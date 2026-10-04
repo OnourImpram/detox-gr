@@ -63,3 +63,15 @@ Yalnız Taha'nın doğruladığı ürün fotoğrafı gerçek ürün kaydı olara
 ## Henüz tamamlanmayan dış bağımlılıklar
 
 Taha'nın ürün ve hikâye onayı, gerçek fotoğraflar, zorunlu ürün bilgileri, işletme ve hukuk metinleri, vergi ve taşıyıcı yapılandırması, Shopify varyantları, yerel dil incelemesi ve gerçek test siparişi gerekir. Bağımsız erişilebilirlik ve güvenlik denetimi yapılmış sayılmaz. Üretim sırları repoya yazılmaz.
+
+## 4 Ekim. Marka ve fotoğraf sürümü
+
+Yeni ana anlatı, Bir dükkânın özeni. Her güne bir parça. Ana sayfa, hikâye, iletişim, hediye, ticari talepler, teslimat ve mevcut önizleme bilgileri yeniden yazıldı. `/raf` 151 gerçek stüdyo fotoğrafını gruplu, büyütülebilir bir defterde sunar. `/notlar` altında üç editöryal yazı bulunur. Yeni editöryal kaynak 113 anahtar ve 20 dil içerir.
+
+Fotoğraflar `taha-foto-kucuk.zip` içinden görsel olarak incelendi. Özgünlere dokunulmadan 400, 800 ve 1440 piksel genişliğinde 453 WebP türevi üretildi. Kaynak adları ve SHA256 kayıtları korundu, EXIF kaldırıldı. Bunlar 151 doğrulanmış ürün eşleştirmesi değildir. `photo-approved.json` boş kalır. Sahibin doğruladığı bir kayıt geldiğinde katalog yalnız geçerli, aynı ürün kodunu taşıyan ve manifestte bulunan fotoğrafı kullanır.
+
+`docs/brand/MARKA_KITABI.md` anlatı, dil, görsel ve sayfa görevlerini tanımlar. `docs/brand/FOTOGRAF_IS_AKISI.md` ürün eşleştirme sürecini açıklar. `docs/brand/photo-register.csv` bütün kareleri kaynak adlarıyla bağlar.
+
+Hediye, iletişim ve ticari talep alanları WhatsApp için bir mesaj hazırlar. Mesaj kendiliğinden gönderilmez, form sunucuya kaydedilmez. Yasal bilgi sayfasındaki düğme yerel listeyi ve ülke tercihini temizler. Satış kilitleri korunur.
+
+`editorial-browser.mjs`, 20 dilde 12 yeni veya yeniden düzenlenen sayfayı dar ekranda, temel dilleri masaüstünde, galeri etkileşimlerini, talep mesajını, veri temizliğini ve 453 varlık yolunu kontrol eder. Test tanımı başarılı sonuç anlamına gelmez. Son sonucu Actions artefaktından okuyun.

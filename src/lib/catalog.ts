@@ -1,3 +1,6 @@
+import photoApprovals from "@/data/photo-approved.json";
+import photoArchive from "@/data/photo-archive.json";
+import { approvedPhotoPath } from "./photo-policy";
 import raw from "@/data/catalog-vitrin.json";
 import infoRaw from "@/data/urun-bilgi.json";
 import commerceConfig from "@/data/commerce-config.json";
@@ -18,7 +21,9 @@ export type ProductInfo = {
 const INFO = infoRaw as Record<string, ProductInfo | string>;
 export function productInfo(sourceId: string): ProductInfo | undefined {
   const value = INFO[sourceId];
-  return value && typeof value === "object" && !Array.isArray(value) ? value : undefined;
+  const info = value && typeof value === "object" && !Array.isArray(value) ? value : undefined;
+  const approvedImage = approvedPhotoPath(photoApprovals, sourceId, photoArchive.photos);
+  return approvedImage ? { ...info, image: info?.image ?? approvedImage } : info;
 }
 export type Product = {
   slug: string; sourceId: string; name: string; category: CategoryId; priceEur: number | null;

@@ -210,3 +210,7 @@ button, a, input, select, textarea { -webkit-tap-highlight-color:transparent; }
   .dt-footer__grid { grid-template-columns:1fr; } .dt-footer__links { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { scroll-behavior:auto !important; } }
+/* Intrinsic grid minimums must not exceed a narrow translated headline. */
+.ed-home-hero > *, .ed-hero-photographs, .ed-page-header > *, .ed-section-heading > *, .ed-contact-layout > * { min-width:0; }
+.ed-actions > a, .ed-contact-cta > a { max-width:100%; white-space:normal; height:auto; padding-block:12px; }
+@media(max-width:767px) { .ed-home-hero, .ed-page-header.with-image, .ed-story-chapters section, .ed-contact-layout { grid-template-columns:minmax(0,1fr); } }

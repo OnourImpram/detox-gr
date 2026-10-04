@@ -26,3 +26,18 @@ test('photo approval cannot be inferred from a candidate or description',async()
  assert.equal(isApprovedPhoto({assetId:'a',approved:true}),false);
  assert.equal(isApprovedPhoto({assetId:'a',approved:true,reviewedBy:'Taha',reviewedAt:'2026-10-04',sourceId:'DT117'}),true);
 });
+test('photo approvals reject impossible calendar dates and unsafe asset names',async()=>{
+ const {isApprovedPhoto}=await import('../src/lib/photo-policy.ts');
+ const good={assetId:'gul-tomurcuklari-mf8a6417',sourceId:'DT222',approved:true,reviewedBy:'Taha',reviewedAt:'2026-10-04'};
+ assert.equal(isApprovedPhoto({...good,reviewedAt:'2026-02-30'}),false);
+ assert.equal(isApprovedPhoto({...good,assetId:'../../image'}),false);
+});
+test('only an approved, source-matching, known asset can become a product photograph',async()=>{
+ const {approvedPhotoPath}=await import('../src/lib/photo-policy.ts');
+ const photo={id:'rose-photo',variants:[{src:'/photos/taha-2026/rose-photo-1440.webp'}]};
+ const approval={assetId:'rose-photo',sourceId:'DT222',approved:true,reviewedBy:'Taha',reviewedAt:'2026-10-04'};
+ assert.equal(approvedPhotoPath({},'DT222',[photo]),undefined);
+ assert.equal(approvedPhotoPath({DT222:{...approval,sourceId:'DT223'}},'DT222',[photo]),undefined);
+ assert.equal(approvedPhotoPath({DT222:approval},'DT222',[]),undefined);
+ assert.equal(approvedPhotoPath({DT222:approval},'DT222',[photo]),photo.variants[0].src);
+});
