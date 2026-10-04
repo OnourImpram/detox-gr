@@ -71,7 +71,10 @@ try {
  assert.ok(order.products<order.shelves);report.assertions.push('Products precede extended two-shelf narrative');
  await screenshot('v3-home-desktop');await screenshot('v3-home-desktop-fold',false);
  await page.locator('.ed-featured').screenshot({path:`${out}/v3-featured-desktop.png`});
- await page.locator('#desktop-search').fill('DT117');await page.locator('#desktop-search').press('Enter');await page.waitForLoadState('networkidle');
+ await page.locator('#desktop-search').fill('DT117');
+ await Promise.all([page.waitForURL(url => url.pathname.endsWith('/shop') && url.searchParams.get('q') === 'DT117'), page.locator('#desktop-search').press('Enter')]);
+ await page.locator('[data-testid=product-explorer]').waitFor();
+ await page.waitForFunction(() => document.querySelectorAll('[data-testid=product-grid] [data-product-id]').length === 1);
  assert.equal(await page.locator('[data-product-id]').count(),1);assert.equal(new URL(page.url()).searchParams.get('q'),'DT117');
  report.assertions.push('Header search submits an actual catalogue query');
  const urls={};for(const id of Object.keys(registry.products))urls[id]=await inspectProduct(id,'illustration');

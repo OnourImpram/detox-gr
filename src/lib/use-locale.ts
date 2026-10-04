@@ -1,13 +1,3 @@
-import { useRouterState } from "@tanstack/react-router";
-import { localeFromSearch } from "./seo";
-import type { Locale } from "./i18n-locales";
-
-/**
- * Aktif dil: URL'deki ?lang'dan, sunucuda ve istemcide aynı. Eskiden bileşenler useShop(s => s.locale) okuyordu;
- * store sunucuda hiç set edilmediği için SSR gövdesi her dilde Türkçe basılıyordu (kaymak kıyası deneyim-01/icerik-05).
- * Store'daki locale kalır (kalıcılık/para birimi); gövde metni buradan.
- */
-export function useLocale(): Locale {
-  const lang = useRouterState({ select: (s) => (s.location.search as { lang?: unknown }).lang });
-  return localeFromSearch({ lang });
-}
+// The root binds this context to the locale whose UI and editorial packs finished loading.
+// Reading the latest URL here caused visible headers to render a not-yet-loaded language.
+export { useContentLocale as useLocale } from './content-locale';

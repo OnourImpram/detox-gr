@@ -13,6 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,16 +21,54 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm test && npm run typecheck && npm run lint
       - run: npm run build:pages
+      - name: Record public deployment identity
+        env:
+          BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          node --input-type=module <<'JS'
+          import {writeFileSync} from 'node:fs';
+          writeFileSync('dist/client/build.json',JSON.stringify({version:'3.0.0',commit:process.env.BUILD_COMMIT,builtAt:new Date().toISOString(),mode:'catalogue-preview',paymentActivated:false},null,2));
+          JS
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/client
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Prove the public site serves this version
+        env:
+          SITE_URL: ${{ needs.deploy.outputs.page_url }}
+          EXPECTED_COMMIT: ${{ github.sha }}
+        run: node scripts/v3-live-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-v3-live-proof
+          path: qa-live
+          retention-days: 14

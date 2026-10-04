@@ -21,6 +21,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: mkdir -p qa-evidence
+      - name: Dependency vulnerability audit
+        id: dependencies
+        continue-on-error: true
+        run: npm audit --audit-level=high --json > qa-evidence/dependencies.json
       - name: Unit and integration tests
         id: tests
         continue-on-error: true
@@ -55,6 +59,10 @@ jobs:
         id: v3
         continue-on-error: true
         run: node scripts/v3-browser.mjs > qa-evidence/v3-browser.log 2>&1
+      - name: Cold locale transitions under delayed networks
+        id: locale
+        continue-on-error: true
+        run: node scripts/v3-locale-browser.mjs > qa-evidence/v3-locale-browser.log 2>&1
       - name: Server rendered HTML checks
         id: ssr
         continue-on-error: true
@@ -71,7 +79,7 @@ jobs:
       - name: Evidence summary
         if: always()
         run: |
-          printf '%s\n' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
+          printf '%s\n' 'dependencies=${{ steps.dependencies.outcome }}' 'locale=${{ steps.locale.outcome }}' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
           git rev-parse HEAD > qa-evidence/commit.txt
           git ls-files -z | xargs -0 sha256sum > qa-evidence/source-sha256.txt
           for f in qa-evidence/*.log; do echo "===== $f ====="; tail -25 "$f"; done
@@ -84,6 +92,8 @@ jobs:
       - name: Require all quality gates
         if: always()
         run: |
+          test '${{ steps.dependencies.outcome }}' = success
+          test '${{ steps.locale.outcome }}' = success
           test '${{ steps.tests.outcome }}' = success
           test '${{ steps.types.outcome }}' = success
           test '${{ steps.lint.outcome }}' = success
