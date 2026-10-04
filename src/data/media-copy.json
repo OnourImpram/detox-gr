@@ -1,0 +1,222 @@
+{
+  "tr": {
+    "illustration": "Temsili görsel",
+    "disclosure": "Yapay zekâ ile üretilmiş temsili kompozisyon. Satılan ürünün, ambalajın veya içeriğin birebir fotoğrafı değildir.",
+    "reference": "Arşiv fotoğrafı",
+    "referenceDisclosure": "Taha’nın paylaştığı fotoğraf arşivinden. Satılan ürün çeşidiyle birebir eşleşmesi henüz doğrulanmadı.",
+    "pending": "Fotoğraf hazırlanıyor",
+    "pendingBody": "Yanlış bir görsel yerine ürün bilgisini öne çıkarıyoruz. Ayrıntılar için bize yazın.",
+    "verified": "Doğrulanmış ürün fotoğrafı",
+    "view": "Ürünü inceleyin",
+    "askPrice": "Fiyat bilgisi için sorun"
+  },
+  "el": {
+    "illustration": "Ενδεικτική εικόνα",
+    "disclosure": "Ενδεικτική σύνθεση που δημιουργήθηκε με τεχνητή νοημοσύνη. Δεν είναι ακριβής φωτογραφία του προϊόντος, της συσκευασίας ή των συστατικών του.",
+    "reference": "Φωτογραφία αρχείου",
+    "referenceDisclosure": "Από το φωτογραφικό αρχείο που μοιράστηκε ο Τάχα. Η ακριβής αντιστοίχιση με την πωλούμενη ποικιλία δεν έχει ακόμη επιβεβαιωθεί.",
+    "pending": "Η φωτογραφία ετοιμάζεται",
+    "pendingBody": "Προτιμούμε ακριβείς πληροφορίες αντί για μια λανθασμένη εικόνα. Ρωτήστε μας για λεπτομέρειες.",
+    "verified": "Επιβεβαιωμένη φωτογραφία προϊόντος",
+    "view": "Δείτε το προϊόν",
+    "askPrice": "Ρωτήστε μας για την τιμή"
+  },
+  "en": {
+    "illustration": "Illustrative image",
+    "disclosure": "AI generated illustrative composition. Not an exact photograph of the product, packaging or ingredients being sold.",
+    "reference": "Archive photograph",
+    "referenceDisclosure": "From the photographic archive supplied by Taha. An exact match to the product variety being sold has not yet been confirmed.",
+    "pending": "Photograph in preparation",
+    "pendingBody": "We prefer useful product information to a misleading image. Ask us for details.",
+    "verified": "Verified product photograph",
+    "view": "View product",
+    "askPrice": "Ask us for the price"
+  },
+  "de": {
+    "illustration": "Symbolbild",
+    "disclosure": "Mit KI erzeugte illustrative Komposition. Kein originalgetreues Foto des angebotenen Produkts, der Verpackung oder der Zutaten.",
+    "reference": "Archivfoto",
+    "referenceDisclosure": "Aus dem von Taha bereitgestellten Fotoarchiv. Die genaue Zuordnung zur angebotenen Produktsorte ist noch nicht bestätigt.",
+    "pending": "Foto in Vorbereitung",
+    "pendingBody": "Lieber verlässliche Produktinformationen als ein irreführendes Bild. Fragen Sie uns nach Einzelheiten.",
+    "verified": "Bestätigtes Produktfoto",
+    "view": "Produkt ansehen",
+    "askPrice": "Preis auf Anfrage"
+  },
+  "fr": {
+    "illustration": "Image illustrative",
+    "disclosure": "Composition illustrative créée par IA. Il ne s’agit pas d’une photographie exacte du produit, de l’emballage ou des ingrédients proposés.",
+    "reference": "Photo d’archive",
+    "referenceDisclosure": "Issue des archives photographiques fournies par Taha. La correspondance exacte avec la variété vendue n’est pas encore confirmée.",
+    "pending": "Photo en préparation",
+    "pendingBody": "Nous préférons des informations utiles à une image trompeuse. Contactez-nous pour les détails.",
+    "verified": "Photo du produit vérifiée",
+    "view": "Voir le produit",
+    "askPrice": "Prix sur demande"
+  },
+  "it": {
+    "illustration": "Immagine illustrativa",
+    "disclosure": "Composizione illustrativa generata con IA. Non è una fotografia esatta del prodotto, della confezione o degli ingredienti in vendita.",
+    "reference": "Foto d’archivio",
+    "referenceDisclosure": "Dall’archivio fotografico fornito da Taha. La corrispondenza esatta con la varietà in vendita non è ancora confermata.",
+    "pending": "Foto in preparazione",
+    "pendingBody": "Preferiamo informazioni utili a un’immagine fuorviante. Contattateci per i dettagli.",
+    "verified": "Foto del prodotto verificata",
+    "view": "Vedi prodotto",
+    "askPrice": "Prezzo su richiesta"
+  },
+  "es": {
+    "illustration": "Imagen ilustrativa",
+    "disclosure": "Composición ilustrativa generada con IA. No es una fotografía exacta del producto, el envase ni los ingredientes que se venden.",
+    "reference": "Fotografía de archivo",
+    "referenceDisclosure": "Del archivo fotográfico facilitado por Taha. Aún no se ha confirmado la correspondencia exacta con la variedad a la venta.",
+    "pending": "Fotografía en preparación",
+    "pendingBody": "Preferimos información útil a una imagen engañosa. Consúltanos los detalles.",
+    "verified": "Fotografía del producto verificada",
+    "view": "Ver producto",
+    "askPrice": "Consultar precio"
+  },
+  "nl": {
+    "illustration": "Illustratieve afbeelding",
+    "disclosure": "Illustratieve compositie gemaakt met AI. Geen exacte foto van het verkochte product, de verpakking of de ingrediënten.",
+    "reference": "Archieffoto",
+    "referenceDisclosure": "Uit het door Taha aangeleverde fotoarchief. De exacte overeenkomst met de verkochte productvariant is nog niet bevestigd.",
+    "pending": "Foto in voorbereiding",
+    "pendingBody": "Liever nuttige productinformatie dan een misleidende afbeelding. Vraag ons naar de details.",
+    "verified": "Geverifieerde productfoto",
+    "view": "Bekijk product",
+    "askPrice": "Prijs op aanvraag"
+  },
+  "pl": {
+    "illustration": "Ilustracja produktu",
+    "disclosure": "Kompozycja ilustracyjna wygenerowana przez AI. Nie jest dokładnym zdjęciem sprzedawanego produktu, opakowania ani składników.",
+    "reference": "Zdjęcie archiwalne",
+    "referenceDisclosure": "Z archiwum fotograficznego udostępnionego przez Tahę. Dokładne dopasowanie do sprzedawanej odmiany nie zostało jeszcze potwierdzone.",
+    "pending": "Zdjęcie w przygotowaniu",
+    "pendingBody": "Wolimy rzetelne informacje niż mylące zdjęcie. Zapytaj nas o szczegóły.",
+    "verified": "Zweryfikowane zdjęcie produktu",
+    "view": "Zobacz produkt",
+    "askPrice": "Zapytaj o cenę"
+  },
+  "no": {
+    "illustration": "Illustrasjonsbilde",
+    "disclosure": "Illustrativ komposisjon laget med KI. Ikke et nøyaktig fotografi av produktet, emballasjen eller ingrediensene som selges.",
+    "reference": "Arkivfoto",
+    "referenceDisclosure": "Fra fotoarkivet Taha har delt. Nøyaktig samsvar med produktvarianten som selges er ennå ikke bekreftet.",
+    "pending": "Foto under forberedelse",
+    "pendingBody": "Vi foretrekker nyttig produktinformasjon fremfor et misvisende bilde. Spør oss om detaljer.",
+    "verified": "Bekreftet produktfoto",
+    "view": "Se produktet",
+    "askPrice": "Spør om pris"
+  },
+  "bg": {
+    "illustration": "Илюстративно изображение",
+    "disclosure": "Илюстративна композиция, създадена с ИИ. Не е точна снимка на продавания продукт, опаковката или съставките.",
+    "reference": "Архивна снимка",
+    "referenceDisclosure": "От фотоархива, предоставен от Таха. Точното съответствие с продавания вид продукт още не е потвърдено.",
+    "pending": "Снимката се подготвя",
+    "pendingBody": "Предпочитаме полезна информация пред подвеждаща снимка. Попитайте ни за подробности.",
+    "verified": "Потвърдена снимка на продукта",
+    "view": "Вижте продукта",
+    "askPrice": "Попитайте за цената"
+  },
+  "ro": {
+    "illustration": "Imagine ilustrativă",
+    "disclosure": "Compoziție ilustrativă generată cu IA. Nu este o fotografie exactă a produsului, ambalajului sau ingredientelor vândute.",
+    "reference": "Fotografie de arhivă",
+    "referenceDisclosure": "Din arhiva fotografică oferită de Taha. Corespondența exactă cu varietatea vândută nu este încă confirmată.",
+    "pending": "Fotografie în pregătire",
+    "pendingBody": "Preferăm informații utile în locul unei imagini înșelătoare. Cereți-ne detalii.",
+    "verified": "Fotografie de produs verificată",
+    "view": "Vezi produsul",
+    "askPrice": "Preț la cerere"
+  },
+  "sv": {
+    "illustration": "Illustrationsbild",
+    "disclosure": "Illustrativ komposition skapad med AI. Inte ett exakt fotografi av produkten, förpackningen eller ingredienserna som säljs.",
+    "reference": "Arkivfoto",
+    "referenceDisclosure": "Ur fotoarkivet som Taha har delat. Exakt överensstämmelse med den produktvariant som säljs är ännu inte bekräftad.",
+    "pending": "Foto under förberedelse",
+    "pendingBody": "Vi föredrar användbar produktinformation framför en missvisande bild. Fråga oss om detaljer.",
+    "verified": "Verifierat produktfoto",
+    "view": "Visa produkten",
+    "askPrice": "Fråga om pris"
+  },
+  "da": {
+    "illustration": "Illustrationsbillede",
+    "disclosure": "Illustrativ komposition skabt med AI. Ikke et nøjagtigt foto af produktet, emballagen eller ingredienserne, der sælges.",
+    "reference": "Arkivfoto",
+    "referenceDisclosure": "Fra fotoarkivet, som Taha har delt. Det nøjagtige match med den solgte produktvariant er endnu ikke bekræftet.",
+    "pending": "Foto under forberedelse",
+    "pendingBody": "Vi foretrækker nyttige produktoplysninger frem for et misvisende billede. Spørg os om detaljer.",
+    "verified": "Bekræftet produktfoto",
+    "view": "Se produktet",
+    "askPrice": "Spørg om prisen"
+  },
+  "fi": {
+    "illustration": "Havainnekuva",
+    "disclosure": "Tekoälyllä luotu havainnollistava sommitelma. Ei tarkka valokuva myytävästä tuotteesta, pakkauksesta tai ainesosista.",
+    "reference": "Arkistokuva",
+    "referenceDisclosure": "Tahan toimittamasta valokuva-arkistosta. Täsmällistä vastaavuutta myytävään tuoteversioon ei ole vielä vahvistettu.",
+    "pending": "Kuva valmisteilla",
+    "pendingBody": "Tarjoamme mieluummin hyödyllistä tuotetietoa kuin harhaanjohtavan kuvan. Kysy lisätietoja.",
+    "verified": "Vahvistettu tuotekuva",
+    "view": "Katso tuotetta",
+    "askPrice": "Kysy hintaa"
+  },
+  "pt": {
+    "illustration": "Imagem ilustrativa",
+    "disclosure": "Composição ilustrativa gerada com IA. Não é uma fotografia exata do produto, da embalagem ou dos ingredientes vendidos.",
+    "reference": "Fotografia de arquivo",
+    "referenceDisclosure": "Do arquivo fotográfico fornecido por Taha. A correspondência exata com a variedade vendida ainda não foi confirmada.",
+    "pending": "Fotografia em preparação",
+    "pendingBody": "Preferimos informações úteis a uma imagem enganadora. Peça-nos mais detalhes.",
+    "verified": "Fotografia do produto verificada",
+    "view": "Ver produto",
+    "askPrice": "Preço sob consulta"
+  },
+  "hu": {
+    "illustration": "Illusztráció",
+    "disclosure": "Mesterséges intelligenciával készített szemléltető kompozíció. Nem az értékesített termék, csomagolás vagy összetevők pontos fényképe.",
+    "reference": "Archív fénykép",
+    "referenceDisclosure": "A Taha által megosztott fényképarchívumból. Az értékesített termékváltozattal való pontos egyezés még nincs megerősítve.",
+    "pending": "A fénykép készül",
+    "pendingBody": "A félrevezető kép helyett hasznos termékinformációt adunk. Érdeklődjön a részletekről.",
+    "verified": "Ellenőrzött termékfotó",
+    "view": "Termék megtekintése",
+    "askPrice": "Érdeklődjön az árról"
+  },
+  "cs": {
+    "illustration": "Ilustrační obrázek",
+    "disclosure": "Ilustrační kompozice vytvořená pomocí AI. Nejde o přesnou fotografii prodávaného výrobku, obalu ani složek.",
+    "reference": "Archivní fotografie",
+    "referenceDisclosure": "Z fotografického archivu poskytnutého Tahou. Přesná shoda s prodávanou variantou zatím nebyla potvrzena.",
+    "pending": "Fotografie se připravuje",
+    "pendingBody": "Dáváme přednost užitečným informacím před zavádějícím obrázkem. Zeptejte se na podrobnosti.",
+    "verified": "Ověřená fotografie výrobku",
+    "view": "Zobrazit produkt",
+    "askPrice": "Cena na dotaz"
+  },
+  "hr": {
+    "illustration": "Ilustrativna slika",
+    "disclosure": "Ilustrativna kompozicija izrađena umjetnom inteligencijom. Nije točna fotografija proizvoda, ambalaže ili sastojaka koji se prodaju.",
+    "reference": "Arhivska fotografija",
+    "referenceDisclosure": "Iz fotoarhiva koji je ustupio Taha. Točno podudaranje s vrstom proizvoda koja se prodaje još nije potvrđeno.",
+    "pending": "Fotografija u pripremi",
+    "pendingBody": "Prednost dajemo korisnim informacijama umjesto zavaravajućoj slici. Pitajte nas za pojedinosti.",
+    "verified": "Potvrđena fotografija proizvoda",
+    "view": "Pogledajte proizvod",
+    "askPrice": "Cijena na upit"
+  },
+  "sk": {
+    "illustration": "Ilustračný obrázok",
+    "disclosure": "Ilustračná kompozícia vytvorená pomocou AI. Nejde o presnú fotografiu predávaného výrobku, obalu ani zložiek.",
+    "reference": "Archívna fotografia",
+    "referenceDisclosure": "Z fotografického archívu poskytnutého Tahom. Presná zhoda s predávaným variantom ešte nebola potvrdená.",
+    "pending": "Fotografia sa pripravuje",
+    "pendingBody": "Uprednostňujeme užitočné informácie pred zavádzajúcim obrázkom. Spýtajte sa na podrobnosti.",
+    "verified": "Overená fotografia výrobku",
+    "view": "Zobraziť produkt",
+    "askPrice": "Cena na vyžiadanie"
+  }
+}

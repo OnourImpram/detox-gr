@@ -1,0 +1,1487 @@
+{
+  "retired": [
+    {
+      "path": "public/products/brass-scale-1200.webp",
+      "bytes": 84424,
+      "sha256": "6cdf6ffd853d3539637d682a59afe512dc47e33e1356c601e97e9fe3722b6fe0",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/brass-scale-800.webp",
+      "bytes": 44788,
+      "sha256": "90c86027db4c646eb5b956c5af86469b247d8a0a51e4a31146ebe529341def79",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/brass-scale.jpg",
+      "bytes": 467453,
+      "sha256": "9d4dc9c09687bace63b123f22837d260868771eed33b651f9aa16eb9da454661",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/brass-scale.webp",
+      "bytes": 111818,
+      "sha256": "df16b41140c80009e8e339136adbd94524a3989b4c3d9de2b919af21efc46f5e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/care-1200.webp",
+      "bytes": 21706,
+      "sha256": "1b6ddbb924b61b22766596d2ad02faec316defb394a278d8a9d95d632fbab070",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/care-800.webp",
+      "bytes": 9252,
+      "sha256": "729e9708252e2f9ca3bc37d092adfd0649846819b41e48b3fc66afbba1c999d6",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/care.jpg",
+      "bytes": 103786,
+      "sha256": "1e1f231265556d53586d410e3c86d9f7f7cc2864874862d5d2cfe73169cb1efa",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/care.webp",
+      "bytes": 59220,
+      "sha256": "836afc1cc7cee1b27d11fc4a4c936295b6164bd45157aa1cccb424f23aeab93f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/coffee-1200.webp",
+      "bytes": 94902,
+      "sha256": "6a53c31d029dd38741f855645b28bcfd0a36af8d330f96fc39e97962cba389b4",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/coffee-800.webp",
+      "bytes": 45838,
+      "sha256": "eb9de55120bbd859c59a21ae5ecb8911c83a5032a7512cac4d6ca94ea4a42043",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/coffee.jpg",
+      "bytes": 551278,
+      "sha256": "31238b812defc6bac335b51d6b6a35543008c0d6915f1eaf8c9bf92f9a5cbd10",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/coffee.webp",
+      "bytes": 154390,
+      "sha256": "cd6c11883a3532d477c88327af61717cb15dfe7b48203b4ef4987499825c5091",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/cream-1200.webp",
+      "bytes": 49480,
+      "sha256": "4737b6a15cec20ad5983698fd6384f5ae341004f04e520ccd6eda5d0491d2251",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/cream-800.webp",
+      "bytes": 24596,
+      "sha256": "dd34ef044413fa1fa99f30963aaacab7c5fc9f7ba2acb163f8d6895e2f4b9bcf",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/cream.jpg",
+      "bytes": 164351,
+      "sha256": "12afd3fb15e35f1c99e5e9b45748d6c6ee8c1ed389949a7d19759ec94a93435c",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/cream.webp",
+      "bytes": 110856,
+      "sha256": "bf1724a01f01dc6179dae7e2ceca6fd069ac0db9282c03f6b031afc8cc5ed695",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/dates-1200.webp",
+      "bytes": 138412,
+      "sha256": "5cddabb1d9290a4a3a7c2cf8f6c3433cb4726e5330acea9a4c96a573d1fc19af",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/dates-800.webp",
+      "bytes": 73966,
+      "sha256": "d0e69bf2038555bee69e38bfaf9f55136d6e54165a88930c620707a4210d36c2",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/dates.jpg",
+      "bytes": 642150,
+      "sha256": "0a248a0596b84523c0deac5ef22ffb32d4a41b607a6aedb57196cd3fb234dbb8",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/dates.webp",
+      "bytes": 212016,
+      "sha256": "63a59b5300db2a0b750e26c3cac129bfa33ad42c08e7a05d65131d086397a58a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/flour-1200.webp",
+      "bytes": 175282,
+      "sha256": "a3c61aa41b5e79c9d54626999a8427ef0b70ec6100e77a1e10f0bb109ebfacdb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/flour-800.webp",
+      "bytes": 88580,
+      "sha256": "85a470360b9aa8e7491d725d3f5e0328696562a7d7203be5dcb2360075797c3b",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/flour.jpg",
+      "bytes": 752757,
+      "sha256": "3bf4d25b0152392f19a50f39e027580255f696a0dc8d7d08d31d26e714e54583",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/flour.webp",
+      "bytes": 269528,
+      "sha256": "8deec57f2a0397448ca02b12dcc5fd41ca7227868623c51645cdb8dfc658ba16",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-cinematic-1200.webp",
+      "bytes": 62842,
+      "sha256": "de5e793f8d3e7fc7700aa4453bd454b54c13b4da5c2062edb04a2bb25855d20a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-cinematic-800.webp",
+      "bytes": 32478,
+      "sha256": "651649eb2acde86caf021d51560676d7258e09365f0ee2a5edfa890df4786ea6",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-cinematic.jpg",
+      "bytes": 458397,
+      "sha256": "6399df6c5518b30cef1205d2cc25691b5d70ad8c7f1772fcca77a082bc10cc80",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-cinematic.webp",
+      "bytes": 116488,
+      "sha256": "b34ffd3baf3160fda426c86ce9a5dd7b25e98484ec24c93ae48d07c10c168067",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-lokum-wide-1200.webp",
+      "bytes": 90692,
+      "sha256": "c20be337dc75bbdaf3e56da5e0c4d3e17ec5faa4c734ea5afdd6ec4acce68b3f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-lokum-wide-800.webp",
+      "bytes": 48688,
+      "sha256": "f2f012acae0514a2375597e507c7129148b45de92bada3499e8f2c3531fc0fce",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-lokum-wide.jpg",
+      "bytes": 545809,
+      "sha256": "d379be76e68abb7c50431fe5bd89aa260f3ee2f48b43f51e7eed5ed3a00608e1",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-lokum-wide.webp",
+      "bytes": 159758,
+      "sha256": "a8119b1427e97dc4881deb1519a423cb3a9435e3a71560da1af8744101d86d03",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-shop-1200.webp",
+      "bytes": 88394,
+      "sha256": "c27b3a9511a906a376056296e6ba65d6391cfc75c338f8b29e5dee211a93135b",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-shop-800.webp",
+      "bytes": 44834,
+      "sha256": "b11d696dd5b1a45b541d87150647636e5744259bcffc06cb9f1ac96755d5370c",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-shop.jpg",
+      "bytes": 586386,
+      "sha256": "708efbd1e544a01fc5a843f6e158dc53e9f91df755359dd23ee84ef16a1945ca",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-shop.webp",
+      "bytes": 166500,
+      "sha256": "8885362a326ce9be7ac7db278fd672f6ce07937e8deb9496c9e620d8144f633a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-tarhana-wide-1200.webp",
+      "bytes": 71674,
+      "sha256": "acb294a7545e47ee5b49013c13b35d4de8e57c85eef2be66b0e711240e15f54a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-tarhana-wide-800.webp",
+      "bytes": 37788,
+      "sha256": "c994720bdf7331a4a8d7ba76a2c4d10405d2398be52c3547b36ae64b4a89d323",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-tarhana-wide.jpg",
+      "bytes": 465909,
+      "sha256": "4c0c7bfdfb2bc4a72ec605f594b8b92fecf4722bad1ce3107503507a04e0c2fe",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-tarhana-wide.webp",
+      "bytes": 126452,
+      "sha256": "740faab925220f1518bdd58064906839781ca22a7e1cf4fbe5b2e112f263093a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-vinegar-800.webp",
+      "bytes": 84282,
+      "sha256": "76cf7c56d9d303c9bf6aa8773bbedc98644159a1d489b13b8648bd6d7a1a6b9f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-vinegar.jpg",
+      "bytes": 551839,
+      "sha256": "8e80eec055cb6e86f90d8ff2cd1794a34716c0044d3a587af9800cd662729612",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/hero-vinegar.webp",
+      "bytes": 156016,
+      "sha256": "5c158496ea6a31a4f606dfbbf6275bccc0e99456cec7f21504ca5754aa038684",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/honey-1200.webp",
+      "bytes": 29112,
+      "sha256": "7d6523ff2a1ed11e4a8c4e41d9e57b0fa464aec77addd563630e9e98b5a78d8e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/honey-800.webp",
+      "bytes": 14794,
+      "sha256": "6dbebedb61a2b68a2b0f55a7fcceb6f77d6509269971335904a5b5f5c5757fcf",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/honey.jpg",
+      "bytes": 120602,
+      "sha256": "d142701a2d64e357c2df20c1a5ea2b0b3477dfa2b1b92ada602febbaf24873ff",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/honey.webp",
+      "bytes": 62662,
+      "sha256": "0ac935c76e2c5e33548d0866d3f0f7049ce2eed366b992413567b0693834fdec",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-1200.webp",
+      "bytes": 192430,
+      "sha256": "651c78eb82a1f16ae550765b0713de9bffa70fa7713fd06009ea20da81ed3b33",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-800.webp",
+      "bytes": 83498,
+      "sha256": "c7840c57c4fc6e19fc74bb8e45f0b2c642a4d4c0c088a1d914ddd7215244d078",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-copper-1200.webp",
+      "bytes": 111600,
+      "sha256": "bbc03b88f8748fccd65119a5ccb83035c74acd160033cb1fadee506e188d1090",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-copper-800.webp",
+      "bytes": 54306,
+      "sha256": "5184221c5781c111b9506bdecfb83c09a90c775f32687fc94d1a09e273faad1d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-copper.jpg",
+      "bytes": 706006,
+      "sha256": "502466e0d604234080e0e88a01e93a5b505454ca80cb15903360dd247c181475",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-copper.webp",
+      "bytes": 208448,
+      "sha256": "142940c3dfa745574d4ffd4944755cb659367dbfe283dc7c0a9b6fd610f9cf51",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-macro-1200.webp",
+      "bytes": 122100,
+      "sha256": "fca170407ce7704a36d0b6243de13dad0434bd43f2b84d02a20d74be0533a708",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-macro-800.webp",
+      "bytes": 67612,
+      "sha256": "c8027a1a97448ec2a6d4e09f8de1e76d269f7acbfe4341a1ff8695aa25567586",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-macro.jpg",
+      "bytes": 618728,
+      "sha256": "7a07f74876a24b9043dfcd11e18c6634176a99361bc887a71236ff3a4d4d027f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum-macro.webp",
+      "bytes": 181820,
+      "sha256": "3c6ab43a64d8d23fb631ca562ea9985f2bf82964576dd95c60377830521e168f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum.jpg",
+      "bytes": 939017,
+      "sha256": "bf3cafbe75e3e9c65aa399c6dfe169b451f6d9d1611ed9c07d9919e6aebd23b0",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/lokum.webp",
+      "bytes": 395178,
+      "sha256": "d9492eb18681f95eb0403c337b3e8880e9d0c808d592622a53e7adf6a50a87b8",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/night-shelf-1200.webp",
+      "bytes": 85112,
+      "sha256": "00cc25492324f519753b809f1b1716cf718b66d65be4fbde213e062383a6dd58",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/night-shelf-800.webp",
+      "bytes": 43910,
+      "sha256": "5c9908ac32ba1243a9055ca2cd2afb25069713fcc55be22d586f22783fdfcd55",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/night-shelf.jpg",
+      "bytes": 531964,
+      "sha256": "7804dc41f4d5c1d54e003bb9b4a8077ebb784898de86010f9633a27de1d6f979",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/night-shelf.webp",
+      "bytes": 150148,
+      "sha256": "5a5a378f0c10ba3fb195c87fae090d25ffb4f1f511429a40fb48dc7f3e033fd9",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/nuts-1200.webp",
+      "bytes": 131558,
+      "sha256": "3f5bfe5f507aa1ff49fe4aa0495e29d6224f762806dfa38b3feb4159eec9a682",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/nuts-800.webp",
+      "bytes": 74234,
+      "sha256": "05358832a37f77f2b4fb3300f3479a32a092f5251eae1f92e1797e5691b4bd28",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/nuts.jpg",
+      "bytes": 638286,
+      "sha256": "f8e9eda278ab0eebea1f6c0219078ccafb2107a4d54c262cc400ef90f617718b",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/nuts.webp",
+      "bytes": 191556,
+      "sha256": "1a62afe0035ff2ebd1d2450f5319dcc1b756c2071132ed71cf6a5858baa4bcde",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/oils-1200.webp",
+      "bytes": 29332,
+      "sha256": "9b9996d0732c1f669ba6f9e9f72454e75a27934d9ba112c8506a973c423aa219",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/oils-800.webp",
+      "bytes": 15352,
+      "sha256": "8af5a57a7dc52bf4ea4942c56dc9fddb7b3926369fcd9ee642026c3f3dc4790e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/oils.jpg",
+      "bytes": 112113,
+      "sha256": "bf6687d34bd6292cc8faeedfdcdaf362d98d6055d3fa9ee64776c6bdac7bbaaa",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/oils.webp",
+      "bytes": 64696,
+      "sha256": "45082d65e3fa837b6a4a51a1a3c32cbbc93232c6af3472d0cd6cf240de20bcf2",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/rhodope-ridge-1200.webp",
+      "bytes": 55130,
+      "sha256": "0177ac9d30fae9967e685bc420937fe59d1e729078a37740580fd0ee25cb332c",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/rhodope-ridge-800.webp",
+      "bytes": 26474,
+      "sha256": "54a4b3ac0fe7893c4d107c02abd9b98637013694cde3d77dc53ba483e456cf27",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/rhodope-ridge.jpg",
+      "bytes": 463321,
+      "sha256": "b6f168cab4abf71b8dc84f4d159176324419aa7a69ceb38a89d0ffe84ac86c73",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/rhodope-ridge.webp",
+      "bytes": 111722,
+      "sha256": "a7efce36e18e64e062b4587a80747ea9a518e72fd2e4e6036bd3d6ca8bd63340",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/salt-1200.webp",
+      "bytes": 95432,
+      "sha256": "7cbca9c40966150ca85d1e25af6bd99a52b91ffa27478657a8039b7d0ff5e5a5",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/salt-800.webp",
+      "bytes": 50516,
+      "sha256": "8f77adb64588a20d502dcb4f38d5f0ac7e6da52f3e9e40ec8c16ae94843761de",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/salt.jpg",
+      "bytes": 535242,
+      "sha256": "f2883b10741450dc80a137e6ca3daab9f518bb48e87d9f5732c0d6ea1b83278b",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/salt.webp",
+      "bytes": 145916,
+      "sha256": "6af788342c3e3f73eb396344a0fb246d7ec51a89007025d1633266762337fed2",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-demet-1200.webp",
+      "bytes": 44788,
+      "sha256": "f795cb372593c0a5c6e106dee8ab2d4ade8c8fa4fbbd6623bd1f3008291375d9",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-demet-800.webp",
+      "bytes": 23044,
+      "sha256": "47edf58068f57bc0eaab2a260d4dff57b5c0af442dc02959976de21d67c368aa",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-demet.jpg",
+      "bytes": 161274,
+      "sha256": "1a7f9d19dd863fcd74403d8075f70ea716d3bb40a2f8a590a0c49360ff077a6f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-demet.webp",
+      "bytes": 101538,
+      "sha256": "7ff96eb141a223095d24249bf271d13f4cceb82eabaef6aee6495156f85f6c49",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-yagi-1200.webp",
+      "bytes": 32806,
+      "sha256": "649ea7bd31841d46ae117d94204a28a78ef9c904de37b9b065545f36514fd2fb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-yagi-800.webp",
+      "bytes": 15142,
+      "sha256": "16ff82292f1e25c8f923d2f3139092db99dba346ffa213983d85d1f935ceac00",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-yagi.jpg",
+      "bytes": 125586,
+      "sha256": "b55f77816adf95ecbc99ce44049b7175b3cebef0b37b6225ddff5155440e942a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/adacayi-yagi.webp",
+      "bytes": 78184,
+      "sha256": "ed92403afc021db28532b49db3340092ec55510934f00697c3669f6079936394",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/bergamot-cay-800.webp",
+      "bytes": 132424,
+      "sha256": "b184b5c30dd80098577b0298355acea2088210748e04306fac70221459e35d61",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/bergamot-cay.jpg",
+      "bytes": 711620,
+      "sha256": "f4375178aabd8b074cc64113f4517e06c75fd0f5f2987ff7481f704ed13b549a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/bergamot-cay.webp",
+      "bytes": 243116,
+      "sha256": "f0b4d9ba2b3a2c80b1f526ab4874cdc76373021fd9a7fe933de033eb797869ff",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/biberiye-yagi-1200.webp",
+      "bytes": 25956,
+      "sha256": "f5a166b517d3c582aac57e0644a7067e85a5f5349dca1a76399af98f658d415a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/biberiye-yagi-800.webp",
+      "bytes": 13584,
+      "sha256": "d52258c45a4a691a28721ff4e8a53415daf88280260436e1a0c445ab57875805",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/biberiye-yagi.jpg",
+      "bytes": 106743,
+      "sha256": "a85c0966c186968157ea076527bddcc2093670a3cd6daa0b5a4d98774efbb72d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/biberiye-yagi.webp",
+      "bytes": 59024,
+      "sha256": "5b5ca357c07106c93548ebffea484391b0a2a23247d021b5654fe0967ea91806",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cam-puren-bali-1200.webp",
+      "bytes": 29112,
+      "sha256": "7d6523ff2a1ed11e4a8c4e41d9e57b0fa464aec77addd563630e9e98b5a78d8e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cam-puren-bali-800.webp",
+      "bytes": 14794,
+      "sha256": "6dbebedb61a2b68a2b0f55a7fcceb6f77d6509269971335904a5b5f5c5757fcf",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cam-puren-bali.jpg",
+      "bytes": 120602,
+      "sha256": "d142701a2d64e357c2df20c1a5ea2b0b3477dfa2b1b92ada602febbaf24873ff",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cam-puren-bali.webp",
+      "bytes": 62662,
+      "sha256": "0ac935c76e2c5e33548d0866d3f0f7049ce2eed366b992413567b0693834fdec",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cay-agaci-yagi-1200.webp",
+      "bytes": 21430,
+      "sha256": "3889e0627868787e0fb4ee312cff24ade104564ac6e7c8747b969e07372f6fad",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cay-agaci-yagi-800.webp",
+      "bytes": 10136,
+      "sha256": "d2a514341e942513168e83fe3c8ce3fded8869c185c01242b8bfbc52964f144f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cay-agaci-yagi.jpg",
+      "bytes": 103708,
+      "sha256": "368bf2abd172e715b6cc86e006ac35b5e72933a4aaf088b7778b7fee12678da6",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cay-agaci-yagi.webp",
+      "bytes": 54652,
+      "sha256": "ffcafac7a1d9106a1eb2f016d8629f6b33705e0d6133db88a50b055d0f028d7d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cifte-tahin-800.webp",
+      "bytes": 51018,
+      "sha256": "b7760b3d79f918f5784ef20beeaa63d4873ce1ceca6d32b3fbb81bdb454135e2",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cifte-tahin.jpg",
+      "bytes": 440586,
+      "sha256": "d4a7be44ea8d2c780f1f12e642fe1c75ee64efc7774746a71d3e1ff6d6ac1256",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/cifte-tahin.webp",
+      "bytes": 99216,
+      "sha256": "a222bf82cf26f5850cd77a871914f20f8bed8683bf2fcf02f9944f8358942dff",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/corekotu-yagi-1200.webp",
+      "bytes": 29332,
+      "sha256": "9b9996d0732c1f669ba6f9e9f72454e75a27934d9ba112c8506a973c423aa219",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/corekotu-yagi-800.webp",
+      "bytes": 15352,
+      "sha256": "8af5a57a7dc52bf4ea4942c56dc9fddb7b3926369fcd9ee642026c3f3dc4790e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/corekotu-yagi.jpg",
+      "bytes": 112113,
+      "sha256": "bf6687d34bd6292cc8faeedfdcdaf362d98d6055d3fa9ee64776c6bdac7bbaaa",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/corekotu-yagi.webp",
+      "bytes": 64696,
+      "sha256": "45082d65e3fa837b6a4a51a1a3c32cbbc93232c6af3472d0cd6cf240de20bcf2",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/elma-sirkesi-detoks-800.webp",
+      "bytes": 84282,
+      "sha256": "76cf7c56d9d303c9bf6aa8773bbedc98644159a1d489b13b8648bd6d7a1a6b9f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/elma-sirkesi-detoks.jpg",
+      "bytes": 551839,
+      "sha256": "8e80eec055cb6e86f90d8ff2cd1794a34716c0044d3a587af9800cd662729612",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/elma-sirkesi-detoks.webp",
+      "bytes": 156016,
+      "sha256": "5c158496ea6a31a4f606dfbbf6275bccc0e99456cec7f21504ca5754aa038684",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-lokumu-1200.webp",
+      "bytes": 111600,
+      "sha256": "bbc03b88f8748fccd65119a5ccb83035c74acd160033cb1fadee506e188d1090",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-lokumu-800.webp",
+      "bytes": 54306,
+      "sha256": "5184221c5781c111b9506bdecfb83c09a90c775f32687fc94d1a09e273faad1d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-lokumu.jpg",
+      "bytes": 706006,
+      "sha256": "502466e0d604234080e0e88a01e93a5b505454ca80cb15903360dd247c181475",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-lokumu.webp",
+      "bytes": 208448,
+      "sha256": "142940c3dfa745574d4ffd4944755cb659367dbfe283dc7c0a9b6fd610f9cf51",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-suyu-800.webp",
+      "bytes": 43884,
+      "sha256": "73a639801c2d6d06d2b8ffcb1f86a8d23d22fd0058042419bf7a116dae77441f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-suyu.jpg",
+      "bytes": 469535,
+      "sha256": "bc532d1242c673850ff5abd1af7fc906cb568439fb46ac60428b598eca394e3c",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/gul-suyu.webp",
+      "bytes": 81022,
+      "sha256": "3ca1651a0b1a2062b50cc1e57c2cf53fe6a2b72172722a15904a0c1545de6e9d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kantaron-yagi-1200.webp",
+      "bytes": 33628,
+      "sha256": "2919c715bd580b36e8c3f4dde153781568cd6a163b4b4f2200b2bec8ca668a22",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kantaron-yagi-800.webp",
+      "bytes": 17704,
+      "sha256": "9e06593adc74aeeee5445ffa7ec1c491fbfa200782060b7b1896d28961a9ca67",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kantaron-yagi.jpg",
+      "bytes": 127369,
+      "sha256": "23bbdf7fbeb70a912a8e96c104b1fcedd96eee7efca09670d4509ce47aa0f9bb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kantaron-yagi.webp",
+      "bytes": 73942,
+      "sha256": "a518a38c44b46fde5fa55287911e3dc1e18a668f4fbd78ad2c57ef6357a04fde",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kestane-bali-1200.webp",
+      "bytes": 34484,
+      "sha256": "bd866f20803aae5ac8a1f568c13d86822012d6819fb43bde59866d0fcadae3a7",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kestane-bali-800.webp",
+      "bytes": 18208,
+      "sha256": "ea01a6151101d5616f6ed6570b3bae0c8454ee9c2dde55b8df670e1685d66ffb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kestane-bali.jpg",
+      "bytes": 131464,
+      "sha256": "b4d5fe297dc0c6bc18022e9ee61a046ec75447cee2e320e5484613ae6da113b0",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kestane-bali.webp",
+      "bytes": 75134,
+      "sha256": "5d41afd5a52adb84057fb107104da83a4026d7e8e22cdc4b7523ba7a8214648f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kiraz-visneli-lokum-800.webp",
+      "bytes": 92246,
+      "sha256": "f0272148ddbef3180c63855bdaf0c9da423d3e7d56d419cc6a89577d63054587",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kiraz-visneli-lokum.jpg",
+      "bytes": 580986,
+      "sha256": "e3ccd3875c78561f163683623d3dc166009b3f3ccf1c194ddbba7ae838a38133",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kiraz-visneli-lokum.webp",
+      "bytes": 168014,
+      "sha256": "8bbb68bb22065d3e6854f1634913776b081dc887fd5efc3f71406ffcde3cb08d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kuyruk-yagi-kremi-1200.webp",
+      "bytes": 49480,
+      "sha256": "4737b6a15cec20ad5983698fd6384f5ae341004f04e520ccd6eda5d0491d2251",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kuyruk-yagi-kremi-800.webp",
+      "bytes": 24596,
+      "sha256": "dd34ef044413fa1fa99f30963aaacab7c5fc9f7ba2acb163f8d6895e2f4b9bcf",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kuyruk-yagi-kremi.jpg",
+      "bytes": 164351,
+      "sha256": "12afd3fb15e35f1c99e5e9b45748d6c6ee8c1ed389949a7d19759ec94a93435c",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/kuyruk-yagi-kremi.webp",
+      "bytes": 110856,
+      "sha256": "bf1724a01f01dc6179dae7e2ceca6fd069ac0db9282c03f6b031afc8cc5ed695",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/lavanta-yagi-1200.webp",
+      "bytes": 36988,
+      "sha256": "8ebed855d8662189eec8a3c7d5978c701477f04d24091a59e08728b43398313c",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/lavanta-yagi-800.webp",
+      "bytes": 18346,
+      "sha256": "8c2e19f5ff0dea311a02c00149a5627e6cedec69f010b281a62c91ca14520c6f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/lavanta-yagi.jpg",
+      "bytes": 138175,
+      "sha256": "7dadeb831b654f817678a8880ee7ab56ba3b978a66cb903b11dd913851185964",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/lavanta-yagi.webp",
+      "bytes": 84022,
+      "sha256": "b09a00cbe2301cee86b9030aaa03c8a379a5afdfc542d2f9ce4031898ada3665",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/menta-1200.webp",
+      "bytes": 32716,
+      "sha256": "bef581e428d565e067506a79e4635ba28e352862c4c0b279972d35919cd6afd7",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/menta-800.webp",
+      "bytes": 17078,
+      "sha256": "3ec3b3283a10c9546b81bc50f3a26e724f66df9dbe66cad6fd8dbc4e57116350",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/menta.jpg",
+      "bytes": 128000,
+      "sha256": "22e9f634224a197ccc9592cbd71c77911f533d35358a1113b7e95f731dcde4f2",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/menta.webp",
+      "bytes": 72314,
+      "sha256": "a76a3f05e890a276f65ff20cd285248089b31187ad7064f9ac817e4dd6901f6d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/nane-yagi-1200.webp",
+      "bytes": 31888,
+      "sha256": "82469e7df42dab6072a9b958e48824590a6bb4f27964dd465779d6eef46d4455",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/nane-yagi-800.webp",
+      "bytes": 17704,
+      "sha256": "94cdafc95bb4a7c112e4045da1c07349e921fee7479a0e97e14f58efbb982dfb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/nane-yagi.jpg",
+      "bytes": 118837,
+      "sha256": "ec6fa2d09161cdfd725af6687a53266eda7592668727eeca3e76bc90b0d00ab4",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/nane-yagi.webp",
+      "bytes": 65708,
+      "sha256": "c13f370d23bc8f9b6ae668509c9a21482a769d0a5b7f39c7f933eb5b7f57b0c8",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-keci-sutlu-1200.webp",
+      "bytes": 33720,
+      "sha256": "5593be04bb75cccf80c405b6e1b80f7f6890d458ae60fbe147fa1342f638f55d",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-keci-sutlu-800.webp",
+      "bytes": 15334,
+      "sha256": "812c59c045595b5d668aec984e8e6ad5825daaa32962d83344ad6698e26159b6",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-keci-sutlu.jpg",
+      "bytes": 134763,
+      "sha256": "0249f17eaa3e32c9c9c0022312e17abd60c4415500584e7afe7eef44f77a73ba",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-keci-sutlu.webp",
+      "bytes": 85190,
+      "sha256": "d6ce6ec2bad7e81f5221db8b5a250f4ed892d2b8ea4edb90f1c1b5810b6403dc",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-lavanta-800.webp",
+      "bytes": 141040,
+      "sha256": "8a15433341d3687c56600535be90ce6df41c626fc002e7c936635725869663d5",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-lavanta.jpg",
+      "bytes": 684144,
+      "sha256": "2b464903065ceedef5ce3ab24a65102f64cd9e831063bb5f657c09e84b755009",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-lavanta.webp",
+      "bytes": 243584,
+      "sha256": "9370b14b203f43133ff6f9aba540c2ec7eef7ce61e6a1d311143297c766ef7aa",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-okyanus-1200.webp",
+      "bytes": 17826,
+      "sha256": "654e32ab3e18e3e473891c61c678032b4be6c4e31ac8d58f2859f84de178ce64",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-okyanus-800.webp",
+      "bytes": 8492,
+      "sha256": "3e7969d204c67cd611ce82271c42b1d48c94735985ea730d333bdec39f6bcfb9",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-okyanus.jpg",
+      "bytes": 96286,
+      "sha256": "e67fb7ab193d4b0eb497dafbd6e2011b64899e6b1063bd028ff9b19b7c7a6936",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-okyanus.webp",
+      "bytes": 42782,
+      "sha256": "cc90fc896f6edd1c2ac0e06e4eed1943ef66c93201fa6b5870b8713c820f5452",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-yesil-elma-1200.webp",
+      "bytes": 41578,
+      "sha256": "583258135eebaeccadc377945403ca5617d09fe50b7a5f3239b7883e6ab5592e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-yesil-elma-800.webp",
+      "bytes": 22376,
+      "sha256": "a32291f16d62aa64bbd246a5f8332483778a8a65b216346b40d15e48bd6a4703",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-yesil-elma.jpg",
+      "bytes": 145949,
+      "sha256": "35399f3dc76ba7d54b6c8b2e163e5c5f6ac058b538418a3fc3f0591b57385c00",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sabun-yesil-elma.webp",
+      "bytes": 87282,
+      "sha256": "657ea517daea07a4fb4c22e2142e94a0ebbf1d760dd8ba45f23f84279a495ddb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sarimsak-yagi-1200.webp",
+      "bytes": 8320,
+      "sha256": "404aaf1ebd7afe07a1ce147ae3991759de5ccb0d6dedf902d0594d8fedaf88bf",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sarimsak-yagi-800.webp",
+      "bytes": 4276,
+      "sha256": "cb244a829ed2c06989ab1765ff1d49c4126e25bb1a0e7ffe47eaad787ca68d0f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sarimsak-yagi.jpg",
+      "bytes": 60050,
+      "sha256": "c6d682161e06f0fb0f8583e008e33a6eda8b2c7dabc5ebbc3ef75470adebf06b",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/sarimsak-yagi.webp",
+      "bytes": 19920,
+      "sha256": "2d14929a313e36b8c019b75ae5d9401a3ace1c12a4e35c41c6cc8a407d5b0848",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/susam-yagi-1200.webp",
+      "bytes": 34630,
+      "sha256": "219bd5c380b3667eee5be01e4f0be375891a58d416858bb5cef56f0fb58733a1",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/susam-yagi-800.webp",
+      "bytes": 19374,
+      "sha256": "2e8f6804e0d5bf98943c53464c31a3fe104127439d50de2e6f58ab0571f07fb8",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/susam-yagi.jpg",
+      "bytes": 136486,
+      "sha256": "a29906326b51dea00536059caaebc48387ccaf3be64073096481833694373729",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/susam-yagi.webp",
+      "bytes": 72154,
+      "sha256": "39a744528c503261c8527e8ec6948dee40652f08bf17f0ec16cd93e1c7d34424",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/tarhana-800.webp",
+      "bytes": 107696,
+      "sha256": "71034599f76069707ea080e0fadbe3e55ce0565553f71e076c77241c6eff75a4",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/tarhana.jpg",
+      "bytes": 603820,
+      "sha256": "b4d40619ef9dfa7911b844df69f999055e4a339e4178b4e5c3de1b39b914e201",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/tarhana.webp",
+      "bytes": 191182,
+      "sha256": "d7e81907beb1c49d242c1fda4987d53f6755431a672b9fa0a2c40b7fb7cbd6ea",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/uzum-pekmezi-800.webp",
+      "bytes": 86362,
+      "sha256": "3737e08de30b5bd33645b06c927d5954f89c22d873a96534182d4c720144ef4e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/uzum-pekmezi.jpg",
+      "bytes": 559522,
+      "sha256": "ce30c3aa8f39406fdf08498c4991d096cf850be3c85e378cac1cf58aeae2ceb8",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/sku/uzum-pekmezi.webp",
+      "bytes": 162076,
+      "sha256": "030268592f3430fb26d9bac72659c486cf247d92cf90af88178feba7da2a0467",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/soap-1200.webp",
+      "bytes": 41578,
+      "sha256": "583258135eebaeccadc377945403ca5617d09fe50b7a5f3239b7883e6ab5592e",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/soap-800.webp",
+      "bytes": 22376,
+      "sha256": "a32291f16d62aa64bbd246a5f8332483778a8a65b216346b40d15e48bd6a4703",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/soap.jpg",
+      "bytes": 145949,
+      "sha256": "35399f3dc76ba7d54b6c8b2e163e5c5f6ac058b538418a3fc3f0591b57385c00",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/soap.webp",
+      "bytes": 87282,
+      "sha256": "657ea517daea07a4fb4c22e2142e94a0ebbf1d760dd8ba45f23f84279a495ddb",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/spices-1200.webp",
+      "bytes": 44788,
+      "sha256": "f795cb372593c0a5c6e106dee8ab2d4ade8c8fa4fbbd6623bd1f3008291375d9",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/spices-800.webp",
+      "bytes": 23044,
+      "sha256": "47edf58068f57bc0eaab2a260d4dff57b5c0af442dc02959976de21d67c368aa",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/spices.jpg",
+      "bytes": 161274,
+      "sha256": "1a7f9d19dd863fcd74403d8075f70ea716d3bb40a2f8a590a0c49360ff077a6f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/spices.webp",
+      "bytes": 101538,
+      "sha256": "7ff96eb141a223095d24249bf271d13f4cceb82eabaef6aee6495156f85f6c49",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/still-life-1200.webp",
+      "bytes": 117224,
+      "sha256": "473be12f8f59fad95f37a6a6cc62d428b1a517154b4870039db474e0b1f76314",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/still-life-800.webp",
+      "bytes": 64738,
+      "sha256": "442ae9272f4446f623ee2f1dab36500cec769ad7a8313ffa2f87606e4921f52a",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/still-life.jpg",
+      "bytes": 597139,
+      "sha256": "0e41f86059c7fada13b9c96cec41338f323ae78751a354fd02fd5aa279bf70e4",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/products/still-life.webp",
+      "bytes": 174056,
+      "sha256": "febbbf826cde2e321e26539f17ac39d60ad177d8ce0e6330b75d3d9ef6879a5f",
+      "reason": "retired synthetic product media"
+    },
+    {
+      "path": "public/__grok/icon-180.png",
+      "bytes": 2100,
+      "sha256": "3cf5d17d294b51c6cca6c86070309b88554b7ad702b0412e8e2709a01990bc8a",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/glass-puzzle.svg",
+      "bytes": 1824,
+      "sha256": "bc5c81f92d2ce502bf99f97ea5b1eef0c30430d88b62cbdfc1d7218d41b020bc",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/glass-share.svg",
+      "bytes": 2398,
+      "sha256": "8cdc764f90e63753839b589ed72fe57ad6106130e49ee505d6d94c23e761be99",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/logo-grok.svg",
+      "bytes": 1065,
+      "sha256": "ee8ab97130def78b1707c441de0e8ae3c3ad0e0d9add772d3c274e49af6a3e87",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/ob-ipad.png",
+      "bytes": 101843,
+      "sha256": "4c9b09a4660c662b394597d551a04124293b0e37a7a7c72271dd2948c4499a14",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/ob-phone.png",
+      "bytes": 103612,
+      "sha256": "80e0a5ede614d9b920c67d7cb79c80a79134687b1fc9f560384e896a88e302db",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/assets/homescreen/plus.svg",
+      "bytes": 2407,
+      "sha256": "8881cfe08845a7e9b3308f41f429d366de3805751c5c9a7453719914e6b5925b",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/__grok/install/styles.css",
+      "bytes": 7092,
+      "sha256": "bf80a6633be16ee405ff319091f0a499b59fcf819365610e1651984bd0cdec6a",
+      "reason": "retired platform chrome"
+    },
+    {
+      "path": "public/photos/creams-1200.webp",
+      "bytes": 49480,
+      "sha256": "4737b6a15cec20ad5983698fd6384f5ae341004f04e520ccd6eda5d0491d2251",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/creams-800.webp",
+      "bytes": 24596,
+      "sha256": "dd34ef044413fa1fa99f30963aaacab7c5fc9f7ba2acb163f8d6895e2f4b9bcf",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/creams.jpg",
+      "bytes": 164351,
+      "sha256": "12afd3fb15e35f1c99e5e9b45748d6c6ee8c1ed389949a7d19759ec94a93435c",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/creams.webp",
+      "bytes": 110856,
+      "sha256": "bf1724a01f01dc6179dae7e2ceca6fd069ac0db9282c03f6b031afc8cc5ed695",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/herbs-1200.webp",
+      "bytes": 44788,
+      "sha256": "f795cb372593c0a5c6e106dee8ab2d4ade8c8fa4fbbd6623bd1f3008291375d9",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/herbs-800.webp",
+      "bytes": 23044,
+      "sha256": "47edf58068f57bc0eaab2a260d4dff57b5c0af442dc02959976de21d67c368aa",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/herbs.jpg",
+      "bytes": 161274,
+      "sha256": "1a7f9d19dd863fcd74403d8075f70ea716d3bb40a2f8a590a0c49360ff077a6f",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/herbs.webp",
+      "bytes": 101538,
+      "sha256": "7ff96eb141a223095d24249bf271d13f4cceb82eabaef6aee6495156f85f6c49",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/honey-jars-1200.webp",
+      "bytes": 29112,
+      "sha256": "7d6523ff2a1ed11e4a8c4e41d9e57b0fa464aec77addd563630e9e98b5a78d8e",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/honey-jars-800.webp",
+      "bytes": 14794,
+      "sha256": "6dbebedb61a2b68a2b0f55a7fcceb6f77d6509269971335904a5b5f5c5757fcf",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/honey-jars.jpg",
+      "bytes": 120602,
+      "sha256": "d142701a2d64e357c2df20c1a5ea2b0b3477dfa2b1b92ada602febbaf24873ff",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/honey-jars.webp",
+      "bytes": 62662,
+      "sha256": "0ac935c76e2c5e33548d0866d3f0f7049ce2eed366b992413567b0693834fdec",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/oils-1200.webp",
+      "bytes": 29332,
+      "sha256": "9b9996d0732c1f669ba6f9e9f72454e75a27934d9ba112c8506a973c423aa219",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/oils-800.webp",
+      "bytes": 15352,
+      "sha256": "8af5a57a7dc52bf4ea4942c56dc9fddb7b3926369fcd9ee642026c3f3dc4790e",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/oils.jpg",
+      "bytes": 112113,
+      "sha256": "bf6687d34bd6292cc8faeedfdcdaf362d98d6055d3fa9ee64776c6bdac7bbaaa",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/oils.webp",
+      "bytes": 64696,
+      "sha256": "45082d65e3fa837b6a4a51a1a3c32cbbc93232c6af3472d0cd6cf240de20bcf2",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/shop-front-1200.webp",
+      "bytes": 32274,
+      "sha256": "9fb7185b0f8c213b4399ee67235d47e3db43c2716c8ace55802a8d6d84a5520f",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/shop-front-800.webp",
+      "bytes": 17344,
+      "sha256": "c6b58fc0e8cc00d3c5e26017fd5f8a403f49078e0138878a56ce54d8c3212350",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/shop-front.jpg",
+      "bytes": 132688,
+      "sha256": "f023b0af766b422dac340e67f5abec5fc5576280ced0ee69c9664fe23d90c274",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/shop-front.webp",
+      "bytes": 72028,
+      "sha256": "f34fe42773d5edd6dd7351f9b8964ff6b2e618139ff33b4eda7b9cecb67c4aab",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/soaps-1200.webp",
+      "bytes": 41578,
+      "sha256": "583258135eebaeccadc377945403ca5617d09fe50b7a5f3239b7883e6ab5592e",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/soaps-800.webp",
+      "bytes": 22376,
+      "sha256": "a32291f16d62aa64bbd246a5f8332483778a8a65b216346b40d15e48bd6a4703",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/soaps.jpg",
+      "bytes": 145949,
+      "sha256": "35399f3dc76ba7d54b6c8b2e163e5c5f6ac058b538418a3fc3f0591b57385c00",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/soaps.webp",
+      "bytes": 87282,
+      "sha256": "657ea517daea07a4fb4c22e2142e94a0ebbf1d760dd8ba45f23f84279a495ddb",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-1200.webp",
+      "bytes": 35364,
+      "sha256": "68f720c949f727b534cfe99a6e42fe1e1e1c58ebab0da469e67d02e94bb970c8",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-800.webp",
+      "bytes": 19130,
+      "sha256": "852a45b06bac6166cf539eef07e75209f6b5c7a1bdebc1a0f8e5d116cefe5a2c",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-cream-1200.webp",
+      "bytes": 46514,
+      "sha256": "0daa3cdb861840e136f37a85b1238295833e6ffe41ace060c48540df39057995",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-cream-800.webp",
+      "bytes": 21286,
+      "sha256": "4ec80692fa78a61ca1deb4c6b2c2f50f832c54e0980b1a03deed139b04d5f23b",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-cream.jpg",
+      "bytes": 169240,
+      "sha256": "0fd63d58af77adab9073a7054456c469435479652998e0e65b74ce5bb4ade6ce",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-cream.webp",
+      "bytes": 117784,
+      "sha256": "91936157965fbf8a96bdbcce97872b5fc74bde63995dc7d8e91269c4c278ed47",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-honey-1200.webp",
+      "bytes": 29950,
+      "sha256": "218aefcbf30a877ff9baf5c352f6e30e380f7befacc4d00c2665c077a0e1b6d9",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-honey-800.webp",
+      "bytes": 16296,
+      "sha256": "a2579073beebac6f11710489f86d97e34b68b5e6c2534b62054e7ea8c0524dd5",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-honey.jpg",
+      "bytes": 119146,
+      "sha256": "4130aaa8304e21ffccd6c6894e3f9fb6d72f7d0c865b22ed85694231ef5401e6",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-honey.webp",
+      "bytes": 59664,
+      "sha256": "37a93745eb94cb2a4740b50b55f351e3fca981b481079eefc25c93b97f0f0ca2",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-jars-1200.webp",
+      "bytes": 40752,
+      "sha256": "c80d917b600d204ae65005d282274c628d80eaad97af16f15e06bd0fd53ad9e3",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-jars-800.webp",
+      "bytes": 20304,
+      "sha256": "8d6c6a897b8783744c90639e07aa579258d2eedf3d9d95010ef776acc1b1b0a1",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-jars.jpg",
+      "bytes": 146484,
+      "sha256": "3fbf99ea6918effcf6bf5b8e4c3dc6064a7f9bd680c80f86026a4f2e75201378",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-jars.webp",
+      "bytes": 93064,
+      "sha256": "1fc77e47d831308ce8f5a607e8412d09886e28154617ef4085c74dbb41754195",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-oil-1200.webp",
+      "bytes": 94910,
+      "sha256": "592df6e8057b7ee5cb5cc797ee0a9c0d98d7d879be66de9798d5c678b670dfc1",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-oil-800.webp",
+      "bytes": 50290,
+      "sha256": "31c6bb94c095dddde64ac40fbf210bcab78cba7f08b5589e845b7add4c6b9641",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-oil.jpg",
+      "bytes": 287766,
+      "sha256": "a43d8c3f4b99e2dc735f5628a9954a3b9c88cd310848c45de82275b474c5f14e",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-oil.webp",
+      "bytes": 192620,
+      "sha256": "51025d9a965db012992f4eb7a88c0996a94e865e2caaa786826bc3f2f3d20031",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-soap-1200.webp",
+      "bytes": 26072,
+      "sha256": "6874f9595f627bb3ced5cc696ef73294613ed5f36fbc62f87d51dd405aa1029b",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-soap-800.webp",
+      "bytes": 14064,
+      "sha256": "a8e9a75a972569d17ddfbe70e60655ec55af36ea6e89a99f12b6473cb00a4914",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-soap.jpg",
+      "bytes": 110472,
+      "sha256": "08fb33c833793eed6283d7ab2e4fde486626003154751677720057f55c4a0ed3",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-soap.webp",
+      "bytes": 55310,
+      "sha256": "ce77e2aa2776cbb707e874866f26cc64fe64332d2b01561bff39dd1bf5af3fdc",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-spice-1200.webp",
+      "bytes": 50520,
+      "sha256": "90ac23789a97a0e18849b2fd6650123a8fb1bbb3b76995857898e2a444b85c00",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-spice-800.webp",
+      "bytes": 24938,
+      "sha256": "ec7b618405a753d5f756f8f9d30da57fae069e81142833f5fff344a40ac6e31a",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-spice.jpg",
+      "bytes": 159262,
+      "sha256": "6cdf3731e39038694dd882eda6bf73f78d8df65f9982d46684f96c3b9ae32b83",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha-spice.webp",
+      "bytes": 116646,
+      "sha256": "813c2b77b49a0203f00778016da492ffc1f87eecdf8ad8bcebbb41bc1a5af13b",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha.jpg",
+      "bytes": 135740,
+      "sha256": "d66eaa94f6bb9ab9d7e0602a92f89d453905d9e302b3d033ea6beb9eaed4473e",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    },
+    {
+      "path": "public/photos/taha.webp",
+      "bytes": 75858,
+      "sha256": "2972836e800a43c431a2713b805c868109768193a18aa793dfce996e730e8a70",
+      "reason": "obsolete duplicate export with misleading legacy name, canonical 151-photo archive preserved"
+    }
+  ],
+  "restore": "Restore only intentionally via Git history. Do not restore a category fallback as a product photo."
+}

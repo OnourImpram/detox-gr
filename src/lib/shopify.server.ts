@@ -1,4 +1,4 @@
-// Shopify hosted checkout (kapalı karar: her ödeme Shopify'dan). Env yoksa çağıran Stripe yedeğine düşer.
+// Shopify hosted checkout. Missing configuration fails closed, never falls back to Stripe.
 // Varyant eşlemesi: src/data/shopify-varyant.json (sourceId → gid) → yoksa Storefront'ta SKU araması (SKU = source_record_id).
 import varyantRaw from "@/data/shopify-varyant.json";
 import { quoteCart, type QuoteItem } from "./quote";

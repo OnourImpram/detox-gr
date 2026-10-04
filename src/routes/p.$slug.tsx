@@ -3,10 +3,12 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight, MessageCircle, Minus, Plus } from "lucide-react";
 import { LocaleLink } from "@/components/locale-link";
-import { Pic } from "@/components/pic";
+import { ProductMedia } from "@/components/product-media";
+import { productMedia } from "@/lib/product-media";
+import { mediaCopy } from "@/lib/media-copy";
 import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
-import { imageFor, imageIsExact, productBySlug, type Product } from "@/lib/catalog";
+import { imageFor, productBySlug, type Product } from "@/lib/catalog";
 import { categoryTitle, localeMeta, productBlurb, productName, t } from "@/lib/i18n";
 import { useLocale } from "@/lib/use-locale";
 import { usePaymentsEnabled } from "@/lib/payments";
@@ -26,7 +28,7 @@ export const Route = createFileRoute("/p/$slug")({
     if (!product) return {};
     const name = productName(product, locale);
     const origin = pageOrigin();
-    return seoHead({ title: t(locale, "seo.product.title", { name }), description: productBlurb(product, locale), path: `/p/${product.slug}`, locale, origin, image: imageFor(product), ogType: "product", jsonLd: [
+    return seoHead({ title: t(locale, "seo.product.title", { name }), description: productBlurb(product, locale), path: `/p/${product.slug}`, locale, origin, image: imageFor(product) ?? undefined, ogType: "product", jsonLd: [
       breadcrumbJsonLd(origin, locale, [{ name: t(locale, "nav.shop"), path: "/shop" }, { name: categoryTitle(product.category, locale), path: `/shop/${product.category}` }, { name, path: `/p/${product.slug}` }]),
       productJsonLd(origin, locale, product),
     ] });
@@ -49,7 +51,7 @@ function ProductDetail({ product }: { product: Product }) {
   const add = useShop(state => state.add);
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
-  const exact = imageIsExact(product.slug);
+  const media = productMedia(product);
   const name = productName(product, locale);
   const more = related(product);
   const blockers = saleBlockers(product, country, quantity);
@@ -84,10 +86,13 @@ function ProductDetail({ product }: { product: Product }) {
   return <section className="dt-container dt-pdp">
     <nav className="dt-breadcrumb" aria-label={t(locale, "nav.shop")}><LocaleLink to="/shop">{t(locale, "nav.shop")}</LocaleLink><span aria-hidden="true">/</span><LocaleLink to="/shop/$category" params={{ category: product.category }}>{categoryTitle(product.category, locale)}</LocaleLink></nav>
     <div className="dt-pdp__layout">
-      <figure className="dt-pdp__figure"><div className={`dt-pdp__image ${exact ? "is-exact" : ""}`}><Pic src={imageFor(product)} alt={`${name}. ${t(locale, exact ? "product.exact" : "product.illustrative")}`} fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" /></div><figcaption>{t(locale, exact ? "product.exact" : "product.illustrative")}</figcaption></figure>
+      <div className="dt-pdp__figure">
+        <ProductMedia product={product} priority sizes="(min-width: 1024px) 48vw, 90vw" className="v3-pdp-media" />
+        {media.kind !== 'verified' && <p className="v3-media-disclosure">{mediaCopy(locale, media.kind === 'illustration' ? 'disclosure' : media.kind === 'reference' ? 'referenceDisclosure' : 'pendingBody')}</p>}
+      </div>
       <div className="dt-pdp__information">
         <p className="kicker">{t(locale, product.houseNamed ? "product.made" : "product.picked")}</p><h1>{name}</h1>
-        <p className="dt-pdp__price">{formatListed(product.priceEur, product.unit, currency, locale)}</p>
+        <p className="dt-pdp__price">{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</p>
         <p className="dt-price-note">{ux(locale, info?.vatIncluded === true ? "vatIncluded" : "referencePrice")}</p>
         <p className="dt-pdp__blurb">{productBlurb(product, locale)}</p>
         <dl className="dt-product-facts">
@@ -103,6 +108,6 @@ function ProductDetail({ product }: { product: Product }) {
       </div>
     </div>
     {more.length > 0 && <section className="dt-related"><div className="dt-section-heading"><h2>{t(locale, "product.related")}</h2></div><div className="dt-product-grid">{more.map(item => <ProductCard key={item.sourceId} product={item} />)}</div></section>}
-    <div className="dt-mobile-purchase"><span>{formatListed(product.priceEur, product.unit, currency, locale)}</span><Button size="sm" variant="primary" disabled={blocked || product.priceEur == null} onClick={addProduct}>{label}</Button></div>
+    <div className="dt-mobile-purchase"><span>{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</span><Button size="sm" variant="primary" disabled={blocked || product.priceEur == null} onClick={addProduct}>{label}</Button></div>
   </section>;
 }

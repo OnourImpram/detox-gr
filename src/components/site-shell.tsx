@@ -17,6 +17,7 @@ import { useLocale } from "@/lib/use-locale";
 import { usePaymentsEnabled } from "@/lib/payments";
 import { ux } from "@/lib/storefront-copy";
 import { b } from "@/lib/brand-copy";
+import release from "@/data/release.json";
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <button type="button" ref={trigger} className="dt-menu-button" onClick={() => setOpen((value) => !value)} aria-label={t(locale, "nav.menu")} aria-expanded={open} aria-controls="mobile-nav">{open ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}</button>
           </div>
         </div>
-        <div className="dt-country-row shell-x">{countrySelect}<LocaleLink to="/shop"><Search size={14} aria-hidden="true" />{t(locale, "nav.search")}</LocaleLink></div>
+        <div className="dt-country-row shell-x">{countrySelect}<form className="v3-quick-search" role="search" onSubmit={search}><label className="sr-only" htmlFor="desktop-search">{t(locale, "nav.search")}</label><input id="desktop-search" type="search" name="q" maxLength={120} placeholder={t(locale, "nav.search")} autoComplete="off" /><button type="submit" aria-label={t(locale, "nav.search")}><Search size={16} aria-hidden="true" /></button></form></div>
         {open && <div id="mobile-nav" className="dt-mobile-menu shell-x">
           <form onSubmit={search} role="search"><label className="sr-only" htmlFor="mobile-search">{t(locale, "nav.search")}</label><div className="dt-search-field"><Search size={18} aria-hidden="true" /><input ref={searchInput} id="mobile-search" name="q" type="search" maxLength={120} placeholder={t(locale, "nav.search")} /><button type="submit" aria-label={t(locale, "nav.search")}><ArrowUpRight size={18} aria-hidden="true" /></button></div></form>
           <nav aria-label={t(locale, "nav.menu")}>{nav.map((item) => <LocaleLink key={item.to} to={item.to} onClick={() => setOpen(false)}>{item.label}</LocaleLink>)}</nav>
@@ -94,7 +95,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         </div>
         <p className="dt-footer__legal">{b(locale, "preview.body")}</p>
         <nav className="dt-footer__languages" aria-label={t(locale, "nav.language")}>{LOCALES.map((language) => <a key={language.code} href={localeUrl(`${path}${location.searchStr}${location.hash ? `#${location.hash.replace(/^#/, "")}` : ""}`, language.code)} hrefLang={language.html} aria-current={language.code === locale ? "true" : undefined} onClick={(event) => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; event.preventDefault(); changeLocale(language.code); }}>{language.native}</a>)}</nav>
-        <div className="dt-footer__bottom"><p>© {new Date().getFullYear()} {BRAND}</p><p>{shopCity(locale)} · Taha Hüseyinoğlu</p></div>
+        <div className="dt-footer__bottom"><p>© {new Date().getFullYear()} {BRAND} <span className="v3-release">v{release.version}</span></p><p>{shopCity(locale)} · Taha Hüseyinoğlu</p></div>
       </footer>
     </div>
   );

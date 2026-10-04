@@ -288,7 +288,7 @@ export function productJsonLd(origin: string, locale: Locale, product: Product) 
     name: productName(product, locale),
     description: productBlurb(product, locale),
     sku: product.sourceId,
-    image: absoluteUrl(origin, imageFor(product)),
+    ...(imageFor(product) ? { image: absoluteUrl(origin, imageFor(product)!) } : {}),
     ...(product.houseNamed ? { brand: { "@type": "Brand", name: BRAND_SHOP } } : {}),
     category: categoryTitle(product.category, locale),
     offers: offer,

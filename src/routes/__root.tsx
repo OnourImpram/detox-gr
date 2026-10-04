@@ -4,10 +4,12 @@ import { SiteShell } from "@/components/site-shell";
 import { ThemeRoot } from "@/components/theme-root";
 import { parseLang } from "@/lib/lang-search";
 import { localeMeta, t } from "@/lib/i18n";
+import { loadBrandPack, registerBrandPack } from "@/lib/brand-copy";
 import { loadPack, registerPack } from "@/lib/i18n-pack";
 import { getPaymentsEnabled } from "@/lib/payments";
 import { localeFromSearch } from "@/lib/seo";
 import { localeUrl } from "@/lib/locale-navigation";
+import v3Css from "../styles/v3.css?url";
 import appCss from "../styles.css?url";
 import storefrontCss from "../styles/storefront.css?url";
 import narrowCss from "../styles/narrow.css?url";
@@ -34,9 +36,10 @@ export const Route = createRootRoute({
       }
     }
     const locale = localeFromSearch(deps);
-    const [pack, payments] = await Promise.all([loadPack(locale), STATIC_PREVIEW ? Promise.resolve(false) : getPaymentsEnabled()]);
+    const [pack, brand, payments] = await Promise.all([loadPack(locale), loadBrandPack(locale), STATIC_PREVIEW ? Promise.resolve(false) : getPaymentsEnabled()]);
     registerPack(locale, pack);
-    return { locale, pack, payments };
+    registerBrandPack(locale, brand);
+    return { locale, pack, brand, payments };
   },
   head: ({ match }) => ({
     meta: [
@@ -53,6 +56,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: storefrontCss },
       { rel: "stylesheet", href: narrowCss },
       { rel: "stylesheet", href: editorialCss },
+      { rel: "stylesheet", href: v3Css },
       { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),
@@ -74,6 +78,7 @@ function Document({ children }: { children: React.ReactNode }) {
 function Root() {
   const data = Route.useLoaderData();
   registerPack(data.locale, data.pack);
+  registerBrandPack(data.locale, data.brand);
   // SPA prerendering forces the root route to SSR even when ssr:false is set.
   // An explicit ClientOnly body and matching Suspense shell prevent serialized
   // Turkish shell content from being hydrated against a different locale match.

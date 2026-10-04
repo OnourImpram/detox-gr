@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -480,22 +480,20 @@ test("renders the manifest with the per-app name", () => {
   assert.equal(manifest.icons[0].src, "/__grok/icon-180.png");
 });
 
-// Tripwires: the deployed-app path only works if Nitro scans server/ — an
-// accidental edit that drops serverDir or the middleware file would otherwise
-// fail silently (published apps would just render the app for ?install=1).
-test("vite config keeps the nitro serverDir wiring", () => {
+// v3 deliberately retires platform chrome. These integration contracts now prove
+// that an environment variable cannot silently reintroduce old branding/assets.
+// The standalone historical plugin utility tests above remain unchanged.
+test("independent v3 server build never activates legacy platform chrome", () => {
   const viteConfig = readFileSync(join(TEMPLATE_ROOT, "vite.config.ts"), "utf8");
-  assert.match(viteConfig, /serverDir:\s*"\.\/server"/);
-  assert.match(viteConfig, /grokPwaPlugin\(\)/);
+  assert.match(viteConfig, /serverDir:\s*false/);
+  assert.doesNotMatch(viteConfig, /grokPwaPlugin|GROK_PLATFORM/);
 });
 
-test("nitro middleware and its bundled assets exist", () => {
-  const middleware = readFileSync(join(TEMPLATE_ROOT, "server/middleware/grok-pwa.ts"), "utf8");
-  assert.match(middleware, /install-page\.html\?raw/);
-  assert.match(middleware, /virtual:grok-og-identity/);
-  readFileSync(join(TEMPLATE_ROOT, "scripts/install-page.html"));
-  readFileSync(join(TEMPLATE_ROOT, "public/__grok/icon-180.png"));
-  readFileSync(join(TEMPLATE_ROOT, "public/__grok/install/styles.css"));
+test("v3 publishes its own icons and no obsolete platform asset directory", () => {
+  const manifest = JSON.parse(readFileSync(join(TEMPLATE_ROOT, "public/manifest.webmanifest"), "utf8"));
+  assert.ok(manifest.icons.every(icon => !icon.src.includes("__grok")));
+  for (const icon of manifest.icons) assert.ok(existsSync(join(TEMPLATE_ROOT, "public", icon.src)));
+  assert.equal(existsSync(join(TEMPLATE_ROOT, "public/__grok")), false);
 });
 
 test("vite plugin bakes og identity as a virtual module", () => {

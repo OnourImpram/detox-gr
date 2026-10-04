@@ -1,12 +1,25 @@
-# detoks.gr
+# Detoks v3.0.0
 
 Taha Hüseyinoğlu'nun Gümülcine'deki aktarının 20 dilli dijital vitrini. Proje, gerçek bir küçük işletmenin kimliğini koruyarak AB pazarına açılabilecek bir işletim modeli geliştirmeyi amaçlar.
+
+
+## v3 uygulaması
+
+Bu sürüm yalnız bir yama dosyası değildir. Dört yeni temsili görsel, ürün kodları üzerinden ana sayfa, katalog, ürün detayları ve listeye bağlanmıştır. Eski sentetik ürün görselleri ve platform simgeleri public çıktısından kaldırılmıştır. Taha’nın 151 fotoğraf kaydı ve 453 WebP dosyası korunur. Gerçek ürün onayı olmayan fotoğraflar açıkça arşiv referansı olarak ayrılır. Belirsiz ürünler rastgele kategori fotoğrafı kullanmaz.
+
+Yeni sürümde kart ve fiyat hizası, masaüstü arama, katalogdan geri dönüş, eksik fotoğraf ve fiyat durumları, dil başına yüklenen editöryal paketler ve bağımsız uygulama simgeleri bulunur. Ticari satış onayları kapalıdır. Ayrıntılar `docs/v3/RELEASE.md`, doğrulanabilir envanter `npm run audit:v3` içindedir. Ana dal ile birleştirme ve gerçek satışa açılma ayrıca ele alınır.
+
+```
+npm run test:v3
+npm run audit:v3
+npm run brand:locales
+```
 
 ## Bu dalın durumu
 
 `work/detoks-eu-storefront`, mevcut ana sürümden bağımsız geliştirme dalıdır. Çevrim içi ödeme varsayılan olarak kapalıdır. GitHub Pages statik katalog önizlemesidir, sunuculu satış sitesi değildir. Gerçek ödeme, alan adı veya şirket hesabı bu dal tarafından etkinleştirilmez.
 
-Kaynak katalogdaki 271 kayıt korunur. 226 kayıt önizlemede görünür, 45 kayıt editöryal incelemede tutulur. Tüm kaynak yayın bayrakları kapalıdır. Doğrulanmış ürün kaydı ve fotoğraf eşlemesi henüz yoktur. Güncel sayılar `npm run audit:catalogue` ile alınır.
+Kaynak katalogdaki 271 kayıt korunur. 226 kayıt önizlemede görünür, 45 kayıt editöryal incelemede tutulur. Tüm kaynak yayın bayrakları kapalıdır. Doğrulanmış ürün kaydı ve birebir fotoğraf onayı henüz yoktur. Gerçek arşiv fotoğrafları ve dört açıkça işaretli referans eşlemesi vardır. Güncel sayılar `npm run audit:catalogue` ile alınır.
 
 ## Deneyim
 

@@ -1,5 +1,5 @@
 {
-  "name": "app-builder-workspace",
+  "name": "detoks-storefront",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -23,7 +23,10 @@
     "format": "prettier --write .",
     "build:pages": "STATIC_PAGES=1 VITE_STATIC_PREVIEW=1 vite build && node scripts/static-pages-post.mjs",
     "test:storefront": "node --experimental-strip-types --test scripts/storefront*.test.mjs",
-    "audit:catalogue": "node scripts/catalogue-audit.mjs"
+    "audit:catalogue": "node scripts/catalogue-audit.mjs",
+    "brand:locales": "node scripts/generate-brand-locales.mjs",
+    "test:v3": "node --experimental-strip-types --test scripts/v3-*.test.mjs",
+    "audit:v3": "node scripts/audit-v3.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",
@@ -104,5 +107,6 @@
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"
-  }
+  },
+  "version": "3.0.0"
 }

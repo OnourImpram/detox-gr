@@ -2,10 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, MessageCircle, ShoppingBag, Trash2 } from "lucide-react";
 import { usePaymentsEnabled } from "@/lib/payments";
 import { useLocale } from "@/lib/use-locale";
-import { Pic } from "@/components/pic";
+import { ProductMedia } from "@/components/product-media";
 import { LocaleLink } from "@/components/locale-link";
 import { Button } from "@/components/ui/button";
-import { imageFor, imageIsExact } from "@/lib/catalog";
 import { countryName, productName, t } from "@/lib/i18n";
 import { formatMoney } from "@/lib/money";
 import { localeFromSearch, pageOrigin, seoHead, BRAND } from "@/lib/seo";
@@ -42,7 +41,7 @@ function CartPage() {
     {!payments && <p className="dt-notice">{ux(locale, "previewBody")}</p>}
     {lines.length === 0 ? <div className="dt-empty"><ShoppingBag size={34} aria-hidden="true" /><p>{t(locale, "cart.emptyTitle")}</p><Button asChild variant="primary"><LocaleLink to="/shop">{t(locale, "home.cta")}<ArrowRight size={17} aria-hidden="true" /></LocaleLink></Button></div> : <div className="dt-cart__layout">
       <ul className="dt-cart__lines">{lines.map(line => <li className="dt-cart-line" key={line.product.sourceId}>
-        <LocaleLink to="/p/$slug" params={{ slug: line.product.slug }} className="dt-cart-line__image"><Pic src={imageFor(line.product)} alt={`${productName(line.product, locale)}. ${t(locale, imageIsExact(line.product.slug) ? "product.exact" : "product.illustrative")}`} sizes="96px" loading="lazy" /></LocaleLink>
+        <LocaleLink to="/p/$slug" params={{ slug: line.product.slug }} className="dt-cart-line__image"><ProductMedia product={line.product} sizes="96px" caption={false} compact /></LocaleLink>
         <div className="dt-cart-line__body"><LocaleLink to="/p/$slug" params={{ slug: line.product.slug }} className="dt-cart-line__title">{productName(line.product, locale)}</LocaleLink><p>{line.product.sourceId}</p><p>{formatMoney(line.product.priceEur, currency, locale)}</p><div className="dt-cart-line__controls"><label><span className="sr-only">{t(locale, "product.qty")} {productName(line.product, locale)}</span><input type="number" inputMode="numeric" min={1} max={MAX_ITEM_QUANTITY} step={1} value={line.qty} onChange={event => setQty(line.product.slug, Number(event.target.value))} /></label><button type="button" onClick={() => remove(line.product.slug)}><Trash2 size={16} aria-hidden="true" />{t(locale, "cart.remove")}</button></div></div>
         <p className="dt-cart-line__total">{formatMoney((line.product.priceEur ?? 0) * line.qty, currency, locale)}</p>
       </li>)}</ul>

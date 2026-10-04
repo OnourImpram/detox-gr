@@ -1,3 +1,4 @@
+import { productMedia, ILLUSTRATION_BY_ID } from "./product-media";
 import photoApprovals from "@/data/photo-approved.json";
 import photoArchive from "@/data/photo-archive.json";
 import { approvedPhotoPath } from "./photo-policy";
@@ -28,7 +29,7 @@ export function productInfo(sourceId: string): ProductInfo | undefined {
 export type Product = {
   slug: string; sourceId: string; name: string; category: CategoryId; priceEur: number | null;
   unit: string; grams: number | null; net: { value: number; unit: "g" | "ml" } | null;
-  kind: ShipKind; klass: ProductClass; image: string; blurb: string; publish: boolean;
+  kind: ShipKind; klass: ProductClass; image: string | null; blurb: string; publish: boolean;
   houseNamed: boolean; storyTitle?: string; storyBody?: string; reviewFlags: string[]; info?: ProductInfo;
 };
 export const CATEGORIES: { id: CategoryId; title: string; blurb: string }[] = [
@@ -91,22 +92,9 @@ function stripHouseSuffix(name: string) {
 }
 const HELD_STATUS = "İNCELEME ÖNCESİ YAYIN YOK";
 function firstSentence(body: string) { const index = body.indexOf(". "); return index > 24 && index < 180 ? body.slice(0, index + 1) : body; }
-/** These are illustrative compositions, not verified photographs of the merchandise. */
-const SKU_BY_ID: Record<string, string> = {
-  DT117: "/products/sku/elma-sirkesi-detoks.jpg", DT021: "/products/sku/sabun-lavanta.jpg",
-  DT049: "/products/sku/gul-suyu.jpg", DT157: "/products/sku/tarhana.jpg", DT002: "/products/sku/gul-lokumu.jpg",
-  DT001: "/products/sku/kiraz-visneli-lokum.jpg", DT102: "/products/sku/cifte-tahin.jpg",
-  DT101: "/products/sku/uzum-pekmezi.jpg", DT235: "/products/sku/bergamot-cay.jpg",
-};
+/** Explicit v3 illustrations. No category-to-product image substitution. */
+const SKU_BY_ID = ILLUSTRATION_BY_ID;
 const FEATURED_IDS = ["DT117", "DT101", "DT157", "DT002", "DT001", "DT021", "DT049", "DT096"];
-const GALLERY: Record<CategoryId, string> = {
-  lokum: "/products/lokum.jpg", soap: "/products/sku/sabun-lavanta.jpg", care: "/products/sku/gul-suyu.jpg",
-  cream: "/products/hero-shop.jpg", essential: "/products/brass-scale.jpg", honey: "/products/still-life.jpg",
-  pantry: "/products/sku/elma-sirkesi-detoks.jpg", nuts: "/products/nuts.jpg", dates: "/products/dates.jpg",
-  salt: "/products/salt.jpg", flour: "/products/flour.jpg", form: "/products/coffee.jpg",
-  spice: "/photos/taha-jars.jpg", oil: "/products/night-shelf.jpg",
-};
-export const SKU_IMAGE: Record<string, string> = {};
 function netFromSource(quantity: string | number | null, unit: string | null): { value: number; unit: "g" | "ml"; grams: number } | null {
   const value = typeof quantity === "number" ? quantity : Number(String(quantity ?? "").replace(",", "."));
   if (!Number.isFinite(value) || value <= 0 || !unit) return null;
@@ -134,7 +122,7 @@ function adapt(row: SourceRecord): Product {
     net: info?.grams != null ? { value: info.grams, unit: "g" } : net,
     kind: kindFor(category),
     klass: info?.productClass && ["food", "cosmetic", "other"].includes(info.productClass) ? info.productClass : klassFor(category),
-    image: info?.image ?? SKU_BY_ID[row.source_record_id] ?? GALLERY[category],
+    image: productMedia({ sourceId: row.source_record_id, info }).src,
     blurb: text(hook, story ? firstSentence(story) : "", SHELF[category], name),
     publish: row.publish === true && row.editorial_status !== HELD_STATUS,
     houseNamed: /detoks aktar/i.test(row.source_name),
@@ -147,7 +135,6 @@ const ALL_PRODUCTS: Product[] = (raw as SourceRecord[]).map((row) => {
   const product = adapt(row);
   const slug = used.has(product.slug) ? `${product.slug}-${row.source_record_id.toLowerCase()}` : product.slug;
   used.add(slug);
-  if (product.info?.image || SKU_BY_ID[product.sourceId]) SKU_IMAGE[slug] = product.image;
   return { ...product, slug };
 });
 const HELD_IDS = new Set((raw as SourceRecord[]).filter(row => row.editorial_status === HELD_STATUS).map(row => row.source_record_id));
@@ -161,12 +148,9 @@ export function productBySourceId(id: string) { return PRODUCTS.find(product => 
 export function productsByCategory(id: CategoryId) { return PRODUCTS.filter(product => product.category === id); }
 export function categoryById(id: string) { return CATEGORIES.find(category => category.id === id); }
 export function featured() { return FEATURED_IDS.map(productBySourceId).filter((product): product is Product => Boolean(product)); }
-export function imageIsExact(slug: string) { return Boolean(productBySlug(slug)?.info?.image); }
-export function imageFor(product: Product) { return product.info?.image ?? SKU_BY_ID[product.sourceId] ?? product.image; }
+export function imageIsExact(slug: string) { const product = productBySlug(slug); return product ? productMedia(product).kind === "verified" : false; }
+export function imageFor(product: Product) { return productMedia(product).src; }
 export function outOfStock(product: Product) { return product.info?.stock === 0; }
-export function categoryImage(id: CategoryId) { return GALLERY[id] ?? "/products/still-life.jpg"; }
-export function imageCrop(_slug: string) { return "50% 50%"; }
-export function imageTall(slug: string) { return imageIsExact(slug); }
 export function isHouseNamed(slug: string) { return Boolean(productBySlug(slug)?.houseNamed); }
 export function searchProducts(query: string, extra?: (product: Product) => string[]) {
   const needle = query.trim().toLocaleLowerCase("tr-TR");
