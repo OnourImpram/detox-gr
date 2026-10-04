@@ -1,3 +1,4 @@
+import { maskCheckoutEmail } from "./commerce-policy";
 import Stripe from "stripe";
 import { productLabel, quoteCart, stripeCountryCodes, type QuoteItem } from "./quote";
 
@@ -97,10 +98,10 @@ export async function readStripeCheckout(sessionId: string) {
   return {
     ok: true as const,
     paid: session.payment_status === "paid",
-    email: session.customer_email ?? session.customer_details?.email ?? "",
+    email: maskCheckoutEmail(session.customer_email ?? session.customer_details?.email),
     amountEur: (session.amount_total ?? 0) / 100,
     currency: session.currency ?? "eur",
     id: session.id,
-    name: session.customer_details?.name ?? session.metadata?.name ?? "",
+    name: "",
   };
 }

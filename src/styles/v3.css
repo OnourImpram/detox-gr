@@ -1,0 +1,74 @@
+/* Detoks v3. Product-led, quiet layouts with explicit photographic provenance. */
+.v3-product-media { margin:0; width:100%; min-width:0; }
+.v3-product-media__surface { aspect-ratio:4/3; overflow:hidden; width:100%; background:#eee6da; border:1px solid rgba(55,36,20,.08); }
+.v3-product-media__surface > img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .22s ease; }
+.v3-product-media[data-media-kind="verified"] .v3-product-media__surface > img { object-fit:contain; }
+.v3-product-media figcaption { min-height:2.8em; padding-top:9px; font-size:11px; line-height:1.6; color:var(--dt-muted); }
+.v3-product-media__pending { height:100%; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:18px; text-align:center; color:#76604d; background:#ece3d6; }
+.v3-product-media__pending > svg { color:#92755c; flex-shrink:0; }
+.v3-product-media__pending > span { font-size:12px; line-height:1.5; }
+.v3-product-media__pending > .v3-product-media__category { color:#563b27; font-size:14px; font-weight:500; }
+.v3-product-media__pending small { font:10px var(--dt-mono); color:#806f60; }
+.v3-product-media.is-compact .v3-product-media__surface { height:100%; aspect-ratio:1; }
+.v3-product-card { min-width:0; height:100%; }
+.v3-product-card .dt-product-card__link { display:flex; flex-direction:column; height:100%; outline-offset:6px; }
+.v3-product-card .dt-product-card__link:hover .v3-product-media__surface > img { transform:scale(1.025); }
+.v3-product-card .dt-product-card__body { display:flex; flex-direction:column; gap:18px; flex:1; padding-top:12px; }
+.v3-product-card .v3-product-card__details { flex:1; }
+.v3-product-card h3 { margin-top:9px; overflow-wrap:anywhere; font-size:clamp(16px,1.4vw,20px); }
+.v3-product-card .dt-product-card__shelf { font-size:11px; }
+.v3-product-card .dt-product-card__category { margin-top:9px; }
+.v3-product-card .dt-product-card__quantity { margin-top:3px; }
+.v3-product-card__purchase { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; border-top:1px solid var(--dt-border); padding-top:14px; }
+.v3-product-card__purchase .dt-product-card__price { margin-top:0; font-size:20px; }
+.v3-product-card__purchase .dt-product-card__price-note { font-size:10px; line-height:1.5; }
+.v3-product-card__purchase > svg { flex-shrink:0; color:var(--dt-primary); }
+.v3-pdp-media .v3-product-media__surface { aspect-ratio:4/3; }
+.v3-media-disclosure { max-width:64ch; font-size:12px; line-height:1.7; margin-top:8px; color:var(--dt-muted); }
+.v3-pdp-media[data-media-kind="pending"] .v3-product-media__pending { min-height:250px; }
+.dt-cart-line__image > .v3-product-media { width:100%; height:100%; }
+.dt-cart-line__image .v3-product-media img { width:100%; height:100%; }
+.ed-featured { border-bottom:1px solid var(--dt-border); padding-top:48px; }
+.ed-home-hero { padding-block:42px 46px; }
+.ed-home-hero h1 { font-size:clamp(2.2rem,4.1vw,4.15rem); }
+.ed-hero-main-photo { padding-left:0; }
+.ed-hero-photo-pair { padding-right:0; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; }
+.ed-hero-star { margin-top:0; }
+.ed-categories { border-bottom:1px solid var(--dt-border); }
+.v3-quick-search { display:flex; align-items:center; width:min(420px,48vw); gap:10px; }
+.v3-quick-search input { min-width:0; width:100%; min-height:40px; color:var(--dt-fg); background:transparent; font-size:12px; border:0; }
+.v3-quick-search input::placeholder { color:var(--dt-muted); opacity:1; }
+.v3-quick-search button { display:grid; place-items:center; width:44px; min-height:44px; flex-shrink:0; }
+.v3-release { display:inline-flex; border:1px solid var(--dt-border); padding:3px 7px; font:10px var(--dt-mono); }
+#icerik:focus { outline:none; }
+.dt-explorer__select, .dt-product-card__body, .dt-cart__summary { min-width:0; }
+.v3-product-media.is-compact figcaption { display:none; }
+@media (max-width:1023px) {
+ .dt-site-header .dt-cart-link { min-width:44px; }
+ .dt-site-header .dt-menu-button { min-width:44px; }
+ .dt-header-actions { flex-shrink:0; }
+ .dt-mobile-purchase { position:sticky; bottom:0; margin-inline:-6vw; padding-inline:max(6vw,20px); box-shadow:0 -5px 20px #2c21180b; }
+ .dt-pdp { padding-bottom:0; }
+ .dt-pdp__figure { max-width:none; }
+}
+@media (max-width:639px) {
+ .v3-product-media figcaption { font-size:10px; min-height:3.9em; padding-top:7px; }
+ .v3-product-media__pending { padding:12px; gap:7px; }
+ .v3-product-media__pending > span { font-size:10px; }
+ .v3-product-media__pending > .v3-product-media__category { font-size:11px; }
+ .v3-product-media__pending small { font-size:9px; }
+ .v3-product-media__pending > svg { width:23px; height:23px; }
+ .v3-product-card .dt-product-card__body { padding-top:7px; gap:14px; }
+ .v3-product-card__purchase { padding-top:11px; gap:7px; }
+ .v3-product-card__purchase .dt-product-card__price { font-size:17px; }
+ .v3-product-card__purchase .dt-product-card__price-note { font-size:9px; }
+ .v3-product-card__purchase > svg { width:16px; }
+ .ed-home-hero { padding-block:30px 36px; }
+ .ed-home-hero h1 { font-size:clamp(2rem,8vw,3.2rem); }
+ .ed-featured { padding-top:36px; }
+ .v3-pdp-media figcaption { min-height:0; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .v3-product-media__surface > img { transition:none; }
+ .v3-product-card .dt-product-card__link:hover .v3-product-media__surface > img { transform:none; }
+}

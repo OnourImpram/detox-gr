@@ -1,5 +1,5 @@
 {
-  "name": "app-builder-workspace",
+  "name": "detoks-storefront",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -18,10 +18,15 @@
     "check:auth": "node scripts/check-auth-invariant.mjs",
     "katalog": "python scripts/katalog-incelt.py",
     "i18n": "node --experimental-strip-types scripts/i18n-paket-uret.mts",
-    "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/shopify-cart.test.ts src/lib/shop-status.test.ts src/lib/dil-pazarlik.test.ts",
+    "test": "node scripts/test-all.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "build:pages": "STATIC_PAGES=1 vite build && node scripts/static-pages-post.mjs"
+    "build:pages": "STATIC_PAGES=1 VITE_STATIC_PREVIEW=1 vite build && node scripts/static-pages-post.mjs",
+    "test:storefront": "node --experimental-strip-types --test scripts/storefront*.test.mjs",
+    "audit:catalogue": "node scripts/catalogue-audit.mjs",
+    "brand:locales": "node scripts/generate-brand-locales.mjs",
+    "test:v3": "node --experimental-strip-types --test scripts/v3-*.test.mjs",
+    "audit:v3": "node scripts/audit-v3.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",
@@ -102,5 +107,6 @@
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"
-  }
+  },
+  "version": "3.0.0"
 }

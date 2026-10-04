@@ -1,3 +1,6 @@
+import { b } from "./brand-copy";
+import commerceConfig from "@/data/commerce-config.json";
+import { launchBlockers, saleBlockers } from "./commerce-policy";
 import { CATEGORIES, PRODUCTS, imageFor, type CategoryId, type Product } from "./catalog";
 import {
   categoryBlurb,
@@ -36,8 +39,7 @@ export function localeFromSearch(search: { lang?: unknown } | undefined): Locale
 export function withLang(path: string, locale: Locale) {
   const [base, query = ""] = path.split("?");
   const params = new URLSearchParams(query);
-  if (locale === "tr") params.delete("lang");
-  else params.set("lang", locale);
+  params.set("lang", locale);
   const qs = params.toString();
   return qs ? `${base}?${qs}` : base;
 }
@@ -89,7 +91,7 @@ export function seoHead(opts: {
   const url = absoluteUrl(origin, withLang(opts.path, opts.locale));
   const image = absoluteUrl(origin, opts.image || "/og.jpg");
   const ogLocale = hreflangOf(opts.locale).replace("-", "_");
-  const robots = opts.noindex
+  const robots = opts.noindex || import.meta.env.VITE_STATIC_PREVIEW === "1" || launchBlockers(commerceConfig).length > 0
     ? "noindex,nofollow"
     : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
   const meta: Array<Record<string, string>> = [
@@ -141,9 +143,9 @@ export function orgJsonLd(origin: string, locale: Locale) {
     "@type": ["Organization", "Store", "LocalBusiness"],
     "@id": orgId(origin),
     name: BRAND,
-    legalName: BRAND_SHOP,
+
     alternateName: [BRAND_SHOP, BRAND_LEGACY],
-    description: t(locale, "seo.home.desc"),
+    description: b(locale, "hero.lead"),
     url: absoluteUrl(origin, withLang("/", locale)),
     image: absoluteUrl(origin, "/og.jpg"),
     logo: {
@@ -219,8 +221,8 @@ export function aboutJsonLd(origin: string, locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: t(locale, "seo.story.title"),
-    description: t(locale, "seo.story.desc"),
+    name: b(locale, "story.title"),
+    description: b(locale, "story.lead"),
     url: absoluteUrl(origin, withLang("/hikaye", locale)),
     inLanguage: hreflangOf(locale),
     mainEntity: { "@id": `${origin.replace(/\/$/, "") || "https://detoks.gr"}/#taha` },
@@ -256,7 +258,7 @@ export function speakableHomeJsonLd(origin: string, locale: Locale) {
     "@type": "WebPage",
     "@id": absoluteUrl(origin, withLang("/", locale)),
     name: t(locale, "seo.home.title"),
-    description: t(locale, "seo.home.desc"),
+    description: b(locale, "hero.lead"),
     url: absoluteUrl(origin, withLang("/", locale)),
     inLanguage: hreflangOf(locale),
     isPartOf: { "@id": `${origin.replace(/\/$/, "") || "https://detoks.gr"}/#website` },
@@ -270,7 +272,7 @@ export function speakableHomeJsonLd(origin: string, locale: Locale) {
 
 export function productJsonLd(origin: string, locale: Locale, product: Product) {
   const offer =
-    product.priceEur == null
+    product.priceEur == null || launchBlockers(commerceConfig).length > 0 || !commerceConfig.enabledCountries.some((country: string) => saleBlockers(product, country).length === 0)
       ? undefined
       : {
           "@type": "Offer",
@@ -286,8 +288,8 @@ export function productJsonLd(origin: string, locale: Locale, product: Product) 
     name: productName(product, locale),
     description: productBlurb(product, locale),
     sku: product.sourceId,
-    image: absoluteUrl(origin, imageFor(product)),
-    brand: { "@type": "Brand", name: BRAND_SHOP },
+    ...(imageFor(product) ? { image: absoluteUrl(origin, imageFor(product)!) } : {}),
+    ...(product.houseNamed ? { brand: { "@type": "Brand", name: BRAND_SHOP } } : {}),
     category: categoryTitle(product.category, locale),
     offers: offer,
   };
@@ -339,7 +341,7 @@ export function sitemapPaths() {
     "/paket",
     "/ticari",
     "/iletisim",
-    "/yasal",
+    "/yasal", "/raf", "/notlar", "/notlar/etiketin-anlattiklari", "/notlar/dusunulmus-bir-hediye", "/notlar/gumulcinede-bir-dukkan",
     ...CATEGORIES.map((c) => `/shop/${c.id}`),
     ...PRODUCTS.map((p) => `/p/${p.slug}`),
   ];
@@ -347,8 +349,7 @@ export function sitemapPaths() {
 }
 
 export function buildSitemapXml(origin: string) {
-  const lastmod = new Date().toISOString().slice(0, 10);
-  const urls = sitemapPaths();
+  const urls = launchBlockers(commerceConfig).length > 0 ? [] : sitemapPaths();
   const chunks: string[] = [
     `<?xml version="1.0" encoding="UTF-8"?>`,
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
@@ -356,7 +357,6 @@ export function buildSitemapXml(origin: string) {
   for (const path of urls) {
     chunks.push("  <url>");
     chunks.push(`    <loc>${escapeXml(absoluteUrl(origin, withLang(path, "tr")))}</loc>`);
-    chunks.push(`    <lastmod>${lastmod}</lastmod>`);
     chunks.push(`    <changefreq>${path === "/" ? "daily" : path.startsWith("/p/") ? "weekly" : "weekly"}</changefreq>`);
     chunks.push(`    <priority>${path === "/" ? "1.0" : path === "/shop" || path === "/hikaye" ? "0.8" : path.startsWith("/shop/") ? "0.7" : path.startsWith("/p/") ? "0.6" : "0.5"}</priority>`);
     chunks.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(absoluteUrl(origin, withLang(path, "tr")))}"/>`);
@@ -372,34 +372,8 @@ export function buildSitemapXml(origin: string) {
 }
 
 export function buildRobotsTxt(origin: string) {
-  const sitemap = absoluteUrl(origin, "/sitemap.xml");
-  const llms = absoluteUrl(origin, "/llms.txt");
-  const agents = [
-    "GPTBot",
-    "ChatGPT-User",
-    "Google-Extended",
-    "Anthropic-AI",
-    "ClaudeBot",
-    "PerplexityBot",
-    "Applebot-Extended",
-    "Bytespider",
-    "CCBot",
-  ];
-  const lines = [
-    "User-agent: *",
-    "Allow: /",
-    "Disallow: /sepet",
-    "Disallow: /odeme",
-    "Disallow: /siparis",
-    "Disallow: /atelier",
-    "Disallow: /uyum",
-    "",
-  ];
-  for (const a of agents) {
-    lines.push(`User-agent: ${a}`, "Allow: /", "");
-  }
-  lines.push(`Sitemap: ${sitemap}`, `LLMs: ${llms}`, "");
-  return lines.join("\n");
+  if (launchBlockers(commerceConfig).length > 0) return "User-agent: *\nAllow: /\nDisallow: /sepet\nDisallow: /odeme\nDisallow: /siparis\n";
+  return ["User-agent: *", "Allow: /", "Disallow: /sepet", "Disallow: /odeme", "Disallow: /siparis", "Disallow: /uyum", `Sitemap: ${absoluteUrl(origin, "/sitemap.xml")}`, ""].join("\n");
 }
 
 export function buildLlmsTxt(origin: string) {
@@ -419,9 +393,9 @@ export function buildLlmsTxt(origin: string) {
     "",
     "## Commerce",
     "",
-    "- Card payments use Stripe Checkout in EUR when a merchant key is connected. If checkout is unconfigured, write on Instagram.",
-    "- Dispatch from Komotini across Europe.",
-    "- Food is not shipped to Norway. Cosmetics can be.",
+    "- Shopify hosted checkout is the intended payment provider. The current catalogue is a preview. Online sales require merchant, legal, tax, shipping and product approvals.",
+    "- The planned market is the 27 EU member states and Norway. This is a target, not a claim that shipping is currently available everywhere.",
+    "- Food is excluded from Norway. Any other shipment requires product and destination approval.",
     "- Trade and questions: Instagram https://www.instagram.com/detoks_taha/ and Facebook.",
     "",
     "## Pages",

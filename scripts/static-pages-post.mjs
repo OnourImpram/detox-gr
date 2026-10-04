@@ -22,7 +22,8 @@ for (const file of walk(ROOT)) {
   const ext = file.slice(file.lastIndexOf("."));
   if (!EXT.has(ext)) continue;
   const src = readFileSync(file, "utf8");
-  const out = src.replace(ASSET, (_m, pre, name) => `${pre}${BASE}/${name}`);
+  let out = src.replace(ASSET, (_m, pre, name) => `${pre}${BASE}/${name}`);
+  if (file.endsWith(".webmanifest")) out = out.replaceAll('"/media/', `"${BASE}/media/`);
   if (out !== src) {
     writeFileSync(file, out);
     changed++;
