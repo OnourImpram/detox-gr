@@ -1,0 +1,30 @@
+name: Recover v3 workspace
+on:
+  push:
+    branches: [work/detoks-eu-storefront]
+    paths: [.github/workflows/recover-v3.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Reproducible recovery evidence
+        run: |
+          mkdir -p /tmp/v3-recovery
+          git archive HEAD | gzip > /tmp/v3-recovery/source.tar.gz
+          tar -czf /tmp/v3-recovery/dependencies.tar.gz node_modules
+          npm audit --json > /tmp/v3-recovery/dependency-audit.json || true
+          git rev-parse HEAD > /tmp/v3-recovery/commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v3-recovery-workspace
+          path: /tmp/v3-recovery
+          retention-days: 1
