@@ -1,201 +1,83 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useLocale } from "@/lib/use-locale";
 import { Pic } from "@/components/pic";
 import { LocaleLink } from "@/components/locale-link";
 import { ProductCard } from "@/components/product-card";
-import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { CATEGORIES, featured, productBySourceId, productsByCategory } from "@/lib/catalog";
-import { categoryTitle, t } from "@/lib/i18n";
-import { localeFromSearch, orgJsonLd, pageOrigin, personJsonLd, seoHead, speakableHomeJsonLd, websiteJsonLd } from "@/lib/seo";
+import { CATEGORIES, categoryImage, featured, productBySourceId, productsByCategory } from "@/lib/catalog";
+import { categoryTitle, productName, t } from "@/lib/i18n";
+import { ux } from "@/lib/storefront-copy";
+import { formatListed } from "@/lib/money";
+import { localeFromSearch, orgJsonLd, pageOrigin, personJsonLd, seoHead, websiteJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: ({ match }) => {
     const locale = localeFromSearch(match.search);
     const origin = pageOrigin();
-    return seoHead({
-      title: t(locale, "seo.home.title"),
-      description: t(locale, "seo.home.desc"),
-      path: "/",
-      locale,
-      origin,
-      image: "/products/hero-cinematic.jpg",
-      jsonLd: [
-        orgJsonLd(origin, locale),
-        personJsonLd(origin),
-        websiteJsonLd(origin, locale),
-        speakableHomeJsonLd(origin, locale),
-      ],
-    });
+    return seoHead({ title: t(locale, "seo.home.title"), description: ux(locale, "homeDescription"), path: "/", locale, origin, image: "/products/hero-cinematic.jpg", jsonLd: [orgJsonLd(origin, locale), personJsonLd(origin), websiteJsonLd(origin, locale)] });
   },
   component: Home,
 });
 
-const BENTO: { id: (typeof CATEGORIES)[number]["id"]; img: string; span: string }[] = [
-  { id: "lokum", img: "/products/lokum.jpg", span: "lg:col-span-7 lg:row-span-2 min-h-[28rem]" },
-  { id: "pantry", img: "/products/sku/elma-sirkesi-detoks.jpg", span: "lg:col-span-5 min-h-48" },
-  { id: "spice", img: "/photos/taha-jars.jpg", span: "lg:col-span-5 min-h-48" },
-  { id: "soap", img: "/products/sku/sabun-lavanta.jpg", span: "lg:col-span-4 min-h-64" },
-  { id: "honey", img: "/products/still-life.jpg", span: "lg:col-span-4 min-h-64" },
-  { id: "oil", img: "/products/night-shelf.jpg", span: "lg:col-span-4 min-h-64" },
-];
-
 function Home() {
-  const picks = featured();
   const locale = useLocale();
+  const picks = featured();
   const vinegar = productBySourceId("DT117");
-
+  const categories = CATEGORIES.filter((category) => productsByCategory(category.id).length > 0);
   return (
-    <>
-      <section className="relative min-h-[100dvh] overflow-hidden">
-        <div className="hero-still hero-still-ken">
-          <Pic
-            src="/products/hero-cinematic.jpg"
-            alt={t(locale, "home.heroCaption")}
-            sizes="100vw"
-            fetchPriority="high"
-            decoding="async"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/25 to-transparent sm:from-ink/20" />
-        <div className="on-photo relative z-10 flex min-h-[100dvh] flex-col justify-end shell-x pt-32 pb-16 lg:pb-20">
-          <p className="hero-enter kicker">{t(locale, "home.kicker")}</p>
-          <h1 className="hero-enter hero-enter-2 mt-5 max-w-[20ch] text-[clamp(1.9rem,6.2vw+0.6rem,5.75rem)] leading-none text-cream lg:max-w-[56%]">
-            {t(locale, "home.lineA")} <em>{t(locale, "home.lineEm")}</em>
-          </h1>
-          <p id="aeo-lead" className="hero-enter hero-enter-3 mt-6 max-w-[28ch] text-[1.35rem] leading-snug text-cream/90">
-            {t(locale, "home.lead")}
-          </p>
-          {/* İlk ekranda "ne satıyor, nereye gönderiyor" — soğuk trafik 5 saniyede anlasın (red team RT-A-10 / RT-C #12) */}
-          <p className="hero-enter hero-enter-3 mt-3 max-w-[44ch] text-sm leading-relaxed text-cream/75">
-            {t(locale, "home.what")}
-          </p>
-          <div className="hero-enter hero-enter-4 mt-10 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap">
-            <Button asChild variant="primary" className="w-full sm:w-auto">
-              <LocaleLink to="/shop">{t(locale, "home.cta")}</LocaleLink>
-            </Button>
-            <Button asChild variant="outline" className="w-full border-cream/40 text-cream hover:border-primary hover:text-primary sm:w-auto">
-              <LocaleLink to="/hikaye">{t(locale, "home.rose")}</LocaleLink>
-            </Button>
+    <div className="dt-home">
+      <section className="dt-hero shell-x">
+        <div className="dt-hero__copy">
+          <p className="kicker">{t(locale, "home.kicker")}</p>
+          <h1 className="dt-hero__title">{t(locale, "home.lineA")} <em>{t(locale, "home.lineEm")}</em></h1>
+          <p id="aeo-lead" className="dt-hero__lead">{ux(locale, "homeDescription")}</p>
+          <div className="dt-hero__actions">
+            <Button asChild variant="primary"><LocaleLink to="/shop">{t(locale, "home.cta")}<ArrowUpRight size={18} aria-hidden="true" /></LocaleLink></Button>
+            <LocaleLink to="/hikaye" className="dt-text-link">{t(locale, "home.rose")}<ArrowRight size={16} aria-hidden="true" /></LocaleLink>
           </div>
-          <p className="mt-10 max-w-[48ch] text-xs leading-relaxed text-cream/70">{t(locale, "home.heroCaption")}</p>
+          <div className="dt-hero__signature"><span aria-hidden="true" />Taha Hüseyinoğlu<span className="dt-hero__signature-place">{t(locale, "home.statM")}</span></div>
         </div>
-        <div className="scroll-cue hidden sm:block" aria-hidden="true" />
+        <figure className="dt-hero__still">
+          <Pic src="/products/hero-cinematic.jpg" alt={t(locale, "home.heroCaption")} sizes="(min-width: 1024px) 48vw, 100vw" fetchPriority="high" decoding="async" />
+          {vinegar && <LocaleLink to="/p/$slug" params={{ slug: vinegar.slug }} className="dt-hero__product">
+            <span><span className="dt-hero__product-shelf">{t(locale, "product.made")}</span><strong>{productName(vinegar, locale)}</strong><small>{t(locale, "product.illustrative")}</small></span>
+            <span className="dt-hero__product-price">{formatListed(vinegar.priceEur, vinegar.unit, "EUR", locale)}<small>{ux(locale, "referencePrice")}</small></span>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </LocaleLink>}
+          <figcaption>{t(locale, "home.heroCaption")}</figcaption>
+        </figure>
       </section>
 
-      <Reveal>
-        <div className="bento">
-          {BENTO.map((cell) => {
-            const n = productsByCategory(cell.id).length;
-            return (
-              <LocaleLink
-                key={cell.id}
-                to="/shop/$category"
-                params={{ category: cell.id }}
-                className={`group relative overflow-hidden focus-inset ${cell.span}`}
-              >
-                <Pic
-                  src={cell.img}
-                  alt={categoryTitle(cell.id, locale)}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="img-in absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/25 to-transparent transition-opacity duration-500 group-hover:opacity-70" />
-                <span className="relative z-10 flex h-full flex-col justify-end p-6">
-                  <span className="font-display text-3xl font-semibold text-cream [text-shadow:0_2px_18px_rgb(31_19_11/0.55)] lg:text-4xl">
-                    {categoryTitle(cell.id, locale)}
-                  </span>
-                  <span className="micro mt-2 text-cream/75">{t(locale, "shop.count", { n })}</span>
-                </span>
-              </LocaleLink>
-            );
-          })}
-        </div>
-      </Reveal>
+      <nav className="dt-category-index shell-x" aria-label={t(locale, "shop.collections")}>
+        {categories.map((category) => <LocaleLink key={category.id} to="/shop/$category" params={{ category: category.id }}>
+          {categoryTitle(category.id, locale)}<span>{new Intl.NumberFormat(locale).format(productsByCategory(category.id).length)}</span>
+        </LocaleLink>)}
+      </nav>
 
-      <section className="relative min-h-[80dvh] overflow-hidden">
-        <div className="hero-still hero-still-portrait">
-          <Pic src="/photos/taha.jpg" alt={t(locale, "photo.taha")} sizes="100vw" loading="lazy" decoding="async" />
-        </div>
-        {/* Beyaz zeminli stüdyo karesi: natürmort scrim'i (35) krem metni AA altına düşürüyordu (ölçüm 3,34:1) → 92/72 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/72 to-ink/30" />
-        <div className="on-photo relative z-10 flex min-h-[80dvh] flex-col justify-end shell-x py-20">
-          <h2 className="max-w-[16ch] text-[clamp(2rem,5.5vw+0.5rem,5rem)] text-cream">{t(locale, "home.storyTitle")}</h2>
-          <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-cream/85">{t(locale, "home.storyBody")}</p>
-          <Button asChild variant="outline" className="mt-10 w-fit border-cream/40 text-cream hover:border-primary hover:text-primary">
-            <LocaleLink to="/hikaye">{t(locale, "home.storyCta")}</LocaleLink>
-          </Button>
+      {picks.length > 0 && <section className="dt-featured shell-x" aria-labelledby="featured-heading">
+        <div className="dt-section-heading"><div><p className="kicker">{ux(locale, "featured")}</p><h2 id="featured-heading">{t(locale, "home.picks")}</h2></div><LocaleLink to="/shop" className="dt-text-link">{t(locale, "shop.all")}<ArrowRight size={18} aria-hidden="true" /></LocaleLink></div>
+        <div className="dt-product-grid">{picks.slice(0, 4).map((product) => <ProductCard key={product.sourceId} product={product} />)}</div>
+      </section>}
+
+      <section className="dt-two-shelves shell-x" aria-labelledby="shelves-heading">
+        <div className="dt-section-heading"><div><p className="kicker">Detoks Aktar</p><h2 id="shelves-heading">{t(locale, "home.splitTitle")}</h2></div></div>
+        <div className="dt-two-shelves__grid">
+          <LocaleLink to="/shop" search={{ shelf: "house" } as never} className="dt-shelf-story">
+            <span className="dt-shelf-story__mark" aria-hidden="true">T.</span><div><p className="kicker">{t(locale, "product.made")}</p><h3>{t(locale, "home.splitOwn")}</h3><p>{t(locale, "home.splitOwnBody")}</p></div><ArrowUpRight size={25} aria-hidden="true" />
+          </LocaleLink>
+          <LocaleLink to="/shop" search={{ shelf: "selected" } as never} className="dt-shelf-story">
+            <span className="dt-shelf-story__mark" aria-hidden="true">D.</span><div><p className="kicker">{t(locale, "product.picked")}</p><h3>{t(locale, "home.splitPick")}</h3><p>{t(locale, "home.splitPickBody")}</p></div><ArrowUpRight size={25} aria-hidden="true" />
+          </LocaleLink>
         </div>
       </section>
-      <p className="photo-credit shell-x">{t(locale, "photo.taha")}</p>
 
-      {vinegar && (
-        <>
-          <section className="relative min-h-[75dvh] overflow-hidden">
-            <div className="hero-still">
-              <Pic src="/products/sku/elma-sirkesi-detoks.jpg" alt={t(locale, "home.appleTitle")} sizes="100vw" loading="lazy" decoding="async" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/82 via-ink/25 to-transparent" />
-            <div className="on-photo relative z-10 flex min-h-[75dvh] flex-col justify-end shell-x py-20">
-              <h2 className="max-w-[14ch] text-[clamp(2rem,5vw+0.6rem,4.6rem)] text-cream">{t(locale, "home.appleTitle")}</h2>
-              <p className="mt-6 max-w-[42ch] text-lg leading-relaxed text-cream/85">{t(locale, "home.appleBody")}</p>
-              <Button asChild variant="primary" className="mt-10 w-fit">
-                <LocaleLink to="/p/$slug" params={{ slug: vinegar.slug }}>
-                  {t(locale, "home.appleCta")}
-                </LocaleLink>
-              </Button>
-            </div>
-          </section>
-          <p className="photo-credit shell-x">{t(locale, "photo.vinegar")}</p>
-        </>
-      )}
-
-      <section className="grid lg:grid-cols-2">
-        <LocaleLink to="/hikaye" className="group relative min-h-[70vh] overflow-hidden focus-inset">
-          <Pic src="/photos/taha-jars.jpg" alt="" sizes="(min-width: 1024px) 50vw, 100vw" loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10 transition-opacity duration-500 group-hover:opacity-75" />
-          <div className="on-photo relative z-10 flex h-full min-h-[70vh] flex-col justify-end p-[6vw]">
-            <h2 className="max-w-[12ch] text-[clamp(2rem,3.4vw,3.2rem)] text-cream">{t(locale, "home.splitOwn")}</h2>
-            <p className="mt-4 max-w-[36ch] text-cream/85">{t(locale, "home.splitOwnBody")}</p>
-          </div>
-        </LocaleLink>
-        <LocaleLink to="/shop" className="group relative min-h-[70vh] overflow-hidden focus-inset">
-          <Pic src="/photos/herbs.jpg" alt="" sizes="(min-width: 1024px) 50vw, 100vw" loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10 transition-opacity duration-500 group-hover:opacity-75" />
-          <div className="on-photo relative z-10 flex h-full min-h-[70vh] flex-col justify-end p-[6vw]">
-            <h2 className="max-w-[14ch] text-[clamp(2rem,3.4vw,3.2rem)] text-cream">{t(locale, "home.splitPick")}</h2>
-            <p className="mt-4 max-w-[36ch] text-cream/85">{t(locale, "home.splitPickBody")}</p>
-          </div>
-        </LocaleLink>
+      <section className="dt-founder shell-x" aria-labelledby="founder-heading">
+        <figure className="dt-founder__image"><Pic src={categoryImage("pantry")} alt={t(locale, "photo.vinegar")} sizes="(min-width: 1024px) 40vw, 100vw" loading="lazy" decoding="async" /><figcaption>{t(locale, "photo.vinegar")}</figcaption></figure>
+        <div className="dt-founder__copy"><p className="kicker">Taha Hüseyinoğlu</p><h2 id="founder-heading">{t(locale, "home.storyTitle")}</h2><p>{t(locale, "home.storyBody")}</p><LocaleLink to="/hikaye" className="dt-text-link">{t(locale, "home.storyCta")}<ArrowRight size={18} aria-hidden="true" /></LocaleLink></div>
       </section>
 
-      <Reveal className="shell-x section-y">
-        <hr className="rule-line" aria-hidden="true" />
-        <h2 className="mt-10 max-w-[16ch] text-[clamp(1.9rem,5vw+0.5rem,4rem)]">{t(locale, "home.picks")}</h2>
-        <div className="mt-14 grid items-start gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-          {picks.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
-        <Button asChild variant="outline" className="mt-14">
-          <LocaleLink to="/shop">{t(locale, "home.cta")}</LocaleLink>
-        </Button>
-      </Reveal>
-
-      <section className="relative min-h-[70dvh] overflow-hidden">
-        <div className="hero-still">
-          <Pic src="/photos/shop-front.jpg" alt={t(locale, "photo.shop")} sizes="100vw" loading="lazy" decoding="async" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/72 to-ink/30" />
-        <div className="on-photo relative z-10 flex min-h-[70dvh] flex-col justify-end shell-x py-20">
-          <h2 className="max-w-[14ch] text-[clamp(2rem,6vw+0.4rem,5rem)] text-cream">{t(locale, "home.close")}</h2>
-          <p className="mt-6 max-w-[46ch] text-lg text-cream/85">{t(locale, "home.closeBody")}</p>
-        </div>
-      </section>
-      <p className="photo-credit shell-x">{t(locale, "photo.shop")}</p>
-    </>
+      <section className="dt-home-close shell-x"><p className="kicker">{t(locale, "home.statM")}</p><h2>{t(locale, "home.close")}</h2><p>{t(locale, "home.closeBody")}</p><Button asChild variant="primary"><LocaleLink to="/shop">{t(locale, "home.cta")}<ArrowUpRight size={18} aria-hidden="true" /></LocaleLink></Button></section>
+    </div>
   );
 }

@@ -1,0 +1,9 @@
+{
+  "mode": "preview",
+  "merchantReady": false,
+  "legalReady": false,
+  "taxReady": false,
+  "shippingReady": false,
+  "enabledCountries": [],
+  "_note": "All 27 EU countries and Norway remain target markets. These fields record verified operational readiness, not ambition. No payment token can override this gate. See docs/LAUNCH_CHECKLIST.md."
+}

@@ -20,7 +20,7 @@ for (const f of readdirSync(OUT)) if (f.endsWith(".ts")) unlinkSync(join(OUT, f)
 // Ek satırlar (tam ürün adları) önce; sonra uzunluk sırası — en uzun eşleşme kazanır (i18n-glossary.ts'teki düzenle aynı)
 const ROWS: Row[] = [...GLOSSARY_EK, ...GLOSSARY].sort((a, b) => b.src.length - a.src.length);
 
-let ozet: string[] = [];
+const ozet: string[] = [];
 for (const { code } of LOCALES) {
   if (code === "tr") continue; // TR kaynak dil: UI fill(tr) tabanda, sözlük geçişsiz
   const ui: Record<string, string> = {};

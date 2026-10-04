@@ -20,9 +20,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Prepare evidence
-        run: mkdir -p qa-evidence
-      - name: Unit tests
+      - run: mkdir -p qa-evidence
+      - name: Unit and integration tests
         id: tests
         continue-on-error: true
         run: npm test > qa-evidence/tests.log 2>&1
@@ -34,28 +33,43 @@ jobs:
         id: lint
         continue-on-error: true
         run: npm run lint > qa-evidence/lint.log 2>&1
-      - name: Pages build
+      - name: Catalogue readiness audit
+        id: catalogue
+        continue-on-error: true
+        run: node scripts/catalogue-audit.mjs > qa-evidence/catalogue.json
+      - name: Pages preview build
         id: pages
         continue-on-error: true
         run: npm run build:pages > qa-evidence/pages.log 2>&1
-      - name: Build evidence
+      - name: Install test browser
+        run: npx playwright install --with-deps chromium
+      - name: Responsive and interactive browser checks
+        id: browser
+        continue-on-error: true
+        run: node scripts/storefront-browser.mjs > qa-evidence/browser.log 2>&1
+      - name: Production server build
+        id: production
+        continue-on-error: true
+        run: npm run build > qa-evidence/production.log 2>&1
+      - name: Evidence summary
         if: always()
         run: |
-          printf '%s\n' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'pages=${{ steps.pages.outcome }}' | tee qa-evidence/status.txt
-          for f in qa-evidence/*.log; do echo "===== $f ====="; tail -60 "$f"; done
-      - name: Offline verification workspace
-        if: always()
-        run: tar --exclude=./.git --exclude=./qa-evidence --exclude=./.vercel --exclude=./.output --exclude=./dist -czf /tmp/detoks-verification.tar.gz . && mv /tmp/detoks-verification.tar.gz qa-evidence/
+          printf '%s\n' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
+          git ls-files -z | xargs -0 sha256sum > qa-evidence/source-sha256.txt
+          for f in qa-evidence/*.log; do echo "===== $f ====="; tail -40 "$f"; done
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: storefront-verification
+          name: storefront-quality-evidence
           path: qa-evidence
-          retention-days: 1
+          retention-days: 7
       - name: Require green gates
         if: always()
         run: |
           test '${{ steps.tests.outcome }}' = success
           test '${{ steps.types.outcome }}' = success
           test '${{ steps.lint.outcome }}' = success
+          test '${{ steps.catalogue.outcome }}' = success
           test '${{ steps.pages.outcome }}' = success
+          test '${{ steps.browser.outcome }}' = success
+          test '${{ steps.production.outcome }}' = success

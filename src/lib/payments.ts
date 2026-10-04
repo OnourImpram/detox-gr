@@ -1,16 +1,16 @@
 import { createServerFn } from "@tanstack/react-start";
 import { useLoaderData } from "@tanstack/react-router";
+import commerceConfig from "@/data/commerce-config.json";
+import { launchBlockers } from "./commerce-policy";
 
-/**
- * Ödeme açık mı? Sunucuda hesaplanır (Shopify env ya da Stripe anahtarı), kök loader'la her sayfaya gelir.
- * Müşteri kopyası "ödeme açıksa … değilse …" diye koşul anlatmaz; duruma göre tek cümle basar (kaymak kıyası deneyim-05/icerik-11).
- */
+/** Credentials are connectivity, not authorization to launch a shop. */
 export const getPaymentsEnabled = createServerFn({ method: "GET" }).handler(async () => {
+  if (launchBlockers(commerceConfig).length > 0) return false;
   const { shopifyConfigured } = await import("./shopify.server");
-  return shopifyConfigured() || Boolean(process.env.STRIPE_SECRET_KEY);
+  return shopifyConfigured();
 });
 
 export function usePaymentsEnabled(): boolean {
   const data = useLoaderData({ from: "__root__" }) as { payments?: boolean } | undefined;
-  return Boolean(data?.payments);
+  return data?.payments === true;
 }

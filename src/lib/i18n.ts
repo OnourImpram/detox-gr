@@ -44,7 +44,10 @@ export function categoryBlurb(id: CategoryId, locale: Locale) {
 }
 
 export function productName(product: Product, locale: Locale) {
+  const approved = product.info?.localized?.[locale]?.name;
+  if (approved?.trim()) return approved;
   if (locale === "tr") return product.name;
+  if (locale === "en" && product.info?.nameEn?.trim()) return product.info.nameEn;
   return translatePhrase(product.name, locale);
 }
 
