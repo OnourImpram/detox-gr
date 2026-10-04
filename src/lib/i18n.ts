@@ -1,3 +1,4 @@
+import { featuredName } from "./featured-names";
 import type { CategoryId, Product } from "./catalog";
 import { MESSAGES } from "./i18n-messages";
 import { pack, translatePhrase } from "./i18n-pack";
@@ -48,7 +49,7 @@ export function productName(product: Product, locale: Locale) {
   if (approved?.trim()) return approved;
   if (locale === "tr") return product.name;
   if (locale === "en" && product.info?.nameEn?.trim()) return product.info.nameEn;
-  return translatePhrase(product.name, locale);
+  return featuredName(product.sourceId, locale) ?? translatePhrase(product.name, locale);
 }
 
 export function productBlurb(product: Product, locale: Locale) {

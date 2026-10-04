@@ -46,3 +46,9 @@ test('static document shell does not hydrate locale-dependent content with a dif
   assert.match(code, /useHydrated/);
   assert.doesNotMatch(code, /suppressHydrationWarning/);
 });
+
+test('static root renders the same Suspense boundary and an empty client-only body on both sides', () => {
+  const code = source('src/routes/__root.tsx');
+  assert.match(code, /wrapInSuspense: STATIC_PREVIEW/);
+  assert.match(code, /STATIC_PREVIEW \? <ClientOnly>/);
+});

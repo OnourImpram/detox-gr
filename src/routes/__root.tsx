@@ -1,4 +1,4 @@
-import { createRootRoute, HeadContent, Outlet, redirect, Scripts, useHydrated } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, redirect, Scripts, useHydrated, ClientOnly } from "@tanstack/react-router";
 import { useLocale } from "@/lib/use-locale";
 import { SiteShell } from "@/components/site-shell";
 import { ThemeRoot } from "@/components/theme-root";
@@ -19,6 +19,7 @@ export const Route = createRootRoute({
   // Otherwise ?lang changes the root match ID and wraps SSR HTML in a new Suspense boundary.
   ssr: STATIC_PREVIEW ? false : true,
   shellComponent: Document,
+  wrapInSuspense: STATIC_PREVIEW,
   validateSearch: (search: Record<string, unknown>) => parseLang(search),
   loaderDeps: ({ search }) => ({ lang: search.lang }),
   loader: async ({ deps, location }) => {
@@ -71,5 +72,9 @@ function Document({ children }: { children: React.ReactNode }) {
 function Root() {
   const data = Route.useLoaderData();
   registerPack(data.locale, data.pack);
-  return <ThemeRoot><SiteShell><Outlet /></SiteShell></ThemeRoot>;
+  // SPA prerendering forces the root route to SSR even when ssr:false is set.
+  // An explicit ClientOnly body and matching Suspense shell prevent serialized
+  // Turkish shell content from being hydrated against a different locale match.
+  const content = <ThemeRoot><SiteShell><Outlet /></SiteShell></ThemeRoot>;
+  return STATIC_PREVIEW ? <ClientOnly>{content}</ClientOnly> : content;
 }
