@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: storefront-quality-${{ github.ref }}
+  group: storefront-quality-${{ github.event.pull_request.head.ref || github.ref_name }}
   cancel-in-progress: true
 jobs:
   quality:
@@ -33,20 +33,37 @@ jobs:
         id: lint
         continue-on-error: true
         run: npm run lint > qa-evidence/lint.log 2>&1
-      - name: Catalogue readiness audit
+      - name: Catalogue and v3 media audits
         id: catalogue
         continue-on-error: true
-        run: node scripts/catalogue-audit.mjs > qa-evidence/catalogue.json
+        run: node scripts/catalogue-audit.mjs > qa-evidence/catalogue.json && node scripts/audit-v3.mjs > qa-evidence/v3-audit.json
       - name: Pages preview build
         id: pages
         continue-on-error: true
         run: npm run build:pages > qa-evidence/pages.log 2>&1
       - name: Install test browser
         run: npx playwright install --with-deps chromium
-      - name: Responsive and interactive browser checks
+      - name: Existing storefront scenarios
         id: browser
         continue-on-error: true
-        run: node scripts/storefront-browser.mjs > qa-evidence/browser.log 2>&1 && node scripts/editorial-browser.mjs > qa-evidence/editorial-browser.log 2>&1
+        run: node scripts/storefront-browser.mjs > qa-evidence/browser.log 2>&1
+      - name: Twenty-language editorial scenarios
+        id: editorial
+        continue-on-error: true
+        run: node scripts/editorial-browser.mjs > qa-evidence/editorial-browser.log 2>&1
+      - name: v3 product media and interaction scenarios
+        id: v3
+        continue-on-error: true
+        run: node scripts/v3-browser.mjs > qa-evidence/v3-browser.log 2>&1
+      - name: Server rendered HTML checks
+        id: ssr
+        continue-on-error: true
+        run: |
+          node scripts/with-app-env.mjs node_modules/vite/bin/vite.js dev --host 127.0.0.1 --port 8095 > qa-evidence/ssr-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do curl -sf 'http://127.0.0.1:8095/?lang=tr' > /dev/null && break; sleep 1; done
+          node scripts/v3-ssr-smoke.mjs > qa-evidence/v3-ssr.log 2>&1
       - name: Production server build
         id: production
         continue-on-error: true
@@ -54,16 +71,17 @@ jobs:
       - name: Evidence summary
         if: always()
         run: |
-          printf '%s\n' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
+          printf '%s\n' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
+          git rev-parse HEAD > qa-evidence/commit.txt
           git ls-files -z | xargs -0 sha256sum > qa-evidence/source-sha256.txt
-          for f in qa-evidence/*.log; do echo "===== $f ====="; tail -40 "$f"; done
+          for f in qa-evidence/*.log; do echo "===== $f ====="; tail -25 "$f"; done
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: storefront-quality-evidence
+          name: detoks-v3-quality-evidence
           path: qa-evidence
-          retention-days: 7
-      - name: Require green gates
+          retention-days: 14
+      - name: Require all quality gates
         if: always()
         run: |
           test '${{ steps.tests.outcome }}' = success
@@ -72,4 +90,7 @@ jobs:
           test '${{ steps.catalogue.outcome }}' = success
           test '${{ steps.pages.outcome }}' = success
           test '${{ steps.browser.outcome }}' = success
+          test '${{ steps.editorial.outcome }}' = success
+          test '${{ steps.v3.outcome }}' = success
+          test '${{ steps.ssr.outcome }}' = success
           test '${{ steps.production.outcome }}' = success
