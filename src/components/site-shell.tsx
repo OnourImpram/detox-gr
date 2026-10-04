@@ -16,6 +16,7 @@ import { bootShop, countItems, useShop } from "@/lib/store";
 import { useLocale } from "@/lib/use-locale";
 import { usePaymentsEnabled } from "@/lib/payments";
 import { ux } from "@/lib/storefront-copy";
+import { b } from "@/lib/brand-copy";
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const nav = [
     { to: "/shop", label: t(locale, "nav.shop") },
     { to: "/hikaye", label: t(locale, "nav.story") },
+    { to: "/raf", label: b(locale, "archive.title") },
     { to: "/iletisim", label: t(locale, "nav.contact") },
   ] as const;
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -65,7 +67,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh bg-bg text-fg">
       <Toaster position="bottom-right" toastOptions={{ style: { background: "var(--dt-raised)", color: "var(--dt-fg)", border: "1px solid var(--dt-border)", fontFamily: "var(--dt-sans)" } }} />
       <a href="#icerik" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[80] focus:bg-primary focus:px-4 focus:py-2 focus:text-on-primary">{t(locale, "nav.skip")}</a>
-      {!payments && <div className="dt-preview-bar shell-x" data-testid="preview-notice"><strong>{ux(locale, "preview")}</strong><p>{ux(locale, "previewBody")}</p></div>}
+      {!payments && <div className="dt-preview-bar shell-x" data-testid="preview-notice"><strong>{b(locale, "preview.title")}</strong><p>{b(locale, "preview.body")}</p></div>}
       <header className="dt-site-header">
         <div className="dt-header-row shell-x">
           <LocaleLink to="/" className="dt-wordmark" aria-label={BRAND}><BrandMark size="nav" /><span>{shopCity(locale)}</span></LocaleLink>
@@ -86,11 +88,11 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <main id="icerik" tabIndex={-1}>{children}</main>
       <footer className="dt-footer shell-x">
         <div className="dt-footer__grid">
-          <div><BrandMark size="footer" /><p className="dt-footer__about">{t(locale, "footer.about")}</p><a href={SOCIAL.instagram.href} target="_blank" rel="me noopener noreferrer" className="dt-text-link">Instagram {SOCIAL.instagram.handle}<ArrowUpRight size={15} aria-hidden="true" /><span className="sr-only">{t(locale, "nav.external")}</span></a></div>
-          <nav className="dt-footer__links" aria-label={t(locale, "nav.menu")}>{nav.map((item) => <LocaleLink key={item.to} to={item.to}>{item.label}</LocaleLink>)}<LocaleLink to="/paket">{t(locale, "footer.gift")}</LocaleLink><LocaleLink to="/teslimat">{t(locale, "footer.ship")}</LocaleLink><LocaleLink to="/ticari">{t(locale, "footer.trade")}</LocaleLink><LocaleLink to="/yasal">{t(locale, "nav.legal")}</LocaleLink></nav>
+          <div><BrandMark size="footer" /><p className="dt-footer__about">{b(locale, "footer.line")}</p><a href={SOCIAL.instagram.href} target="_blank" rel="me noopener noreferrer" className="dt-text-link">Instagram {SOCIAL.instagram.handle}<ArrowUpRight size={15} aria-hidden="true" /><span className="sr-only">{t(locale, "nav.external")}</span></a></div>
+          <nav className="dt-footer__links" aria-label={t(locale, "nav.menu")}>{nav.map((item) => <LocaleLink key={item.to} to={item.to}>{item.label}</LocaleLink>)}<LocaleLink to="/notlar">{b(locale, "journal.title")}</LocaleLink><LocaleLink to="/paket">{t(locale, "footer.gift")}</LocaleLink><LocaleLink to="/teslimat">{t(locale, "footer.ship")}</LocaleLink><LocaleLink to="/ticari">{t(locale, "footer.trade")}</LocaleLink><LocaleLink to="/yasal">{t(locale, "nav.legal")}</LocaleLink></nav>
           <ShopFacts title={SHOP_FACTS.shop} />
         </div>
-        <p className="dt-footer__legal">{t(locale, "footer.legal")}</p>
+        <p className="dt-footer__legal">{b(locale, "preview.body")}</p>
         <nav className="dt-footer__languages" aria-label={t(locale, "nav.language")}>{LOCALES.map((language) => <a key={language.code} href={localeUrl(`${path}${location.searchStr}${location.hash ? `#${location.hash.replace(/^#/, "")}` : ""}`, language.code)} hrefLang={language.html} aria-current={language.code === locale ? "true" : undefined} onClick={(event) => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return; event.preventDefault(); changeLocale(language.code); }}>{language.native}</a>)}</nav>
         <div className="dt-footer__bottom"><p>© {new Date().getFullYear()} {BRAND}</p><p>{shopCity(locale)} · Taha Hüseyinoğlu</p></div>
       </footer>

@@ -11,6 +11,7 @@ import { localeUrl } from "@/lib/locale-navigation";
 import appCss from "../styles.css?url";
 import storefrontCss from "../styles/storefront.css?url";
 import narrowCss from "../styles/narrow.css?url";
+import editorialCss from "../styles/editorial.css?url";
 
 const STATIC_PREVIEW = import.meta.env.VITE_STATIC_PREVIEW === "1";
 
@@ -51,6 +52,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: storefrontCss },
       { rel: "stylesheet", href: narrowCss },
+      { rel: "stylesheet", href: editorialCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),

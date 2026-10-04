@@ -13,8 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as HikayeRouteImport } from './routes/hikaye'
 import { Route as IletisimRouteImport } from './routes/iletisim'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as NotlarRouteImport } from './routes/notlar'
 import { Route as OdemeRouteImport } from './routes/odeme'
 import { Route as PaketRouteImport } from './routes/paket'
+import { Route as RafRouteImport } from './routes/raf'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SepetRouteImport } from './routes/sepet'
 import { Route as ShopRouteImport } from './routes/shop'
@@ -23,6 +25,8 @@ import { Route as TeslimatRouteImport } from './routes/teslimat'
 import { Route as TicariRouteImport } from './routes/ticari'
 import { Route as UyumRouteImport } from './routes/uyum'
 import { Route as YasalRouteImport } from './routes/yasal'
+import { Route as NotlarIndexRouteImport } from './routes/notlar.index'
+import { Route as NotlarSlugRouteImport } from './routes/notlar.$slug'
 import { Route as OdemeBasariliRouteImport } from './routes/odeme.basarili'
 import { Route as OdemeIptalRouteImport } from './routes/odeme.iptal'
 import { Route as PSlugRouteImport } from './routes/p.$slug'
@@ -50,6 +54,11 @@ const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotlarRoute = NotlarRouteImport.update({
+  id: '/notlar',
+  path: '/notlar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OdemeRoute = OdemeRouteImport.update({
   id: '/odeme',
   path: '/odeme',
@@ -58,6 +67,11 @@ const OdemeRoute = OdemeRouteImport.update({
 const PaketRoute = PaketRouteImport.update({
   id: '/paket',
   path: '/paket',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RafRoute = RafRouteImport.update({
+  id: '/raf',
+  path: '/raf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -100,6 +114,16 @@ const YasalRoute = YasalRouteImport.update({
   path: '/yasal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotlarIndexRoute = NotlarIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => NotlarRoute,
+} as any)
+const NotlarSlugRoute = NotlarSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => NotlarRoute,
+} as any)
 const OdemeBasariliRoute = OdemeBasariliRouteImport.update({
   id: '/basarili',
   path: '/basarili',
@@ -136,8 +160,10 @@ export interface FileRoutesByFullPath {
   '/hikaye': typeof HikayeRoute
   '/iletisim': typeof IletisimRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/notlar': typeof NotlarRouteWithChildren
   '/odeme': typeof OdemeRouteWithChildren
   '/paket': typeof PaketRoute
+  '/raf': typeof RafRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sepet': typeof SepetRoute
   '/shop': typeof ShopRouteWithChildren
@@ -146,11 +172,13 @@ export interface FileRoutesByFullPath {
   '/ticari': typeof TicariRoute
   '/uyum': typeof UyumRoute
   '/yasal': typeof YasalRoute
+  '/notlar/$slug': typeof NotlarSlugRoute
   '/odeme/basarili': typeof OdemeBasariliRoute
   '/odeme/iptal': typeof OdemeIptalRoute
   '/p/$slug': typeof PSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
   '/siparis/$id': typeof SiparisIdRoute
+  '/notlar/': typeof NotlarIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
@@ -160,6 +188,7 @@ export interface FileRoutesByTo {
   '/llms.txt': typeof LlmsDottxtRoute
   '/odeme': typeof OdemeRouteWithChildren
   '/paket': typeof PaketRoute
+  '/raf': typeof RafRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sepet': typeof SepetRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -167,11 +196,13 @@ export interface FileRoutesByTo {
   '/ticari': typeof TicariRoute
   '/uyum': typeof UyumRoute
   '/yasal': typeof YasalRoute
+  '/notlar/$slug': typeof NotlarSlugRoute
   '/odeme/basarili': typeof OdemeBasariliRoute
   '/odeme/iptal': typeof OdemeIptalRoute
   '/p/$slug': typeof PSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
   '/siparis/$id': typeof SiparisIdRoute
+  '/notlar': typeof NotlarIndexRoute
   '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
@@ -180,8 +211,10 @@ export interface FileRoutesById {
   '/hikaye': typeof HikayeRoute
   '/iletisim': typeof IletisimRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/notlar': typeof NotlarRouteWithChildren
   '/odeme': typeof OdemeRouteWithChildren
   '/paket': typeof PaketRoute
+  '/raf': typeof RafRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sepet': typeof SepetRoute
   '/shop': typeof ShopRouteWithChildren
@@ -190,11 +223,13 @@ export interface FileRoutesById {
   '/ticari': typeof TicariRoute
   '/uyum': typeof UyumRoute
   '/yasal': typeof YasalRoute
+  '/notlar/$slug': typeof NotlarSlugRoute
   '/odeme/basarili': typeof OdemeBasariliRoute
   '/odeme/iptal': typeof OdemeIptalRoute
   '/p/$slug': typeof PSlugRoute
   '/shop/$category': typeof ShopCategoryRoute
   '/siparis/$id': typeof SiparisIdRoute
+  '/notlar/': typeof NotlarIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
@@ -204,8 +239,10 @@ export interface FileRouteTypes {
     | '/hikaye'
     | '/iletisim'
     | '/llms.txt'
+    | '/notlar'
     | '/odeme'
     | '/paket'
+    | '/raf'
     | '/robots.txt'
     | '/sepet'
     | '/shop'
@@ -214,11 +251,13 @@ export interface FileRouteTypes {
     | '/ticari'
     | '/uyum'
     | '/yasal'
+    | '/notlar/$slug'
     | '/odeme/basarili'
     | '/odeme/iptal'
     | '/p/$slug'
     | '/shop/$category'
     | '/siparis/$id'
+    | '/notlar/'
     | '/shop/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -228,6 +267,7 @@ export interface FileRouteTypes {
     | '/llms.txt'
     | '/odeme'
     | '/paket'
+    | '/raf'
     | '/robots.txt'
     | '/sepet'
     | '/sitemap.xml'
@@ -235,11 +275,13 @@ export interface FileRouteTypes {
     | '/ticari'
     | '/uyum'
     | '/yasal'
+    | '/notlar/$slug'
     | '/odeme/basarili'
     | '/odeme/iptal'
     | '/p/$slug'
     | '/shop/$category'
     | '/siparis/$id'
+    | '/notlar'
     | '/shop'
   id:
     | '__root__'
@@ -247,8 +289,10 @@ export interface FileRouteTypes {
     | '/hikaye'
     | '/iletisim'
     | '/llms.txt'
+    | '/notlar'
     | '/odeme'
     | '/paket'
+    | '/raf'
     | '/robots.txt'
     | '/sepet'
     | '/shop'
@@ -257,11 +301,13 @@ export interface FileRouteTypes {
     | '/ticari'
     | '/uyum'
     | '/yasal'
+    | '/notlar/$slug'
     | '/odeme/basarili'
     | '/odeme/iptal'
     | '/p/$slug'
     | '/shop/$category'
     | '/siparis/$id'
+    | '/notlar/'
     | '/shop/'
   fileRoutesById: FileRoutesById
 }
@@ -270,8 +316,10 @@ export interface RootRouteChildren {
   HikayeRoute: typeof HikayeRoute
   IletisimRoute: typeof IletisimRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  NotlarRoute: typeof NotlarRouteWithChildren
   OdemeRoute: typeof OdemeRouteWithChildren
   PaketRoute: typeof PaketRoute
+  RafRoute: typeof RafRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SepetRoute: typeof SepetRoute
   ShopRoute: typeof ShopRouteWithChildren
@@ -314,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notlar': {
+      id: '/notlar'
+      path: '/notlar'
+      fullPath: '/notlar'
+      preLoaderRoute: typeof NotlarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/odeme': {
       id: '/odeme'
       path: '/odeme'
@@ -326,6 +381,13 @@ declare module '@tanstack/react-router' {
       path: '/paket'
       fullPath: '/paket'
       preLoaderRoute: typeof PaketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/raf': {
+      id: '/raf'
+      path: '/raf'
+      fullPath: '/raf'
+      preLoaderRoute: typeof RafRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -384,6 +446,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof YasalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/notlar/': {
+      id: '/notlar/'
+      path: '/'
+      fullPath: '/notlar/'
+      preLoaderRoute: typeof NotlarIndexRouteImport
+      parentRoute: typeof NotlarRoute
+    }
+    '/notlar/$slug': {
+      id: '/notlar/$slug'
+      path: '/$slug'
+      fullPath: '/notlar/$slug'
+      preLoaderRoute: typeof NotlarSlugRouteImport
+      parentRoute: typeof NotlarRoute
+    }
     '/odeme/basarili': {
       id: '/odeme/basarili'
       path: '/basarili'
@@ -429,6 +505,19 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface NotlarRouteChildren {
+  NotlarSlugRoute: typeof NotlarSlugRoute
+  NotlarIndexRoute: typeof NotlarIndexRoute
+}
+
+const NotlarRouteChildren: NotlarRouteChildren = {
+  NotlarSlugRoute: NotlarSlugRoute,
+  NotlarIndexRoute: NotlarIndexRoute,
+}
+
+const NotlarRouteWithChildren =
+  NotlarRoute._addFileChildren(NotlarRouteChildren)
+
 interface OdemeRouteChildren {
   OdemeBasariliRoute: typeof OdemeBasariliRoute
   OdemeIptalRoute: typeof OdemeIptalRoute
@@ -458,8 +547,10 @@ const rootRouteChildren: RootRouteChildren = {
   HikayeRoute: HikayeRoute,
   IletisimRoute: IletisimRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  NotlarRoute: NotlarRouteWithChildren,
   OdemeRoute: OdemeRouteWithChildren,
   PaketRoute: PaketRoute,
+  RafRoute: RafRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SepetRoute: SepetRoute,
   ShopRoute: ShopRouteWithChildren,

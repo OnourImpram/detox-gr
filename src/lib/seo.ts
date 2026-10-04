@@ -1,3 +1,4 @@
+import { b } from "./brand-copy";
 import commerceConfig from "@/data/commerce-config.json";
 import { launchBlockers, saleBlockers } from "./commerce-policy";
 import { CATEGORIES, PRODUCTS, imageFor, type CategoryId, type Product } from "./catalog";
@@ -142,9 +143,9 @@ export function orgJsonLd(origin: string, locale: Locale) {
     "@type": ["Organization", "Store", "LocalBusiness"],
     "@id": orgId(origin),
     name: BRAND,
-    legalName: BRAND_SHOP,
+
     alternateName: [BRAND_SHOP, BRAND_LEGACY],
-    description: t(locale, "seo.home.desc"),
+    description: b(locale, "hero.lead"),
     url: absoluteUrl(origin, withLang("/", locale)),
     image: absoluteUrl(origin, "/og.jpg"),
     logo: {
@@ -220,8 +221,8 @@ export function aboutJsonLd(origin: string, locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    name: t(locale, "seo.story.title"),
-    description: t(locale, "seo.story.desc"),
+    name: b(locale, "story.title"),
+    description: b(locale, "story.lead"),
     url: absoluteUrl(origin, withLang("/hikaye", locale)),
     inLanguage: hreflangOf(locale),
     mainEntity: { "@id": `${origin.replace(/\/$/, "") || "https://detoks.gr"}/#taha` },
@@ -257,7 +258,7 @@ export function speakableHomeJsonLd(origin: string, locale: Locale) {
     "@type": "WebPage",
     "@id": absoluteUrl(origin, withLang("/", locale)),
     name: t(locale, "seo.home.title"),
-    description: t(locale, "seo.home.desc"),
+    description: b(locale, "hero.lead"),
     url: absoluteUrl(origin, withLang("/", locale)),
     inLanguage: hreflangOf(locale),
     isPartOf: { "@id": `${origin.replace(/\/$/, "") || "https://detoks.gr"}/#website` },
@@ -340,7 +341,7 @@ export function sitemapPaths() {
     "/paket",
     "/ticari",
     "/iletisim",
-    "/yasal",
+    "/yasal", "/raf", "/notlar", "/notlar/etiketin-anlattiklari", "/notlar/dusunulmus-bir-hediye", "/notlar/gumulcinede-bir-dukkan",
     ...CATEGORIES.map((c) => `/shop/${c.id}`),
     ...PRODUCTS.map((p) => `/p/${p.slug}`),
   ];

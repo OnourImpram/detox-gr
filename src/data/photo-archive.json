@@ -1,0 +1,4689 @@
+{
+  "version": 1,
+  "sourceArchive": "taha-foto-kucuk.zip",
+  "source": "Provided by the project owner, 2026-10-04",
+  "reviewNote": "Observed subjects are not botanical, brand, batch or SKU verification. No image alone grants sale approval.",
+  "photos": [
+    {
+      "id": "kuru-yaprak-parcalari-mf8a6398",
+      "subject": "leaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6398.JPG",
+      "sha256": "9e03a84b4ee19f032ca89bff7ebe25911791913bca51e23ad7948c96fe169f35",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6398-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7114
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6398-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21600
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6398-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54116
+        }
+      ]
+    },
+    {
+      "id": "ince-uzun-yapraklar-mf8a6399",
+      "subject": "narrow",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6399.JPG",
+      "sha256": "0987c1c0ee4b3ece50f152d05405dc772d29ee1f9c5f9498ac93bcc6a2875571",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ince-uzun-yapraklar-mf8a6399-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7532
+        },
+        {
+          "src": "/photos/taha-2026/ince-uzun-yapraklar-mf8a6399-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23726
+        },
+        {
+          "src": "/photos/taha-2026/ince-uzun-yapraklar-mf8a6399-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58104
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6400",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6400.JPG",
+      "sha256": "a0dc3445333d22b08e4bf609a0ad5c30a2ebe51a533bfbbe724e4413c0051f4b",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6400-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7456
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6400-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23394
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6400-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57494
+        }
+      ]
+    },
+    {
+      "id": "altin-rengi-taneler-mf8a6401",
+      "subject": "gold",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6401.JPG",
+      "sha256": "d287cab60419ea57a868b67e1ca5320527580790275885e661e37261ecaed281",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/altin-rengi-taneler-mf8a6401-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6462
+        },
+        {
+          "src": "/photos/taha-2026/altin-rengi-taneler-mf8a6401-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20610
+        },
+        {
+          "src": "/photos/taha-2026/altin-rengi-taneler-mf8a6401-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 48142
+        }
+      ]
+    },
+    {
+      "id": "keten-tohumlari-mf8a6403",
+      "subject": "flax",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6403.JPG",
+      "sha256": "5e2409db05b516da6d114a06b219ee35762098958e3ad1565838ed2b3cde3c25",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/keten-tohumlari-mf8a6403-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7242
+        },
+        {
+          "src": "/photos/taha-2026/keten-tohumlari-mf8a6403-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24434
+        },
+        {
+          "src": "/photos/taha-2026/keten-tohumlari-mf8a6403-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 60888
+        }
+      ]
+    },
+    {
+      "id": "alacali-kucuk-tohumlar-mf8a6405",
+      "subject": "chia",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6405.JPG",
+      "sha256": "b8336bb8ccad0c17c40ba61aaf0942bd25234b44abc116b68c43473cbbeac3c3",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/alacali-kucuk-tohumlar-mf8a6405-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7426
+        },
+        {
+          "src": "/photos/taha-2026/alacali-kucuk-tohumlar-mf8a6405-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 28314
+        },
+        {
+          "src": "/photos/taha-2026/alacali-kucuk-tohumlar-mf8a6405-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 78104
+        }
+      ]
+    },
+    {
+      "id": "acik-renkli-taneler-mf8a6411",
+      "subject": "pale",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6411.JPG",
+      "sha256": "311d60da0e70030d8b846f2bc145fab204d0e0ca4415cc3fdd3a3d65f631090b",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/acik-renkli-taneler-mf8a6411-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5616
+        },
+        {
+          "src": "/photos/taha-2026/acik-renkli-taneler-mf8a6411-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19484
+        },
+        {
+          "src": "/photos/taha-2026/acik-renkli-taneler-mf8a6411-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 49932
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6412",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6412.JPG",
+      "sha256": "a7a6a8b4e96b46dc19030cd927482d61767d48e2d6047fdad7612903345674c9",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6412-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6936
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6412-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 25796
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6412-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 70102
+        }
+      ]
+    },
+    {
+      "id": "toprak-tonlu-toz-mf8a6414",
+      "subject": "ochre",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6414.JPG",
+      "sha256": "96f9b814b41968d7b229fab2371906e41bc40684094a18e86c92863b923b8937",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6414-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2178
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6414-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 7780
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6414-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 23240
+        }
+      ]
+    },
+    {
+      "id": "yuvarlak-tohumlar-mf8a6415",
+      "subject": "round",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6415.JPG",
+      "sha256": "76b961dbc2195cb94a90a846a224a8396e5186c6bfb8d049bd9a578f6c858777",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yuvarlak-tohumlar-mf8a6415-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7608
+        },
+        {
+          "src": "/photos/taha-2026/yuvarlak-tohumlar-mf8a6415-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23000
+        },
+        {
+          "src": "/photos/taha-2026/yuvarlak-tohumlar-mf8a6415-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57086
+        }
+      ]
+    },
+    {
+      "id": "siyah-tohumlar-mf8a6416",
+      "subject": "black",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6416.JPG",
+      "sha256": "61256bd378872be70b203cdd11a3b9dd2537edac11cf45c45d4b85b9cece8763",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/siyah-tohumlar-mf8a6416-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5486
+        },
+        {
+          "src": "/photos/taha-2026/siyah-tohumlar-mf8a6416-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18222
+        },
+        {
+          "src": "/photos/taha-2026/siyah-tohumlar-mf8a6416-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 42434
+        }
+      ]
+    },
+    {
+      "id": "gul-tomurcuklari-mf8a6417",
+      "subject": "rose",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6417.JPG",
+      "sha256": "18a479fd437c54029c452d3d96c15bc3871b8c49bc1793098bd4f1f5f164753c",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gul-tomurcuklari-mf8a6417-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6804
+        },
+        {
+          "src": "/photos/taha-2026/gul-tomurcuklari-mf8a6417-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19746
+        },
+        {
+          "src": "/photos/taha-2026/gul-tomurcuklari-mf8a6417-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 45902
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6418",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6418.JPG",
+      "sha256": "51439fbc4c299a5f517b6e941b94c0bb7c7371173e5f3af352c9accde0f674ff",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6418-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6208
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6418-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22732
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6418-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 60422
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6419",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6419.JPG",
+      "sha256": "b8310d3ebf4644dfbc8f9b45f62bc786b49eb382fae2bdad8a104c05bd017463",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6419-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4810
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6419-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14742
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6419-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 39036
+        }
+      ]
+    },
+    {
+      "id": "bordo-granuller-mf8a6420",
+      "subject": "redgrains",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6420.JPG",
+      "sha256": "aa5c4c5e8310694efe93aae1ef6baa93825459e8848bfefff86a33457f4c0c6b",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/bordo-granuller-mf8a6420-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5570
+        },
+        {
+          "src": "/photos/taha-2026/bordo-granuller-mf8a6420-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21658
+        },
+        {
+          "src": "/photos/taha-2026/bordo-granuller-mf8a6420-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 61198
+        }
+      ]
+    },
+    {
+      "id": "bej-renkli-toz-mf8a6422",
+      "subject": "beige",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6422.JPG",
+      "sha256": "28e69938be65ccc424dc5fe2e5b6ad5d258decb3e0c98db99f1dbe523356624e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/bej-renkli-toz-mf8a6422-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2070
+        },
+        {
+          "src": "/photos/taha-2026/bej-renkli-toz-mf8a6422-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 7256
+        },
+        {
+          "src": "/photos/taha-2026/bej-renkli-toz-mf8a6422-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 21044
+        }
+      ]
+    },
+    {
+      "id": "cizgili-tohumlar-mf8a6423",
+      "subject": "ribbed",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6423.JPG",
+      "sha256": "6cebd8fc010e463288e97efdabafa163ac6170a1c98b5de675732a7570e34ad6",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6423-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6832
+        },
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6423-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24174
+        },
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6423-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 66280
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6424",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6424.JPG",
+      "sha256": "1b2b26d867be9218e6151c367be536f0b6138985b8590e844df1f0b3aec2f05d",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6424-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8218
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6424-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 30844
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6424-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 88114
+        }
+      ]
+    },
+    {
+      "id": "turuncu-toz-mf8a6426",
+      "subject": "orange",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6426.JPG",
+      "sha256": "fbb3209a9c98523ec4baa51913595f73085a20752f61506c8e86b7eb5431c254",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6426-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2572
+        },
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6426-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 8626
+        },
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6426-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 28216
+        }
+      ]
+    },
+    {
+      "id": "acik-tane-karisimi-mf8a6427",
+      "subject": "grainmix",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6427.JPG",
+      "sha256": "3e5af2665449b80b4947d7102db9f678baafd1caa1704b38637913efdb742e73",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/acik-tane-karisimi-mf8a6427-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6596
+        },
+        {
+          "src": "/photos/taha-2026/acik-tane-karisimi-mf8a6427-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20644
+        },
+        {
+          "src": "/photos/taha-2026/acik-tane-karisimi-mf8a6427-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 46200
+        }
+      ]
+    },
+    {
+      "id": "koyu-kuru-yapraklar-mf8a6428",
+      "subject": "darkleaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6428.JPG",
+      "sha256": "c90b080429d8e9f91df30045449207ba453c4ecc48a80a79f3c3d94453c29167",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6428-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6538
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6428-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20040
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6428-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 49076
+        }
+      ]
+    },
+    {
+      "id": "kurutulmus-kirmizi-taneler-mf8a6430",
+      "subject": "berries",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6430.JPG",
+      "sha256": "0206c0b0b7569d44ae4d835f0ef4e4565757ae2ddbb56d9705623e54da0462f2",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kurutulmus-kirmizi-taneler-mf8a6430-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5778
+        },
+        {
+          "src": "/photos/taha-2026/kurutulmus-kirmizi-taneler-mf8a6430-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17908
+        },
+        {
+          "src": "/photos/taha-2026/kurutulmus-kirmizi-taneler-mf8a6430-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 45810
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6431",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6431.JPG",
+      "sha256": "e1144c33f2ba1f65d4fddace6329bab87572ad5710292f6b4151ae3392b78997",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6431-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8296
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6431-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26628
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6431-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 68146
+        }
+      ]
+    },
+    {
+      "id": "cicek-yaprak-karisimi-mf8a6432",
+      "subject": "flowerblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6432.JPG",
+      "sha256": "c167d96eec2e91bd196314af4678e312cfdfa529c199852a41effae86f83b1e1",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6432-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7072
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6432-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22230
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6432-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 55634
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6433",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6433.JPG",
+      "sha256": "bd2a9c5f53bd9d76836fb6f326dfd36788de9a681a5cf1faef634ff40a16af11",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6433-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7066
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6433-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22162
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6433-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 56290
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6434",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6434.JPG",
+      "sha256": "c67f4bab1abbcf9905f07eda5778c2133fa4f523a5961e3f58b353a6beb3fdbf",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6434-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8518
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6434-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 27998
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6434-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 73070
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6435",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6435.JPG",
+      "sha256": "a72b138f416cf43bc5e382f52d030e4d33cecc4154c59a4d8b8bb1b6c81e06a5",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6435-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7540
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6435-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 25084
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6435-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 61278
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6436",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6436.JPG",
+      "sha256": "d4178b3906300dfda4156fefb59fedd9852dfc8aec6e4648416bd6fa1d18399e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6436-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7086
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6436-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22398
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6436-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58454
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6437",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6437.JPG",
+      "sha256": "304d88f25716d2a6455f7014e3037aee5a857279a690d9c2b73d434ef4913883",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6437-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7538
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6437-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23834
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6437-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 60998
+        }
+      ]
+    },
+    {
+      "id": "bej-renkli-toz-mf8a6439",
+      "subject": "beige",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6439.JPG",
+      "sha256": "bab9aa5475d022df2c383db615e901e0210e5dfcdf1facf3441c8e71f993de96",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/bej-renkli-toz-mf8a6439-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3226
+        },
+        {
+          "src": "/photos/taha-2026/bej-renkli-toz-mf8a6439-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 12522
+        },
+        {
+          "src": "/photos/taha-2026/bej-renkli-toz-mf8a6439-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 38468
+        }
+      ]
+    },
+    {
+      "id": "gumusi-uzun-yapraklar-mf8a6440",
+      "subject": "silver",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6440.JPG",
+      "sha256": "46a2fd47232d35d0b3a3c80e3fc12f5db1427b583afba2ac93ec9008f68305ce",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gumusi-uzun-yapraklar-mf8a6440-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5280
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-uzun-yapraklar-mf8a6440-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14228
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-uzun-yapraklar-mf8a6440-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 33490
+        }
+      ]
+    },
+    {
+      "id": "koyu-yuvarlak-taneler-mf8a6441",
+      "subject": "darkround",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6441.JPG",
+      "sha256": "826fe2d53a04746578304dc417c1a6048b11f26a56356c54f6584bb4dd76b8a3",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-yuvarlak-taneler-mf8a6441-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4962
+        },
+        {
+          "src": "/photos/taha-2026/koyu-yuvarlak-taneler-mf8a6441-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14574
+        },
+        {
+          "src": "/photos/taha-2026/koyu-yuvarlak-taneler-mf8a6441-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 36462
+        }
+      ]
+    },
+    {
+      "id": "acik-yuvarlak-taneler-mf8a6442",
+      "subject": "paleround",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6442.JPG",
+      "sha256": "ccda814d53e9de6f9581ec9407784309dfe296427e9349b3b058d1d2e0e63365",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/acik-yuvarlak-taneler-mf8a6442-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6814
+        },
+        {
+          "src": "/photos/taha-2026/acik-yuvarlak-taneler-mf8a6442-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19344
+        },
+        {
+          "src": "/photos/taha-2026/acik-yuvarlak-taneler-mf8a6442-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 47316
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6443",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6443.JPG",
+      "sha256": "64bce2bfb16eb4707d2314eed991e1844c7f5ba04840569825ed95e5dc7db2b4",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6443-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6340
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6443-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20966
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6443-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 53510
+        }
+      ]
+    },
+    {
+      "id": "cicek-yaprak-karisimi-mf8a6444",
+      "subject": "flowerblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6444.JPG",
+      "sha256": "acf8b96a3036073ec65b18be0ec368aad86a80e0aa06a201d0c6a3bc41e52d19",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6444-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6372
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6444-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19846
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6444-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 49652
+        }
+      ]
+    },
+    {
+      "id": "koyu-kuru-yapraklar-mf8a6445",
+      "subject": "darkleaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6445.JPG",
+      "sha256": "6e5a9de6b2d1fffe45840dd87225b2530f64bf6b8af48c5846e2e4cb11ea68a8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6445-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6544
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6445-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21756
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6445-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 56030
+        }
+      ]
+    },
+    {
+      "id": "kahverengi-toz-mf8a6447",
+      "subject": "brown",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6447.JPG",
+      "sha256": "91f6aed03f762ea7462bde2e7d72983cc6f28bc3632a65582f119b9e0ff498a0",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6447-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3944
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6447-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16276
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6447-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 52228
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6448",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6448.JPG",
+      "sha256": "49ce9c50dee052e29c522e737a715a0af00aca166c2b0e9af62022c3e9326626",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6448-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6318
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6448-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26108
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6448-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 79752
+        }
+      ]
+    },
+    {
+      "id": "sari-turuncu-cicekler-mf8a6449",
+      "subject": "orangeflower",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6449.JPG",
+      "sha256": "a7e4691f5c17a66d725914b8a2baecb4c132136ae2642f115e3d0784b75ea42b",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/sari-turuncu-cicekler-mf8a6449-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7658
+        },
+        {
+          "src": "/photos/taha-2026/sari-turuncu-cicekler-mf8a6449-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23994
+        },
+        {
+          "src": "/photos/taha-2026/sari-turuncu-cicekler-mf8a6449-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58600
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6453",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6453.JPG",
+      "sha256": "975ae6be51e0b44be86d407ccda5e53fc25a0684aaeb9308e24d459b53693ed2",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6453-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8756
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6453-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 30166
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6453-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 78606
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6454",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6454.JPG",
+      "sha256": "14f4923a8d1e6bff6b537bb17cc343c88f759995a6ae5e559b4fedc210251062",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6454-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7764
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6454-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 29402
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6454-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 78896
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6455",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6455.JPG",
+      "sha256": "cac017dd4a4cef50ca422b8d1d410fdfc28e04a642446fddab5d4aa415d98e80",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6455-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3784
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6455-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 15498
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6455-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 50244
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6456",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6456.JPG",
+      "sha256": "c174317e99064c3ccc5cdd3312e9e157d241981b58ff50630f58e101f93f4ab8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6456-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4096
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6456-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16242
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6456-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 47460
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6457",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6457.JPG",
+      "sha256": "7bba69415a7e6a0bd69e7ec89ff944e11ceeb2bf5c51c065b632a2f01f6aa27a",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6457-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3902
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6457-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14888
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6457-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 43436
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6458",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6458.JPG",
+      "sha256": "95130424698ee89791ca568e7369b6c398534692dca0c21697993a17ce1575cb",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6458-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3186
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6458-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 12806
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6458-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 41968
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-biber-pullari-mf8a6459",
+      "subject": "chili",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6459.JPG",
+      "sha256": "e612ea335e30784bdae723ebc7f9e745a66de8d0fdb7ddff7df1a1a50e538175",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6459-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7940
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6459-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26964
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6459-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 68010
+        }
+      ]
+    },
+    {
+      "id": "koyu-renkli-pullar-mf8a6460",
+      "subject": "darkflakes",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6460.JPG",
+      "sha256": "c5147a9b17960aa8d82bca0434825093742f7a56fc9dbc4b29c2827fb371b90d",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-renkli-pullar-mf8a6460-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5674
+        },
+        {
+          "src": "/photos/taha-2026/koyu-renkli-pullar-mf8a6460-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18778
+        },
+        {
+          "src": "/photos/taha-2026/koyu-renkli-pullar-mf8a6460-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 45634
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-biber-pullari-mf8a6461",
+      "subject": "chili",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6461.JPG",
+      "sha256": "0c59d6a83cab7b2911876a0965fbe43547bc2f88e2205e97931d555c849b0a9e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6461-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 10388
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6461-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 31970
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6461-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 76170
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-biber-pullari-mf8a6463",
+      "subject": "chili",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6463.JPG",
+      "sha256": "3bfe6641ef961a73f8b751fb6dd428ab6ec237fe3f2abca49097e0d30d33d2bf",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6463-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8716
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6463-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 27452
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-biber-pullari-mf8a6463-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 67780
+        }
+      ]
+    },
+    {
+      "id": "cizgili-tohumlar-mf8a6464",
+      "subject": "ribbed",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6464.JPG",
+      "sha256": "5a11a7f4aaa8de645d98e0c20394ef44fc0c864ad69f49b35819af6e16a91545",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6464-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7732
+        },
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6464-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 27862
+        },
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6464-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 79712
+        }
+      ]
+    },
+    {
+      "id": "toprak-tonlu-toz-mf8a6465",
+      "subject": "ochre",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6465.JPG",
+      "sha256": "e21c2c5a33938212aade2c0a92830952c999d7cd886d7fb9043cbd05a8fc8cb0",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6465-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4054
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6465-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16770
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6465-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54372
+        }
+      ]
+    },
+    {
+      "id": "krem-renkli-cekirdekler-mf8a6467",
+      "subject": "cream",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6467.JPG",
+      "sha256": "12c9b1352931a449a566f0b9c92f594d4ecd38a8b57fafa588904d280e4cabc8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/krem-renkli-cekirdekler-mf8a6467-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5394
+        },
+        {
+          "src": "/photos/taha-2026/krem-renkli-cekirdekler-mf8a6467-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14012
+        },
+        {
+          "src": "/photos/taha-2026/krem-renkli-cekirdekler-mf8a6467-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 31704
+        }
+      ]
+    },
+    {
+      "id": "beyaz-tanecikler-mf8a6470",
+      "subject": "whitegrains",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6470.JPG",
+      "sha256": "f58a1a4d2336a6c425e7ead29a83e6700d73ca5dbf160a8a4ad37a67d7b076bd",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/beyaz-tanecikler-mf8a6470-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3196
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-tanecikler-mf8a6470-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 11670
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-tanecikler-mf8a6470-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 32540
+        }
+      ]
+    },
+    {
+      "id": "cizgili-tohumlar-mf8a6471",
+      "subject": "ribbed",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6471.JPG",
+      "sha256": "73e749f9a6df733c84b3a9b7bfe11be68ee4611f01b8d239291a912e95ab69e6",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6471-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7888
+        },
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6471-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 28888
+        },
+        {
+          "src": "/photos/taha-2026/cizgili-tohumlar-mf8a6471-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 79414
+        }
+      ]
+    },
+    {
+      "id": "kahverengi-toz-mf8a6472",
+      "subject": "brown",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6472.JPG",
+      "sha256": "824bf57b3d46cea99083c3fbca238527b2f1be440abff1384749d81bbbec03ff",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6472-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4498
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6472-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19042
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6472-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58320
+        }
+      ]
+    },
+    {
+      "id": "sari-kok-parcalari-mf8a6473",
+      "subject": "yellowroot",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6473.JPG",
+      "sha256": "3bccb3c1aa9c91290ee0bb3dacbb055837be327cecf4aa89baec8c616eae2f76",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/sari-kok-parcalari-mf8a6473-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5070
+        },
+        {
+          "src": "/photos/taha-2026/sari-kok-parcalari-mf8a6473-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14974
+        },
+        {
+          "src": "/photos/taha-2026/sari-kok-parcalari-mf8a6473-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 38762
+        }
+      ]
+    },
+    {
+      "id": "toprak-tonlu-toz-mf8a6475",
+      "subject": "ochre",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6475.JPG",
+      "sha256": "c03af9f22b255f61dffebd32047192af2f1530a5632599149911f74a3b9eda53",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6475-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4746
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6475-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19308
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6475-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 59628
+        }
+      ]
+    },
+    {
+      "id": "grimsi-pembe-tanecikler-mf8a6476",
+      "subject": "pink",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6476.JPG",
+      "sha256": "2210e9e7b9b48e35de6e8c27122fba98655b9ac1e30c0d458d60aa36d337f4e3",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/grimsi-pembe-tanecikler-mf8a6476-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6564
+        },
+        {
+          "src": "/photos/taha-2026/grimsi-pembe-tanecikler-mf8a6476-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26146
+        },
+        {
+          "src": "/photos/taha-2026/grimsi-pembe-tanecikler-mf8a6476-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 69918
+        }
+      ]
+    },
+    {
+      "id": "toprak-tonlu-toz-mf8a6480",
+      "subject": "ochre",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6480.JPG",
+      "sha256": "186df95070b978d41f3c5bb2ca340d859f120d444723ba68a5cdd54e34d5e685",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6480-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2418
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6480-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 8604
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6480-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 30794
+        }
+      ]
+    },
+    {
+      "id": "igne-bicimli-yapraklar-mf8a6481",
+      "subject": "needle",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6481.JPG",
+      "sha256": "94203dc3adb10a86a1a4422404d2e38aa48dc55502d8b7016f936b27a39b041e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/igne-bicimli-yapraklar-mf8a6481-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7194
+        },
+        {
+          "src": "/photos/taha-2026/igne-bicimli-yapraklar-mf8a6481-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 25422
+        },
+        {
+          "src": "/photos/taha-2026/igne-bicimli-yapraklar-mf8a6481-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 64324
+        }
+      ]
+    },
+    {
+      "id": "oval-butun-baharat-taneleri-mf8a6482",
+      "subject": "nutmeg",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6482.JPG",
+      "sha256": "baa9655623b039106ac7bbac9234f5f0c8b1771af88d180ed2c1d4f8cccc02e6",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/oval-butun-baharat-taneleri-mf8a6482-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4014
+        },
+        {
+          "src": "/photos/taha-2026/oval-butun-baharat-taneleri-mf8a6482-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 12748
+        },
+        {
+          "src": "/photos/taha-2026/oval-butun-baharat-taneleri-mf8a6482-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 32720
+        }
+      ]
+    },
+    {
+      "id": "gri-toz-mf8a6484",
+      "subject": "grey",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6484.JPG",
+      "sha256": "f11007af09e61b8280f8e6dd17fa36d1e062061d81ba3544d3bd89cf2b48c262",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gri-toz-mf8a6484-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4498
+        },
+        {
+          "src": "/photos/taha-2026/gri-toz-mf8a6484-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18950
+        },
+        {
+          "src": "/photos/taha-2026/gri-toz-mf8a6484-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 60188
+        }
+      ]
+    },
+    {
+      "id": "kurutulmus-meyve-dilimleri-mf8a6486",
+      "subject": "fruitslice",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6486.JPG",
+      "sha256": "eec0125bf946f3a309ea9d052b9f46fe53ddb35385c2d6c7d90e68a971e41851",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kurutulmus-meyve-dilimleri-mf8a6486-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4846
+        },
+        {
+          "src": "/photos/taha-2026/kurutulmus-meyve-dilimleri-mf8a6486-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14202
+        },
+        {
+          "src": "/photos/taha-2026/kurutulmus-meyve-dilimleri-mf8a6486-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 35392
+        }
+      ]
+    },
+    {
+      "id": "mor-cicek-parcalari-mf8a6487",
+      "subject": "purpleflower",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6487.JPG",
+      "sha256": "5ad03ae3449f6ad3aacb5b68aef966188e56052c7351219865fdf91365cd1d3f",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/mor-cicek-parcalari-mf8a6487-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6960
+        },
+        {
+          "src": "/photos/taha-2026/mor-cicek-parcalari-mf8a6487-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21888
+        },
+        {
+          "src": "/photos/taha-2026/mor-cicek-parcalari-mf8a6487-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54032
+        }
+      ]
+    },
+    {
+      "id": "beyaz-kristaller-mf8a6489",
+      "subject": "crystals",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6489.JPG",
+      "sha256": "5b2d3aab3d007f51f89ae71ff6791db10878e0ff577ef4024471ee2120f4373c",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/beyaz-kristaller-mf8a6489-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 1722
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-kristaller-mf8a6489-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 5344
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-kristaller-mf8a6489-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 13774
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6491",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6491.JPG",
+      "sha256": "5e1d55d6f62f523f56a8af3ab974f6824a509801dd4d8062eb67f4927c34d743",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6491-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6496
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6491-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21022
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6491-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 51822
+        }
+      ]
+    },
+    {
+      "id": "kahverengi-butun-taneler-mf8a6493",
+      "subject": "brownberry",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6493.JPG",
+      "sha256": "ed9b0f86820edd2fb285bb445f190c4f0f3e6e2b9d53aa05d07d81cc5f043e42",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kahverengi-butun-taneler-mf8a6493-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5240
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-butun-taneler-mf8a6493-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17966
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-butun-taneler-mf8a6493-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 51362
+        }
+      ]
+    },
+    {
+      "id": "kahverengi-toz-mf8a6496",
+      "subject": "brown",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6496.JPG",
+      "sha256": "3686dfd351d1c79a04a1b09c7aeaceba914b98a9301abe7e1ad789825ab1fff8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6496-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4040
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6496-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16490
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6496-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 51120
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6497",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6497.JPG",
+      "sha256": "f8bc186bf453da2c8086a61e33c33ecd1700a27a9780937f0d31899431d46a77",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6497-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2962
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6497-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 10246
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6497-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 31916
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6498",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6498.JPG",
+      "sha256": "70bb17e03f8f716aece47c68c6d5a9b04a2db4c4107f17138c0ec775cc5731f4",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6498-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3464
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6498-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 13812
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6498-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 43158
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6500",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6500.JPG",
+      "sha256": "976ead611bedc618efdea785fe11ca2adb2a260f22c5ec7c4870ad865f865a1e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6500-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2338
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6500-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 9786
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6500-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 31968
+        }
+      ]
+    },
+    {
+      "id": "gri-toz-mf8a6502",
+      "subject": "grey",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6502.JPG",
+      "sha256": "067adef48a3dd6f0553ceea199517e2f89bc8a77d48beb29f5ab4430a53302dc",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gri-toz-mf8a6502-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2860
+        },
+        {
+          "src": "/photos/taha-2026/gri-toz-mf8a6502-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 10142
+        },
+        {
+          "src": "/photos/taha-2026/gri-toz-mf8a6502-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 30870
+        }
+      ]
+    },
+    {
+      "id": "beyaz-toz-mf8a6504",
+      "subject": "white",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6504.JPG",
+      "sha256": "cda7810d1ce65cfca44e7c802536ac5905d4923f58eb2fe791233fd8286ed2bd",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/beyaz-toz-mf8a6504-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2596
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-toz-mf8a6504-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 9138
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-toz-mf8a6504-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 24086
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6505",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6505.JPG",
+      "sha256": "ee3dd6418352db08e90a131b36e455f416a08e6a16edc5cd8ca1348c926893df",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6505-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7728
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6505-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 25644
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6505-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 65880
+        }
+      ]
+    },
+    {
+      "id": "kuru-yaprak-parcalari-mf8a6508",
+      "subject": "leaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6508.JPG",
+      "sha256": "81c20cb798795c764dcadac7e1a781be3503724d8af16802b1fabe4b6bac75cf",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6508-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7600
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6508-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24512
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6508-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 61018
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6510",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6510.JPG",
+      "sha256": "9eb154692b9a48dc3a8dbf6ac4ba7fc535997ca64e2e8d001079dbf36d3ca7b9",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6510-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3816
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6510-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16692
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6510-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 53866
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6512",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6512.JPG",
+      "sha256": "f70ce4c3dbdfa69de54d8c0bd61b99c6c407bcb52e9abb1df0b7d67447aeac6f",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6512-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2908
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6512-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 11884
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6512-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 39398
+        }
+      ]
+    },
+    {
+      "id": "yesil-toz-mf8a6513",
+      "subject": "green",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6513.JPG",
+      "sha256": "fc8bd61dbc6efcd7106174666ee695c0804ecf48e1f5167286a4281d68a1bd4f",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6513-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4518
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6513-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18130
+        },
+        {
+          "src": "/photos/taha-2026/yesil-toz-mf8a6513-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54952
+        }
+      ]
+    },
+    {
+      "id": "kuru-yaprak-parcalari-mf8a6514",
+      "subject": "leaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6514.JPG",
+      "sha256": "9889421ed96a3d8e306624d222bc04c8df64c823cd3d17093e643c8750e0ff89",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6514-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7286
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6514-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24228
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6514-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 62674
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6515",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6515.JPG",
+      "sha256": "1585070e0f848f3102e6f0672663c11656a4f1ca332f029acf3365695266a918",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6515-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7252
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6515-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23488
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6515-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57010
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6518",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6518.JPG",
+      "sha256": "964223abd07fe2b00c6794027cafc46d1304c5c101b21edb5e364b057522ed13",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6518-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6922
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6518-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23522
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6518-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 60134
+        }
+      ]
+    },
+    {
+      "id": "altin-rengi-taneler-mf8a6519",
+      "subject": "gold",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6519.JPG",
+      "sha256": "8abdde17ddbcb33e49d81a330e7f753ab4b2256986b0bce65010acd003ec0e48",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/altin-rengi-taneler-mf8a6519-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8232
+        },
+        {
+          "src": "/photos/taha-2026/altin-rengi-taneler-mf8a6519-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 28986
+        },
+        {
+          "src": "/photos/taha-2026/altin-rengi-taneler-mf8a6519-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 75276
+        }
+      ]
+    },
+    {
+      "id": "bordo-cicek-parcalari-mf8a6520",
+      "subject": "burgundyflower",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6520.JPG",
+      "sha256": "1c692966ed88bb987d1e7224782f458fe66130f0f058e52abe7520f705cd5936",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/bordo-cicek-parcalari-mf8a6520-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6028
+        },
+        {
+          "src": "/photos/taha-2026/bordo-cicek-parcalari-mf8a6520-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17464
+        },
+        {
+          "src": "/photos/taha-2026/bordo-cicek-parcalari-mf8a6520-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 41814
+        }
+      ]
+    },
+    {
+      "id": "beyaz-kristaller-mf8a6522",
+      "subject": "crystals",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6522.JPG",
+      "sha256": "7f1529d88d0055e30bc09a2055bd10bf307c8bcc3c910b736c86597d10f89fee",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/beyaz-kristaller-mf8a6522-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 1688
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-kristaller-mf8a6522-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 5130
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-kristaller-mf8a6522-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 13530
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6523",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6523.JPG",
+      "sha256": "ebac0a395b996f49b61521bb0561405885db87e0f115d909659cb20828d5225e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6523-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6654
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6523-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21146
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6523-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 55978
+        }
+      ]
+    },
+    {
+      "id": "gri-kucuk-tohumlar-mf8a6524",
+      "subject": "greyseed",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6524.JPG",
+      "sha256": "b6d3095ab7e327ac6ce546cd2e142fbd645a9ae740f8f788ba755c1e47c33e15",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gri-kucuk-tohumlar-mf8a6524-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7510
+        },
+        {
+          "src": "/photos/taha-2026/gri-kucuk-tohumlar-mf8a6524-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24500
+        },
+        {
+          "src": "/photos/taha-2026/gri-kucuk-tohumlar-mf8a6524-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 59644
+        }
+      ]
+    },
+    {
+      "id": "kabuk-parcalari-mf8a6526",
+      "subject": "bark",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6526.JPG",
+      "sha256": "99b2c28da25e5e55f88801a07b38006857253276363093de2373e06a27fd16ec",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kabuk-parcalari-mf8a6526-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4032
+        },
+        {
+          "src": "/photos/taha-2026/kabuk-parcalari-mf8a6526-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 13686
+        },
+        {
+          "src": "/photos/taha-2026/kabuk-parcalari-mf8a6526-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 38912
+        }
+      ]
+    },
+    {
+      "id": "tarcin-cubuklari-mf8a6527",
+      "subject": "cinnamon",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6527.JPG",
+      "sha256": "fac8ba24e87dbf53ca672237e731dd86c072da3d7561d711f4bd6d425abf4357",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/tarcin-cubuklari-mf8a6527-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4670
+        },
+        {
+          "src": "/photos/taha-2026/tarcin-cubuklari-mf8a6527-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 12822
+        },
+        {
+          "src": "/photos/taha-2026/tarcin-cubuklari-mf8a6527-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 29054
+        }
+      ]
+    },
+    {
+      "id": "gumusi-kuru-bitki-demeti-mf8a6531",
+      "subject": "greybundle",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6531.JPG",
+      "sha256": "b3b3eae4d0984f5351393e6fee32ab6516d73c2ebf4757dd139d31e6ec939ce8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gumusi-kuru-bitki-demeti-mf8a6531-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 13030
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-kuru-bitki-demeti-mf8a6531-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 45444
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-kuru-bitki-demeti-mf8a6531-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 111212
+        }
+      ]
+    },
+    {
+      "id": "ince-yesil-saplar-mf8a6533",
+      "subject": "stems",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6533.JPG",
+      "sha256": "8e883de1470c926c578c156ddc84dac015016df09f6f943d31185bbbb9b6e23c",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ince-yesil-saplar-mf8a6533-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6792
+        },
+        {
+          "src": "/photos/taha-2026/ince-yesil-saplar-mf8a6533-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21278
+        },
+        {
+          "src": "/photos/taha-2026/ince-yesil-saplar-mf8a6533-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 50098
+        }
+      ]
+    },
+    {
+      "id": "kuru-yaprak-parcalari-mf8a6534",
+      "subject": "leaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6534.JPG",
+      "sha256": "b089ad0e57f654365b35fc21a62af06347c0f9dbdf73c296f1728484ee5b87c9",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6534-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5702
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6534-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17090
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6534-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 41824
+        }
+      ]
+    },
+    {
+      "id": "acik-cicek-yaprak-karisimi-mf8a6535",
+      "subject": "paleblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6535.JPG",
+      "sha256": "baa36abe7225c89cb54eee05b549da0c68feb9a52373289d2793b4f8fcfffa3e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/acik-cicek-yaprak-karisimi-mf8a6535-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6816
+        },
+        {
+          "src": "/photos/taha-2026/acik-cicek-yaprak-karisimi-mf8a6535-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18204
+        },
+        {
+          "src": "/photos/taha-2026/acik-cicek-yaprak-karisimi-mf8a6535-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 41046
+        }
+      ]
+    },
+    {
+      "id": "koyu-kuru-yapraklar-mf8a6536",
+      "subject": "darkleaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6536.JPG",
+      "sha256": "5a635e2b3de2d7af723b63976fb18d993c25258996800e37a59d5e5a97a4f88c",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6536-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6436
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6536-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19774
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6536-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 47996
+        }
+      ]
+    },
+    {
+      "id": "kizil-ince-lifler-mf8a6538",
+      "subject": "fibres",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6538.JPG",
+      "sha256": "bffd9bddb7fa8ad2edb79ca57fc9a48f2faca36c5d640de6db461a196b3b1164",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kizil-ince-lifler-mf8a6538-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5928
+        },
+        {
+          "src": "/photos/taha-2026/kizil-ince-lifler-mf8a6538-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22808
+        },
+        {
+          "src": "/photos/taha-2026/kizil-ince-lifler-mf8a6538-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 62238
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6540",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6540.JPG",
+      "sha256": "2e524f07ef04ff37522a7306489493cf921e0d7c0cb4097abd7d6aaff2e8e9e5",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6540-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6758
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6540-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21452
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6540-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 51788
+        }
+      ]
+    },
+    {
+      "id": "gumusi-uzun-yapraklar-mf8a6541",
+      "subject": "silver",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6541.JPG",
+      "sha256": "f8f353a736084a179d5501928ac1b522d550dbf673f29048559808abb1a63ac0",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gumusi-uzun-yapraklar-mf8a6541-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4280
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-uzun-yapraklar-mf8a6541-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 13142
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-uzun-yapraklar-mf8a6541-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 35854
+        }
+      ]
+    },
+    {
+      "id": "butun-kuru-yapraklar-mf8a6542",
+      "subject": "wholeleaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6542.JPG",
+      "sha256": "56d3fe8b3ca92c59c5dc2b0682c9673d68270748ec7bf5d81b23dc3622098adb",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/butun-kuru-yapraklar-mf8a6542-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2766
+        },
+        {
+          "src": "/photos/taha-2026/butun-kuru-yapraklar-mf8a6542-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 8766
+        },
+        {
+          "src": "/photos/taha-2026/butun-kuru-yapraklar-mf8a6542-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 29204
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6543",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6543.JPG",
+      "sha256": "89c926e94db02d488435c95e874fad2ad0788ce5404e678be76dd047c94a58a3",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6543-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5960
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6543-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18396
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6543-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 46470
+        }
+      ]
+    },
+    {
+      "id": "cicekli-kuru-dallar-mf8a6544",
+      "subject": "flowerstems",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6544.JPG",
+      "sha256": "50a69a52377450b5119f188d6b28d9692a06217d294eb39ce517bac0dbe8bd25",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cicekli-kuru-dallar-mf8a6544-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7058
+        },
+        {
+          "src": "/photos/taha-2026/cicekli-kuru-dallar-mf8a6544-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19672
+        },
+        {
+          "src": "/photos/taha-2026/cicekli-kuru-dallar-mf8a6544-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 45262
+        }
+      ]
+    },
+    {
+      "id": "gumusi-kuru-bitki-demeti-mf8a6548",
+      "subject": "greybundle",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6548.JPG",
+      "sha256": "8c086216c664a81bfc7ca8a385468228977fd6c6ce5178c7de2c1a21fd650b5e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gumusi-kuru-bitki-demeti-mf8a6548-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 10342
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-kuru-bitki-demeti-mf8a6548-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 28792
+        },
+        {
+          "src": "/photos/taha-2026/gumusi-kuru-bitki-demeti-mf8a6548-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 63620
+        }
+      ]
+    },
+    {
+      "id": "mor-cicekli-demet-mf8a6549",
+      "subject": "purplebundle",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6549.JPG",
+      "sha256": "32fda8ac2897ef438ee213d89b321564cb69ab98b5a1b0f768d170cf43f0cb8e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/mor-cicekli-demet-mf8a6549-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 9568
+        },
+        {
+          "src": "/photos/taha-2026/mor-cicekli-demet-mf8a6549-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 29398
+        },
+        {
+          "src": "/photos/taha-2026/mor-cicekli-demet-mf8a6549-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 69062
+        }
+      ]
+    },
+    {
+      "id": "acik-cicekli-demet-mf8a6551",
+      "subject": "palebundle",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6551.JPG",
+      "sha256": "af93ef9df20568e955a88e9741b2b06e9e5b2438f7b28cca44d0d0b0c406c00f",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/acik-cicekli-demet-mf8a6551-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 15542
+        },
+        {
+          "src": "/photos/taha-2026/acik-cicekli-demet-mf8a6551-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 55794
+        },
+        {
+          "src": "/photos/taha-2026/acik-cicekli-demet-mf8a6551-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 147864
+        }
+      ]
+    },
+    {
+      "id": "koyu-cicekli-demet-mf8a6552",
+      "subject": "darkbundle",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6552.JPG",
+      "sha256": "1146f9b878cb1d9319fda0b33056a3d2934f3cc7ab4be4dc3fa86e3bcbc8b214",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-cicekli-demet-mf8a6552-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 17586
+        },
+        {
+          "src": "/photos/taha-2026/koyu-cicekli-demet-mf8a6552-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 60508
+        },
+        {
+          "src": "/photos/taha-2026/koyu-cicekli-demet-mf8a6552-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 149742
+        }
+      ]
+    },
+    {
+      "id": "kuru-yaprak-parcalari-mf8a6553",
+      "subject": "leaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6553.JPG",
+      "sha256": "40f3edf8cbaae935fdf7ea2b142b10ad31db81ab9cbc914691e21e4a33e47f37",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6553-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6786
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6553-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22126
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6553-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 55370
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6554",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6554.JPG",
+      "sha256": "f62abe29beb41924c7e7e4a5c706c5d6e8b1cba19452bc67b4f83aff89133491",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6554-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5742
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6554-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18368
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6554-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 46434
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6556",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6556.JPG",
+      "sha256": "f422234f95a19b3ef75f7e4e81e2f2680ce28a7a5c958d5668f2f7f0d4c4e4b5",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6556-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6180
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6556-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19480
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6556-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 49526
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6557",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6557.JPG",
+      "sha256": "d8746fda41f275cc708f2af21a5612bc92ca72251df84be60b37697958f4010a",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6557-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7258
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6557-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22936
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6557-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58540
+        }
+      ]
+    },
+    {
+      "id": "kuru-yaprak-parcalari-mf8a6558",
+      "subject": "leaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6558.JPG",
+      "sha256": "1bfd194ff0ad3e60b7af70352dbfc393d189b5424a872e42c3b3aa041b4b4d02",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6558-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4684
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6558-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 13896
+        },
+        {
+          "src": "/photos/taha-2026/kuru-yaprak-parcalari-mf8a6558-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 34158
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6560",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6560.JPG",
+      "sha256": "d175761e739930ec22e927c5cf90c5038e00530af463a2feb90a516a9308d8aa",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6560-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5472
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6560-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17940
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6560-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 46910
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6562",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6562.JPG",
+      "sha256": "46ef0e9eb97e1c1399d0ab618c74235bacc8d669bf5c9bfc3e3885f3e65bf4af",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6562-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4714
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6562-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17370
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6562-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 48390
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6563",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6563.JPG",
+      "sha256": "17defa723fa3945b5f9585ff3ec6431e0c5cf6e35761f89831cd68ccf32b053e",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6563-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5180
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6563-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16396
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6563-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 42282
+        }
+      ]
+    },
+    {
+      "id": "sari-beyaz-cicek-baslari-mf8a6565",
+      "subject": "chamomile",
+      "group": "flowers",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6565.JPG",
+      "sha256": "a3d47c4884b421e2d2e861459df36b7b03d4fe8d6b5c24526493676a720b7f07",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/sari-beyaz-cicek-baslari-mf8a6565-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7210
+        },
+        {
+          "src": "/photos/taha-2026/sari-beyaz-cicek-baslari-mf8a6565-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22788
+        },
+        {
+          "src": "/photos/taha-2026/sari-beyaz-cicek-baslari-mf8a6565-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57524
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6567",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6567.JPG",
+      "sha256": "d01d7c14287dff79126c33702811b46cb0b2f7ba39952b4994aefecdd2e2fc8f",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6567-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6062
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6567-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22874
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6567-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 61924
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6568",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6568.JPG",
+      "sha256": "f14e1f3452a1c2e9e720e9d2911cfccc49ac8c067424500fbf3adc564b677267",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6568-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6898
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6568-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26946
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6568-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 76934
+        }
+      ]
+    },
+    {
+      "id": "gri-kucuk-tohumlar-mf8a6569",
+      "subject": "greyseed",
+      "group": "seeds",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6569.JPG",
+      "sha256": "ebdec1aa929d93c5e1cf1f2533ac07a9c7f94610c61e687ee337872046c15806",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/gri-kucuk-tohumlar-mf8a6569-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6098
+        },
+        {
+          "src": "/photos/taha-2026/gri-kucuk-tohumlar-mf8a6569-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23896
+        },
+        {
+          "src": "/photos/taha-2026/gri-kucuk-tohumlar-mf8a6569-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 63064
+        }
+      ]
+    },
+    {
+      "id": "beyaz-tanecikler-mf8a6570",
+      "subject": "whitegrains",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6570.JPG",
+      "sha256": "46aa5aad69c09923946e6bed59878749a71970322d1f95fc15dde8f7732d1f6d",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/beyaz-tanecikler-mf8a6570-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 1448
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-tanecikler-mf8a6570-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 4566
+        },
+        {
+          "src": "/photos/taha-2026/beyaz-tanecikler-mf8a6570-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 11884
+        }
+      ]
+    },
+    {
+      "id": "karanfil-taneleri-mf8a6571",
+      "subject": "cloves",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6571.JPG",
+      "sha256": "0521ba1e25e06cf58fef997ead8c2f92a1b74b76413e821c67d0eeed1c4b9ca8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/karanfil-taneleri-mf8a6571-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6758
+        },
+        {
+          "src": "/photos/taha-2026/karanfil-taneleri-mf8a6571-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20842
+        },
+        {
+          "src": "/photos/taha-2026/karanfil-taneleri-mf8a6571-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54304
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6572",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6572.JPG",
+      "sha256": "765bb5a968d1ce52ac82183ea4cd0abafb11d2ed80271ad66b19c4b5f24ca935",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6572-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6888
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6572-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20850
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6572-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 50238
+        }
+      ]
+    },
+    {
+      "id": "cicek-yaprak-karisimi-mf8a6574",
+      "subject": "flowerblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6574.JPG",
+      "sha256": "6bb4e90f5b1073544daca04c6de08b697be2f74e5d14d4aba2128574b1d5dbc7",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6574-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5800
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6574-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 18360
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6574-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 47460
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6575",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6575.JPG",
+      "sha256": "0c3bba6007e7f42cf70773742962183d2739b0569e44d1b4f9d894742c67187c",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6575-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3690
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6575-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 14602
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6575-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 45122
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6576",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6576.JPG",
+      "sha256": "e9e9413da0e2e7e768829698cbecf322154e2601ac8930cafe675c0ab34154bf",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6576-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7418
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6576-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26660
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6576-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 68502
+        }
+      ]
+    },
+    {
+      "id": "turuncu-toz-mf8a6577",
+      "subject": "orange",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6577.JPG",
+      "sha256": "f7b3061fb19ea38b8016047d4ca51b399cd782ed35fc895eba350241860d7791",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6577-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 2946
+        },
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6577-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 11112
+        },
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6577-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 34696
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6579",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6579.JPG",
+      "sha256": "e3567ba36bd138a2486be9c8d768ae8ec101f3c79afafe363749461d39320838",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6579-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5896
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6579-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20938
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6579-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 55650
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6580",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6580.JPG",
+      "sha256": "b115c0b3f86527c9f6427d676cc7098dbf7c0899a9269519e7f1137f4e672712",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6580-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6454
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6580-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23776
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6580-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 63084
+        }
+      ]
+    },
+    {
+      "id": "turuncu-toz-mf8a6581",
+      "subject": "orange",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6581.JPG",
+      "sha256": "ea458edda0600831b2910d2357d19e76c7a7953ae5d409744a7671e0d48896b7",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6581-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4132
+        },
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6581-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 15418
+        },
+        {
+          "src": "/photos/taha-2026/turuncu-toz-mf8a6581-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 44296
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6583",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6583.JPG",
+      "sha256": "dd964dea8beddaba6fe504e903cc7335886519460836fe26d294cdbd570875bf",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6583-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5628
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6583-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20640
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6583-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58072
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6584",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6584.JPG",
+      "sha256": "dc1c28668414841dd5f612349b32367ea7418b261c2bac20e9d46300083d0516",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6584-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6894
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6584-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 25396
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6584-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 69238
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6586",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6586.JPG",
+      "sha256": "421f022dbbb28d30d1702ca3b00c2644dac627d97b6be4a9ef9009449959b3e5",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6586-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5066
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6586-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19936
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6586-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58166
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6587",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6587.JPG",
+      "sha256": "706bcc2764527dbe2be367714a3f47c9c4553ad2a5ca5d94900330d607c72525",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6587-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4910
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6587-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19436
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6587-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 56574
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6589",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6589.JPG",
+      "sha256": "7a66b68d5dcd1285fede74482b871edaf991d7b4c0a212edb419751bef60e9dc",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6589-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5734
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6589-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21560
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6589-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 60686
+        }
+      ]
+    },
+    {
+      "id": "renkli-kuru-karisim-mf8a6590",
+      "subject": "seasoning",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6590.JPG",
+      "sha256": "3f8aa8c9b15231eb892103d5619bc9edc003ed52968644f766fb52f83067dffd",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6590-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6154
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6590-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21666
+        },
+        {
+          "src": "/photos/taha-2026/renkli-kuru-karisim-mf8a6590-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57488
+        }
+      ]
+    },
+    {
+      "id": "toprak-tonlu-toz-mf8a6591",
+      "subject": "ochre",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6591.JPG",
+      "sha256": "ed840634357cbc3f055db20cbdde1b6c39c48d34f5d6f526083f9eafae1b0c26",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6591-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 3456
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6591-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 13836
+        },
+        {
+          "src": "/photos/taha-2026/toprak-tonlu-toz-mf8a6591-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 41956
+        }
+      ]
+    },
+    {
+      "id": "kahverengi-toz-mf8a6592",
+      "subject": "brown",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6592.JPG",
+      "sha256": "1ecdc74d20cf3e7427805d733fe6431178fc62dde8d1f6f1c6c2875770b96ee8",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6592-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4438
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6592-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 17678
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6592-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54690
+        }
+      ]
+    },
+    {
+      "id": "kirmizi-toz-mf8a6593",
+      "subject": "red",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6593.JPG",
+      "sha256": "e4f04b228579067d936f14f83408f8e6d118dcecba6bd72373bb9a22f1a06e81",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6593-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 4722
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6593-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19012
+        },
+        {
+          "src": "/photos/taha-2026/kirmizi-toz-mf8a6593-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 58024
+        }
+      ]
+    },
+    {
+      "id": "kuru-kok-parcalari-mf8a6594",
+      "subject": "roots",
+      "group": "bark",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6594.JPG",
+      "sha256": "58d340cc98277019b35b97933ef9153bee34081ef47b75ab044623b32b1caa2d",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6594-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6834
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6594-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21414
+        },
+        {
+          "src": "/photos/taha-2026/kuru-kok-parcalari-mf8a6594-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 53416
+        }
+      ]
+    },
+    {
+      "id": "kahverengi-toz-mf8a6595",
+      "subject": "brown",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6595.JPG",
+      "sha256": "de343c1849b9276bba746c0bfdc31cac8d3af77b948d03b2bdd414b828046313",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6595-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5380
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6595-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19988
+        },
+        {
+          "src": "/photos/taha-2026/kahverengi-toz-mf8a6595-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 53196
+        }
+      ]
+    },
+    {
+      "id": "cicek-yaprak-karisimi-mf8a6596",
+      "subject": "flowerblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6596.JPG",
+      "sha256": "12fa447461081a4286971e7e8fcfb41bb6dc58cbe9cfeebf0d3e76fa9bb5a293",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6596-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6024
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6596-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19000
+        },
+        {
+          "src": "/photos/taha-2026/cicek-yaprak-karisimi-mf8a6596-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 47768
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6597",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6597.JPG",
+      "sha256": "2d6f135ea8f52dcfb258713249314f92ac9bd34f5c0ac687f4955ad1210e2796",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6597-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7894
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6597-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24034
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6597-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57902
+        }
+      ]
+    },
+    {
+      "id": "koyu-kuru-yapraklar-mf8a6599",
+      "subject": "darkleaf",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6599.JPG",
+      "sha256": "81547840bb8580ecbd2b1b5e51a6a6a1a8908ad84cf923d690cbcc63eb351f16",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6599-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8528
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6599-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26842
+        },
+        {
+          "src": "/photos/taha-2026/koyu-kuru-yapraklar-mf8a6599-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 66042
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6600",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6600.JPG",
+      "sha256": "21cdb32b6856e82cbcb97f5b3eaef5716d1275d4e055db85ad901e4d62efdb4f",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6600-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6828
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6600-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22210
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6600-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 56776
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6602",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6602.JPG",
+      "sha256": "1aff8665056d5f5ae6435427f8865bd4a9f558355ca366c5c23ad2758a903109",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6602-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8368
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6602-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23836
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6602-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 55576
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6603",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6603.JPG",
+      "sha256": "428e658be2386162cc7217355c794a4e4a7feeec5e26c439f36cfbfbe8282063",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6603-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5310
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6603-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 16528
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6603-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 41288
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6604",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6604.JPG",
+      "sha256": "140cdb06248ffbe19ce567fa7e6a5f4c234371eea2cd11eda866be8ad0c5a6c3",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6604-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6668
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6604-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21438
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6604-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 53818
+        }
+      ]
+    },
+    {
+      "id": "kuru-bitki-karisimi-mf8a6605",
+      "subject": "blend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6605.JPG",
+      "sha256": "406b2577455779f5bdb00cab3ee1443280c89f2a0288b85dc4a22d6cd23e9826",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6605-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 8082
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6605-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 24186
+        },
+        {
+          "src": "/photos/taha-2026/kuru-bitki-karisimi-mf8a6605-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 57074
+        }
+      ]
+    },
+    {
+      "id": "meyve-parcali-karisim-mf8a6606",
+      "subject": "fruitblend",
+      "group": "blends",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6606.JPG",
+      "sha256": "33993b8d6f4ba265504678d73a383d8dc79e6d3340727572af3faa41f83326b9",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6606-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6984
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6606-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21828
+        },
+        {
+          "src": "/photos/taha-2026/meyve-parcali-karisim-mf8a6606-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54394
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6607",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6607.JPG",
+      "sha256": "91e51793f313811a5e1fda07a523686d1e23994a34930e12b1aff3f06fd03900",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6607-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7976
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6607-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 27526
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6607-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 71888
+        }
+      ]
+    },
+    {
+      "id": "ufalanmis-kuru-bitki-mf8a6608",
+      "subject": "herb",
+      "group": "herbs",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6608.JPG",
+      "sha256": "f1fc5bc4dcf4fbba596d3ec3378eb676e79cded67e3294b103a3df8e7b44360a",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6608-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 6416
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6608-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 23370
+        },
+        {
+          "src": "/photos/taha-2026/ufalanmis-kuru-bitki-mf8a6608-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 61964
+        }
+      ]
+    },
+    {
+      "id": "renkli-yuvarlak-taneler-mf8a6609",
+      "subject": "peppermix",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6609.JPG",
+      "sha256": "f94dde7a834eea3b843e9f813d18046607b0ac6043f994c390b499ab91294a36",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/renkli-yuvarlak-taneler-mf8a6609-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7326
+        },
+        {
+          "src": "/photos/taha-2026/renkli-yuvarlak-taneler-mf8a6609-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 22524
+        },
+        {
+          "src": "/photos/taha-2026/renkli-yuvarlak-taneler-mf8a6609-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 54214
+        }
+      ]
+    },
+    {
+      "id": "kakule-kapsulleri-mf8a6610",
+      "subject": "cardamom",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6610.JPG",
+      "sha256": "fca6be31ef0b725500c44f71d1e1c40637e32478dddad235e46214617622e51a",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kakule-kapsulleri-mf8a6610-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7198
+        },
+        {
+          "src": "/photos/taha-2026/kakule-kapsulleri-mf8a6610-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 20484
+        },
+        {
+          "src": "/photos/taha-2026/kakule-kapsulleri-mf8a6610-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 50570
+        }
+      ]
+    },
+    {
+      "id": "yildiz-anason-mf8a6611",
+      "subject": "star",
+      "group": "spices",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6611.JPG",
+      "sha256": "a8905def0ce43ac41208d590dfa1dc96859541b23483dd91048c1dbbf36e04af",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/yildiz-anason-mf8a6611-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 7108
+        },
+        {
+          "src": "/photos/taha-2026/yildiz-anason-mf8a6611-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 21004
+        },
+        {
+          "src": "/photos/taha-2026/yildiz-anason-mf8a6611-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 51428
+        }
+      ]
+    },
+    {
+      "id": "kavanozda-kirmizi-toz-mf8a6613",
+      "subject": "jar",
+      "group": "powders",
+      "identification": "visual-description-only",
+      "productVerified": false,
+      "original": "MF8A6613.JPG",
+      "sha256": "e83f66d7696905337b8409b80db463971b4b4a70cc3d73c697a1213f9c565462",
+      "originalWidth": 6720,
+      "originalHeight": 4480,
+      "variants": [
+        {
+          "src": "/photos/taha-2026/kavanozda-kirmizi-toz-mf8a6613-400.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 5806
+        },
+        {
+          "src": "/photos/taha-2026/kavanozda-kirmizi-toz-mf8a6613-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 19118
+        },
+        {
+          "src": "/photos/taha-2026/kavanozda-kirmizi-toz-mf8a6613-1440.webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 52162
+        }
+      ]
+    }
+  ]
+}
