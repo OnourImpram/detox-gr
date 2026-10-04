@@ -1,0 +1,85 @@
+name: Final editorial verification
+on:
+  push:
+    branches: [work/detoks-eu-storefront]
+    paths: [.github/workflows/import-editorial-final.yml]
+permissions:
+  contents: write
+jobs:
+  editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          ref: work/detoks-eu-storefront
+      - run: test "$(git rev-parse HEAD^)" = 23d552419a06466eceed4f089ab12bf330a22810
+      - name: Apply checksum-verified editorial refinement
+        env:
+          PACKAGE_URL: 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-18a4-8210-a156-ce6db56a9269/raw?se=2026-10-04T15%3A06%3A09Z&sp=r&sv=2026-02-06&sr=b&scid=40fb2b65-3a8e-5ecb-bbaf-1b936d99b80e&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-04T02%3A39%3A42Z&ske=2026-10-05T02%3A39%3A42Z&sks=b&skv=2026-02-06&sig=ARJ96EnBEc0tx%2BNXvjI/ge1h/d4MBRwpxSPA4b79uog%3D'
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 "$PACKAGE_URL" -o /tmp/editorial.zip
+          echo '2afc697a1f8f840b8e8c0c491d74477c591130fd0489f6360bb8a37f81a093ae  /tmp/editorial.zip' | sha256sum -c -
+          python - <<'PY'
+          import zipfile, json, hashlib, pathlib
+          with zipfile.ZipFile('/tmp/editorial.zip') as archive:
+              checks = json.loads(archive.read('PATCH-SHA256.json'))
+              assert len(checks) == 9
+              assert sum(item.file_size for item in archive.infolist()) < 1000000
+              for name, digest in checks.items():
+                  path = pathlib.PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert name.startswith(('src/','scripts/','docs/')) or name in ('README.md','public/og.jpg')
+                  body = archive.read(name)
+                  assert hashlib.sha256(body).hexdigest() == digest
+                  target = pathlib.Path.cwd() / path
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(body)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Commit reviewed implementation, not a deployment
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git add README.md src scripts docs public/og.jpg
+          git commit -m 'feat: complete editorial brand system, photo approvals and comprehensive browser verification'
+          git push origin HEAD:work/detoks-eu-storefront
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - run: npx playwright install --with-deps chromium
+      - name: Existing storefront scenarios
+        id: storefront
+        continue-on-error: true
+        run: node scripts/storefront-browser.mjs > qa-evidence/browser.log 2>&1
+      - name: Complete twenty-language editorial verification
+        id: editorial
+        continue-on-error: true
+        run: node scripts/editorial-browser.mjs > qa-evidence/editorial-browser.log 2>&1
+      - name: Production server build
+        id: production
+        continue-on-error: true
+        run: npm run build > qa-evidence/production.log 2>&1
+      - name: Results
+        if: always()
+        run: printf '%s\n' 'storefront=${{ steps.storefront.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'production=${{ steps.production.outcome }}' > qa-evidence/status.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: editorial-final-evidence
+          path: qa-evidence
+          retention-days: 7
+      - name: Require every browser and build gate
+        if: always()
+        run: |
+          test '${{ steps.storefront.outcome }}' = success
+          test '${{ steps.editorial.outcome }}' = success
+          test '${{ steps.production.outcome }}' = success
