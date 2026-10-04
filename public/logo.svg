@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Detoks.gr">
-  <rect width="640" height="160" fill="#10221c"/>
-  <text x="40" y="104" font-family="Syne, Figtree, Arial, sans-serif" font-size="78" font-weight="700" fill="#f4efe6">Detoks</text>
-  <text x="332" y="104" font-family="Syne, Figtree, Arial, sans-serif" font-size="78" font-weight="600" fill="#9dba9a">.gr</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Detoks.gr" role="img" viewBox="0 0 640 160"><rect width="640" height="160" fill="#10221c"/><text x="40" y="104" fill="#f4efe6" font-family="Syne, Figtree, Arial, sans-serif" font-size="78" font-weight="700">Detoks</text><text x="332" y="104" fill="#9dba9a" font-family="Syne, Figtree, Arial, sans-serif" font-size="78" font-weight="600">.gr</text></svg>
