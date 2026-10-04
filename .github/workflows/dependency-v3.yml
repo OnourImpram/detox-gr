@@ -19,20 +19,29 @@ jobs:
           cache: npm
       - run: cp package-lock.json /tmp/before-lock.json
       - run: npm update brace-expansion --package-lock-only --ignore-scripts --no-fund --no-audit
-      - name: Reject unrelated dependency changes
+      - name: Retain only the two reviewed package changes
         run: |
           node --input-type=module <<'JS'
-          import {readFileSync} from 'node:fs';
+          import {readFileSync,writeFileSync} from 'node:fs';
           import assert from 'node:assert/strict';
-          const before=JSON.parse(readFileSync('/tmp/before-lock.json'));
-          const after=JSON.parse(readFileSync('package-lock.json'));
-          assert.deepEqual(Object.keys(after.packages),Object.keys(before.packages));
-          for(const [path,entry] of Object.entries(after.packages)){
-            if(JSON.stringify(entry)===JSON.stringify(before.packages[path])) continue;
-            assert.ok(path.endsWith('/brace-expansion'), `Unexpected package change ${path}`);
-            assert.ok(['1.1.21','5.0.12'].includes(entry.version), `Unexpected version ${entry.version}`);
-            console.log(`${path}: ${before.packages[path].version} -> ${entry.version}`);
+          const raw=readFileSync('/tmp/before-lock.json','utf8');
+          const before=JSON.parse(raw);
+          const proposed=JSON.parse(readFileSync('package-lock.json'));
+          let updated=0;
+          for(const [path,entry] of Object.entries(before.packages)){
+            if(!path.endsWith('/brace-expansion')) continue;
+            const replacement=proposed.packages[path];
+            const target=entry.version.startsWith('1.')?'1.1.21':'5.0.12';
+            assert.equal(replacement.version,target);
+            assert.deepEqual(replacement.dependencies,entry.dependencies);
+            before.packages[path]=replacement;
+            updated++;
+            console.log(`${path}: ${entry.version} -> ${target}`);
           }
+          assert.equal(updated,2);
+          let output=JSON.stringify(before,null,2)+'\n';
+          if(raw.includes('\r\n')) output=output.replaceAll('\n','\r\n');
+          writeFileSync('package-lock.json',output);
           JS
       - run: npm ci
       - run: npm audit --audit-level=high
