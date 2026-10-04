@@ -26,6 +26,7 @@ async function inspect(page, name) {
     h1: document.querySelector('h1')?.textContent?.trim() ?? '',
     bodyLength: document.body.innerText.length,
     brokenImages: Array.from(document.images).filter(image => image.complete && image.naturalWidth === 0).map(image => image.src),
+    overflowElements: Array.from(document.body.querySelectorAll('*')).map(element => ({ tag: element.tagName, class: element.className?.toString(), text: element.textContent?.slice(0,70), right: element.getBoundingClientRect().right, width: element.getBoundingClientRect().width })).filter(element => element.right > innerWidth + 1).slice(0,16),
     robots: [...document.querySelectorAll('meta[name="robots"]')].map(meta => meta.content),
   }));
   observations.push({ name, ...result });
@@ -88,7 +89,6 @@ try {
   assert.ok(!stored.includes('PRIVATE_QA_NOTE') && !stored.includes('orders') && !stored.includes('email'));
   await page.setViewportSize({ width: 390, height: 844 });
   await inspect(page, 'list-mobile'); await shot(page, 'list-tr-mobile');
-  // Upgrade a legacy record. The actual Zustand integration must purge PII, not just a helper unit test.
   await page.evaluate(() => { const existing = JSON.parse(localStorage.getItem('detoks-gr-shop-v4')); existing.state.orders = [{ email: 'private@example.test', address: 'PRIVATE_QA_ADDRESS' }]; existing.state.note = 'PRIVATE_QA_NOTE'; localStorage.setItem('detoks-gr-shop-v4', JSON.stringify(existing)); });
   await page.reload({ waitUntil: 'networkidle' });
   const purged = await page.evaluate(() => localStorage.getItem('detoks-gr-shop-v4'));

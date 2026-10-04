@@ -1,0 +1,9 @@
+/* Fit the real wordmark and controls at 320px rather than hiding overflow. */
+@media (max-width: 479px) {
+  .dt-header-row { padding-inline: 16px; gap: 8px; }
+  .dt-wordmark > span:first-child { font-size: 1.05rem; }
+  .dt-header-actions { gap: 4px; }
+  .dt-language-select { width: 66px; max-width: 66px; }
+  .dt-menu-button { min-width: 36px; }
+  .dt-footer__grid > div:first-child > span { font-size: clamp(1.65rem, 8vw, 2.4rem); }
+}

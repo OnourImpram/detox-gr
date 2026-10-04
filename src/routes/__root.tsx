@@ -9,6 +9,7 @@ import { localeFromSearch } from "@/lib/seo";
 import { localeUrl } from "@/lib/locale-navigation";
 import appCss from "../styles.css?url";
 import storefrontCss from "../styles/storefront.css?url";
+import narrowCss from "../styles/narrow.css?url";
 
 const STATIC_PREVIEW = import.meta.env.VITE_STATIC_PREVIEW === "1";
 
@@ -26,7 +27,6 @@ export const Route = createRootRoute({
       }
     }
     const locale = localeFromSearch(deps);
-    // A static preview cannot call a server function. Keep it a genuinely offline catalogue.
     const [pack, payments] = await Promise.all([loadPack(locale), STATIC_PREVIEW ? Promise.resolve(false) : getPaymentsEnabled()]);
     registerPack(locale, pack);
     return { locale, pack, payments };
@@ -44,6 +44,7 @@ export const Route = createRootRoute({
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: storefrontCss },
+      { rel: "stylesheet", href: narrowCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),
