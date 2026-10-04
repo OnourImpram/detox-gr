@@ -145,7 +145,11 @@ function authPopupPlugin(): Plugin {
 // `0.0.0.0:8080` is the live-preview contract — don't change host/port.
 // The dev server starts once `src/router.tsx` and `src/routes/` exist — see
 // AGENTS.md § "First scaffold".
+// STATIC_PAGES=1: GitHub Pages için statik SPA derlemesi (sunucu işlevleri/ödeme YOK).
+const STATIC_PAGES = process.env.STATIC_PAGES === "1";
+
 export default defineConfig(({ command, isPreview }) => ({
+  base: STATIC_PAGES ? "/detox-gr/" : "/",
   server: {
     host: "0.0.0.0",
     port: 8080,
@@ -166,8 +170,8 @@ export default defineConfig(({ command, isPreview }) => ({
     // PWA head + ?install=1 tutorial page; runs before Start/Nitro.
     grokPwaPlugin(),
     tailwindcss(),
-    tanstackStart(),
-    ...(command === "build" || isPreview
+    tanstackStart(STATIC_PAGES ? { spa: { enabled: true } } : undefined),
+    ...(!STATIC_PAGES && (command === "build" || isPreview)
       ? [
           nitro({
             preset: "vercel",

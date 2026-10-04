@@ -20,7 +20,8 @@
     "i18n": "node --experimental-strip-types scripts/i18n-paket-uret.mts",
     "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/shopify-cart.test.ts src/lib/shop-status.test.ts src/lib/dil-pazarlik.test.ts",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:pages": "STATIC_PAGES=1 vite build && node scripts/static-pages-post.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",
