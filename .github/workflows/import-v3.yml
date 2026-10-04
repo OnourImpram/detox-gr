@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
       - name: Reject concurrent source changes
         run: git diff --exit-code 8eb9e2f8489eb5031508f58f74a0394250b5f4ca HEAD -- . ':(exclude).github/workflows/import-v3.yml'
-      - name: Import only the reviewed source and media changes
+      - name: Import only the reviewed application and media changes
         env:
           V3_PACKAGE: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-4fd8-8246-8ad4-725222201f62/raw?se=2026-10-04T19%3A12%3A37Z&sp=r&sv=2026-02-06&sr=b&scid=5512cf3d-8b46-54e7-84c0-d978304330ef&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-04T16%3A30%3A01Z&ske=2026-10-05T16%3A30%3A01Z&sks=b&skv=2026-02-06&sig=Jo3SRbtKm6X0SckSsbT/xYIHP5TquXzbgAOnq8Sp8BM%3D'
         run: |
@@ -41,18 +41,20 @@ jobs:
               for name, sha in manifest['files'].items():
                   data = archive.read(name)
                   assert hashlib.sha256(data).hexdigest() == sha, name
+                  if name.startswith('.github/'):
+                      continue
                   target = root / name
                   target.parent.mkdir(parents=True, exist_ok=True)
                   target.write_bytes(data)
               for name in manifest['delete']:
                   (root / name).unlink()
           PY
-      - name: Commit the integration on the working branch only
+      - name: Commit application sources on the working branch only
         run: |
           git config user.name 'Detoks project automation'
           git config user.email 'detoks-automation@users.noreply.github.com'
-          rm .github/workflows/import-v3.yml
           git add -A
+          git diff --cached --quiet -- .github
           git commit -m 'feat: Detoks v3 with integrated product media, retired synthetic library and responsive storefront'
           git push origin HEAD:work/detoks-eu-storefront
           git rev-parse HEAD
