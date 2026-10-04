@@ -1,0 +1,61 @@
+name: Storefront quality
+on:
+  push:
+    branches: [work/detoks-eu-storefront]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: storefront-quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Prepare evidence
+        run: mkdir -p qa-evidence
+      - name: Unit tests
+        id: tests
+        continue-on-error: true
+        run: npm test > qa-evidence/tests.log 2>&1
+      - name: Type check
+        id: types
+        continue-on-error: true
+        run: npm run typecheck > qa-evidence/types.log 2>&1
+      - name: Lint
+        id: lint
+        continue-on-error: true
+        run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Pages build
+        id: pages
+        continue-on-error: true
+        run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - name: Build evidence
+        if: always()
+        run: |
+          printf '%s\n' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'pages=${{ steps.pages.outcome }}' | tee qa-evidence/status.txt
+          for f in qa-evidence/*.log; do echo "===== $f ====="; tail -60 "$f"; done
+      - name: Offline verification workspace
+        if: always()
+        run: tar --exclude=.git --exclude=qa-evidence --exclude=.vercel --exclude=.output --exclude=dist -czf /tmp/detoks-verification.tar.gz . && mv /tmp/detoks-verification.tar.gz qa-evidence/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: storefront-verification
+          path: qa-evidence
+          retention-days: 1
+      - name: Require green gates
+        if: always()
+        run: |
+          test '${{ steps.tests.outcome }}' = success
+          test '${{ steps.types.outcome }}' = success
+          test '${{ steps.lint.outcome }}' = success
+          test '${{ steps.pages.outcome }}' = success
