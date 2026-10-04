@@ -1,0 +1,924 @@
+@import "tailwindcss";
+
+/* Özbarındırılan yazıtipleri — Google Fonts CSS2 alt-kümelerinden indirildi (OFL), scripts/fontlari-ozbarindir.py.
+   Harici CDN isteği yok; unicode-range korunur, tarayıcı yalnız gereken alt-kümeyi çeker. */
+@font-face {
+  font-family: "Figtree";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/figtree-italic-300-900-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/figtree-italic-300-900-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/figtree-normal-300-900-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/figtree-normal-300-900-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-400-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-400-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-400-vietnamese.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-500-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-500-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-500-vietnamese.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-500-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-normal-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/syne-normal-400-800-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/syne-normal-400-800-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/syne-normal-400-800-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Yunanca yedek: Figtree ve IBM Plex Mono Yunanca glif taşımaz → Noto Sans / Noto Sans Mono, yalnız greek alt-kümesi; yığında Figtree'den sonra gelir (red team RT-A-09). */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-italic-300-900-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-italic-300-900-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-normal-300-900-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-normal-300-900-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/noto-sans-mono-normal-400-700-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+@font-face {
+  font-family: "Noto Sans Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/noto-sans-mono-normal-400-700-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@theme {
+  --color-bg: var(--dt-bg);
+  --color-ink: var(--dt-ink);
+  --color-raised: var(--dt-raised);
+  --color-graphite: var(--dt-graphite);
+  --color-cream: var(--dt-cream);
+  --color-fg: var(--dt-fg);
+  --color-muted: var(--dt-muted);
+  --color-faint: var(--dt-faint);
+  --color-primary: var(--dt-primary);
+  --color-primary-hover: var(--dt-primary-hover);
+  --color-on-primary: var(--dt-on-primary);
+  --color-patina: var(--dt-patina);
+  --color-brass: var(--dt-brass);
+  --color-border: var(--dt-border);
+  --color-rule: var(--dt-rule);
+  --font-sans: var(--dt-sans);
+  --font-display: var(--dt-display);
+  --font-mono: var(--dt-mono);
+  --shadow-card: 0 24px 70px color-mix(in oklab, var(--dt-ink) 42%, transparent);
+  --radius-md: var(--dt-radius);
+}
+
+:root,
+[data-theme="pine"] {
+  --dt-bg: #1f130b;
+  --dt-ink: #1a1009;
+  --dt-raised: #2a1b10;
+  --dt-graphite: #322015;
+  --dt-cream: #f2e8d8;
+  --dt-fg: #f2e8d8;
+  --dt-muted: #b7a68c;
+  /* #8F7F68, raised zemin üstünde 4.27:1 kalıyordu; ≥4.5:1 için yükseltildi */
+  --dt-faint: #9a8870;
+  --dt-primary: #d9a13b;
+  --dt-primary-hover: #e3b45a;
+  --dt-on-primary: #1f130b;
+  --dt-patina: #c98f4e;
+  --dt-brass: #d9a13b;
+  --dt-border: rgba(242, 232, 216, 0.12);
+  --dt-rule: rgba(217, 161, 59, 0.22);
+  --dt-sans: "Figtree", "Noto Sans", "Avenir Next", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --dt-display: "Syne", "Figtree", "Avenir Next", Arial, sans-serif;
+  --dt-mono: "IBM Plex Mono", "Noto Sans Mono", "SFMono-Regular", Consolas, monospace;
+  --dt-radius: 2px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.028em;
+  --dt-motion: 220ms;
+}
+
+[data-theme="apple"] {
+  --dt-bg: #f4f4f2;
+  --dt-ink: #1c1c1e;
+  --dt-raised: #ffffff;
+  --dt-graphite: #e8e8e4;
+  --dt-cream: #f5f5f7;
+  --dt-fg: #1c1c1e;
+  --dt-muted: #6e6e73;
+  --dt-faint: #8e8e93;
+  --dt-primary: #0a84ff;
+  --dt-primary-hover: #0070e0;
+  --dt-on-primary: #f5f7fa;
+  --dt-patina: #3a7bd5;
+  --dt-brass: #0a84ff;
+  --dt-border: rgb(28 28 30 / 0.12);
+  --dt-rule: rgb(10 132 255 / 0.35);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Figtree", system-ui, sans-serif;
+  --dt-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --dt-radius: 14px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.022em;
+  --dt-motion: 180ms;
+}
+
+[data-theme="editorial"] {
+  --dt-bg: #f7f4ee;
+  --dt-ink: #161513;
+  --dt-raised: #fffdf8;
+  --dt-graphite: #ebe6dc;
+  --dt-cream: #f7f4ee;
+  --dt-fg: #161513;
+  --dt-muted: #6b6760;
+  --dt-faint: #8a847a;
+  --dt-primary: #161513;
+  --dt-primary-hover: #2a2824;
+  --dt-on-primary: #f7f4ee;
+  --dt-patina: #6b6760;
+  --dt-brass: #161513;
+  --dt-border: rgb(22 21 19 / 0.14);
+  --dt-rule: rgb(22 21 19 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Syne", "Figtree", sans-serif;
+  --dt-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --dt-radius: 0px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.02em;
+  --dt-motion: 200ms;
+}
+
+[data-theme="brutalism"] {
+  --dt-bg: #111111;
+  --dt-ink: #000000;
+  --dt-raised: #1a1a1a;
+  --dt-graphite: #222;
+  --dt-cream: #f4f400;
+  --dt-fg: #f4f400;
+  --dt-muted: #b8b800;
+  --dt-faint: #8a8a00;
+  --dt-primary: #f4f400;
+  --dt-primary-hover: #ffff44;
+  --dt-on-primary: #111111;
+  --dt-patina: #f4f400;
+  --dt-brass: #f4f400;
+  --dt-border: #f4f400;
+  --dt-rule: #f4f400;
+  --dt-sans: "IBM Plex Mono", monospace;
+  --dt-display: "IBM Plex Mono", monospace;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 0px;
+  --dt-border-w: 3px;
+  --dt-tracking: 0;
+  --dt-motion: 120ms;
+}
+
+[data-theme="glass"] {
+  --dt-bg: #0c1220;
+  --dt-ink: #070b14;
+  --dt-raised: #121a2c;
+  --dt-graphite: #1a2438;
+  --dt-cream: #e8f1ff;
+  --dt-fg: #e8f1ff;
+  --dt-muted: #8aa0c2;
+  --dt-faint: #5d7194;
+  --dt-primary: #3ee0c9;
+  --dt-primary-hover: #62f0dc;
+  --dt-on-primary: #06201c;
+  --dt-patina: #3ee0c9;
+  --dt-brass: #3ee0c9;
+  --dt-border: rgb(232 241 255 / 0.14);
+  --dt-rule: rgb(62 224 201 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Syne", "Figtree", sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 18px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.02em;
+  --dt-motion: 220ms;
+}
+
+[data-theme="cafe"] {
+  --dt-bg: #e7eadc;
+  --dt-ink: #1c261e;
+  --dt-raised: #f3f6ea;
+  --dt-graphite: #d5d9c8;
+  --dt-cream: #f3f6ea;
+  --dt-fg: #243026;
+  --dt-muted: #5c6b5e;
+  --dt-faint: #7a887c;
+  --dt-primary: #3f6b49;
+  --dt-primary-hover: #33573c;
+  --dt-on-primary: #f3f6ea;
+  --dt-patina: #3f6b49;
+  --dt-brass: #3f6b49;
+  --dt-border: rgb(36 48 38 / 0.14);
+  --dt-rule: rgb(63 107 73 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Syne", "Figtree", sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 10px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.02em;
+  --dt-motion: 200ms;
+}
+
+[data-theme="paper"] {
+  --dt-bg: #eceae6;
+  --dt-ink: #22211f;
+  --dt-raised: #f5f4f1;
+  --dt-graphite: #dddcd7;
+  --dt-cream: #f5f4f1;
+  --dt-fg: #22211f;
+  --dt-muted: #6f6d69;
+  --dt-faint: #8e8c87;
+  --dt-primary: #3a3936;
+  --dt-primary-hover: #22211f;
+  --dt-on-primary: #eceae6;
+  --dt-patina: #6f6d69;
+  --dt-brass: #3a3936;
+  --dt-border: rgb(34 33 31 / 0.14);
+  --dt-rule: rgb(58 57 54 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Figtree", system-ui, sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 4px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.018em;
+  --dt-motion: 180ms;
+}
+
+[data-theme="neon"] {
+  --dt-bg: #0a0d0a;
+  --dt-ink: #050705;
+  --dt-raised: #12160e;
+  --dt-graphite: #1a2014;
+  --dt-cream: #d6ff8a;
+  --dt-fg: #d6ff8a;
+  --dt-muted: #7a9460;
+  --dt-faint: #5a6e48;
+  --dt-primary: #c8ff3d;
+  --dt-primary-hover: #d6ff8a;
+  --dt-on-primary: #12160e;
+  --dt-patina: #c8ff3d;
+  --dt-brass: #c8ff3d;
+  --dt-border: rgb(214 255 138 / 0.18);
+  --dt-rule: rgb(200 255 61 / 0.45);
+  --dt-sans: "IBM Plex Mono", monospace;
+  --dt-display: "Syne", sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 6px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.02em;
+  --dt-motion: 160ms;
+}
+
+[data-theme="minimal"] {
+  --dt-bg: #f6f6f6;
+  --dt-ink: #111111;
+  --dt-raised: #ffffff;
+  --dt-graphite: #ececec;
+  --dt-cream: #f6f6f6;
+  --dt-fg: #111111;
+  --dt-muted: #6a6a6a;
+  --dt-faint: #8a8a8a;
+  --dt-primary: #111111;
+  --dt-primary-hover: #000;
+  --dt-on-primary: #f6f6f6;
+  --dt-patina: #6a6a6a;
+  --dt-brass: #111;
+  --dt-border: rgb(17 17 17 / 0.12);
+  --dt-rule: rgb(17 17 17 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Syne", sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 0px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.03em;
+  --dt-motion: 180ms;
+}
+
+[data-theme="terracotta"] {
+  --dt-bg: #2a2e33;
+  --dt-ink: #1c1f24;
+  --dt-raised: #343940;
+  --dt-graphite: #3e444c;
+  --dt-cream: #f0ebe4;
+  --dt-fg: #f0ebe4;
+  --dt-muted: #b3aea6;
+  --dt-faint: #8e8982;
+  --dt-primary: #c4653a;
+  --dt-primary-hover: #d4784c;
+  --dt-on-primary: #fff4ec;
+  --dt-patina: #c4653a;
+  --dt-brass: #c4653a;
+  --dt-border: rgb(240 235 228 / 0.12);
+  --dt-rule: rgb(196 101 58 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Syne", sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 8px;
+  --dt-border-w: 1px;
+  --dt-tracking: -0.02em;
+  --dt-motion: 200ms;
+}
+
+[data-theme="impeccable"] {
+  --dt-bg: #f3ead8;
+  --dt-ink: #1f140c;
+  --dt-raised: #faf3e6;
+  --dt-graphite: #e4d8c0;
+  --dt-cream: #f3ead8;
+  --dt-fg: #1f140c;
+  --dt-muted: #7a5e48;
+  --dt-faint: #9a7e68;
+  --dt-primary: #c55221;
+  --dt-primary-hover: #a84418;
+  --dt-on-primary: #fff4ea;
+  --dt-patina: #c55221;
+  --dt-brass: #c55221;
+  --dt-border: rgb(31 20 12 / 0.14);
+  --dt-rule: rgb(197 82 33 / 0.4);
+  --dt-sans: "Figtree", "Noto Sans", system-ui, sans-serif;
+  --dt-display: "Syne", sans-serif;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 2px;
+  --dt-border-w: 2px;
+  --dt-tracking: -0.02em;
+  --dt-motion: 200ms;
+}
+
+[data-theme="matrix"] {
+  --dt-bg: #050805;
+  --dt-ink: #020302;
+  --dt-raised: #0b120b;
+  --dt-graphite: #122012;
+  --dt-cream: #7cff7c;
+  --dt-fg: #7cff7c;
+  --dt-muted: #3d8a3d;
+  --dt-faint: #2a5e2a;
+  --dt-primary: #33ff33;
+  --dt-primary-hover: #7cff7c;
+  --dt-on-primary: #050805;
+  --dt-patina: #33ff33;
+  --dt-brass: #33ff33;
+  --dt-border: rgb(124 255 124 / 0.18);
+  --dt-rule: rgb(51 255 51 / 0.45);
+  --dt-sans: "IBM Plex Mono", monospace;
+  --dt-display: "IBM Plex Mono", monospace;
+  --dt-mono: "IBM Plex Mono", monospace;
+  --dt-radius: 0px;
+  --dt-border-w: 1px;
+  --dt-tracking: 0;
+  --dt-motion: 120ms;
+}
+
+@layer base {
+  html {
+    background: var(--dt-bg);
+    color: var(--dt-fg);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--dt-bg);
+    color: var(--dt-fg);
+    font-family: var(--dt-sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  h1 {
+    font-family: var(--dt-display);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    padding-bottom: 0.12em;
+    text-wrap: balance;
+  }
+
+  html[lang="el"] h1 {
+    font-size: clamp(2.4rem, 5.4vw, 4.8rem);
+  }
+
+  h1 em,
+  .em-gold {
+    color: var(--dt-primary);
+    font-style: normal;
+    font-weight: 800;
+    display: inline-block;
+    transform: skewX(-7deg);
+    /* inline-block'un shrink-to-fit genişliği break-word'ü görmez: uzun sözcük (NL "nieuwsgierigheid") kutuyu
+       aşıp kırpılıyordu (iris 390px, 2026-09-22). anywhere = min-content kırılma noktalarını sayar; hero
+       sözcüklerinde yumuşak tire (gorevler/hero-yumusak-tire.py) doğru heceyi verir, bu satır son güvence. */
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-family: var(--dt-display);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-family: var(--dt-sans);
+    font-weight: 500;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  /* Kırılamayan uzun sözcük (DE "Versandhinweise", NL "nieuwsgierigheid", EL "περιέργεια") 320px'te kutuyu aşıp
+     sayfayı yatay kaydırıyordu (tasma-320 ölçümü 2026-09-22, docW 535). break-word: sözcük kutuda kalır;
+     bileşik-sözcük dillerinde tireyle kırılır (tarayıcı sözlüğü yoksa düz kırılır). TR/EN/FR hero'ya tire girmez. */
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+  }
+
+  html:is([lang="de"], [lang="nl"], [lang="fi"], [lang="sv"], [lang="da"], [lang="nb"], [lang="hu"], [lang="el"]) :is(h1, h2) {
+    hyphens: auto;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--dt-primary);
+    outline-offset: 4px;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--dt-primary) 40%, transparent);
+    color: var(--dt-fg);
+  }
+}
+
+@layer components {
+  .glass-bar {
+    isolation: isolate;
+    background: color-mix(in oklab, var(--dt-ink) 62%, transparent);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: var(--dt-border-w) solid var(--dt-border);
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .glass-bar {
+      background: var(--dt-bg);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+
+  .hairline {
+    border: var(--dt-border-w) solid var(--dt-border);
+  }
+
+  .grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    height: 2px;
+    width: calc(var(--scroll, 0) * 100%);
+    background: var(--dt-primary);
+    pointer-events: none;
+  }
+
+  /* Yatay ritim: 6vw boşluk, ~1500px içerikte doyuma ulaşır (320–1920 taşma yok) */
+  .shell-x {
+    padding-inline: max(6vw, (100vw - 1500px) / 2);
+  }
+
+  /* shell-x içinden tam genişliğe kaçış (sticky çubuklar için) */
+  .bar-breakout {
+    margin-inline: calc(-1 * max(6vw, (100vw - 1500px) / 2));
+    padding-inline: max(6vw, (100vw - 1500px) / 2);
+  }
+
+  /* B3 bölüm dikey ritmi: clamp(72px, 10vw, 140px) */
+  .section-y {
+    padding-block: clamp(4.5rem, 10vw, 8.75rem);
+  }
+
+  /* İmza ayraç: sol başta 56px bakır segment, kalanı soluk hairline */
+  .rule-line {
+    position: relative;
+    height: 1px;
+    border: 0;
+    background: var(--dt-border);
+  }
+
+  .rule-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 1px;
+    background: var(--dt-patina);
+  }
+
+  /* Mono mikro-etiket (raf etiketi dili) */
+  .micro {
+    font-family: var(--dt-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* B2/D3 uzun metin ölçüsü */
+  .prose-long {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* Görsel yüklenirken yumuşak giriş — boş kutu hissi yerine */
+  .img-in {
+    animation: dt-img-in 480ms ease-out both;
+  }
+
+  @keyframes dt-img-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Hero kaydırma işareti — ince bakır damla, yalnız görsel krom */
+  .scroll-cue {
+    position: absolute;
+    right: max(6vw, (100vw - 1500px) / 2);
+    bottom: 1.5rem;
+    width: 1px;
+    height: 64px;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--dt-cream) 28%, transparent);
+  }
+
+  .scroll-cue::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -45%;
+    width: 1px;
+    height: 45%;
+    background: var(--dt-primary);
+    animation: dt-cue 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  @keyframes dt-cue {
+    to {
+      top: 110%;
+    }
+  }
+
+  /* market-strip kayan şeridi — daha önce keyframes tanımsızdı */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: dt-marquee 42s linear infinite;
+  }
+
+  .marquee-track > span {
+    flex: none;
+    padding-right: 3rem;
+    white-space: nowrap;
+  }
+
+  @keyframes dt-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Fotoğraf üstü linklerde odak halkası görselin içine çekilir */
+  .focus-inset:focus-visible {
+    outline-offset: -4px;
+  }
+
+  /* Mobil alt barlar için güvenli alan */
+  .pb-safe {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  /* Bento: 1px hairline mozaik (gap çakışması giderildi) */
+  .bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--dt-border);
+    border: var(--dt-border-w) solid var(--dt-border);
+  }
+
+  @media (min-width: 1024px) {
+    .bento {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+
+  .hero-still {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero-still img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-still-ken img {
+    animation: dt-ken 6s ease-out forwards;
+    transform-origin: 30% 30%;
+  }
+
+  .hero-still-portrait img {
+    object-position: 50% 18%;
+    transform-origin: 50% 20%;
+  }
+
+  @media (max-width: 640px) {
+    .hero-still-ken img {
+      object-position: 72% 30%;
+    }
+    .hero-still-portrait img {
+      object-position: 48% 12%;
+    }
+  }
+
+  @keyframes dt-ken {
+    from { transform: scale(1.06); }
+    to { transform: scale(1); }
+  }
+
+  .hero-enter {
+    animation: dt-rise 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .hero-enter-2 { animation-delay: 70ms; }
+  .hero-enter-3 { animation-delay: 140ms; }
+  .hero-enter-4 { animation-delay: 210ms; }
+
+  .on-photo h1,
+  .on-photo h2 {
+    text-shadow: 0 18px 48px rgb(31 19 11 / 0.55);
+  }
+
+  .on-photo h1 em {
+    text-shadow: 0 2px 24px rgb(31 19 11 / 0.7);
+  }
+
+  /* Kicker: B2 ölçüsü + bakır kare işaret (raf etiketi imzası) */
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--dt-patina);
+  }
+
+  .kicker::before {
+    content: "";
+    flex: none;
+    width: 0.5em;
+    height: 0.5em;
+    background: var(--dt-patina);
+  }
+
+  .photo-credit {
+    padding-block: 0.7rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--dt-faint);
+  }
+
+  @keyframes dt-rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-still-ken img,
+    .hero-enter,
+    .hero-enter-2,
+    .hero-enter-3,
+    .hero-enter-4,
+    .img-in,
+    .marquee-track {
+      animation: none !important;
+    }
+
+    .scroll-cue::after {
+      animation: none !important;
+    }
+  }
+}
+
+/* Kimi tamamlama turu EK (2026-09-21) */
+@layer components {
+  /* Yumuşak satır ayracı: yalnız border rengi; yön Tailwind ile (className="hairline-soft border-t") */
+  .hairline-soft {
+    border-color: color-mix(in oklab, var(--dt-border) 60%, transparent);
+  }
+}

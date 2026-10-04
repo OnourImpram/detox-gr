@@ -1,0 +1,34 @@
+{
+  "task": "T01",
+  "date": "2026-09-19",
+  "workspace": "Grok Build preview sandbox",
+  "package": "codex/",
+  "catalog_records": 271,
+  "unique_source_ids": true,
+  "publication_status": "DRAFT",
+  "missing_prices": ["DT008 Melomakarno", "DT172 Narcissa aserola çay"],
+  "countries": 28,
+  "shopify": {
+    "present": false,
+    "hydrogen": false,
+    "checkout": false,
+    "note": "This sandbox is a preview catalogue. No Shopify account, AFM, GEMI, carrier contract or payment is attached."
+  },
+  "applied_now": [
+    "catalog_normalized.json as product source",
+    "country_launch_matrix.json copied, display still EUR without invented FX",
+    "Fusion homepage copy for kicker and CTAs",
+    "editorial stories from source records",
+    "null prices remain null",
+    "kg prices not converted to pack prices",
+    "reference posters NOT copied into product media"
+  ],
+  "not_applied": [
+    "T02 workspaces Hydrogen Oxygen Render",
+    "Shopify Grow and Markets live checkout",
+    "carrier adapters",
+    "1084 media jobs",
+    "G01-G14 commercial gates"
+  ],
+  "external_unresolved": 18
+}

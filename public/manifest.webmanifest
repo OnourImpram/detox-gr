@@ -1,0 +1,12 @@
+{
+  "name": "Detoks Aktar — detox.gr",
+  "short_name": "Detoks",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1F130B",
+  "theme_color": "#1F130B",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/__grok/icon-180.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

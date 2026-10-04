@@ -1,0 +1,3 @@
+{
+  "_": "Taha'nın doğruladığı ürün bilgileri; anahtar = source_record_id (DT###). Tüm alanlar isteğe bağlı; olmayan alan sayfada gösterilmez, uydurulmaz. Doldurma: docs/Taha-Urun-Formu.csv → scripts/urun-bilgi-ice-aktar.py. Şema: grams (net g), unit (adet|paket|şişe|kavanoz|kg), ingredients, allergens, origin, producer, bestBefore, inci, responsiblePerson, stock (sayı), vatIncluded (true|false), image (/products/taha/DT###.jpg), images ([...]), nameTr, nameEn, note"
+}
