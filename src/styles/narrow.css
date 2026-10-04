@@ -7,3 +7,7 @@
   .dt-menu-button { min-width: 36px; }
   .dt-footer__grid > div:first-child > span { font-size: clamp(1.65rem, 8vw, 2.4rem); }
 }
+
+/* Column flex items otherwise keep the min-content width of Finnish compounds. */
+.ed-section-heading > div { max-width:100%; }
+.ed-section-heading h2 { overflow-wrap:anywhere; }

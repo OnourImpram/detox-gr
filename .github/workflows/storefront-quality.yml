@@ -46,7 +46,7 @@ jobs:
       - name: Responsive and interactive browser checks
         id: browser
         continue-on-error: true
-        run: node scripts/storefront-browser.mjs > qa-evidence/browser.log 2>&1
+        run: node scripts/storefront-browser.mjs > qa-evidence/browser.log 2>&1 && node scripts/editorial-browser.mjs > qa-evidence/editorial-browser.log 2>&1
       - name: Production server build
         id: production
         continue-on-error: true
