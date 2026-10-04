@@ -38,3 +38,11 @@ test('new interface has complete copy for all twenty supported locales', async (
     assert.doesNotMatch(ux(code, 'shown', { shown: 24, total: 226 }), /\{\w+\}/);
   }
 });
+
+test('static document shell does not hydrate locale-dependent content with a different root match ID', () => {
+  const code = source('src/routes/__root.tsx');
+  assert.match(code, /ssr: STATIC_PREVIEW \? false : true/);
+  assert.match(code, /shellComponent: Document/);
+  assert.match(code, /useHydrated/);
+  assert.doesNotMatch(code, /suppressHydrationWarning/);
+});

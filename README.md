@@ -1,47 +1,65 @@
 # detoks.gr
 
-Gümülcine'deki (Komotini) aktar dükkânı için çok dilli (20 dil) e-ticaret vitrini. Taha Hüseyinoğlu'nun ürünleri, Taha'nın hazırladığı paketler.
+Taha Hüseyinoğlu'nun Gümülcine'deki aktarının 20 dilli dijital vitrini. Proje, gerçek bir küçük işletmenin kimliğini koruyarak AB pazarına açılabilecek bir işletim modeli geliştirmeyi amaçlar.
 
-**Durum:** geliştirme. Ödeme (Shopify) ve alan adı henüz bağlı değil; yayına çıkmadı.
+## Bu dalın durumu
 
-## Teknoloji
+`work/detoks-eu-storefront`, mevcut ana sürümden bağımsız geliştirme dalıdır. Çevrim içi ödeme varsayılan olarak kapalıdır. GitHub Pages statik katalog önizlemesidir, sunuculu satış sitesi değildir. Gerçek ödeme, alan adı veya şirket hesabı bu dal tarafından etkinleştirilmez.
 
-TanStack Start + Vite 8 + React 19 + Tailwind v4. Vitrin verisi `src/data/catalog-vitrin.json` (üretilir: `npm run katalog`). Arayüz metinleri 20 dilde: `src/lib/i18n-messages.ts` (TR/EN kaynak) → `src/lib/i18n-gen/<dil>.ts` (üretilir: `npm run i18n`) → `src/lib/i18n-ui.ts` (elle düzeltme katmanı, en üstte).
+Kaynak katalogdaki 271 kayıt korunur. 226 kayıt önizlemede görünür, 45 kayıt editöryal incelemede tutulur. Tüm kaynak yayın bayrakları kapalıdır. Doğrulanmış ürün kaydı ve fotoğraf eşlemesi henüz yoktur. Güncel sayılar `npm run audit:catalogue` ile alınır.
+
+## Deneyim
+
+Yeni ana sayfa ürünleri ve fiyatları uzun hikâye bölümlerinin önüne alır. Ceviz ve bakır kimliği, Syne ve Figtree yazı sistemi korunur. Açık renk ürün alanı, iki raf ayrımı, kategori keşfi ve Taha'nın hikâyesi birlikte çalışır.
+
+Ortak ürün gezgini, Türkçe ve Yunanca karakter normalizasyonu, çok sözcüklü arama, kategori ve raf filtreleri, ad ve fiyat sıralaması, 24 ürünlük kademeli gösterim sağlar. Filtreler ve dil URL'de korunur. Türkçe seçimi açık `lang=tr` olarak saklanır.
+
+Ödeme kapalıyken sepet bir soru listesi olarak çalışır. WhatsApp bağlantısı gerçek ürün kimliklerini ve miktarları içerir. Bağlantı mesajı kendiliğinden göndermez. Tarayıcıda yalnız doğrulanmış liste satırları ve ülke tercihi tutulur. Eski sürümün sipariş ve kişisel veri alanları yeniden açılışta temizlenir. Serbest metin notu kalıcı kaydedilmez.
+
+## Satış sözleşmesi
+
+Katalogda görünmek satış izni değildir. `src/data/commerce-config.json` mağaza düzeyindeki onayları tutar. Her ürün için kaynak yayın bayrağı, etiket ve satış onayı, vergi, hedef ülke, stok ve uygulanabilir ürün bilgisi ayrıca gerekir. API anahtarı tek başına kilidi açmaz. Shopify tek yeni ödeme yoludur. Stripe kodu eski ödeme makbuzu uyumluluğu için tutulur, otomatik ödeme yedeği değildir.
+
+Tüm 27 AB ülkesi ve Norveç hedef olarak korunur. Bu kapsam mevcut teslimat taahhüdü değildir. Norveç için gıda engeli devam eder. Gerçek ürün ve ülke onayları gelmeden hiçbir ülkeye çevrim içi satış açılmaz.
 
 ## Çalıştırma
 
+Node 22 kullanılır. Bağımlılık sürümleri mevcut kilit dosyasıyla korunmuştur.
+
 ```sh
 npm ci
-cp .env.example .env     # değerleri doldurmadan da yerelde çalışır
-npm run dev              # http://localhost:8080
-npm test && npm run typecheck && npm run lint
+npm run dev
+npm test
+npm run test:storefront
+npm run typecheck
+npm run lint
+npm run audit:catalogue
+npm run build:pages
+npm run build
 ```
 
-`.env` repoya girmez. Gerçek anahtarlar (Shopify, Stripe) yalnız ortam değişkeni olarak verilir.
+Sayfa önizlemesi `dist/client` altına, sunuculu üretim derlemesi Vercel çıktısına yazılır. İki derleme art arda çalıştırılırsa son çıktıyı test ettiğinizden emin olun. `scripts/storefront-browser.mjs`, Pages derlemesi üzerinde Playwright kontrolünü çalıştırır. CI tarayıcıyı kurar ve ekran görüntüleriyle günlükleri artefakt olarak saklar. Bu iş akışı dağıtım yapmaz.
 
-## Ödeme
+`npm test`, mevcut platformdan kalan dört dış belge testini yalnız ilgili özel belgeler bulunmadığında, isimleri açıkça belirtilerek kapsam dışında bırakır. Bunlar başarılı test gibi raporlanmaz. Diğer platform testleri korunur. Testler ayrı geçici çalışma dizininde yürütülerek mağazanın gerçek OG görseli ile platform test fikstürü karıştırılmaz.
 
-`SHOPIFY_STORE_DOMAIN` + `SHOPIFY_STOREFRONT_TOKEN` doluysa ödeme Shopify hosted checkout'a gider; boşsa geçici Stripe; ikisi de yoksa "ödeme bağlı değil" durumu gösterilir. Shopify açılınca: `.env` (3 değişken) → `python scripts/shopify-varyant-esle.py` (SKU → variant) → test siparişi → Stripe kodunu sök.
+## Veri hattı
 
-## Tasarım ilkeleri (bağlayıcı)
+`catalog-normalized.json`, kaynak kayıttır. `npm run katalog`, kullanılan alanları `catalog-vitrin.json` dosyasına üretir. Taha ürün formu ve fotoğraf eşlemeleri `urun-bilgi.json` için girdi sağlar. Yeni satış onayları otomatik verilmez. `docs/LAUNCH_CHECKLIST.md` adımları uygulanır.
 
-- Syne + Figtree (özbarındırılan; Yunanca için Noto Sans alt kümeleri), ceviz lake + bakır/altın, tam kare natürmort.
-- Sağlık iddiası, abartı, aciliyet baskısı ve uydurma veri yok. Boş alan gizlenir.
-- Görsel dürüstlük: yalnız Taha'nın fotoğrafı "gerçek ürün" sayılır; diğer kareler "Temsili görsel" etiketi taşır. Dosya adı içerik değildir; altyazı yazmadan önce görsele bak.
-- TR metinde Gümülcine/Rodop, EN'de Komotini/Rhodope.
+Yeni arayüz metinleri `src/lib/storefront-copy.ts` içinde 20 dilde bulunur. Mevcut büyük metinler ve sözlükler önceki i18n hattını kullanır. `localized` alanı gözden geçirilmiş ürün metinlerine öncelik verir. Anahtar kapsamı, bütün metinlerin yerel dil uzmanı onayı aldığı anlamına gelmez.
 
-## Bekleyenler
+## Görsel ve içerik doğruluğu
 
-| Konu | Kimde |
-|---|---|
-| Ürün formu + fotoğraflar + sorular | Taha (`docs/Taha-Mesaj.md`, `docs/Taha-Urun-Formu.csv`) |
-| Shopify mağazası + Payments, alan adı, iş e-postası, `SITE_ORIGINS` | Sahibi |
-| `/yasal` metinleri (6 satır) | Danışman |
+Yalnız Taha'nın doğruladığı ürün fotoğrafı gerçek ürün kaydı olarak işaretlenir. Temsili görseller kart ve ürün sayfasında etiketlenir. Dosya adından portre, dükkân veya ürün kimliği çıkarılmaz. Fizyoterapi geçmişi ürünlere tedavi etkisi kazandırmaz. Yapılmayan üretim, doğrulanmayan menşe, stok, müşteri yorumu veya ihracat başarısı yazılmaz.
 
 ## Belgeler
 
-`docs/Detoks_gr_Marka_Anlatisi.md` marka anlatısı, `docs/Detoks_gr_Nihai.md` nihai tasarım kararları, `docs/Red-Team-2026-09-22.md` bulgu listesi, `GROK-AGENTS.md` ajan notları.
+* `docs/LAUNCH_CHECKLIST.md`, gerçek satışa geçişte sorumluluklar ve kanıtlar.
+* `docs/REGIONAL_SME_MODEL.md`, Batı Trakya'daki küçük işletmeler için tekrar kullanılabilir işletim modeli.
+* `docs/WORKLOG.md`, değişiklik ve doğrulama kaydı.
+* `docs/superpowers/specs/2026-10-04-detoks-storefront-design.md`, tasarım kapsamı.
+* `docs/Detoks_gr_Marka_Anlatisi.md`, mevcut marka kaynağı. Eski önizleme ve ödeme kararları bu dalın güvenlik sözleşmesini geçersiz kılmaz.
 
-## Geçmiş
+## Henüz tamamlanmayan dış bağımlılıklar
 
-Bu depo, yerel geliştirme geçmişinin temiz bir anlık görüntüsüdür (tek commit). Orijinal geçmişte, sökülmüş bir üçüncü taraf iskeletinden kalma bir önizleme istemci sırrı bulunduğundan geçmiş yayınlanmadı.
+Taha'nın ürün ve hikâye onayı, gerçek fotoğraflar, zorunlu ürün bilgileri, işletme ve hukuk metinleri, vergi ve taşıyıcı yapılandırması, Shopify varyantları, yerel dil incelemesi ve gerçek test siparişi gerekir. Bağımsız erişilebilirlik ve güvenlik denetimi yapılmış sayılmaz. Üretim sırları repoya yazılmaz.

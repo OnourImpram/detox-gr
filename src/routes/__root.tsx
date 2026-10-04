@@ -1,4 +1,5 @@
-import { createRootRoute, HeadContent, Outlet, redirect, Scripts } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, redirect, Scripts, useHydrated } from "@tanstack/react-router";
+import { useLocale } from "@/lib/use-locale";
 import { SiteShell } from "@/components/site-shell";
 import { ThemeRoot } from "@/components/theme-root";
 import { parseLang } from "@/lib/lang-search";
@@ -14,6 +15,10 @@ import narrowCss from "../styles/narrow.css?url";
 const STATIC_PREVIEW = import.meta.env.VITE_STATIC_PREVIEW === "1";
 
 export const Route = createRootRoute({
+  // A static shell cannot know the requested locale. Only the document is prerendered.
+  // Otherwise ?lang changes the root match ID and wraps SSR HTML in a new Suspense boundary.
+  ssr: STATIC_PREVIEW ? false : true,
+  shellComponent: Document,
   validateSearch: (search: Record<string, unknown>) => parseLang(search),
   loaderDeps: ({ search }) => ({ lang: search.lang }),
   loader: async ({ deps, location }) => {
@@ -51,13 +56,20 @@ export const Route = createRootRoute({
   component: Root,
 });
 
+function Document({ children }: { children: React.ReactNode }) {
+  const locale = useLocale();
+  const hydrated = useHydrated();
+  const htmlLocale = STATIC_PREVIEW && !hydrated ? "tr" : locale;
+  return (
+    <html lang={localeMeta(htmlLocale).html} className="antialiased" data-theme="pine">
+      <head><HeadContent /></head>
+      <body>{children}<Scripts /></body>
+    </html>
+  );
+}
+
 function Root() {
   const data = Route.useLoaderData();
   registerPack(data.locale, data.pack);
-  return (
-    <html lang={localeMeta(data.locale).html} className="antialiased" data-theme="pine">
-      <head><HeadContent /></head>
-      <body><ThemeRoot><SiteShell><Outlet /></SiteShell></ThemeRoot><Scripts /></body>
-    </html>
-  );
+  return <ThemeRoot><SiteShell><Outlet /></SiteShell></ThemeRoot>;
 }
