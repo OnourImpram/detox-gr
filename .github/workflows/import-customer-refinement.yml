@@ -1,0 +1,76 @@
+name: Import customer experience refinements
+on:
+  push:
+    branches: [work/customer-refinement-v32]
+    paths: [.github/workflows/import-customer-refinement.yml]
+permissions:
+  contents: write
+jobs:
+  refinement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/customer-refinement-v32
+          fetch-depth: 2
+      - name: Require the reviewed source base
+        run: test "$(git rev-parse HEAD^)" = 2c01c20b8744e1a05be7e930369115a2af6a3dd1
+      - name: Apply checked application files only
+        env:
+          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-8b8c-820a-b6f5-729f8dae74dd/raw?se=2026-10-05T14%3A19%3A35Z&sp=r&sv=2026-02-06&sr=b&scid=9b556700-0b89-5363-8c04-5ad3e6961f53&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-05T03%3A59%3A24Z&ske=2026-10-06T03%3A59%3A24Z&sks=b&skv=2026-02-06&sig=qEH4Ky7RrhuX57vep4xf7z0nCfmLQ%2BUPdS/f9WuXuZU%3D'
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 "$PACKAGE_URL" -o /tmp/refinement.zip
+          echo '0a370e52fc376617ce1eee1fd9c4909248bba9df1b750093e7bdd606aefaf5d6  /tmp/refinement.zip' | sha256sum -c -
+          python - <<'PY'
+          import zipfile,json,pathlib,hashlib
+          root=pathlib.Path.cwd()
+          with zipfile.ZipFile('/tmp/refinement.zip') as archive:
+              manifest=json.loads(archive.read('PATCH.json'))
+              assert manifest['base']=='2c01c20b8744e1a05be7e930369115a2af6a3dd1'
+              assert len(manifest['files'])==51
+              assert sum(f.file_size for f in archive.infolist())<2000000
+              for name,digest in manifest['existing'].items():
+                  actual=hashlib.sha256((root/name).read_bytes()).hexdigest()
+                  if actual!=digest and name=='package.json':
+                      old=json.loads((root/name).read_bytes()); new=json.loads(archive.read(name))
+                      new['version']=old['version']
+                      assert old==new, 'Concurrent package change'
+                  else:
+                      assert actual==digest, 'Source mismatch: '+name
+              for name,digest in manifest['files'].items():
+                  path=pathlib.PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert name.startswith(('src/','scripts/','docs/')) or name in ('README.md','package.json','public/version.json')
+                  if name not in manifest['existing']: assert not (root/path).exists(), 'Unexpected existing file: '+name
+                  body=archive.read(name)
+                  assert hashlib.sha256(body).hexdigest()==digest
+                  target=root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(body)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - name: Save reviewed application source on the work branch
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git add README.md package.json public/version.json src scripts docs
+          git commit -m 'feat: refine customer quantities, discovery, image viewing and multilingual brand experience'
+          git push origin HEAD:work/customer-refinement-v32
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - run: npx playwright install --with-deps chromium
+      - name: Customer journey verification
+        run: node scripts/refinement-browser.mjs > qa-evidence/refinement-browser.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-refinement-first-evidence
+          path: qa-evidence
+          retention-days: 7
