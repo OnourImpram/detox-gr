@@ -24,7 +24,14 @@ for (const [id, record] of Object.entries(references)) {
 if (JSON.stringify(release) !== JSON.stringify(read('public/version.json'))) failures.push('Public version mismatch');
 if (read('src/data/commerce-config.json').mode !== 'preview') failures.push('Release unexpectedly activates commerce');
 const size = dir => readdirSync(dir,{withFileTypes:true}).reduce((sum,item) => sum+(item.isDirectory()?size(join(dir,item.name)):statSync(join(dir,item.name)).size),0);
+const scenes=read('src/data/generated-scenes.json').scenes;
+for (const scene of scenes) for(const variant of scene.variants) {
+ const file=`public${variant.src}`; if(!existsSync(join(root,file))||digest(file)!==variant.sha256)failures.push(`Invalid generated composition: ${variant.src}`);
+}
 const report = {
+  addedCompositions: scenes.length,
+  addedResponsiveFiles: scenes.flatMap(s=>s.variants).length,
+  activeProductIllustrations: new Set(scenes.flatMap(s=>s.primaryFor)).size,
   version: release.version,
   sourceRecords: source.length,
   previewProducts: source.filter(row=>row.editorial_status!=='İNCELEME ÖNCESİ YAYIN YOK').length,

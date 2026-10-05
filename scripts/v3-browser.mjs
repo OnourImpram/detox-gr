@@ -9,7 +9,7 @@ const base = `${origin}/detox-gr`;
 const out = 'qa-evidence';
 const registry = JSON.parse(readFileSync('src/data/product-media-v3.json','utf8'));
 const disclosures = JSON.parse(readFileSync('src/data/media-copy.json','utf8'));
-const report = { version:'3.0.0', ok:false, observations:[], assertions:[], requests:[], errors:[], sources:[], variantsVerified:0 };
+const report = { version:JSON.parse(readFileSync('src/data/release.json','utf8')).version, ok:false, observations:[], assertions:[], requests:[], errors:[], sources:[], variantsVerified:0 };
 mkdirSync(out,{recursive:true});
 const server=spawn(process.execPath,['scripts/serve-storefront-preview.mjs'],{stdio:'ignore'});
 let browser,page;
@@ -41,7 +41,7 @@ async function inspectProduct(id,kind){
  if(kind!=='pending') {
   const image=await main.locator('img').evaluate(el=>({src:el.currentSrc,width:el.naturalWidth,height:el.naturalHeight,srcset:el.srcset}));
   report.sources.push({id,kind,...image});assert.ok(image.width>0);
-  if(kind==='illustration')assert.ok(image.src.includes('/media/v3/'));
+  if(kind==='illustration')assert.ok(image.src.includes('/media/generated/'));
   else assert.ok(image.src.includes('/photos/taha-2026/'));
  } else {assert.equal(await main.locator('img').count(),0);assert.ok(await main.getByRole('img').isVisible());}
  report.assertions.push(`${id} uses ${kind} in both catalogue and product page`);
@@ -90,8 +90,10 @@ try {
  await load('/shop?lang=tr&page=100');
  assert.equal(await page.locator('[data-product-id]').count(),226);
  const kinds=await page.locator('[data-product-id] [data-media-kind]').evaluateAll(elements=>elements.reduce((counts,el)=>{const kind=el.dataset.mediaKind;counts[kind]=(counts[kind]||0)+1;return counts;},{}));
- assert.deepEqual(kinds,{illustration:4,pending:218,reference:4});
- report.assertions.push('All 226 product media records classified: 4 illustrations, 4 archive references, 218 explicit pending states');
+ const primaryIds=new Set(JSON.parse(readFileSync('src/data/generated-scenes.json','utf8')).scenes.flatMap(scene=>scene.primaryFor));
+ assert.equal(primaryIds.size,20);
+ assert.deepEqual(kinds,{illustration:20,pending:202,reference:4});
+ report.assertions.push('All 226 product media records classified: 20 illustrations, 4 archive references, 202 explicit pending states');
  report.catalogueMedia=kinds;
  await load('/shop?lang=el&page=2&sort=price-asc');
  const target=page.locator('[data-product-id] a').nth(8);await target.scrollIntoViewIfNeeded();
@@ -119,13 +121,13 @@ try {
  }
  const manifestResponse=await fetch(`${base}/manifest.webmanifest`);const manifest=await manifestResponse.json();
  for(const icon of manifest.icons){const response=await fetch(new URL(icon.src,base));assert.equal(response.status,200);}
- assert.equal((await (await fetch(`${base}/version.json`)).json()).version,'3.0.0');
+ assert.equal((await (await fetch(`${base}/version.json`)).json()).version,report.version);
  assert.equal(report.requests.filter(url=>/\/(?:products|__grok)\//.test(url)).length,0);
  assert.equal(report.errors.length,0,report.errors.join('\n'));
  report.assertions.push('No obsolete synthetic or Grok icon URL requested');
  // Fault injection is isolated and reported separately, never hidden from normal checks.
  const fault=await context.newPage();const faults=[];fault.on('console',m=>{if(m.type()==='error')faults.push(m.text());});
- await fault.route('**/media/v3/**',route=>route.fulfill({status:200,contentType:'image/webp',body:'invalid image fixture'}));
+ await fault.route('**/media/generated/**',route=>route.fulfill({status:200,contentType:'image/webp',body:'invalid image fixture'}));
  await fault.goto(urls.DT117,{waitUntil:'networkidle'});
  assert.equal(await fault.locator('.v3-pdp-media').getAttribute('data-media-kind'),'pending');
  assert.equal(await fault.locator('.v3-pdp-media img').count(),0);

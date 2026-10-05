@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import { Camera } from 'lucide-react';
 import { productMedia } from '@/lib/product-media';
-import { assetUrl } from '@/lib/product-media-policy';
+import { assetUrl, type ProductMedia as MediaRecord } from '@/lib/product-media-policy';
 import { mediaCopy } from '@/lib/media-copy';
 import { useLocale } from '@/lib/use-locale';
 import { categoryTitle, productName } from '@/lib/i18n';
 import type { Product } from '@/lib/catalog';
 
-type Props = { product: Product; sizes?: string; priority?: boolean; className?: string; caption?: boolean; compact?: boolean };
-export function ProductMedia({ product, sizes = '100vw', priority = false, className = '', caption = true, compact = false }: Props) {
+type Props = { product: Product; sizes?: string; priority?: boolean; className?: string; caption?: boolean; compact?: boolean; media?: MediaRecord };
+export function ProductMedia({ product, sizes = '100vw', priority = false, className = '', caption = true, compact = false, media: selectedMedia }: Props) {
   const locale = useLocale();
-  const media = productMedia(product);
+  const media = selectedMedia ?? productMedia(product);
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const failed = media.src !== null && failedSrc === media.src;
   const kind = failed ? 'pending' : media.kind;
   const url = (path: string) => assetUrl(path, import.meta.env.BASE_URL);
-  return <figure className={`v3-product-media ${className} ${compact ? 'is-compact' : ''}`} data-media-kind={kind} data-media-for={product.sourceId}>
+  return <figure className={`v3-product-media ${className} ${compact ? 'is-compact' : ''}`} data-media-kind={kind} data-media-for={product.sourceId} data-scene-id={media.sceneId}>
     <div className="v3-product-media__surface">
       {media.src && !failed ? <img
         src={url(media.src)}

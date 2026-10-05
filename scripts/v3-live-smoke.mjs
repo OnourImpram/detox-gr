@@ -31,7 +31,7 @@ try {
   }
   assert.equal(report.build?.commit, expectedCommit, 'The deployed commit did not reach the public URL');
   const version = await readJson('version.json');
-  assert.equal(version.version, '3.0.0');
+  assert.equal(version.version, JSON.parse(readFileSync('src/data/release.json','utf8')).version);
   assert.equal(version.paymentActivated, false);
   report.checks.push('Public build commit and catalogue-preview version match');
   browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
@@ -52,7 +52,7 @@ try {
     const image = card.locator('img');
     await image.evaluate(el => el.decode());
     const data = await image.evaluate(el => ({ src: el.currentSrc, width: el.naturalWidth, height: el.naturalHeight }));
-    assert.ok(data.src.includes('/media/v3/'), id);
+    assert.ok(data.src.includes('/media/generated/'), id);
     assert.ok(data.width > 0, id);
     report.media.push({ id, ...data });
   }
@@ -69,7 +69,7 @@ try {
   await page.locator('[data-product-id="DT117"] a').first().click();
   await page.locator('.v3-pdp-media[data-media-for="DT117"]').waitFor();
   await page.locator('.v3-pdp-media img').evaluate(el => el.decode());
-  assert.ok((await page.locator('.v3-pdp-media img').evaluate(el => el.currentSrc)).includes('/media/v3/'));
+  assert.ok((await page.locator('.v3-pdp-media img').evaluate(el => el.currentSrc)).includes('/media/generated/'));
   await page.screenshot({ path: 'qa-live/v3-live-product.png', fullPage: true });
   await page.locator('.dt-pdp__actions > button').click();
   await page.locator('.dt-cart-link').click();

@@ -3,8 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight, MessageCircle, Minus, Plus } from "lucide-react";
 import { LocaleLink } from "@/components/locale-link";
-import { ProductMedia } from "@/components/product-media";
-import { productMedia } from "@/lib/product-media";
+import { ProductGallery } from "@/components/product-gallery";
 import { mediaCopy } from "@/lib/media-copy";
 import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,6 @@ function ProductDetail({ product }: { product: Product }) {
   const add = useShop(state => state.add);
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
-  const media = productMedia(product);
   const name = productName(product, locale);
   const more = related(product);
   const blockers = saleBlockers(product, country, quantity);
@@ -86,10 +84,7 @@ function ProductDetail({ product }: { product: Product }) {
   return <section className="dt-container dt-pdp">
     <nav className="dt-breadcrumb" aria-label={t(locale, "nav.shop")}><LocaleLink to="/shop">{t(locale, "nav.shop")}</LocaleLink><span aria-hidden="true">/</span><LocaleLink to="/shop/$category" params={{ category: product.category }}>{categoryTitle(product.category, locale)}</LocaleLink></nav>
     <div className="dt-pdp__layout">
-      <div className="dt-pdp__figure">
-        <ProductMedia product={product} priority sizes="(min-width: 1024px) 48vw, 90vw" className="v3-pdp-media" />
-        {media.kind !== 'verified' && <p className="v3-media-disclosure">{mediaCopy(locale, media.kind === 'illustration' ? 'disclosure' : media.kind === 'reference' ? 'referenceDisclosure' : 'pendingBody')}</p>}
-      </div>
+      <ProductGallery product={product} />
       <div className="dt-pdp__information">
         <p className="kicker">{t(locale, product.houseNamed ? "product.made" : "product.picked")}</p><h1>{name}</h1>
         <p className="dt-pdp__price">{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</p>

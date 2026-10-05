@@ -1,3 +1,4 @@
+import { sceneCopy } from '@/lib/scene-copy';
 import { type FormEvent, useEffect, useRef, useState } from "react";
 import { useNavigate, useRouterState } from "@tanstack/react-router";
 import { Menu, Search, ShoppingBag, X, ArrowUpRight } from "lucide-react";
@@ -90,7 +91,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <footer className="dt-footer shell-x">
         <div className="dt-footer__grid">
           <div><BrandMark size="footer" /><p className="dt-footer__about">{b(locale, "footer.line")}</p><a href={SOCIAL.instagram.href} target="_blank" rel="me noopener noreferrer" className="dt-text-link">Instagram {SOCIAL.instagram.handle}<ArrowUpRight size={15} aria-hidden="true" /><span className="sr-only">{t(locale, "nav.external")}</span></a></div>
-          <nav className="dt-footer__links" aria-label={t(locale, "nav.menu")}>{nav.map((item) => <LocaleLink key={item.to} to={item.to}>{item.label}</LocaleLink>)}<LocaleLink to="/notlar">{b(locale, "journal.title")}</LocaleLink><LocaleLink to="/paket">{t(locale, "footer.gift")}</LocaleLink><LocaleLink to="/teslimat">{t(locale, "footer.ship")}</LocaleLink><LocaleLink to="/ticari">{t(locale, "footer.trade")}</LocaleLink><LocaleLink to="/yasal">{t(locale, "nav.legal")}</LocaleLink></nav>
+          <nav className="dt-footer__links" aria-label={t(locale, "nav.menu")}>{nav.map((item) => <LocaleLink key={item.to} to={item.to}>{item.label}</LocaleLink>)}<LocaleLink to="/kompozisyonlar">{sceneCopy(locale,"title")}</LocaleLink><LocaleLink to="/notlar">{b(locale, "journal.title")}</LocaleLink><LocaleLink to="/paket">{t(locale, "footer.gift")}</LocaleLink><LocaleLink to="/teslimat">{t(locale, "footer.ship")}</LocaleLink><LocaleLink to="/ticari">{t(locale, "footer.trade")}</LocaleLink><LocaleLink to="/yasal">{t(locale, "nav.legal")}</LocaleLink></nav>
           <ShopFacts title={SHOP_FACTS.shop} />
         </div>
         <p className="dt-footer__legal">{b(locale, "preview.body")}</p>

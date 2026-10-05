@@ -1,7 +1,7 @@
 {
-  "version": "3.0.0",
-  "name": "Detoks v3",
+  "version": "3.1.0",
+  "name": "Detoks v3.1",
   "mode": "catalogue-preview",
   "paymentActivated": false,
-  "baseline": "8eb9e2f8489eb5031508f58f74a0394250b5f4ca"
+  "baseline": "461eb058324c1262d9ce3126eb60ef644f5f0960"
 }
