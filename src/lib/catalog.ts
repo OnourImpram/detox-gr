@@ -1,3 +1,4 @@
+import { sourceProductSlugs, sourceProductTitle, cleanProductTitle, slugifySourceTitle } from "./catalog-address";
 import { productMedia, ILLUSTRATION_BY_ID } from "./product-media";
 import photoApprovals from "@/data/photo-approved.json";
 import photoArchive from "@/data/photo-archive.json";
@@ -54,7 +55,6 @@ const CAT_MAP: Record<string, CategoryId> = {
   Tuz: "salt", Un: "flour", "Zayıflama ve Form ürünleri": "form", "Baharatlar - Bitkiler": "spice", Yağlar: "oil",
 };
 const CAT_OVERRIDE: Record<string, CategoryId> = { DT157: "pantry", DT158: "pantry" };
-const NAME_OVERRIDE: Record<string, string> = { DT054: "Kuyruk yağı kremi" };
 const SHELF: Record<CategoryId, string> = {
   lokum: "Kahvenin yanında, sohbetin ortasında.", soap: "Gündelik bakımın küçük bir ayrıntısı.",
   care: "Taha’nın bakım rafından, her güne.", cream: "Cilt bakımında günlük bir dokunuş.",
@@ -69,11 +69,6 @@ type SourceRecord = {
   editorial_title_candidate: string | null; editorial_story_candidate: string | null;
   editorial_hook_candidate: string | null; review_flags: string[]; editorial_status: string; publish: boolean;
 };
-const TR: Record<string, string> = { ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u", â: "a", î: "i", û: "u" };
-function slugify(value: string) {
-  return value.toLocaleLowerCase("tr-TR").split("").map((char) => TR[char] ?? char).join("")
-    .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 72);
-}
 function parsePrice(value: string | null): number | null {
   if (value == null || value === "") return null;
   const number = Number(String(value).replace(",", "."));
@@ -85,11 +80,6 @@ function klassFor(category: CategoryId): ProductClass {
 }
 function kindFor(category: CategoryId): ShipKind { return ["oil", "essential", "honey", "pantry"].includes(category) ? "glass" : "dry"; }
 function text(...values: Array<string | null | undefined>) { return values.map(value => (value ?? "").trim()).find(Boolean) ?? ""; }
-function titleStart(name: string) { const value = name.trim(); return value ? value.charAt(0).toLocaleUpperCase("tr-TR") + value.slice(1) : value; }
-function stripHouseSuffix(name: string) {
-  return name.replace(/\(\s*DETOKS AKTAR(?:\s+özel yapım)?\s*,?\s*/gi, "(").replace(/\(\s*\)/g, "")
-    .replace(/\s*DETOKS AKTAR(?:\s+özel yapım)?/gi, "").replace(/\s{2,}/g, " ").replace(/\s+,/g, ",").trim();
-}
 const HELD_STATUS = "İNCELEME ÖNCESİ YAYIN YOK";
 function firstSentence(body: string) { const index = body.indexOf(". "); return index > 24 && index < 180 ? body.slice(0, index + 1) : body; }
 /** Explicit v3 illustrations. No category-to-product image substitution. */
@@ -109,14 +99,14 @@ function netFromSource(quantity: string | number | null, unit: string | null): {
 function adapt(row: SourceRecord): Product {
   const category = CAT_OVERRIDE[row.source_record_id] ?? CAT_MAP[row.source_category] ?? "spice";
   const info = productInfo(row.source_record_id);
-  const sourceTitle = titleStart(stripHouseSuffix(text(NAME_OVERRIDE[row.source_record_id], row.editorial_title_candidate, row.source_name)));
-  const name = info?.nameTr ? titleStart(stripHouseSuffix(info.nameTr)) : sourceTitle;
+  const sourceTitle = sourceProductTitle(row);
+  const name = info?.nameTr ? cleanProductTitle(info.nameTr) : sourceTitle;
   const hook = text(row.editorial_hook_candidate);
   const story = text(row.editorial_story_candidate);
   const net = netFromSource(row.source_quantity, row.source_unit);
   return {
     // Correcting the displayed name no longer changes an existing product URL.
-    slug: slugify(sourceTitle), sourceId: row.source_record_id, name, category,
+    slug: slugifySourceTitle(sourceTitle), sourceId: row.source_record_id, name, category,
     priceEur: parsePrice(row.source_price), unit: info?.unit ?? (row.source_price_basis || "ürün"),
     grams: info?.grams ?? net?.grams ?? null,
     net: info?.grams != null ? { value: info.grams, unit: "g" } : net,
@@ -130,11 +120,10 @@ function adapt(row: SourceRecord): Product {
     reviewFlags: row.review_flags ?? [], info,
   };
 }
-const used = new Set<string>();
-const ALL_PRODUCTS: Product[] = (raw as SourceRecord[]).map((row) => {
+const productSlugs = sourceProductSlugs(raw as SourceRecord[]);
+const ALL_PRODUCTS: Product[] = (raw as SourceRecord[]).map((row, index) => {
   const product = adapt(row);
-  const slug = used.has(product.slug) ? `${product.slug}-${row.source_record_id.toLowerCase()}` : product.slug;
-  used.add(slug);
+  const slug = productSlugs[index];
   return { ...product, slug };
 });
 const HELD_IDS = new Set((raw as SourceRecord[]).filter(row => row.editorial_status === HELD_STATUS).map(row => row.source_record_id));
