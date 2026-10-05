@@ -1,0 +1,73 @@
+name: Import thirty generated compositions
+on:
+  push:
+    branches: [work/media-three-rounds]
+    paths: [.github/workflows/import-three-rounds.yml]
+permissions:
+  contents: write
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/media-three-rounds
+          fetch-depth: 2
+      - name: Require the reviewed branch base
+        run: test "$(git rev-parse HEAD^)" = d0f034b835495af99b523e71ffcf147b78e53f2f
+      - name: Apply the reviewed website files
+        env:
+          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-b620-820a-b035-49e03dbb610e/raw?se=2026-10-05T05%3A38%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=2972c1ec-1dc4-54c6-84ec-84deee490045&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-05T03%3A59%3A24Z&ske=2026-10-06T03%3A59%3A24Z&sks=b&skv=2026-02-06&sig=6vo0b0e00Evgcf2RxRnnEVz40gaPT1MkQsRD/QRpFT4%3D'
+        run: |
+          curl --fail --silent --show-error --location --max-time 90 "$PACKAGE_URL" -o /tmp/scenes.zip
+          echo '68d4a1d6358e5e00b503c31991f25eaeac559e61d5e7fd6429255fa448cb61c6  /tmp/scenes.zip' | sha256sum -c -
+          python - <<'PY'
+          import zipfile,json,pathlib,hashlib
+          root=pathlib.Path.cwd()
+          with zipfile.ZipFile('/tmp/scenes.zip') as archive:
+              manifest=json.loads(archive.read('PACKAGE.json'))
+              assert len(manifest['files']) == 155
+              assert sum(f.file_size for f in archive.infolist()) < 25000000
+              for name,digest in manifest['existing'].items():
+                  assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest, 'Concurrent change: '+name
+              for name,digest in manifest['files'].items():
+                  path=pathlib.PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert name.startswith(('src/','scripts/','docs/','public/media/generated/')) or name in ('package.json','public/version.json','.github/workflows/pages.yml','.github/workflows/storefront-quality.yml')
+                  assert not name.endswith(('.woff','.woff2','.ttf','.env'))
+                  body=archive.read(name)
+                  assert hashlib.sha256(body).hexdigest()==digest
+                  target=root/path
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  target.write_bytes(body)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - run: node scripts/audit-v3.mjs > qa-evidence/media-audit.json
+      - name: Save the integration and remove temporary transfer workflows
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git rm .github/workflows/media-source-snapshot.yml .github/workflows/import-three-rounds.yml
+          git add src scripts docs public/media/generated public/version.json package.json .github/workflows/pages.yml .github/workflows/storefront-quality.yml
+          git commit -m 'feat: integrate all thirty generated scenes with product galleries and honest editorial mapping'
+          git push origin HEAD:work/media-three-rounds
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - run: npx playwright install --with-deps chromium
+      - name: Verify all new scenes in the browser
+        run: node scripts/three-rounds-browser.mjs > qa-evidence/scenes-browser.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-thirty-scenes-import-evidence
+          path: qa-evidence
+          retention-days: 7
