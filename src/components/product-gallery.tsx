@@ -51,7 +51,19 @@ export function ProductGallery({ product }: { product: Product }) {
       onCancel={event => { event.preventDefault(); setExpanded(false); }}
       onClose={() => { setExpanded(false); opener.current?.focus(); }}
       onClick={event => { if (event.target === dialog.current) setExpanded(false); }}
-      onKeyDown={event => { if (items.length > 1 && ['ArrowLeft','ArrowRight'].includes(event.key)) { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); } }}>
+      onKeyDown={event => {
+        if (event.key === 'Tab') {
+          // Explicit boundary wrapping keeps focus in the viewer rather than browser chrome.
+          const buttons = Array.from(event.currentTarget.querySelectorAll<HTMLButtonElement>('button:not(:disabled)'));
+          const first = buttons[0];
+          const last = buttons[buttons.length - 1];
+          if (first && last && ((!event.shiftKey && document.activeElement === last) || (event.shiftKey && document.activeElement === first))) {
+            event.preventDefault();
+            (event.shiftKey ? last : first).focus();
+          }
+        }
+        if (items.length > 1 && ['ArrowLeft','ArrowRight'].includes(event.key)) { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); }
+      }}>
       {expanded && <div className="rf-product-dialog__body">
         <div className="rf-product-dialog__header"><h2 id={titleId}>{productName(product,locale)}</h2><button autoFocus type="button" className="rf-dialog-close" aria-label={b(locale,'archive.close')} onClick={() => setExpanded(false)}><X size={23} aria-hidden="true" /></button></div>
         <ProductMedia product={product} media={media} priority sizes="(min-width: 1440px) 1280px, 94vw" className="rf-product-full" />

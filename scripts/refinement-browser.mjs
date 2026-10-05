@@ -159,6 +159,7 @@ try {
   await page.keyboard.press('ArrowRight');
   assert.notEqual(await page.locator('.rf-product-full').getAttribute('data-scene-id'), firstScene);
   for (let n = 0; n < 6; n++) { await page.keyboard.press('Tab'); assert.ok(await page.evaluate(() => document.querySelector('.rf-product-dialog').contains(document.activeElement))); }
+  for (let n = 0; n < 4; n++) { await page.keyboard.press('Shift+Tab'); assert.ok(await page.evaluate(() => document.querySelector('.rf-product-dialog').contains(document.activeElement))); }
   await page.screenshot({ path: `${out}/refinement-product-zoom.png` });
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('.rf-product-dialog[open]').count(), 0);
