@@ -1,0 +1,47 @@
+name: Customer experience baseline
+on:
+  push:
+    branches: [work/customer-experience-v32]
+    paths: [.github/workflows/refinement-baseline.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2c01c20b8744e1a05be7e930369115a2af6a3dd1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p /tmp/detoks-baseline && git archive --format=tar.gz --output=/tmp/detoks-baseline/source.tar.gz HEAD && tar -czf /tmp/detoks-baseline/dependencies.tar.gz node_modules
+      - run: npx playwright install --with-deps chromium
+      - name: Read the live customer journey
+        run: |
+          node --input-type=module <<'JS'
+          import { chromium } from 'playwright';
+          import { writeFileSync } from 'node:fs';
+          const browser=await chromium.launch({headless:true});
+          const page=await browser.newPage({viewport:{width:1440,height:1000}});
+          const data=[];
+          for(const [name,path] of [['home','/'],['shop','/shop/'],['product','/p/elma-sirkesi/'],['gift','/paket/'],['contact','/iletisim/'],['story','/hikaye/']]){
+            const response=await page.goto('https://onourimpram.github.io/detox-gr'+path+'?lang=tr',{waitUntil:'networkidle'});
+            data.push({name,status:response.status(),text:await page.locator('body').innerText(),performance:await page.evaluate(()=>performance.getEntriesByType('resource').map(r=>({name:r.name,size:r.transferSize,duration:r.duration}))) });
+            await page.screenshot({path:'/tmp/detoks-baseline/'+name+'.png',fullPage:true});
+          }
+          await page.setViewportSize({width:390,height:844});
+          await page.goto('https://onourimpram.github.io/detox-gr/?lang=el',{waitUntil:'networkidle'});
+          await page.screenshot({path:'/tmp/detoks-baseline/mobile-el.png',fullPage:true});
+          writeFileSync('/tmp/detoks-baseline/live.json',JSON.stringify(data,null,2));
+          await browser.close();
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-refinement-baseline
+          path: /tmp/detoks-baseline
+          retention-days: 1
