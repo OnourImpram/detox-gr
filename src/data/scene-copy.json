@@ -1,0 +1,142 @@
+{
+  "tr": {
+    "title": "Ürün kompozisyonları",
+    "all": "Tüm kompozisyonlar",
+    "concept": "Bu görsel bir sunum fikridir. Katalogdaki belirli bir ürünü, ambalajı veya hediye kutusu içeriğini doğrulamaz.",
+    "alternatives": "Alternatif görseller",
+    "gift": "Hediye seçkisi"
+  },
+  "el": {
+    "title": "Συνθέσεις προϊόντων",
+    "all": "Όλες οι συνθέσεις",
+    "concept": "Αυτή η εικόνα είναι μια ιδέα παρουσίασης. Δεν επιβεβαιώνει συγκεκριμένο προϊόν, συσκευασία ή περιεχόμενο δώρου του καταλόγου.",
+    "alternatives": "Εναλλακτικές εικόνες",
+    "gift": "Πρόταση δώρου"
+  },
+  "en": {
+    "title": "Product compositions",
+    "all": "All compositions",
+    "concept": "This image is a presentation concept. It does not confirm any specific catalogue product, packaging or gift box contents.",
+    "alternatives": "Alternative images",
+    "gift": "Gift selection"
+  },
+  "de": {
+    "title": "Produktkompositionen",
+    "all": "Alle Kompositionen",
+    "concept": "Dieses Bild ist eine Präsentationsidee. Es bestätigt weder ein bestimmtes Katalogprodukt noch dessen Verpackung oder den Inhalt eines Geschenkpakets.",
+    "alternatives": "Alternative Bilder",
+    "gift": "Geschenkauswahl"
+  },
+  "fr": {
+    "title": "Compositions de produits",
+    "all": "Toutes les compositions",
+    "concept": "Cette image est une idée de présentation. Elle ne confirme aucun produit précis du catalogue, son emballage ou le contenu d’un coffret cadeau.",
+    "alternatives": "Autres images",
+    "gift": "Sélection cadeau"
+  },
+  "it": {
+    "title": "Composizioni di prodotti",
+    "all": "Tutte le composizioni",
+    "concept": "Questa immagine è un’idea di presentazione. Non conferma un prodotto specifico del catalogo, la sua confezione o il contenuto di una scatola regalo.",
+    "alternatives": "Immagini alternative",
+    "gift": "Selezione regalo"
+  },
+  "es": {
+    "title": "Composiciones de productos",
+    "all": "Todas las composiciones",
+    "concept": "Esta imagen es una idea de presentación. No confirma ningún producto concreto del catálogo, su envase ni el contenido de una caja de regalo.",
+    "alternatives": "Imágenes alternativas",
+    "gift": "Selección de regalo"
+  },
+  "nl": {
+    "title": "Productcomposities",
+    "all": "Alle composities",
+    "concept": "Deze afbeelding is een presentatieconcept. Ze bevestigt geen specifiek catalogusproduct, verpakking of inhoud van een geschenkdoos.",
+    "alternatives": "Alternatieve afbeeldingen",
+    "gift": "Cadeauselectie"
+  },
+  "pl": {
+    "title": "Kompozycje produktów",
+    "all": "Wszystkie kompozycje",
+    "concept": "Ten obraz jest pomysłem na prezentację. Nie potwierdza konkretnego produktu z katalogu, jego opakowania ani zawartości zestawu prezentowego.",
+    "alternatives": "Alternatywne zdjęcia",
+    "gift": "Zestaw prezentowy"
+  },
+  "no": {
+    "title": "Produktkomposisjoner",
+    "all": "Alle komposisjoner",
+    "concept": "Dette bildet er en presentasjonsidé. Det bekrefter ikke et bestemt katalogprodukt, emballasje eller innhold i en gaveeske.",
+    "alternatives": "Alternative bilder",
+    "gift": "Gaveutvalg"
+  },
+  "bg": {
+    "title": "Продуктови композиции",
+    "all": "Всички композиции",
+    "concept": "Това изображение е идея за представяне. То не потвърждава конкретен продукт от каталога, опаковка или съдържание на подаръчна кутия.",
+    "alternatives": "Алтернативни изображения",
+    "gift": "Подаръчна селекция"
+  },
+  "ro": {
+    "title": "Compoziții de produse",
+    "all": "Toate compozițiile",
+    "concept": "Această imagine este o idee de prezentare. Nu confirmă un produs anume din catalog, ambalajul sau conținutul unei cutii cadou.",
+    "alternatives": "Imagini alternative",
+    "gift": "Selecție cadou"
+  },
+  "sv": {
+    "title": "Produktkompositioner",
+    "all": "Alla kompositioner",
+    "concept": "Den här bilden är en presentationsidé. Den bekräftar inte en viss katalogprodukt, förpackning eller innehållet i en presentask.",
+    "alternatives": "Alternativa bilder",
+    "gift": "Presenturval"
+  },
+  "da": {
+    "title": "Produktkompositioner",
+    "all": "Alle kompositioner",
+    "concept": "Dette billede er en præsentationsidé. Det bekræfter ikke et bestemt katalogprodukt, emballage eller indholdet i en gaveæske.",
+    "alternatives": "Alternative billeder",
+    "gift": "Gaveudvalg"
+  },
+  "fi": {
+    "title": "Tuotesommitelmat",
+    "all": "Kaikki sommitelmat",
+    "concept": "Tämä kuva on esittelyidea. Se ei vahvista tiettyä luettelon tuotetta, pakkausta tai lahjapakkauksen sisältöä.",
+    "alternatives": "Vaihtoehtoiset kuvat",
+    "gift": "Lahjavalikoima"
+  },
+  "pt": {
+    "title": "Composições de produtos",
+    "all": "Todas as composições",
+    "concept": "Esta imagem é uma ideia de apresentação. Não confirma um produto específico do catálogo, a sua embalagem ou o conteúdo de uma caixa de oferta.",
+    "alternatives": "Imagens alternativas",
+    "gift": "Seleção de oferta"
+  },
+  "hu": {
+    "title": "Termékkompozíciók",
+    "all": "Összes kompozíció",
+    "concept": "Ez a kép egy bemutatási ötlet. Nem igazol konkrét katalógusterméket, csomagolást vagy ajándékdoboz-tartalmat.",
+    "alternatives": "Alternatív képek",
+    "gift": "Ajándékválogatás"
+  },
+  "cs": {
+    "title": "Produktové kompozice",
+    "all": "Všechny kompozice",
+    "concept": "Tento obrázek je námětem k prezentaci. Nepotvrzuje konkrétní produkt z katalogu, jeho obal ani obsah dárkové krabičky.",
+    "alternatives": "Alternativní obrázky",
+    "gift": "Dárkový výběr"
+  },
+  "hr": {
+    "title": "Kompozicije proizvoda",
+    "all": "Sve kompozicije",
+    "concept": "Ova slika je ideja za prezentaciju. Ne potvrđuje određeni proizvod iz kataloga, pakiranje ili sadržaj darovne kutije.",
+    "alternatives": "Alternativne slike",
+    "gift": "Darovni izbor"
+  },
+  "sk": {
+    "title": "Produktové kompozície",
+    "all": "Všetky kompozície",
+    "concept": "Tento obrázok je námetom na prezentáciu. Nepotvrdzuje konkrétny produkt z katalógu, jeho obal ani obsah darčekovej škatuľky.",
+    "alternatives": "Alternatívne obrázky",
+    "gift": "Darčekový výber"
+  }
+}

@@ -1,3 +1,4 @@
+import scenesCss from "../styles/scenes.css?url";
 import { createRootRoute, HeadContent, Outlet, redirect, Scripts, useHydrated, ClientOnly, useRouterState } from "@tanstack/react-router";
 import { ContentLocale, localeFromLoaderData } from "@/lib/content-locale";
 import { SiteShell } from "@/components/site-shell";
@@ -57,6 +58,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: narrowCss },
       { rel: "stylesheet", href: editorialCss },
       { rel: "stylesheet", href: v3Css },
+      { rel: "stylesheet", href: scenesCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),

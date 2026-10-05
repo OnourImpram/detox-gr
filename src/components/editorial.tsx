@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { b, type BrandKey } from '@/lib/brand-copy';
 import { useLocale } from '@/lib/use-locale';
@@ -11,11 +12,11 @@ export const JOURNAL = [
   { slug: 'dusunulmus-bir-hediye', key: 'note2', image: EDITORIAL_PHOTOS.rose },
   { slug: 'gumulcinede-bir-dukkan', key: 'note3', image: EDITORIAL_PHOTOS.star },
 ] as const;
-export function EditorialHeader({ title, lead, kicker, image }: { title: BrandKey; lead: BrandKey; kicker?: BrandKey; image?: string }) {
+export function EditorialHeader({ title, lead, kicker, image, visual }: { title: BrandKey; lead: BrandKey; kicker?: BrandKey; image?: string; visual?: ReactNode }) {
   const locale = useLocale();
-  return <header className={`ed-page-header ${image ? 'with-image' : ''}`}>
+  return <header className={`ed-page-header ${image || visual ? 'with-image' : ''}`}>
     <div>{kicker && <p className="ed-eyebrow">{b(locale, kicker)}</p>}<h1>{b(locale, title)}</h1><p className="ed-lead">{b(locale, lead)}</p></div>
-    {image && <ArchivePhoto original={image} priority sizes="(min-width: 900px) 40vw, 100vw" />}
+    {visual ?? (image && <ArchivePhoto original={image} priority sizes="(min-width: 900px) 40vw, 100vw" />)}
   </header>;
 }
 export function ProcessSteps() {

@@ -29,8 +29,8 @@ jobs:
           BUILD_COMMIT: ${{ github.sha }}
         run: |
           node --input-type=module <<'JS'
-          import {writeFileSync} from 'node:fs';
-          writeFileSync('dist/client/build.json',JSON.stringify({version:'3.0.0',commit:process.env.BUILD_COMMIT,builtAt:new Date().toISOString(),mode:'catalogue-preview',paymentActivated:false},null,2));
+          import {writeFileSync,readFileSync} from 'node:fs';
+          writeFileSync('dist/client/build.json',JSON.stringify({version:JSON.parse(readFileSync('src/data/release.json','utf8')).version,commit:process.env.BUILD_COMMIT,builtAt:new Date().toISOString(),mode:'catalogue-preview',paymentActivated:false},null,2));
           JS
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -65,10 +65,10 @@ jobs:
         env:
           SITE_URL: ${{ needs.deploy.outputs.page_url }}
           EXPECTED_COMMIT: ${{ github.sha }}
-        run: node scripts/v3-live-smoke.mjs
+        run: node scripts/v3-live-smoke.mjs && node scripts/three-rounds-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: detoks-v3-live-proof
+          name: detoks-v31-live-proof
           path: qa-live
           retention-days: 14

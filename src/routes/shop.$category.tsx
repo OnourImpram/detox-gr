@@ -1,3 +1,5 @@
+import { CATEGORY_SCENES, sceneById } from '@/lib/generated-scenes';
+import { SceneFigure } from '@/components/scene-figure';
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ProductExplorer } from "@/components/product-explorer";
 import { LocaleLink } from "@/components/locale-link";
@@ -24,5 +26,6 @@ function Collection() {
   const { category: id } = Route.useParams();
   const category = categoryById(id);
   if (!category) throw notFound();
-  return <section className="dt-container dt-shop"><header className="dt-shop__heading"><LocaleLink to="/shop" className="dt-text-link">{t(locale, "shop.back")}</LocaleLink><h1>{categoryTitle(category.id, locale)}</h1><p>{categoryBlurb(category.id, locale)}</p></header><ProductExplorer products={productsByCategory(category.id)} fixedCategory={category.id} /></section>;
+  const scene = sceneById(CATEGORY_SCENES[category.id] ?? "");
+  return <section className="dt-container dt-shop"><header className={`dt-shop__heading ${scene ? "scene-category-header" : ""}`}><div><LocaleLink to="/shop" className="dt-text-link">{t(locale, "shop.back")}</LocaleLink><h1>{categoryTitle(category.id, locale)}</h1><p>{categoryBlurb(category.id, locale)}</p></div>{scene && <SceneFigure scene={scene} priority sizes="(min-width: 900px) 28vw, 85vw" />}</header><ProductExplorer products={productsByCategory(category.id)} fixedCategory={category.id} /></section>;
 }

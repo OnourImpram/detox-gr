@@ -1,0 +1,48 @@
+/* Generated concepts are visibly separate from Taha's real photographic archive. */
+.scene-figure { margin:0; min-width:0; width:100%; }
+.scene-figure__surface { width:100%; aspect-ratio:4/3; background:#e9dfd1; overflow:hidden; }
+.scene-figure img { display:block; width:100%; height:100%; object-fit:cover; }
+.scene-figure figcaption,.scene-card-caption { padding-top:8px; color:var(--dt-muted); font-size:11px; line-height:1.6; }
+.scene-figure__error { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; gap:12px; font-size:12px; color:#705a46; }
+.scene-thumbnails { display:flex; flex-wrap:wrap; gap:10px; padding-block:15px 4px; }
+.scene-thumbnails button { position:relative; width:100px; border:2px solid transparent; padding:3px; background:transparent; }
+.scene-thumbnails button[aria-pressed=true] { border-color:var(--dt-primary); }
+.scene-thumbnails img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; }
+.scene-thumbnails button>span { position:absolute; bottom:5px; right:5px; background:#f6f0e6; color:#3b2819; font-size:10px; min-width:16px; text-align:center; }
+.scene-tabs { display:flex; gap:12px 26px; flex-wrap:wrap; border-bottom:1px solid var(--dt-border); margin-top:28px; }
+.scene-tabs>* { display:flex; align-items:center; min-height:44px; font-size:13px; padding-block:10px; }
+.scene-tabs [aria-current=page] { color:var(--dt-primary); border-bottom:2px solid currentColor; }
+.scene-collection { padding-bottom:64px; }
+.scene-collection .ed-page-header { padding-bottom:28px; }
+.scene-collection__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px 24px; }
+.scene-collection__grid article { min-width:0; }
+.scene-open { width:100%; position:relative; display:block; }
+.scene-open .ed-expand { position:absolute; bottom:10px; right:10px; }
+.scene-card-text h2 { margin-block:10px; font-size:clamp(19px,2vw,23px); overflow-wrap:anywhere; }
+.scene-card-text .ed-link { width:100%; font-size:13px; }
+.scene-concept-note { font-size:12px; color:var(--dt-muted); line-height:1.7; margin-top:10px; max-width:66ch; }
+.scene-category-section { padding-block:52px; border-top:1px solid var(--dt-border); }
+.scene-category-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.scene-category-grid h3 { font-size:22px; margin-block:12px; }
+.scene-gift-bridge { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(24px,5vw,80px); align-items:center; padding-block:42px 66px; }
+.scene-gift-bridge h2 { font-size:clamp(26px,3vw,42px); margin-block:16px 24px; }
+.scene-gift-bridge .ed-link { margin-top:24px; }
+.scene-category-header { display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,.42fr); gap:36px; align-items:center; }
+.scene-category-header>div { min-width:0; }
+.scene-category-header h1 { overflow-wrap:anywhere; }
+.scene-category-header .scene-figure { max-width:360px; justify-self:end; }
+.scene-collection .ed-photo-dialog h2 { overflow-wrap:anywhere; padding-right:40px; }
+@media (max-width:1023px) {
+ .scene-collection__grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:639px) {
+ .scene-collection__grid,.scene-category-grid,.scene-gift-bridge,.scene-category-header { grid-template-columns:1fr; }
+ .scene-collection__grid { gap:30px; }
+ .scene-category-header { gap:24px; }
+ .scene-category-header .scene-figure { max-width:100%; }
+ .scene-category-grid { gap:25px; }
+ .scene-gift-bridge { padding-block:32px 48px; }
+ .scene-category-section { padding-block:40px; }
+ .scene-collection .ed-gallery-filter { column-gap:14px; }
+ .scene-collection .ed-page-header h1 { overflow-wrap:anywhere; }
+}

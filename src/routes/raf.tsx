@@ -1,3 +1,5 @@
+import { LocaleLink } from '@/components/locale-link';
+import { sceneCopy } from '@/lib/scene-copy';
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 import { X, Expand, ArrowDown } from 'lucide-react';
@@ -25,7 +27,7 @@ function Archive() {
     if (!selected && element?.open) element.close();
   }, [selected]);
   function close() { setSelected(null); opener.current?.focus(); }
-  return <section className="ed-container ed-archive-page"><EditorialHeader title="archive.title" lead="archive.lead" kicker="photo.source" />
+  return <section className="ed-container ed-archive-page"><nav className="scene-tabs"><span aria-current="page">{b(locale,"archive.title")}</span><LocaleLink to="/kompozisyonlar">{sceneCopy(locale,"title")}</LocaleLink></nav><EditorialHeader title="archive.title" lead="archive.lead" kicker="photo.source" />
     <p className="ed-archive-note">{b(locale, 'archive.note')}</p>
     <fieldset className="ed-gallery-filter"><legend className="sr-only">{b(locale, 'archive.title')}</legend>{(['all',...PHOTO_GROUPS] as const).map(key => <button key={key} type="button" aria-pressed={group === key} onClick={() => {setGroup(key);setLimit(24);}}>{key === 'all' ? b(locale, 'archive.all') : b(locale, `group.${key}`)}</button>)}</fieldset>
     <p className="ed-gallery-counter" aria-live="polite">{b(locale, 'archive.counter', { shown: Math.min(limit,matching.length), total: matching.length })}</p>

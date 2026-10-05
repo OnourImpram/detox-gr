@@ -1,3 +1,4 @@
+import { HomeSceneSections } from '@/components/scene-sections';
 import { createFileRoute } from '@tanstack/react-router';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ArchivePhoto } from '@/components/archive-photo';
@@ -38,6 +39,6 @@ function Home() {
     </div></section>
     <section className="ed-story-bridge ed-container"><ArchivePhoto original={PHOTO.cinnamon} sizes="(min-width: 900px) 40vw, 100vw" /><div><p className="ed-eyebrow">Taha Hüseyinoğlu</p><h2>{b(locale, 'home.storyTitle')}</h2><p>{b(locale, 'home.storyBody')}</p><LocaleLink to="/hikaye" className="ed-link">{b(locale, 'hero.secondary')}<ArrowRight size={18} aria-hidden="true" /></LocaleLink></div></section>
     <section className="ed-archive-bridge"><div className="ed-container ed-section-heading"><div><p className="ed-eyebrow">{b(locale, 'photo.source')}</p><h2>{b(locale, 'home.archiveTitle')}</h2><p>{b(locale, 'home.archiveBody')}</p></div><LocaleLink to="/raf" className="ed-link">{b(locale, 'archive.all')}<ArrowRight size={18} aria-hidden="true" /></LocaleLink></div><div className="ed-archive-strip ed-container">{[PHOTO.rose, PHOTO.seeds, PHOTO.cloves, PHOTO.flowers].map(photo => <LocaleLink key={photo} to="/raf"><ArchivePhoto original={photo} sizes="(min-width: 900px) 22vw, 45vw" caption={false} /></LocaleLink>)}</div></section>
-    <ProcessSteps /><JournalCards /><ContactCta />
+    <HomeSceneSections /><ProcessSteps /><JournalCards /><ContactCta />
   </div>;
 }

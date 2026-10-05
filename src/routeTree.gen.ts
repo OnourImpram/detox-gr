@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as HikayeRouteImport } from './routes/hikaye'
 import { Route as IletisimRouteImport } from './routes/iletisim'
+import { Route as KompozisyonlarRouteImport } from './routes/kompozisyonlar'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as NotlarRouteImport } from './routes/notlar'
 import { Route as OdemeRouteImport } from './routes/odeme'
@@ -47,6 +48,11 @@ const HikayeRoute = HikayeRouteImport.update({
 const IletisimRoute = IletisimRouteImport.update({
   id: '/iletisim',
   path: '/iletisim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KompozisyonlarRoute = KompozisyonlarRouteImport.update({
+  id: '/kompozisyonlar',
+  path: '/kompozisyonlar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
@@ -159,6 +165,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/hikaye': typeof HikayeRoute
   '/iletisim': typeof IletisimRoute
+  '/kompozisyonlar': typeof KompozisyonlarRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/notlar': typeof NotlarRouteWithChildren
   '/odeme': typeof OdemeRouteWithChildren
@@ -185,6 +192,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/hikaye': typeof HikayeRoute
   '/iletisim': typeof IletisimRoute
+  '/kompozisyonlar': typeof KompozisyonlarRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/odeme': typeof OdemeRouteWithChildren
   '/paket': typeof PaketRoute
@@ -210,6 +218,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/hikaye': typeof HikayeRoute
   '/iletisim': typeof IletisimRoute
+  '/kompozisyonlar': typeof KompozisyonlarRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/notlar': typeof NotlarRouteWithChildren
   '/odeme': typeof OdemeRouteWithChildren
@@ -238,6 +247,7 @@ export interface FileRouteTypes {
     | '/'
     | '/hikaye'
     | '/iletisim'
+    | '/kompozisyonlar'
     | '/llms.txt'
     | '/notlar'
     | '/odeme'
@@ -264,6 +274,7 @@ export interface FileRouteTypes {
     | '/'
     | '/hikaye'
     | '/iletisim'
+    | '/kompozisyonlar'
     | '/llms.txt'
     | '/odeme'
     | '/paket'
@@ -288,6 +299,7 @@ export interface FileRouteTypes {
     | '/'
     | '/hikaye'
     | '/iletisim'
+    | '/kompozisyonlar'
     | '/llms.txt'
     | '/notlar'
     | '/odeme'
@@ -315,6 +327,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   HikayeRoute: typeof HikayeRoute
   IletisimRoute: typeof IletisimRoute
+  KompozisyonlarRoute: typeof KompozisyonlarRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   NotlarRoute: typeof NotlarRouteWithChildren
   OdemeRoute: typeof OdemeRouteWithChildren
@@ -353,6 +366,13 @@ declare module '@tanstack/react-router' {
       path: '/iletisim'
       fullPath: '/iletisim'
       preLoaderRoute: typeof IletisimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kompozisyonlar': {
+      id: '/kompozisyonlar'
+      path: '/kompozisyonlar'
+      fullPath: '/kompozisyonlar'
+      preLoaderRoute: typeof KompozisyonlarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms.txt': {
@@ -546,6 +566,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   HikayeRoute: HikayeRoute,
   IletisimRoute: IletisimRoute,
+  KompozisyonlarRoute: KompozisyonlarRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   NotlarRoute: NotlarRouteWithChildren,
   OdemeRoute: OdemeRouteWithChildren,

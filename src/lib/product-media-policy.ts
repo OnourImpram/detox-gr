@@ -1,9 +1,10 @@
 /** Product identity is explicit. Category images must never impersonate a SKU. */
 export type MediaVariant = { src: string; width: number; height: number };
-export type Illustration = { sourceId: string; kind: string; width: number; height: number; variants: readonly MediaVariant[] };
+export type Illustration = { sourceId: string; sceneId?: string; kind: string; width: number; height: number; variants: readonly MediaVariant[] };
 export type ProductMedia = {
   kind: 'verified' | 'illustration' | 'reference' | 'pending';
   src: string | null;
+  sceneId?: string;
   width?: number;
   height?: number;
   variants: readonly MediaVariant[];
@@ -30,8 +31,8 @@ export function resolveProductMedia(
   references: Readonly<Record<string, { sourceId: string; assetId: string }>> = {},
 ): ProductMedia {
   const approved = product.info?.image;
-  const isGeneratedPath = typeof approved === 'string' && Object.values(illustrations)
-    .some(art => art.variants.some(variant => variant.src === approved));
+  const isGeneratedPath = typeof approved === 'string' && (/\/media\/(?:generated|v3)\//.test(approved) || Object.values(illustrations)
+    .some(art => art.variants.some(variant => variant.src === approved)));
   if (approved && safeLocalImage(approved) && !isGeneratedPath) {
     const photo = archives.find(entry => entry.variants.some(variant => variant.src === approved));
     const full = photo?.variants.at(-1);
@@ -41,7 +42,7 @@ export function resolveProductMedia(
   if (illustration?.sourceId === product.sourceId && illustration.kind === 'illustration'
     && illustration.variants.length > 0 && illustration.variants.every(variant => safeLocalImage(variant.src))) {
     const fallback = illustration.variants.find(variant => variant.width >= 800) ?? illustration.variants.at(-1)!;
-    return { kind: 'illustration', src: fallback.src, width: illustration.width, height: illustration.height, variants: illustration.variants };
+    return { kind: 'illustration', sceneId: illustration.sceneId, src: fallback.src, width: illustration.width, height: illustration.height, variants: illustration.variants };
   }
   const reference = references[product.sourceId];
   const photo = reference?.sourceId === product.sourceId ? archives.find(entry => entry.id === reference.assetId) : undefined;
