@@ -1,7 +1,11 @@
+import { useStorefrontHref } from "@/lib/use-storefront-href";
+import { QuantityPicker } from "@/components/quantity-picker";
+import { lineAmountCents, quantityRule } from "@/lib/list-quantity";
+import { refinement } from "@/lib/refinement-copy";
 import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight, MessageCircle, Minus, Plus } from "lucide-react";
+import { ArrowRight, MessageCircle, Check } from "lucide-react";
 import { LocaleLink } from "@/components/locale-link";
 import { ProductGallery } from "@/components/product-gallery";
 import { mediaCopy } from "@/lib/media-copy";
@@ -11,9 +15,9 @@ import { imageFor, productBySlug, type Product } from "@/lib/catalog";
 import { categoryTitle, localeMeta, productBlurb, productName, t } from "@/lib/i18n";
 import { useLocale } from "@/lib/use-locale";
 import { usePaymentsEnabled } from "@/lib/payments";
-import { saleBlockers, MAX_ITEM_QUANTITY } from "@/lib/commerce-policy";
+import { saleBlockers } from "@/lib/commerce-policy";
 import { ux } from "@/lib/storefront-copy";
-import { formatListed } from "@/lib/money";
+import { formatListed, formatMoney } from "@/lib/money";
 import { related, useCurrency, useShop } from "@/lib/store";
 import { SHOP_WHATSAPP } from "@/lib/shop-facts";
 import { breadcrumbJsonLd, localeFromSearch, pageOrigin, productJsonLd, seoHead } from "@/lib/seo";
@@ -48,8 +52,9 @@ function ProductDetail({ product }: { product: Product }) {
   const payments = usePaymentsEnabled();
   const country = useShop(state => state.country);
   const add = useShop(state => state.add);
+  const inList = useShop(state => state.cart.find(line => line.slug === product.slug)?.qty ?? 0);
   const navigate = useNavigate();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(quantityRule(product.unit).initial);
   const name = productName(product, locale);
   const more = related(product);
   const blockers = saleBlockers(product, country, quantity);
@@ -66,21 +71,19 @@ function ProductDetail({ product }: { product: Product }) {
     ["product.inci", info?.inci, ""],
     ["product.responsiblePerson", info?.responsiblePerson, ""],
   ].filter(row => typeof row[1] === "string" && row[1].trim());
-  const whatsapp = `${SHOP_WHATSAPP}?text=${encodeURIComponent(`${name}\n${product.sourceId}\n${country}\n${pageOrigin()}/p/${product.slug}?lang=${locale}`)}`;
+  const lineCents = lineAmountCents(product.priceEur, quantity);
+  const requested = product.unit === "kg" ? `${quantity < 1 ? quantity*1000 : quantity} ${quantity < 1 ? "g" : "kg"}` : `${quantity} ${refinement(locale,"pieces")}`;
+  const shareUrl = useStorefrontHref(`/p/${product.slug}?lang=${locale}`);
+  const whatsapp = `${SHOP_WHATSAPP}?text=${encodeURIComponent(`${name}\n${product.sourceId}\n${requested}\n${country}\n${shareUrl}`)}`;
   function addProduct() {
     if (blocked) return;
-    const result = add(product.slug, quantity);
+    const result = add(product.slug, quantity, !payments);
     if (result !== "ok") {
       toast(t(locale, result === "norway_food" ? "cart.norwayBlock" : "checkout.err.unknown"));
       return;
     }
     toast(payments ? t(locale, "product.added") : ux(locale, "listAdded"), { action: { label: payments ? t(locale, "nav.cart") : ux(locale, "selection"), onClick: () => { void navigate({ to: "/sepet", search: ((previous: Record<string, unknown>) => applyLang(previous, locale)) as never }); } } });
   }
-  const qtyInput = <div className="dt-quantity" role="group" aria-label={t(locale, "product.qty")}>
-    <button type="button" aria-label={`${t(locale, "product.qty")} −`} disabled={quantity <= 1} onClick={() => setQuantity(value => Math.max(1, value - 1))}><Minus size={16} aria-hidden="true" /></button>
-    <input type="number" inputMode="numeric" aria-label={t(locale, "product.qty")} min={1} max={MAX_ITEM_QUANTITY} step={1} value={quantity} onChange={event => setQuantity(Math.min(MAX_ITEM_QUANTITY, Math.max(1, Math.floor(Number(event.target.value)) || 1)))} />
-    <button type="button" aria-label={`${t(locale, "product.qty")} +`} disabled={quantity >= MAX_ITEM_QUANTITY} onClick={() => setQuantity(value => Math.min(MAX_ITEM_QUANTITY, value + 1))}><Plus size={16} aria-hidden="true" /></button>
-  </div>;
   return <section className="dt-container dt-pdp">
     <nav className="dt-breadcrumb" aria-label={t(locale, "nav.shop")}><LocaleLink to="/shop">{t(locale, "nav.shop")}</LocaleLink><span aria-hidden="true">/</span><LocaleLink to="/shop/$category" params={{ category: product.category }}>{categoryTitle(product.category, locale)}</LocaleLink></nav>
     <div className="dt-pdp__layout">
@@ -88,21 +91,24 @@ function ProductDetail({ product }: { product: Product }) {
       <div className="dt-pdp__information">
         <p className="kicker">{t(locale, product.houseNamed ? "product.made" : "product.picked")}</p><h1>{name}</h1>
         <p className="dt-pdp__price">{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</p>
-        <p className="dt-price-note">{ux(locale, info?.vatIncluded === true ? "vatIncluded" : "referencePrice")}</p>
+        {product.priceEur !== null && <p className="dt-price-note">{ux(locale, info?.vatIncluded === true ? "vatIncluded" : "referencePrice")}</p>}
         <p className="dt-pdp__blurb">{productBlurb(product, locale)}</p>
         <dl className="dt-product-facts">
           {product.net && <div><dt>{t(locale, "product.net")}</dt><dd>{new Intl.NumberFormat(localeMeta(locale).html).format(product.net.value)} {product.net.unit}</dd></div>}
           <div><dt>SKU</dt><dd>{product.sourceId}</dd></div>
           {infoRows.map(([key, value, language]) => <div key={key}><dt>{t(locale, key!)}{language && language !== locale ? ` (${language.toUpperCase()})` : ""}</dt><dd lang={language || undefined}>{value}</dd></div>)}
         </dl>
-        {!payments && <p className="dt-notice">{ux(locale, "previewBody")}</p>}
+
         {payments && blockers.length > 0 && <p className="dt-notice">{ux(locale, "pendingSale")}</p>}
         {country === "NO" && product.klass === "food" && <p className="dt-notice">{t(locale, "cart.norwayBlock")}</p>}
-        <div className="dt-pdp__actions">{qtyInput}<Button variant="primary" disabled={blocked || product.priceEur == null} onClick={addProduct}>{label}<ArrowRight size={17} aria-hidden="true" /></Button></div>
+        <div className="dt-pdp__actions"><QuantityPicker value={quantity} unit={product.unit} name={name} onChange={setQuantity} /><Button variant="primary" disabled={blocked || (payments && product.priceEur == null)} onClick={addProduct}>{label}<ArrowRight size={17} aria-hidden="true" /></Button></div>
+        {lineCents !== null && <p className="rf-line-amount">{refinement(locale,"amount")} <strong>{formatMoney(lineCents/100,currency,locale)}</strong></p>}
+        <p className="rf-request-note">{refinement(locale,"requestNote")}</p>
+        <p className="rf-in-list" role="status">{inList > 0 && <><Check size={17} aria-hidden="true" /><span>{refinement(locale,"inList")}. {new Intl.NumberFormat(locale).format(product.unit === "kg" && inList < 1 ? inList*1000 : inList)} {product.unit === "kg" ? (inList < 1 ? "g" : "kg") : refinement(locale,"pieces")}</span><LocaleLink to="/sepet">{ux(locale,"selection")}</LocaleLink></>}</p>
         <a className="dt-text-link dt-pdp__question" href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} aria-hidden="true" />{t(locale, "product.askWhatsApp")}<span className="sr-only"> ({t(locale, "nav.external")})</span></a>
       </div>
     </div>
     {more.length > 0 && <section className="dt-related"><div className="dt-section-heading"><h2>{t(locale, "product.related")}</h2></div><div className="dt-product-grid">{more.map(item => <ProductCard key={item.sourceId} product={item} />)}</div></section>}
-    <div className="dt-mobile-purchase"><span>{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</span><Button size="sm" variant="primary" disabled={blocked || product.priceEur == null} onClick={addProduct}>{label}</Button></div>
+    <div className="dt-mobile-purchase"><span><small>{new Intl.NumberFormat(locale).format(product.unit === "kg" && quantity < 1 ? quantity*1000 : quantity)} {product.unit === "kg" ? (quantity < 1 ? "g" : "kg") : refinement(locale,"pieces")}</small>{product.priceEur === null ? mediaCopy(locale,"askPrice") : formatMoney((lineAmountCents(product.priceEur,quantity) ?? 0)/100,currency,locale)}</span><Button size="sm" variant="primary" disabled={blocked || (payments && product.priceEur == null)} onClick={addProduct}>{label}</Button></div>
   </section>;
 }

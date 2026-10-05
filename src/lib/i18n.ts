@@ -1,3 +1,4 @@
+import { contextProductName, displaySourceLabel } from "./product-name-context";
 import { featuredName } from "./featured-names";
 import type { CategoryId, Product } from "./catalog";
 import { MESSAGES } from "./i18n-messages";
@@ -47,9 +48,12 @@ export function categoryBlurb(id: CategoryId, locale: Locale) {
 export function productName(product: Product, locale: Locale) {
   const approved = product.info?.localized?.[locale]?.name;
   if (approved?.trim()) return approved;
-  if (locale === "tr") return product.name;
+  const contextName = contextProductName(product.sourceId, locale);
+  if (contextName && !product.info?.nameTr && !product.info?.nameEn) return contextName;
+  const sourceName = product.info?.nameTr || displaySourceLabel(product.sourceId, product.name);
+  if (locale === "tr") return sourceName;
   if (locale === "en" && product.info?.nameEn?.trim()) return product.info.nameEn;
-  return featuredName(product.sourceId, locale) ?? translatePhrase(product.name, locale);
+  return featuredName(product.sourceId, locale) ?? translatePhrase(sourceName, locale);
 }
 
 export function productBlurb(product: Product, locale: Locale) {
