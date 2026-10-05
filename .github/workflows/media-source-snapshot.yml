@@ -1,0 +1,19 @@
+name: Media source snapshot
+on:
+  push:
+    branches: [work/media-three-rounds]
+    paths: [.github/workflows/media-source-snapshot.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: git archive --format=tar.gz --output=/tmp/detoks-current-main.tar.gz 461eb058324c1262d9ce3126eb60ef644f5f0960
+      - uses: actions/upload-artifact@v4
+        with:
+          name: detoks-media-base-source
+          path: /tmp/detoks-current-main.tar.gz
+          retention-days: 1
