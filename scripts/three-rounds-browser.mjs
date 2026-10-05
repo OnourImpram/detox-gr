@@ -21,7 +21,7 @@ async function get(path){
  for(let i=0;i<3;i++){response=await fetch(url(path),{cache:'no-store'});if(response.status<500)break;await delay(1500);}
  assert.equal(response.status,200,path);return response;
 }
-async function visit(path){await page.goto(url(path),{waitUntil:'networkidle'});await page.locator('h1').waitFor();}
+async function visit(path){const response=await page.goto(url(path),{waitUntil:'networkidle'});assert.equal(response?.status(),200,`Document ${path}`);await page.locator('h1').waitFor();}
 async function inspect(label){
  const state=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,lang:document.documentElement.lang,
   h1:document.querySelector('h1')?.textContent,broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.currentSrc),
@@ -41,7 +41,7 @@ try {
  const versionJson=await(await get('/version.json')).json();assert.equal(versionJson.version,version);assert.equal(versionJson.paymentActivated,false);
  browser=await chromium.launch({headless:true,args:['--no-sandbox'],...(process.env.BROWSER_EXECUTABLE_PATH?{executablePath:process.env.BROWSER_EXECUTABLE_PATH}:{})});
  const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});page=await context.newPage();
- page.on('pageerror',error=>report.errors.push(error.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});
+ page.on('pageerror',error=>report.errors.push(error.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(`${m.text()} ${m.location().url}`);});
  await visit('/?lang=tr');await page.locator('.ed-featured').waitFor();
  for(const id of ['DT117','DT101','DT157','DT002']){
   const media=page.locator(`.ed-featured [data-media-for=${id}]`);await media.scrollIntoViewIfNeeded();await media.locator('img').evaluate(el=>el.decode());
@@ -67,6 +67,7 @@ try {
   const scene=scenes.find(s=>s.primaryFor.includes(id));assert.equal(await card.locator('[data-media-for]').getAttribute('data-scene-id'),scene.id);
   await card.locator('a').click();await page.locator('.v3-pdp-media').waitFor();await page.locator('.v3-pdp-media img').evaluate(el=>el.decode());
   assert.equal(await page.locator('.v3-pdp-media').getAttribute('data-scene-id'),scene.id);
+  const deep=await fetch(page.url(),{cache:'no-store'});assert.equal(deep.status,200,`Product deep link ${id}`);
   const expected=scenes.filter(s=>s.sourceIds.includes(id));
   if(expected.length>1){
    const thumbs=page.locator('.scene-thumbnails button');assert.equal(await thumbs.count(),expected.length);
