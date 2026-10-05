@@ -8,12 +8,12 @@ import { formatListed } from '@/lib/money';
 import { ux } from '@/lib/storefront-copy';
 import { mediaCopy } from '@/lib/media-copy';
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, view = "grid" }: { product: Product; view?: "grid" | "list" }) {
   const locale = useLocale();
   const name = productName(product, locale);
   return <article className="dt-product-card v3-product-card" data-product-id={product.sourceId}>
     <LocaleLink to="/p/$slug" params={{ slug: product.slug }} className="dt-product-card__link" aria-label={`${name}. ${mediaCopy(locale, 'view')}`}>
-      <ProductMedia product={product} sizes="(min-width: 1200px) 22vw, (min-width: 640px) 29vw, 44vw" />
+      <ProductMedia product={product} sizes={view === "list" ? "(min-width: 640px) 144px, 96px" : "(min-width: 1200px) 22vw, (min-width: 640px) 29vw, 44vw"} />
       <div className="dt-product-card__body">
         <div className="v3-product-card__details">
           <p className="dt-product-card__shelf">{t(locale, product.houseNamed ? 'product.made' : 'product.picked')}</p>

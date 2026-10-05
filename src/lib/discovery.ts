@@ -5,6 +5,7 @@ export type DiscoverySearch = {
   category: string;
   sort: 'featured' | 'price-asc' | 'price-desc' | 'name';
   page: number;
+  view: "grid" | "list";
 };
 export type DiscoverableProduct = {
   slug: string;
@@ -25,10 +26,11 @@ export function normalizeSearch(value: string): string {
 export function parseDiscoverySearch(input: Record<string, unknown>): DiscoverySearch {
   const page = typeof input.page === 'number' ? input.page : typeof input.page === 'string' && /^\d+$/.test(input.page) ? Number(input.page) : 1;
   return {
-    q: typeof input.q === 'string' ? input.q.trim().slice(0, 120) : '',
+    q: typeof input.q === 'string' ? input.q.slice(0, 120) : '',
     shelf: input.shelf === 'house' || input.shelf === 'selected' ? input.shelf : 'all',
     category: typeof input.category === 'string' && (CATEGORY_IDS as readonly string[]).includes(input.category) ? input.category : 'all',
     sort: input.sort === 'price-asc' || input.sort === 'price-desc' || input.sort === 'name' ? input.sort : 'featured',
+    view: input.view === "list" ? "list" : "grid",
     page: Number.isSafeInteger(page) && page > 0 ? Math.min(page, 100) : 1,
   };
 }

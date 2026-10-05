@@ -1,3 +1,4 @@
+import { translateLabel } from "./label-translation";
 import type { Locale } from "./i18n-locales";
 
 /**
@@ -54,21 +55,5 @@ export function translatePhrase(text: string, locale: Locale): string {
   if (locale === "tr") return text;
   const rows = PACKS[locale]?.glossary;
   if (!rows) return text;
-  let i = 0;
-  let out = "";
-  while (i < text.length) {
-    let matched = false;
-    for (const [src, val] of rows) {
-      if (!text.startsWith(src, i)) continue;
-      out += val;
-      i += src.length;
-      matched = true;
-      break;
-    }
-    if (!matched) {
-      out += text[i];
-      i += 1;
-    }
-  }
-  return out;
+  return translateLabel(text, rows);
 }

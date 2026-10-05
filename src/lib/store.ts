@@ -1,3 +1,4 @@
+import { lineAmountCents, normalizeListQuantity, validListQuantity } from "./list-quantity";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { CountryCode } from "./markets";
@@ -6,7 +7,7 @@ import { PRODUCTS, SKU_BY_ID, productBySlug, type Product } from "./catalog";
 import { type CartLine } from "./shipping";
 import { type Locale } from "./i18n-locales";
 import { sanitizeCart, sanitizePersistedShop } from "./cart-storage";
-import { MAX_CART_LINES, MAX_ITEM_QUANTITY, validateQuantity } from "./commerce-policy";
+import { MAX_CART_LINES, MAX_ITEM_QUANTITY } from "./commerce-policy";
 
 export type CartEntry = { slug: string; qty: number };
 export type AddResult = "ok" | "unknown" | "no_price" | "norway_food" | "quantity";
@@ -16,18 +17,19 @@ type State = {
   country: CountryCode; locale: Locale; cart: CartEntry[]; note: string; orders: Order[]; ready: boolean;
   setNote: (value: string) => void; setReady: (value: boolean) => void;
   setCountry: (country: CountryCode) => void; setLocale: (locale: Locale) => void;
-  add: (slug: string, qty?: number) => AddResult; setQty: (slug: string, qty: number) => void;
+  add: (slug: string, qty?: number, allowUnpriced?: boolean) => AddResult; setQty: (slug: string, qty: number) => void;
   remove: (slug: string) => void; clear: () => void;
 };
+const WEIGHT_SLUGS = new Set(PRODUCTS.filter(product => product.unit === "kg").map(product => product.slug));
 const KNOWN_SLUGS = new Set(PRODUCTS.map(product => product.slug));
 export function linesFrom(cart: CartEntry[]): CartLine[] {
-  return sanitizeCart(cart, KNOWN_SLUGS).flatMap(line => {
+  return sanitizeCart(cart, KNOWN_SLUGS, WEIGHT_SLUGS).flatMap(line => {
     const product = productBySlug(line.slug);
     return product ? [{ product, qty: line.qty }] : [];
   });
 }
 export function goodsEur(cart: CartEntry[]) {
-  return linesFrom(cart).reduce((sum, line) => sum + Math.round((line.product.priceEur ?? 0) * 100) * line.qty, 0) / 100;
+  return linesFrom(cart).reduce((sum, line) => sum + (lineAmountCents(line.product.priceEur, line.qty) ?? 0), 0) / 100;
 }
 export const useShop = create<State>()(persist((set, get) => ({
   country: "GR", locale: "tr", cart: [], note: "", orders: [], ready: false,
@@ -35,13 +37,13 @@ export const useShop = create<State>()(persist((set, get) => ({
   setReady: (ready) => set({ ready }),
   setCountry: (country) => set({ country: sanitizePersistedShop({ country }).country }),
   setLocale: (locale) => set({ locale }),
-  add: (slug, qty = 1) => {
+  add: (slug, qty = 1, allowUnpriced = false) => {
     const product = productBySlug(slug);
     if (!product) return "unknown";
-    if (product.priceEur == null || product.priceEur <= 0) return "no_price";
+    if (!allowUnpriced && (product.priceEur == null || product.priceEur <= 0)) return "no_price";
     if (get().country === "NO" && product.klass === "food") return "norway_food";
-    if (!validateQuantity(qty)) return "quantity";
-    const cart = sanitizeCart(get().cart, KNOWN_SLUGS);
+    if (!validListQuantity(qty, product.unit)) return "quantity";
+    const cart = sanitizeCart(get().cart, KNOWN_SLUGS, WEIGHT_SLUGS);
     const index = cart.findIndex(line => line.slug === slug);
     if (index < 0 && cart.length >= MAX_CART_LINES) return "quantity";
     const total = qty + (index >= 0 ? cart[index].qty : 0);
@@ -52,7 +54,7 @@ export const useShop = create<State>()(persist((set, get) => ({
     return "ok";
   },
   setQty: (slug, qty) => {
-    const safe = Number.isFinite(qty) ? Math.max(1, Math.min(MAX_ITEM_QUANTITY, Math.floor(qty))) : 1;
+    const safe = normalizeListQuantity(qty, productBySlug(slug)?.unit ?? "ürün");
     set({ cart: get().cart.map(line => line.slug === slug ? { slug, qty: safe } : line) });
   },
   remove: (slug) => set({ cart: get().cart.filter(line => line.slug !== slug) }),
@@ -61,8 +63,8 @@ export const useShop = create<State>()(persist((set, get) => ({
   // Reuse the old key so rehydration actively overwrites its personal data rather than abandoning it.
   name: "detoks-gr-shop-v4",
   skipHydration: true,
-  partialize: (state) => sanitizePersistedShop(state, KNOWN_SLUGS),
-  merge: (persisted, current) => ({ ...current, ...sanitizePersistedShop(persisted, KNOWN_SLUGS), orders: [], note: "" }),
+  partialize: (state) => sanitizePersistedShop(state, KNOWN_SLUGS, WEIGHT_SLUGS),
+  merge: (persisted, current) => ({ ...current, ...sanitizePersistedShop(persisted, KNOWN_SLUGS, WEIGHT_SLUGS), orders: [], note: "" }),
 }));
 let booted = false;
 export function bootShop() {
@@ -75,7 +77,7 @@ export function bootShop() {
   else done();
 }
 export function useCurrency() { return countryByCode(useShop(state => state.country)).currency; }
-export function countItems(cart: CartEntry[]) { return sanitizeCart(cart, KNOWN_SLUGS).reduce((sum, line) => sum + line.qty, 0); }
+export function countItems(cart: CartEntry[]) { return sanitizeCart(cart, KNOWN_SLUGS, WEIGHT_SLUGS).length; }
 export function related(product: Product, count = 4) {
   return PRODUCTS.filter(item => item.category === product.category && item.slug !== product.slug)
     .sort((a, b) => Number(!SKU_BY_ID[a.sourceId]) - Number(!SKU_BY_ID[b.sourceId]) || Number(!a.houseNamed) - Number(!b.houseNamed))

@@ -1,5 +1,10 @@
 # Detoks v3.0.0
 
+## Customer experience 3.2
+
+Requested weights, correct line amounts, persistent search and list view, full-size product images, contextual soap names, practical message copying, working public share links, and tightened multilingual editorial copy. See `docs/v3.2/REFINEMENT.md`. Existing catalogue IDs, generated media, real photo archive and closed payment gates are preserved.
+
+
 Taha Hüseyinoğlu'nun Gümülcine'deki aktarının 20 dilli dijital vitrini. Proje, gerçek bir küçük işletmenin kimliğini koruyarak AB pazarına açılabilecek bir işletim modeli geliştirmeyi amaçlar.
 
 
