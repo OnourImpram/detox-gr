@@ -62,12 +62,12 @@ try{
  await page.locator('.ed-inquiry select').selectOption('DE');
  await page.locator('.ed-concepts input').nth(1).check();
  await page.locator('.ed-inquiry input:not([type=radio])').fill('60 EUR');
- await page.locator('.ed-inquiry textarea').fill('PRIVATE_QA_GIFT_NOTE');
+ await page.locator('.ed-inquiry > label textarea').fill('PRIVATE_QA_GIFT_NOTE');
  const link=await page.locator('[data-testid=inquiry-link]').getAttribute('href');
  const message=new URL(link).searchParams.get('text');assert.ok(message.includes('DE')&&message.includes('60 EUR')&&message.includes(copy.tr['gift.two'])&&message.includes('PRIVATE_QA_GIFT_NOTE'));
  assert.equal(new URL(link).hostname,'wa.me');
  const saved=await page.evaluate(()=>JSON.stringify(localStorage));assert.ok(!saved.includes('PRIVATE_QA_GIFT_NOTE'));
- await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('.ed-inquiry textarea').inputValue(),'');
+ await page.reload({waitUntil:'networkidle'});assert.equal(await page.locator('.ed-inquiry > label textarea').inputValue(),'');
  await check('/yasal','legal.title','tr',390);
  await page.locator('.ed-legal button').click();assert.equal(await page.evaluate(()=>localStorage.getItem('detoks-gr-shop-v4')),null);
  assert.ok(await page.getByText(copy.tr['legal.cleared'],{exact:true}).isVisible());

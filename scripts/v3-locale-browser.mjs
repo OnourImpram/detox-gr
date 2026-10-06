@@ -42,7 +42,7 @@ try {
     await page.waitForFunction(expected => document.documentElement.lang === expected && document.querySelector('.dt-language-select').value === expected, locale);
     assert.ok(delayedRequests > 0, `${locale}: test did not exercise a cold dictionary request`);
     const pack = JSON.parse(readFileSync(`src/data/brand/${locale}.json`, 'utf8'));
-    assert.ok((await page.locator('.dt-desktop-nav').innerText()).includes(pack['archive.title']));
+    assert.ok((await page.locator('.dt-footer__links').innerText()).includes(pack['archive.title']));
     assert.equal(new URL(page.url()).searchParams.get('q'), 'DT117');
     assert.equal(await page.locator('[data-product-id="DT117"]').count(), 1);
     observations.push({ from: 'tr', to: locale, delayMs: 1200, delayedRequests, queryPreserved: true, visibleContentStayedReady: true });
