@@ -1,0 +1,21 @@
+name: Refinement source snapshot
+on:
+  push:
+    branches: [work/storefront-refinement]
+    paths: [.github/workflows/refinement-snapshot.yml]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2c01c20b8744e1a05be7e930369115a2af6a3dd1
+      - run: git archive --format=tar.gz -o /tmp/released-source.tar.gz HEAD
+      - uses: actions/upload-artifact@v4
+        with:
+          name: detoks-refinement-source
+          path: /tmp/released-source.tar.gz
+          retention-days: 1
