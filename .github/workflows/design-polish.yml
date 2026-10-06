@@ -1,0 +1,66 @@
+name: Reviewed botanical layout refinements
+on:
+  push:
+    branches: [work/design-v4]
+    paths: [.github/workflows/design-polish.yml]
+permissions:
+  contents: write
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/design-v4
+          fetch-depth: 2
+      - run: test "$(git rev-parse HEAD^)" = c44da507d0933f674a08b4895f19046e6eaedfaa
+      - name: Apply only reviewed text refinements
+        env:
+          PACKAGE_URL: 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-a874-8210-b815-ec7d383a6db9/raw?se=2026-10-06T19%3A39%3A38Z&sp=r&sv=2026-02-06&sr=b&scid=6622ff03-a76b-50f7-b4ec-70967548933b&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T03%3A48%3A47Z&ske=2026-10-07T03%3A48%3A47Z&sks=b&skv=2026-02-06&sig=niZrGw6nxaKmUAygUqZJM/DiOgwsF1v7nWyFBKwZ8Ro%3D'
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 "$PACKAGE_URL" -o /tmp/review.zip
+          echo '29ee6bd9cdf02d0e8815ce0bb21e4c740952eb7ff4311b4164ca580ccff0b0d8  /tmp/review.zip' | sha256sum -c -
+          python - <<'PY'
+          import pathlib,zipfile,hashlib,json
+          root=pathlib.Path.cwd()
+          with zipfile.ZipFile('/tmp/review.zip') as z:
+              manifest=json.loads(z.read('PACKAGE.json'))
+              assert len(manifest['files'])==9
+              assert sum(f.file_size for f in z.infolist())<1000000
+              for name,digest in manifest['existing'].items():
+                  p=root/name
+                  assert (not p.exists()) if digest is None else hashlib.sha256(p.read_bytes()).hexdigest()==digest, name
+              for name,digest in manifest['files'].items():
+                  p=pathlib.PurePosixPath(name)
+                  assert not p.is_absolute() and '..' not in p.parts
+                  assert name.startswith(('src/','docs/design/')) or name in ('DESIGN.md','README.md','package.json','package-lock.json','public/version.json')
+                  data=z.read(name)
+                  assert hashlib.sha256(data).hexdigest()==digest
+                  dest=root/p
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  dest.write_bytes(data)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Save the visually reviewed application
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git add DESIGN.md README.md docs/design src public/version.json package.json package-lock.json
+          git commit -m 'design: polish editorial headline, mobile geometry and v4 documentation'
+          git push origin HEAD:work/design-v4
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-design-polish
+          path: qa-evidence
+          retention-days: 7
