@@ -97,7 +97,7 @@ function ProductDetail({ product }: { product: Product }) {
         <dl className="dt-product-facts">
           {product.net && <div><dt>{t(locale, "product.net")}</dt><dd>{new Intl.NumberFormat(localeMeta(locale).html).format(product.net.value)} {product.net.unit}</dd></div>}
           <div><dt>SKU</dt><dd>{product.sourceId}</dd></div>
-          <div><dt>{r(locale, "unitPrice")}</dt><dd>{product.unit === "kg" ? "kg" : unitLabel(product.unit, locale) === "ürün" ? r(locale, "items") : unitLabel(product.unit, locale)}</dd></div>
+          {product.unit !== "ürün" && <div><dt>{r(locale, "unitPrice")}</dt><dd>{unitLabel(product.unit, locale)}</dd></div>}
           {infoRows.map(([key, value, language]) => <div key={key}><dt>{t(locale, key!)}{language && language !== locale ? ` (${language.toUpperCase()})` : ""}</dt><dd lang={language || undefined}>{value}</dd></div>)}
         </dl>
         {!payments && <p className="customer-selection-note">{r(locale, "selectionHelp")}</p>}

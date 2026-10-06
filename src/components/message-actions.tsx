@@ -12,16 +12,17 @@ export function MessageActions({ message, primaryLabel, testId = 'inquiry-link' 
   const id = useId();
   const text = useRef<HTMLTextAreaElement>(null);
   const [expanded, setExpanded] = useState(false);
-  const [status, setStatus] = useState<'idle' | 'copied' | 'manual'>('idle');
+  const [feedback, setFeedback] = useState<{ message: string; kind: 'copied' | 'manual' } | null>(null);
+  const status = feedback?.message === message ? feedback.kind : 'idle';
   const url = new URL(SHOP_WHATSAPP);
   url.searchParams.set('text', message);
   async function copy() {
     try {
       if (!navigator.clipboard?.writeText) throw new Error('Clipboard API unavailable');
       await navigator.clipboard.writeText(message);
-      setStatus('copied');
+      setFeedback({ message, kind: 'copied' });
     } catch {
-      setStatus('manual');
+      setFeedback({ message, kind: 'manual' });
       setExpanded(true);
       requestAnimationFrame(() => { text.current?.focus({ preventScroll: true }); text.current?.select(); });
     }

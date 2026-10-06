@@ -253,3 +253,8 @@
  .dt-site-header .dt-cart-link, .dt-site-header .dt-menu-button { min-width: 40px; }
 }
 @media (prefers-reduced-motion:reduce) { .v3-product-card .v3-product-media__surface > img { transition: none; } }
+
+.dt-page-heading h1, .dt-shop__heading h1, .dt-cart h1, .dt-checkout h1 { font-weight:650; font-size:clamp(2rem,3.5vw,3.2rem); letter-spacing:-.03em; line-height:1.2; }
+.customer-destination { display:grid; gap:8px; font-size:13px; margin-top:18px; color:var(--dt-muted); }
+.customer-destination select { width:100%; }
+.customer-unknown-price { font-size:13px; line-height:1.7; color:var(--dt-primary); margin-top:10px; }

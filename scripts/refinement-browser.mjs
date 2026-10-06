@@ -92,6 +92,7 @@ try {
  await record('Clipboard denial opens a selectable request, phone remains usable',async()=>{
   await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw new Error('Denied for fallback test');}}}));
   await page.getByTestId('copy-message').click();await page.locator('.customer-message details[open] textarea').waitFor();
+  await page.waitForFunction(()=>{const el=document.querySelector('.customer-message details textarea');return el===document.activeElement&&el.selectionStart===0&&el.selectionEnd===el.value.length;});
   const selected=await page.locator('.customer-message details textarea').evaluate(el=>({focus:el===document.activeElement,start:el.selectionStart,end:el.selectionEnd,text:el.value}));
   assert.equal(selected.focus,true);assert.equal(selected.start,0);assert.equal(selected.end,selected.text.length);assert.match(selected.text,/DT002/);
   assert.equal(await page.locator('.customer-message__phone').getAttribute('href'),'tel:+306945827275');
@@ -124,6 +125,8 @@ try {
   // Clipboard success with actual browser permissions is separately exercised below.
   await context.grantPermissions(['clipboard-read','clipboard-write']);await page.getByTestId('copy-message').click();await page.waitForTimeout(100);
   assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),text);
+  await page.locator('.ed-inquiry-fields input').fill('60 EUR');
+  assert.equal(await page.locator('.customer-message__status').innerText(),'');
  });
  for(const locale of ['tr','el','en','de','fi'])for(const width of [320,768,1440]){
   await page.setViewportSize({width,height:900});await visit(`/?lang=${locale}`);await inspect(`home-${locale}-${width}`);

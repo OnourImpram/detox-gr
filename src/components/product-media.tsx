@@ -29,6 +29,6 @@ export function ProductMedia({ product, sizes = '100vw', priority = false, class
         {!compact && <><span className="v3-product-media__category">{categoryTitle(product.category, locale)}</span><span>{mediaCopy(locale, 'pending')}</span><small>{product.sourceId}</small></>}
       </div>}
     </div>
-    {caption && <figcaption>{mediaCopy(locale, kind)}</figcaption>}
+    {caption && <figcaption aria-hidden={kind === "pending" ? true : undefined}>{kind === "pending" ? "" : mediaCopy(locale, kind)}</figcaption>}
   </figure>;
 }
