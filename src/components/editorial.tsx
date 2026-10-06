@@ -21,14 +21,14 @@ export function EditorialHeader({ title, lead, kicker, image, visual }: { title:
 }
 export function ProcessSteps() {
   const locale = useLocale();
-  return <section className="ed-process ed-container"><div className="ed-section-heading"><p className="ed-eyebrow">Detoks Aktar</p><h2>{b(locale, 'process.title')}</h2></div>
+  return <section className="ed-process ed-container"><div className="ed-section-heading"><h2>{b(locale, 'process.title')}</h2></div>
     <ol>{(['one', 'two', 'three'] as const).map((step, index) => <li key={step}><span className="ed-step-number" aria-hidden="true">{index + 1}</span><div><h3>{b(locale, `process.${step}Title`)}</h3><p>{b(locale, `process.${step}Body`)}</p></div></li>)}</ol>
   </section>;
 }
 export function JournalCards({ heading = true, compact = false }: { heading?: boolean; compact?: boolean }) {
   const locale = useLocale();
   return <section className={`ed-journal ed-container ${compact ? "is-compact" : ""}`}>
-    {heading && <div className="ed-section-heading"><div><p className="ed-eyebrow">Detoks Aktar</p><h2>{b(locale, 'journal.title')}</h2><p>{b(locale, 'journal.lead')}</p></div><LocaleLink to="/notlar" className="ed-link">{b(locale, 'journal.back')}<ArrowRight size={18} aria-hidden="true" /></LocaleLink></div>}
+    {heading && <div className="ed-section-heading"><div><h2>{b(locale, 'journal.title')}</h2><p>{b(locale, 'journal.lead')}</p></div><LocaleLink to="/notlar" className="ed-link">{b(locale, 'journal.back')}<ArrowRight size={18} aria-hidden="true" /></LocaleLink></div>}
     <div className="ed-journal-grid">{JOURNAL.map(note => <article key={note.slug}><LocaleLink to="/notlar/$slug" params={{ slug: note.slug }}>
       {!compact && <ArchivePhoto original={note.image} sizes="(min-width: 900px) 30vw, 100vw" caption={false} />}
       <div className="ed-journal-copy"><h3>{b(locale, `${note.key}.title`)}</h3><p>{b(locale, `${note.key}.deck`)}</p><span className="ed-link">{b(locale, 'journal.read')}<ArrowUpRight size={17} aria-hidden="true" /></span></div>

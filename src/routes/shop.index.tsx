@@ -23,7 +23,6 @@ function Shop() {
   return (
     <section className="dt-catalogue shell-x">
       <header className="dt-page-heading">
-        <p className="kicker">{t(locale, "home.kicker")}</p>
         <h1>{search.q.trim() ? r(locale, "results") : t(locale, "shop.title")}</h1>
         <p>{t(locale, "shop.fullHint")}</p>
       </header>

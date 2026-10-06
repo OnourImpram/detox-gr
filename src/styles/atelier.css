@@ -1,0 +1,452 @@
+/* Detoks atelier. One material system, editorial typography, actual photographic subjects. */
+@font-face {
+  font-family: 'Literata';
+  src: url('/fonts/literata-editorial.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root, [data-theme='botanical'], [data-theme='botanical'] .dt-site-header,
+[data-theme='botanical'] .dt-footer, [data-theme='botanical'] .customer-menu {
+  --dt-bg: #f7f6f0;
+  --dt-raised: #eceee5;
+  --dt-graphite: #e2e6da;
+  --dt-fg: #253c31;
+  --dt-muted: #59665c;
+  --dt-faint: #59665c;
+  --dt-primary: #253c31;
+  --dt-primary-hover: #405945;
+  --dt-on-primary: #ffffff;
+  --dt-patina: #915138;
+  --dt-brass: #915138;
+  --dt-border: #ccd2c5;
+  --dt-rule: #aebaa6;
+  --dt-display: 'Literata', Georgia, serif;
+  --dt-radius: 3px;
+  --customer-radius: 3px;
+  --atelier-max: 1440px;
+  --atelier-gutter: clamp(22px, 5vw, 80px);
+  --atelier-ease: cubic-bezier(.2,.75,.25,1);
+}
+html { scrollbar-color: #aebaa6 #f7f6f0; scroll-padding-top: 145px; }
+body { background: var(--dt-bg); color: var(--dt-fg); caret-color: var(--dt-patina); }
+::selection { background: #dfe6cf; color: #253c31; }
+:where(h1,h2,h3) { text-wrap: balance; }
+:where(p) { text-wrap: pretty; }
+:where(a) { text-underline-offset: .3em; }
+:where(a,button,input,textarea,select,summary):focus-visible { outline: 2px solid #915138; outline-offset: 5px; }
+:where(a,button) { transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease; }
+:where(input,select,textarea) { accent-color: var(--dt-primary); }
+:where(button):active { transform: translateY(1px); }
+.ed-container, .dt-container, .shell-x { max-width: var(--atelier-max); width: 100%; margin-inline: auto; padding-inline: var(--atelier-gutter); }
+[data-theme='botanical'] :is(h1,h2) { font-family: var(--dt-display); font-weight: 400; letter-spacing: -.035em; line-height: 1.16; }
+[data-theme='botanical'] h3 { font-weight: 500; letter-spacing: -.015em; }
+.ed-lead { color: #374a40; font-size: 17px; line-height: 1.85; }
+.ed-eyebrow, .kicker { font-family: var(--dt-sans); font-size: 12px; letter-spacing: .07em; color: var(--dt-muted); }
+.ed-link, .dt-text-link { font-size: 14px; font-weight: 500; gap: 20px; min-height: 44px; border-bottom-color: var(--dt-rule); }
+.ed-link:hover, .dt-text-link:hover { color: var(--dt-patina); border-bottom-color: var(--dt-patina); }
+.bg-primary { border-radius: 3px; background: var(--dt-primary); color: var(--dt-on-primary); }
+.bg-primary:hover { background: var(--dt-primary-hover); }
+.customer-skip { background: var(--dt-bg); color: var(--dt-fg); border-color: var(--dt-primary); }
+/* The storefront masthead belongs to the same paper world as the catalogue. */
+[data-theme='botanical'] .dt-site-header { background: #f7f6f0; color: var(--dt-fg); border-bottom: 1px solid var(--dt-border); }
+.dt-preview-bar { background: #eceee5; color: #405443; min-height: 36px; padding-block: 6px; font-size: 12px; line-height: 1.6; }
+.dt-preview-bar strong { font-size: 12px; font-weight: 500; }
+.dt-preview-bar p { font-size: 12px; }
+.dt-header-row { min-height: 98px; gap: 30px; }
+.dt-wordmark { gap: 4px; }
+[data-theme='botanical'] .atelier-wordmark { font-family: 'Literata', Georgia, serif; display: inline-block; font-weight: 400; letter-spacing: -.05em; line-height: 1.05; }
+[data-theme='botanical'] .dt-wordmark .atelier-wordmark { font-size: 42px; }
+.atelier-wordmark__suffix { font-size: .62em; letter-spacing: -.035em; }
+.dt-wordmark > span:last-child { font-size: 10px; color: var(--dt-muted); letter-spacing: .16em; margin-top: 3px; }
+.dt-desktop-nav { gap: clamp(24px, 2.5vw, 38px); }
+.dt-desktop-nav a { font-size: 14px; font-weight: 500; padding-block: 12px; }
+.dt-desktop-nav a[aria-current=page]::after { bottom: 5px; }
+.dt-header-actions { gap: 16px; }
+.dt-language-select { background: transparent; color: var(--dt-fg); min-height: 44px; max-width: 100px; }
+.dt-cart-link { border: 1px solid var(--dt-border); min-height: 44px; padding-inline: 12px; border-radius: 3px; }
+.customer-list-count { background: var(--dt-primary); color: #ffffff; }
+.dt-country-row { min-height: 44px; background: #f7f6f0; border-top-color: var(--dt-border); font-size: 12px; }
+.dt-country select { font-size: 13px; }
+.v3-quick-search { border-color: var(--dt-border); width: min(340px, 40vw); }
+.v3-quick-search input { font-size: 14px; color: var(--dt-fg); }
+.v3-quick-search button { color: var(--dt-fg); }
+.dt-site-header[data-loading=true]::after { background: var(--dt-patina); }
+/* A large botanical photograph is an object, not a decorative card collage. */
+.atelier-hero { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); gap: clamp(40px,6vw,88px); align-items: center; padding-block: 56px 58px; }
+.atelier-hero__copy { min-width: 0; padding-block: 10px 26px; }
+.atelier-place { font-size: 12px; letter-spacing: .06em; color: var(--dt-muted); margin-bottom: 28px; display: flex; align-items: center; gap: 13px; }
+[data-theme='botanical'] .atelier-hero h1 { font-size: clamp(42px, 4.6vw, 66px); line-height: 1.12; max-width: 20ch; margin: 0 0 26px; letter-spacing: -.035em; }
+.atelier-hero .ed-lead { max-width: 43ch; font-size: 17px; line-height: 1.8; }
+.atelier-hero .ed-actions { margin-top: 28px; gap: 15px 26px; }
+.atelier-hero .bg-primary { font-size: 15px; padding-inline: 23px; min-height: 52px; }
+.atelier-quiet-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; gap: 10px; }
+.atelier-quiet-link:hover { color: var(--dt-patina); }
+.atelier-owner { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-top: 34px; font-size: 14px; }
+.atelier-owner span:last-child { color: var(--dt-muted); font-size: 12px; }
+.atelier-specimen { min-width: 0; position: relative; padding-top: 10px; }
+.atelier-specimen__frame { position: relative; background: #e7ece7; width: 100%; aspect-ratio: 1.2; }
+.atelier-specimen__frame .ed-photo { height: 100%; }
+.atelier-specimen__frame img { height: 100%; width: 100%; object-fit: cover; }
+.atelier-specimen__label { position: absolute; left: 20px; bottom: 20px; padding: 8px 14px; font-family: var(--dt-display); font-size: 20px; line-height: 1.3; color: #253c31; background: #f7f6f0; max-width: calc(100% - 40px); }
+.atelier-specimen__controls { display: flex; gap: 8px 22px; flex-wrap: wrap; border-bottom: 1px solid var(--dt-border); padding-block: 10px 5px; }
+.atelier-specimen__controls button { display: inline-flex; align-items: center; min-height: 44px; gap: 8px; font-size: 13px; color: var(--dt-muted); }
+.atelier-specimen__controls button[aria-pressed=true] { color: var(--dt-fg); }
+.atelier-specimen__dot { display: inline-block; width: 5px; height: 5px; border-radius: 100%; background: var(--dt-border); flex: none; }
+[aria-pressed=true] .atelier-specimen__dot { background: var(--dt-patina); }
+.atelier-specimen__caption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 15px; color: var(--dt-muted); font-size: 11px; line-height: 1.6; padding-top: 9px; }
+.atelier-specimen__caption a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 12px; color: var(--dt-fg); }
+.ed-categories { border-block-color: var(--dt-border); padding-block: 10px; gap: 0 22px; }
+.ed-categories a { font-size: 13px; color: #405443; }
+.ed-categories sup { font-family: var(--dt-sans); font-variant-numeric: tabular-nums; font-size: 10px; }
+/* A readable shop window. Product image identity and price always stay visible. */
+.ed-featured { padding-block: 68px 72px; }
+.ed-section-heading { align-items: end; gap: 20px 48px; margin-bottom: 34px; }
+[data-theme='botanical'] .ed-section-heading h2 { font-size: clamp(30px,3.15vw,45px); max-width: 27ch; margin-top: 0; }
+.ed-section-heading p:not(.ed-eyebrow) { font-size: 15px; line-height: 1.8; max-width: 52ch; color: var(--dt-muted); margin-top: 14px; }
+.dt-product-grid { gap: 42px 24px; }
+.v3-product-card .dt-product-card__link { border-radius: 0; }
+.v3-product-media__surface { border: 0; border-radius: 2px; background: #e9ece4; }
+.v3-product-media img { transition: transform 400ms var(--atelier-ease); }
+@media(hover:hover) { .v3-product-card__link:hover .v3-product-media img, .dt-product-card__link:hover .v3-product-media img { transform: scale(1.035); } }
+.v3-product-media figcaption { font-size: 11px; line-height: 1.65; padding-top: 8px; min-height: 27px; color: var(--dt-muted); }
+.v3-product-card .dt-product-card__body { padding-top: 17px; }
+.dt-product-card__shelf { font-size: 12px; color: var(--dt-muted); font-weight: 400; }
+[data-theme='botanical'] .v3-product-card h3 { font-family: var(--dt-display); font-size: clamp(20px,1.8vw,25px); font-weight: 400; line-height: 1.35; margin-block: 9px 7px; }
+.dt-product-card__category, .dt-product-card__quantity { font-size: 12px; color: var(--dt-muted); line-height: 1.7; }
+.v3-product-card__purchase { padding-top: 15px; padding-right: 52px; min-height: 78px; border-top: 1px solid var(--dt-border); }
+.v3-product-card__purchase .dt-product-card__price { font-size: 19px; font-weight: 500; color: var(--dt-fg); }
+.v3-product-card__purchase .dt-product-card__price-note { font-size: 11px; }
+.customer-quick-add { border-color: var(--dt-border); color: var(--dt-fg); background: var(--dt-bg); border-radius: 50%; bottom: 10px; }
+.v3-product-media[data-media-kind=pending] .v3-product-media__surface { background: #eceee5; border: 1px solid #d8dece; }
+.v3-product-media__pending { color: #59665c; }
+.v3-product-media__pending > .v3-product-media__category { font-family: var(--dt-display); font-size: 18px; }
+/* Two different acts, presented as an editorial spread rather than cloned cards. */
+.atelier-shelves { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.08fr); gap: clamp(40px,8vw,116px); align-items: center; padding-block: 66px 72px; border-top: 1px solid var(--dt-border); }
+.atelier-shelves__intro h2 { font-size: clamp(32px,3.5vw,48px); max-width: 19ch; }
+.atelier-shelves__intro > p { margin-top: 20px; color: var(--dt-muted); max-width: 49ch; line-height: 1.8; font-size: 16px; }
+.atelier-shelves__intro .ed-photo { margin-top: 30px; width: 82%; }
+.atelier-shelves__intro .ed-photo img { aspect-ratio: 1.65; object-fit: cover; }
+.atelier-shelves .ed-shelf-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+.atelier-shelves .ed-shelf { display: grid; grid-template-columns: minmax(0,1fr) 26px; gap: 28px; padding-block: 35px 42px; border: 0; border-top: 1px solid var(--dt-rule); }
+.atelier-shelves .ed-shelf:last-child { border-bottom: 1px solid var(--dt-rule); }
+[data-theme='botanical'] .atelier-shelves .ed-shelf h3 { font-family: var(--dt-display); font-size: clamp(27px,2.5vw,36px); font-weight: 400; line-height: 1.2; margin: 0 0 19px; }
+.atelier-shelves .ed-shelf p { max-width: 43ch; font-size: 16px; line-height: 1.8; color: var(--dt-muted); }
+.atelier-shelves .ed-shelf > svg { color: var(--dt-fg); margin-top: 4px; }
+.atelier-shelves .ed-shelf:hover h3 { color: var(--dt-patina); }
+/* Category windows have different widths and heights, not three decorative feature cards. */
+.scene-category-section { padding-block: 62px 70px; border-top: 1px solid var(--dt-border); }
+.scene-category-grid { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr); align-items: end; gap: 30px; }
+.scene-category-grid > a { display: flex; flex-direction: column; }
+.scene-category-grid > a h3 { order: -1; font-family: var(--dt-display); font-weight: 400; font-size: 26px; margin: 0 0 17px; }
+.scene-category-grid > a:first-child .scene-figure__surface { aspect-ratio: 1.18; }
+.scene-category-grid > a:not(:first-child) .scene-figure__surface { aspect-ratio: .95; }
+.scene-figure figcaption, .scene-card-caption { font-size: 11px; color: var(--dt-muted); }
+.scene-gift-bridge { grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); align-items: center; gap: clamp(35px,6vw,85px); background: #e9ece1; padding-block: 54px 58px; margin-block: 10px 50px; }
+.scene-gift-bridge > div:first-child { order: 2; }
+.scene-gift-bridge > div:last-child { order: 1; }
+[data-theme='botanical'] .scene-gift-bridge h2 { font-size: clamp(34px,3.8vw,54px); margin-block: 0 25px; max-width: 15ch; }
+.scene-gift-bridge > div > p:not(.ed-eyebrow) { font-size: 17px; line-height: 1.8; color: #405443; }
+.scene-gift-bridge .scene-concept-note { font-size: 12px; }
+.scene-gift-bridge .ed-link { margin-top: 24px; }
+.ed-story-bridge { display: grid; grid-template-columns: minmax(0,.75fr) minmax(0,1.25fr); gap: clamp(45px,9vw,140px); align-items: center; padding-block: 42px 75px; }
+.ed-story-bridge > .ed-photo { width: 100%; }
+.ed-story-bridge .ed-photo img { aspect-ratio: .93; object-fit: cover; }
+.ed-story-bridge > div { max-width: 570px; }
+.ed-story-bridge .ed-eyebrow { margin-bottom: 20px; text-transform: none; font-size: 14px; letter-spacing: 0; }
+[data-theme='botanical'] .ed-story-bridge h2 { font-size: clamp(32px,3.5vw,49px); max-width: 24ch; margin-block: 0 23px; }
+.ed-story-bridge p:not(.ed-eyebrow) { font-size: 17px; line-height: 1.9; color: var(--dt-muted); }
+.ed-journal { padding-block: 65px 68px; border-top: 1px solid var(--dt-border); }
+.ed-journal.is-compact .ed-journal-grid { grid-template-columns: 1fr; gap: 0; }
+.ed-journal.is-compact .ed-journal-grid > article { padding: 0; border: 0; border-top: 1px solid var(--dt-border); }
+.ed-journal.is-compact .ed-journal-grid > article:last-child { border-bottom: 1px solid var(--dt-border); }
+.ed-journal.is-compact .ed-journal-copy { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr) auto; align-items: center; gap: 35px; padding-block: 26px; }
+[data-theme='botanical'] .ed-journal.is-compact .ed-journal-grid h3 { font-family: var(--dt-display); font-weight: 400; font-size: 25px; line-height: 1.4; }
+.ed-journal.is-compact .ed-journal-copy p { margin: 0; font-size: 14px; max-width: 47ch; }
+.ed-journal.is-compact .ed-link { font-size: 13px; gap: 12px; }
+.ed-contact-cta { padding-block: 46px 64px; border-top: 0; gap: 28px 55px; }
+.ed-contact-cta .ed-eyebrow { text-transform: none; letter-spacing: .025em; font-size: 12px; }
+[data-theme='botanical'] .ed-contact-cta h2 { font-size: clamp(32px,3.4vw,48px); margin-block: 14px 0; max-width: 25ch; }
+.ed-contact-cta p:not(.ed-eyebrow) { font-size: 16px; line-height: 1.8; }
+/* Collections and product pages share the palette, not the home-page layout. */
+.dt-catalogue, .dt-shop { padding-block: 45px 72px; }
+.dt-page-heading, .dt-shop__heading { padding-bottom: 32px; border-color: var(--dt-border); }
+[data-theme='botanical'] :is(.dt-page-heading,.dt-shop__heading) h1 { font-size: clamp(38px,4.3vw,60px); margin-block: 5px 18px; }
+.dt-page-heading p, .dt-shop__heading p { color: var(--dt-muted); line-height: 1.8; }
+.dt-explorer { margin-top: 26px; }
+.dt-explorer__toolbar { padding-block: 0 5px; gap: 22px; }
+.dt-explorer__select select, .dt-search-field { background: #ffffff; border: 1px solid var(--dt-border); border-radius: 3px; }
+.dt-explorer__search label, .dt-explorer__select { color: var(--dt-fg); font-size: 13px; }
+.dt-explorer input, .dt-explorer select { font-size: 16px; }
+.customer-pictured input { accent-color: var(--dt-primary); }
+.customer-filters button { border-radius: 3px; background: #e9ece1; font-size: 13px; min-height: 44px; }
+.dt-shelf-filter button { font-size: 14px; min-height: 44px; }
+.dt-shelf-filter button[aria-pressed=true] { border-bottom-width: 1px; }
+.customer-results-bar { margin-top: 8px; border-top: 1px solid var(--dt-border); padding-block: 17px 26px; }
+.customer-view { border-radius: 3px; }
+[data-view=list] .dt-product-card__link { grid-template-columns: 136px minmax(0,1fr); gap: 32px; }
+[data-view=list] .v3-product-card { padding-block: 21px; }
+[data-theme='botanical'] [data-view=list] .v3-product-card h3 { font-size: 25px; }
+[data-view=list] .v3-product-card__purchase { min-width: 154px; padding: 0; border: 0; }
+[data-view=list] .customer-quick-add { border-radius: 50%; }
+.scene-category-header .scene-figure { max-width: 330px; width: 100%; }
+.scene-category-header .scene-figure__surface { aspect-ratio: 1.75; }
+.dt-pdp { padding-block: 30px 70px; }
+.dt-breadcrumb { font-size: 13px; margin-bottom: 26px; }
+.dt-pdp__layout { grid-template-columns: minmax(0,1.12fr) minmax(0,.88fr); gap: clamp(38px,6vw,90px); }
+.dt-pdp__information { padding-top: 5px; }
+[data-theme='botanical'] .dt-pdp__information h1 { font-size: clamp(35px,4vw,57px); line-height: 1.15; margin-top: 17px; }
+.dt-pdp__information .kicker { text-transform: none; font-size: 13px; color: var(--dt-muted); letter-spacing: .02em; }
+.dt-pdp__price { font-size: 27px; color: var(--dt-fg); margin-block: 21px 6px; font-weight: 500; }
+.dt-pdp__blurb { line-height: 1.85; font-size: 16px; }
+.dt-product-facts > div { padding-block: 14px; font-size: 14px; gap: 22px; }
+.dt-product-facts dt { color: var(--dt-muted); }
+.dt-pdp__actions { margin-top: 23px; gap: 13px; }
+.dt-pdp__actions > button { font-size: 15px; min-height: 54px; }
+.dt-quantity { border-color: var(--dt-border); background: #ffffff; }
+.dt-quantity button { width: 42px; height: 52px; }
+.dt-quantity input { font-size: 16px; }
+.v3-media-disclosure { background: transparent; border: 0; border-bottom: 1px solid var(--dt-border); padding: 10px 0 16px; font-size: 12px; line-height: 1.8; color: var(--dt-muted); }
+.customer-zoom-button { background: #f7f6f0; color: var(--dt-fg); border-color: var(--dt-border); border-radius: 50%; }
+.scene-thumbnails button { border-width: 1px; }
+.scene-thumbnails button > span { background: var(--dt-bg); color: var(--dt-fg); }
+.dt-notice, .ed-archive-note, .dt-product-notice { background: var(--dt-raised); color: var(--dt-muted); border: 0; border-radius: 3px; padding: 15px 18px; line-height: 1.8; font-size: 13px; }
+.dt-related { padding-top: 62px; }
+.customer-product-help { border-color: var(--dt-border); }
+.customer-product-help summary { min-height: 44px; font-size: 14px; }
+/* Reading, gifts and contact use a comfortable type measure and meaningful form surfaces. */
+.ed-page-header { padding-block: 56px 46px; }
+[data-theme='botanical'] .ed-page-header h1, [data-theme='botanical'] .ed-note h1 { font-size: clamp(36px,4.2vw,59px); line-height: 1.17; margin-block: 0 24px; max-width: 21ch; }
+.ed-page-header.with-image { grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: clamp(36px,7vw,100px); align-items: center; }
+.ed-page-header.with-image .ed-photo img { aspect-ratio: 1.13; }
+.ed-page-header.with-image .scene-figure__surface { aspect-ratio: 1.12; }
+.ed-page-header > div > .ed-eyebrow { margin-bottom: 18px; }
+.ed-photo figcaption { font-size: 12px; color: var(--dt-muted); }
+.ed-photo figcaption > span:last-child { font-size: 10px; }
+.ed-story-intro { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 8vw; }
+.ed-pullquote { font-family: var(--dt-display); font-size: clamp(25px,2.7vw,38px); font-weight: 400; line-height: 1.5; }
+.ed-story-chapters section { padding-block: 56px 62px; }
+.ed-story-chapters h2 { font-size: clamp(30px,3vw,42px); }
+.ed-story-chapters section p, .ed-note-prose p { color: #405443; }
+.ed-chapter-mark { font-family: var(--dt-sans); color: var(--dt-muted); }
+.ed-journal:not(.is-compact) .ed-journal-copy h3 { font-family: var(--dt-display); font-weight: 400; font-size: 28px; line-height: 1.3; }
+.ed-gallery-grid h2 { font-family: var(--dt-sans); font-weight: 500; letter-spacing: 0; }
+.ed-gallery-counter { font-family: var(--dt-sans); font-size: 13px; }
+.ed-expand { min-width: 44px; min-height: 44px; border: 0; border-radius: 50%; background: #f7f6f0; color: var(--dt-fg); }
+.ed-archive-note { font-size: 13px; }
+.scene-card-text h2 { font-size: clamp(24px,2.5vw,32px); }
+.ed-inquiry { background: #eceee5; border: 0; border-radius: 4px; padding: clamp(24px,3.5vw,48px); }
+.ed-inquiry input:not([type=radio]), .ed-inquiry select, .ed-inquiry textarea, .dt-note-label textarea, .dt-checkout__form input { background: #ffffff; border: 1px solid var(--dt-border); font-size: 16px; padding: 13px; border-radius: 3px; }
+.ed-inquiry label, .ed-inquiry legend { font-size: 14px; }
+.ed-concepts { grid-template-columns: 1fr; gap: 0; }
+.ed-concepts label { padding: 15px 0; border: 0; border-bottom: 1px solid var(--dt-border); background: transparent; font-size: 15px; gap: 12px; }
+.ed-concepts label:has(:checked) { color: var(--dt-fg); border-color: var(--dt-primary); }
+.ed-concepts input { accent-color: var(--dt-primary); min-width: 18px; height: 18px; }
+.ed-contact-layout aside h2 { font-size: 28px; }
+.ed-form-note { font-size: 13px; }
+.ed-gift-directions h2 { font-size: 27px; }
+.dt-cart__summary { background: #eceee5; border: 0; padding: clamp(22px,3vw,40px); }
+.dt-cart h1, .dt-checkout h1 { font-size: clamp(38px,4vw,58px); margin-block: 22px 30px; }
+.dt-cart__summary h2 { font-size: 30px; }
+.dt-cart-line__title { font-family: var(--dt-display); font-size: 21px; font-weight: 400; }
+.dt-cart-line__total { color: var(--dt-fg); font-weight: 500; }
+.customer-message details textarea { background: #ffffff; color: var(--dt-fg); font-size: 14px; line-height: 1.8; }
+.customer-message__phone { font-size: 14px; }
+.dt-mobile-purchase { background: #f7f6f0; border-top-color: var(--dt-border); box-shadow: none; }
+/* Modal surfaces preserve existing focus and keyboard behavior. */
+[data-theme='botanical'] .customer-menu { background: #f7f6f0; color: #253c31; padding: 27px; }
+.customer-menu__heading { margin-bottom: 28px; }
+[data-theme='botanical'] .customer-menu__heading h2 { font-size: 33px; }
+.customer-menu nav > a { font-family: var(--dt-display); font-size: 29px; font-weight: 400; padding-block: 19px; min-height: 64px; border-color: var(--dt-border); }
+.customer-menu__secondary a { font-family: var(--dt-sans); font-size: 14px; }
+.customer-menu form > label { font-size: 14px; }
+.customer-menu .dt-search-field { background: #ffffff; }
+.customer-menu::backdrop, .customer-zoom::backdrop, .ed-photo-dialog::backdrop { background: #1f362cbb; backdrop-filter: none; }
+.customer-zoom, .ed-photo-dialog { background: #f7f6f0; color: #253c31; }
+.customer-zoom h2 { font-size: 27px; }
+/* The footer is a shop colophon, not an unrelated dark landing-page block. */
+[data-theme='botanical'] .dt-footer { background: #eceee5; color: var(--dt-fg); border-top: 1px solid var(--dt-border); padding-block: 50px 25px; }
+.dt-footer__grid { grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr) minmax(0,1fr); gap: 60px; }
+[data-theme='botanical'] .atelier-wordmark--footer { font-size: 67px; }
+.dt-footer__about { font-size: 14px; line-height: 1.8; max-width: 33ch; margin-top: 17px; }
+.dt-footer__links a { color: var(--dt-fg); font-size: 13px; }
+.dt-footer__links a:hover { color: var(--dt-patina); }
+.customer-footer-languages { margin-top: 24px; border-top: 1px solid var(--dt-border); padding-top: 8px; }
+.customer-footer-languages summary { font-size: 13px; }
+.dt-footer__bottom { font-size: 12px; border-color: var(--dt-border); }
+@keyframes atelier-specimen-in { from { transform: translateY(5px); opacity: .85; } to { transform: translateY(0); opacity: 1; } }
+@media(prefers-reduced-motion:no-preference) { .atelier-specimen__frame .ed-photo { animation: atelier-specimen-in 400ms var(--atelier-ease); } }
+@media(min-width:1600px) { .atelier-hero { padding-top: 70px; } }
+@media(max-width:1199px) {
+  .dt-header-row { gap: 20px; }
+  .dt-header-actions { gap: 9px; }
+  .dt-desktop-nav { gap: 22px; }
+  .atelier-hero { gap: 38px; }
+  .atelier-specimen__frame { aspect-ratio: .92; }
+  .dt-product-grid { gap: 35px 20px; }
+  .ed-featured .dt-product-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .dt-footer__grid { gap: 32px; }
+  .ed-journal.is-compact .ed-journal-copy { gap: 25px; }
+}
+@media(max-width:1023px) {
+  html { scroll-padding-top: 100px; }
+  .dt-header-row { min-height: 86px; }
+  .dt-desktop-nav { display: none; }
+  .dt-menu-button { display: inline-flex; border-color: var(--dt-border); border-radius: 3px; }
+  .atelier-hero { grid-template-columns: minmax(0,1fr) minmax(0,.95fr); gap: 27px; padding-block: 38px 45px; }
+  [data-theme='botanical'] .atelier-hero h1 { font-size: clamp(40px,5.7vw,57px); }
+  .atelier-hero .ed-lead { font-size: 16px; }
+  .atelier-hero .ed-actions { gap: 8px 18px; }
+  .atelier-owner { margin-top: 23px; }
+  .atelier-specimen__frame { aspect-ratio: .85; }
+  .atelier-specimen__controls { gap: 0 12px; }
+  .atelier-specimen__controls button { font-size: 12px; }
+  .scene-category-grid { gap: 20px; }
+  .scene-category-grid > a h3 { font-size: 22px; }
+  .ed-shelves.atelier-shelves { gap: 42px; }
+  .dt-pdp__layout { grid-template-columns: 1fr; gap: 32px; }
+  .dt-pdp__figure { max-width: 100%; }
+  .dt-pdp__information { max-width: 720px; }
+  .dt-product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .ed-featured .dt-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 36px 26px; }
+  .ed-journal.is-compact .ed-journal-copy { grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 12px 26px; }
+  .ed-journal.is-compact .ed-journal-copy .ed-link { grid-column: 2; }
+}
+@media(max-width:767px) {
+  :root { --atelier-gutter: 24px; }
+  [data-theme='botanical'] .dt-wordmark .atelier-wordmark { font-size: 34px; }
+  .dt-preview-bar { padding-block: 7px; }
+  .dt-preview-bar p { font-size: 11px; }
+  .dt-header-row { min-height: 80px; gap: 12px; }
+  .dt-header-actions { gap: 8px; }
+  .atelier-hero { grid-template-columns: 1fr; gap: 32px; padding-block: 32px 36px; }
+  .atelier-hero__copy { padding: 0; }
+  .atelier-place { margin-bottom: 23px; font-size: 11px; }
+  [data-theme='botanical'] .atelier-hero h1 { font-size: clamp(39px,9.7vw,57px); max-width: 16ch; line-height: 1.12; letter-spacing: -.035em; margin-bottom: 22px; }
+  .atelier-hero .ed-lead { max-width: 50ch; font-size: 16px; line-height: 1.8; }
+  .atelier-hero .ed-actions { gap: 12px 18px; margin-top: 25px; }
+  .atelier-hero .bg-primary { min-height: 50px; padding-inline: 18px; font-size: 14px; }
+  .atelier-quiet-link { font-size: 13px; }
+  .atelier-owner { display: none; }
+  .atelier-specimen { padding-top: 0; }
+  .atelier-specimen__frame { aspect-ratio: 1.26; }
+  .atelier-specimen__label { left: 14px; bottom: 14px; font-size: 20px; max-width: calc(100% - 28px); }
+  .atelier-specimen__controls { justify-content: space-between; gap: 0 12px; }
+  .atelier-specimen__controls button { font-size: 12px; min-height: 44px; }
+  .atelier-specimen__caption { font-size: 11px; }
+  .ed-categories { gap: 0 19px; padding-block: 10px; }
+  .ed-categories a { font-size: 13px; }
+  .ed-featured { padding-block: 44px 48px; }
+  .ed-section-heading { align-items: start; flex-direction: column; margin-bottom: 26px; gap: 14px; }
+  [data-theme='botanical'] .ed-section-heading h2 { font-size: 33px; max-width: 24ch; }
+  .ed-section-heading p:not(.ed-eyebrow) { font-size: 14px; }
+  .ed-featured .dt-product-grid, .dt-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 16px; }
+  [data-theme='botanical'] .v3-product-card h3 { font-size: 21px; }
+  .dt-product-card__shelf { font-size: 11px; }
+  .v3-product-card .dt-product-card__body { padding-top: 13px; }
+  .v3-product-card__purchase { padding-right: 45px; min-height: 88px; }
+  .v3-product-card__purchase .dt-product-card__price { font-size: 17px; }
+  .v3-product-card__purchase .dt-product-card__price-note { font-size: 11px; }
+  .customer-quick-add { bottom: 17px; width: 44px; min-width: 44px; height: 44px; border-radius: 3px; }
+  .atelier-shelves { grid-template-columns: 1fr; gap: 30px; padding-block: 46px 50px; }
+  .atelier-shelves__intro h2 { font-size: 36px; }
+  .atelier-shelves__intro > p { font-size: 15px; margin-top: 17px; }
+  .atelier-shelves__intro .ed-photo { width: 100%; margin-top: 24px; }
+  .atelier-shelves__intro .ed-photo img { aspect-ratio: 2; }
+  .atelier-shelves .ed-shelf { padding-block: 28px; gap: 23px; }
+  [data-theme='botanical'] .atelier-shelves .ed-shelf h3 { font-size: 30px; margin-bottom: 15px; }
+  .atelier-shelves .ed-shelf p { font-size: 15px; }
+  .scene-category-section { padding-block: 44px 48px; }
+  .scene-category-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px 18px; }
+  .scene-category-grid > a:first-child { grid-column: 1/-1; }
+  .scene-category-grid > a:first-child .scene-figure__surface { aspect-ratio: 1.75; }
+  .scene-category-grid > a:not(:first-child) .scene-figure__surface { aspect-ratio: 1; }
+  .scene-category-grid > a h3 { font-size: 24px; margin-bottom: 12px; }
+  .scene-gift-bridge { grid-template-columns: 1fr; gap: 27px; padding-block: 40px; margin-block: 0 18px; }
+  [data-theme='botanical'] .scene-gift-bridge h2 { max-width: 18ch; font-size: 39px; margin-bottom: 22px; }
+  .scene-gift-bridge > div > p:not(.ed-eyebrow) { font-size: 16px; }
+  .scene-gift-bridge .ed-link { margin-top: 15px; }
+  .ed-story-bridge { grid-template-columns: minmax(0,.65fr) minmax(0,1fr); align-items: start; gap: 25px; padding-block: 35px 50px; }
+  .ed-story-bridge .ed-photo img { aspect-ratio: .7; }
+  [data-theme='botanical'] .ed-story-bridge h2 { font-size: 29px; }
+  .ed-story-bridge p:not(.ed-eyebrow) { font-size: 15px; line-height: 1.8; }
+  .ed-story-bridge .ed-eyebrow { margin-bottom: 15px; font-size: 12px; }
+  .ed-journal { padding-block: 43px 45px; }
+  .ed-journal.is-compact .ed-journal-copy { grid-template-columns: 1fr; padding-block: 25px; gap: 13px; }
+  .ed-journal.is-compact .ed-journal-copy .ed-link { grid-column: 1; }
+  [data-theme='botanical'] .ed-journal.is-compact .ed-journal-grid h3 { font-size: 27px; }
+  .ed-contact-cta { padding-block: 35px 48px; }
+  [data-theme='botanical'] .ed-contact-cta h2 { font-size: 35px; }
+  .dt-catalogue, .dt-shop { padding-block: 32px 50px; }
+  [data-theme='botanical'] :is(.dt-page-heading,.dt-shop__heading) h1 { font-size: 41px; }
+  .dt-explorer__toolbar { gap: 17px; }
+  .customer-results-bar { padding-block: 15px 22px; }
+  [data-view=list] .dt-product-card__link { grid-template-columns: 90px minmax(0,1fr); padding-right: 0; gap: 17px; }
+  [data-view=list] .dt-product-card__body { display: block; min-width: 0; padding-right: 0; }
+  [data-theme='botanical'] [data-view=list] .v3-product-card h3 { font-size: 22px; }
+  [data-view=list] .v3-product-card__purchase { margin-top: 10px; min-width: 0; width: auto; padding-right: 48px; min-height: 62px; }
+  [data-view=list] .customer-quick-add { top: auto; transform: none; bottom: 27px; }
+  [data-view=list] .v3-product-media figcaption { font-size: 10px; }
+  .dt-pdp { padding-block: 22px 95px; }
+  .dt-pdp__layout { gap: 25px; }
+  .dt-pdp__information { padding-top: 0; }
+  [data-theme='botanical'] .dt-pdp__information h1 { font-size: 40px; }
+  .dt-pdp__price { font-size: 26px; }
+  .dt-product-facts > div { font-size: 14px; }
+  .dt-pdp__actions > button { font-size: 14px; }
+  .scene-category-header { grid-template-columns: 1fr; gap: 22px; }
+  .scene-category-header .scene-figure { max-width: 100%; justify-self: stretch; }
+  .scene-category-header .scene-figure__surface { aspect-ratio: 2.1; }
+  .ed-page-header { padding-block: 34px 34px; }
+  [data-theme='botanical'] .ed-page-header h1, [data-theme='botanical'] .ed-note h1 { font-size: clamp(33px,8.5vw,43px); }
+  .ed-page-header.with-image { grid-template-columns: 1fr; gap: 26px; }
+  .ed-page-header.with-image .ed-photo img, .ed-page-header.with-image .scene-figure__surface { aspect-ratio: 1.65; }
+  .ed-story-intro { grid-template-columns: 1fr; gap: 25px; }
+  .ed-story-chapters section { grid-template-columns: 1fr; gap: 24px; padding-block: 36px; }
+  .ed-story-chapters section:nth-child(even) > div { order: initial; }
+  .ed-story-chapters section:nth-child(even) > figure { order: initial; }
+  .ed-contact-layout { gap: 30px; }
+  .ed-inquiry { padding: 24px 20px; }
+  .ed-contact-layout, .ed-gift-directions { grid-template-columns: 1fr; }
+  .ed-gift-directions { gap: 26px; }
+  .dt-footer__grid { grid-template-columns: 1fr; gap: 32px; }
+  [data-theme='botanical'] .dt-footer .atelier-wordmark--footer { font-size: 64px; }
+  .dt-footer__links { gap: 0 24px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:479px) {
+  :root { --atelier-gutter: 22px; }
+  .dt-header-row { padding-inline: 20px; gap: 10px; }
+  [data-theme='botanical'] .dt-wordmark .atelier-wordmark { font-size: 30px; }
+  .dt-wordmark > span:last-child { font-size: 9px; }
+  .dt-language-select { max-width: 60px; width: 60px; font-size: 12px; }
+  .dt-menu-button { width: 44px; min-width: 44px; min-height: 44px; }
+  .dt-cart-link { min-width: 44px; padding-inline: 3px; border: 0; }
+  .dt-header-actions { gap: 6px; }
+  .atelier-specimen__controls { justify-content: start; gap: 0 14px; }
+  .atelier-specimen__controls button { font-size: 11px; gap: 5px; }
+  .ed-story-bridge { grid-template-columns: 1fr; gap: 25px; }
+  .ed-story-bridge > .ed-photo { width: 73%; }
+  .ed-story-bridge .ed-photo img { aspect-ratio: 1.2; }
+  [data-theme='botanical'] .ed-story-bridge h2 { font-size: 36px; }
+  .scene-category-grid > a h3 { font-size: 22px; }
+  .dt-product-grid, .ed-featured .dt-product-grid { gap: 30px 14px; }
+  [data-theme='botanical'] .v3-product-card h3 { font-size: 19px; }
+  .v3-product-card__purchase { padding-right: 0; padding-bottom: 46px; min-height: 112px; }
+  .customer-quick-add { bottom: 0; left: 0; right: auto; width: 100%; height: 40px; min-height: 44px; }
+  [data-view=list] .v3-product-card__purchase { padding-right: 50px; padding-bottom: 0; min-height: 66px; }
+  [data-view=list] .customer-quick-add { left: auto; right: 0; width: 44px; height: 44px; bottom: 29px; }
+  [data-view=list] .dt-product-card__link { grid-template-columns: 80px minmax(0,1fr); gap: 15px; }
+  [data-theme='botanical'] [data-view=list] .v3-product-card h3 { font-size: 20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .atelier-specimen__frame .ed-photo { animation: none; }
+  .v3-product-media img { transition: none; }
+  .dt-product-card__link:hover .v3-product-media img { transform: none; }
+}
+
+/* Badges never move the compact header. Fixed purchase controls stay inside the viewport. */
+.dt-cart-link { position:relative; }
+.dt-cart-link .customer-list-count { position:absolute; top:-5px; right:-5px; font-size:10px; min-width:18px; padding:2px 3px; line-height:1.3; }
+.dt-mobile-purchase { width:100%; max-width:100%; min-width:0; box-sizing:border-box; }
+.dt-mobile-purchase > button { min-width:0; white-space:normal; }
+.v3-product-media__pending .v3-product-media__category { color:var(--dt-muted); }

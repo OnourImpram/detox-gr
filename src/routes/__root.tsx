@@ -1,3 +1,4 @@
+import atelierCss from '../styles/atelier.css?url';
 import refinementCss from "../styles/refinement.css?url";
 import scenesCss from "../styles/scenes.css?url";
 import { createRootRoute, HeadContent, Outlet, redirect, Scripts, useHydrated, ClientOnly, useRouterState } from "@tanstack/react-router";
@@ -48,7 +49,7 @@ export const Route = createRootRoute({
       { title: t(localeFromSearch(match.search), "seo.notfound.title") },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#1F130B" },
+      { name: "theme-color", content: "#F7F6F0" },
       { name: "author", content: "Taha Hüseyinoğlu" },
       ...(STATIC_PREVIEW ? [{ name: "robots", content: "noindex,nofollow" }] : []),
     ],
@@ -61,6 +62,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: v3Css },
       { rel: "stylesheet", href: scenesCss },
       { rel: "stylesheet", href: refinementCss },
+      { rel: "stylesheet", href: atelierCss },
       { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),
@@ -72,7 +74,7 @@ function Document({ children }: { children: React.ReactNode }) {
   const hydrated = useHydrated();
   const htmlLocale = STATIC_PREVIEW && !hydrated ? "tr" : locale;
   return (
-    <html lang={localeMeta(htmlLocale).html} className="antialiased" data-theme="pine">
+    <html lang={localeMeta(htmlLocale).html} className="antialiased" data-theme="botanical">
       <head><HeadContent /></head>
       <body>{children}<Scripts /></body>
     </html>
