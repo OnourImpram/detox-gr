@@ -1,0 +1,72 @@
+name: Customer refinement integration
+on:
+  push:
+    branches: [work/storefront-refinement]
+    paths: [.github/workflows/import-refinement.yml]
+permissions:
+  contents: write
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/storefront-refinement
+          fetch-depth: 2
+      - name: Preserve the reviewed branch base
+        run: test "$(git rev-parse HEAD^)" = 436cbe8a6dcc544ddf9135a79b1f1105c11990e1
+      - name: Apply verified application sources without changing workflows
+        env:
+          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-3f68-820a-9267-fb49dc11a91a/raw?se=2026-10-06T08%3A20%3A37Z&sp=r&sv=2026-02-06&sr=b&scid=5edb0bb8-9028-501f-a0a9-f00dbc6c84ae&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T04%3A10%3A30Z&ske=2026-10-07T04%3A10%3A30Z&sks=b&skv=2026-02-06&sig=/kGsirLEostgiN1bymWZqmNwPoLjXSLPd7WuImWEsjI%3D'
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 "$PACKAGE_URL" -o /tmp/refinement.zip
+          echo '16b5d8b536461b1d830bea9fb29956c34e14508f1ddb8fe55995948e0a23cf3d  /tmp/refinement.zip' | sha256sum -c -
+          python - <<'PY'
+          import json,zipfile,pathlib,hashlib
+          root=pathlib.Path.cwd()
+          with zipfile.ZipFile('/tmp/refinement.zip') as archive:
+              manifest=json.loads(archive.read('PACKAGE.json'))
+              assert len(manifest['files'])==29
+              assert sum(f.file_size for f in archive.infolist())<1500000
+              for name,digest in manifest['existing'].items():
+                  path=root/name
+                  assert (not path.exists()) if digest is None else hashlib.sha256(path.read_bytes()).hexdigest()==digest, 'Concurrent change: '+name
+              for name,digest in manifest['files'].items():
+                  path=pathlib.PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert name.startswith(('src/','scripts/','docs/'))
+                  assert path.suffix in ('.ts','.tsx','.json','.mjs','.md','.css')
+                  body=archive.read(name)
+                  assert hashlib.sha256(body).hexdigest()==digest
+                  dest=root/path
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  dest.write_bytes(body)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Save application changes only on the isolated branch
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git add src scripts docs
+          git commit -m 'feat: refine product discovery, request alternatives, mobile navigation and route metadata'
+          git push origin HEAD:work/storefront-refinement
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - run: npx playwright install --with-deps chromium
+      - name: Customer journeys and screenshot review evidence
+        run: node scripts/refinement-browser.mjs > qa-evidence/refinement-browser.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: customer-refinement-first-evidence
+          path: qa-evidence
+          retention-days: 7
