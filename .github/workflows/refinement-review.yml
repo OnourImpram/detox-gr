@@ -1,0 +1,45 @@
+name: Customer refinement review
+on:
+  push:
+    branches: [work/storefront-refinement]
+    paths: [.github/workflows/refinement-review.yml]
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/storefront-refinement
+          fetch-depth: 2
+      - run: test "$(git rev-parse HEAD^)" = af01a708ebadde8094083a6aaab02d96b47e9b32
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: node scripts/apply-refinement-review.mjs
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Save reviewed refinements on work branch only
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git rm scripts/apply-refinement-review.mjs
+          git add src scripts public/version.json package.json package-lock.json
+          git commit -m 'fix: clarify quantity labels and make request feedback reflect the current message'
+          git push origin HEAD:work/storefront-refinement
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/refinement-browser.mjs > qa-evidence/refinement-browser.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: customer-refinement-review-evidence
+          path: qa-evidence
+          retention-days: 7
