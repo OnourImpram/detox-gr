@@ -1,3 +1,4 @@
+import { trapDialogTab } from '@/lib/dialog-focus';
 import { sceneCopy } from '@/lib/scene-copy';
 import { type FormEvent, useEffect, useRef, useState } from 'react';
 import { useNavigate, useRouterState } from '@tanstack/react-router';
@@ -99,7 +100,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </div>
       <div className="dt-country-row shell-x">{countrySelect}<form className="v3-quick-search" role="search" onSubmit={search}><label className="sr-only" htmlFor="desktop-search">{t(locale, 'nav.search')}</label><input id="desktop-search" type="search" name="q" maxLength={120} placeholder={r(locale, 'searchHint')} autoComplete="off" /><button type="submit" aria-label={t(locale, 'nav.search')}><Search size={17} aria-hidden="true" /></button></form></div>
     </header>
-    <dialog id="mobile-nav" ref={dialog} className="customer-menu" aria-labelledby="mobile-menu-title" onCancel={event => { event.preventDefault(); closeMenu(); }} onClose={() => setOpen(false)}>
+    <dialog id="mobile-nav" ref={dialog} className="customer-menu" onKeyDown={trapDialogTab} aria-labelledby="mobile-menu-title" onCancel={event => { event.preventDefault(); closeMenu(); }} onClose={() => setOpen(false)}>
       <div className="customer-menu__heading"><h2 id="mobile-menu-title">{t(locale, 'nav.menu')}</h2><button type="button" onClick={closeMenu} aria-label={r(locale, 'close')}><X size={24} aria-hidden="true" /></button></div>
       <form onSubmit={search} role="search"><label htmlFor="mobile-search">{t(locale, 'nav.search')}</label><div className="dt-search-field"><input ref={searchInput} id="mobile-search" name="q" type="search" maxLength={120} placeholder={r(locale, 'searchHint')} /><button type="submit" aria-label={t(locale, 'nav.search')}><Search size={18} aria-hidden="true" /></button></div></form>
       <nav aria-label={t(locale, 'nav.menu')}>{nav.map(item => <LocaleLink key={item.to} to={item.to} onClick={() => setOpen(false)}>{item.label}<ArrowUpRight size={18} aria-hidden="true" /></LocaleLink>)}</nav>

@@ -114,6 +114,7 @@ try {
   await visit('/?lang=tr');await page.locator('.dt-menu-button').click();await page.locator('#mobile-nav[open]').waitFor();
   assert.ok(await page.locator('#mobile-search').evaluate(el=>el===document.activeElement));
   for(let i=0;i<18;i++){await page.keyboard.press('Tab');assert.ok(await page.evaluate(()=>document.querySelector('#mobile-nav').contains(document.activeElement)));}
+  for(let i=0;i<18;i++){await page.keyboard.press('Shift+Tab');assert.ok(await page.evaluate(()=>document.querySelector('#mobile-nav').contains(document.activeElement)));}
   assert.equal(await page.evaluate(()=>document.body.style.overflow),'hidden');await shot('menu-mobile',false);
   await page.keyboard.press('Escape');assert.equal(await page.locator('#mobile-nav[open]').count(),0);assert.ok(await page.locator('.dt-menu-button').evaluate(el=>el===document.activeElement));assert.notEqual(await page.evaluate(()=>document.body.style.overflow),'hidden');
   await page.locator('.dt-menu-button').click();await page.setViewportSize({width:1440,height:1000});await page.waitForTimeout(150);assert.equal(await page.locator('#mobile-nav[open]').count(),0);
@@ -122,7 +123,6 @@ try {
   await visit('/paket?lang=tr');await page.locator('.ed-concepts input').nth(1).check();await page.locator('.ed-inquiry-fields select').selectOption('DE');await page.locator('.ed-inquiry-fields input').fill('50 EUR');await page.locator('.ed-inquiry > label textarea').fill('PRIVATE_GIFT_NOTE');
   const text=new URL(await page.getByTestId('inquiry-link').getAttribute('href')).searchParams.get('text');assert.match(text,/Mutfaktan bir seçki/);assert.match(text,/50 EUR/);assert.match(text,/DE/);assert.match(text,/PRIVATE_GIFT_NOTE/);
   assert.ok(!(await page.evaluate(()=>localStorage.getItem('detoks-gr-shop-v4'))).includes('PRIVATE_GIFT_NOTE'));
-  // Clipboard success with actual browser permissions is separately exercised below.
   await context.grantPermissions(['clipboard-read','clipboard-write']);await page.getByTestId('copy-message').click();await page.waitForTimeout(100);
   assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),text);
   await page.locator('.ed-inquiry-fields input').fill('60 EUR');

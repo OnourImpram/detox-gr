@@ -1,7 +1,7 @@
 name: Storefront quality
 on:
   push:
-    branches: [work/detoks-eu-storefront, work/media-three-rounds]
+    branches: [work/detoks-eu-storefront, work/media-three-rounds, work/storefront-refinement]
   pull_request:
     branches: [main]
 permissions:
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -47,6 +47,10 @@ jobs:
         run: npm run build:pages > qa-evidence/pages.log 2>&1
       - name: Install test browser
         run: npx playwright install --with-deps chromium
+      - name: Customer discovery and accessible request journeys
+        id: refinement
+        continue-on-error: true
+        run: node scripts/refinement-browser.mjs > qa-evidence/refinement-browser.log 2>&1
       - name: Existing storefront scenarios
         id: browser
         continue-on-error: true
@@ -83,19 +87,20 @@ jobs:
       - name: Evidence summary
         if: always()
         run: |
-          printf '%s\n' 'scenes=${{ steps.scenes.outcome }}' 'dependencies=${{ steps.dependencies.outcome }}' 'locale=${{ steps.locale.outcome }}' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
+          printf '%s\n' 'refinement=${{ steps.refinement.outcome }}' 'scenes=${{ steps.scenes.outcome }}' 'dependencies=${{ steps.dependencies.outcome }}' 'locale=${{ steps.locale.outcome }}' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
           git rev-parse HEAD > qa-evidence/commit.txt
           git ls-files -z | xargs -0 sha256sum > qa-evidence/source-sha256.txt
           for f in qa-evidence/*.log; do echo "===== $f ====="; tail -25 "$f"; done
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: detoks-v31-quality-evidence
+          name: detoks-v32-quality-evidence
           path: qa-evidence
           retention-days: 14
       - name: Require all quality gates
         if: always()
         run: |
+          test '${{ steps.refinement.outcome }}' = success
           test '${{ steps.scenes.outcome }}' = success
           test '${{ steps.dependencies.outcome }}' = success
           test '${{ steps.locale.outcome }}' = success

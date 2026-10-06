@@ -57,7 +57,7 @@ try {
  }
  await inspect('gallery-all-30-1440');await shot('gallery-all');report.checks.push('All thirty unique scenes render and select a registered responsive variant');
  const opener=page.locator('[data-composition-id="R3-09"] .scene-open');await opener.click();await page.locator('dialog[open]').waitFor();
- assert.ok(await page.locator('dialog button').evaluate(el=>el===document.activeElement));await page.keyboard.press('Escape');
+ assert.ok(await page.locator('dialog[open] button').evaluate(el=>el===document.activeElement));await page.keyboard.press('Escape');
  assert.equal(await page.locator('dialog[open]').count(),0);assert.ok(await opener.evaluate(el=>el===document.activeElement));
  await page.locator('.ed-gallery-filter button').last().click();assert.equal(await page.locator('[data-composition-id]').count(),1);
  assert.equal(await page.locator('[data-composition-id]').getAttribute('data-composition-id'),'R3-09');report.checks.push('Gallery pagination, filtering, modal Escape and focus restoration');
