@@ -1,0 +1,70 @@
+name: Botanical design review
+on:
+  push:
+    branches: [work/design-v4]
+    paths: [.github/workflows/import-design-v4.yml]
+permissions:
+  contents: write
+jobs:
+  design:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/design-v4
+          fetch-depth: 2
+      - run: test "$(git rev-parse HEAD^)" = 1d7adf1ed3802ebe21eb41b02682ea1409a328f5
+      - name: Apply only checksum-verified design files
+        env:
+          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-2350-820a-9fce-e0e4d6f85c6f/raw?se=2026-10-06T19%3A28%3A42Z&sp=r&sv=2026-02-06&sr=b&scid=a7020391-23e5-518d-81fe-baab32cfd74d&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-06T06%3A05%3A29Z&ske=2026-10-07T06%3A05%3A29Z&sks=b&skv=2026-02-06&sig=GaPvT3Ab5khBntDOOqV2xAA6/UnYbgoKo2Xxbj/BZ%2B0%3D'
+        run: |
+          curl --fail --silent --show-error --location --max-time 60 "$PACKAGE_URL" -o /tmp/design.zip
+          echo 'e1341f406f8dc0338685ae4537be39799b4ae0df3fd603d20d5e3f2b72acdc7f  /tmp/design.zip' | sha256sum -c -
+          python - <<'PY'
+          import zipfile,pathlib,json,hashlib
+          root=pathlib.Path.cwd()
+          with zipfile.ZipFile('/tmp/design.zip') as archive:
+              manifest=json.loads(archive.read('PACKAGE.json'))
+              assert len(manifest['files'])==17
+              assert sum(f.file_size for f in archive.infolist())<1500000
+              for name,digest in manifest['existing'].items():
+                  path=root/name
+                  assert (not path.exists()) if digest is None else hashlib.sha256(path.read_bytes()).hexdigest()==digest, 'Concurrent change: '+name
+              for name,digest in manifest['files'].items():
+                  path=pathlib.PurePosixPath(name)
+                  assert not path.is_absolute() and '..' not in path.parts
+                  assert name.startswith(('src/','scripts/','docs/design/')) or name in ('DESIGN.md','public/fonts/literata-editorial.woff2','public/fonts/OFL-Literata.txt')
+                  body=archive.read(name)
+                  assert hashlib.sha256(body).hexdigest()==digest
+                  target=root/path
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  target.write_bytes(body)
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Save application design on work branch only
+        run: |
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git add DESIGN.md src scripts docs/design public/fonts/literata-editorial.woff2 public/fonts/OFL-Literata.txt
+          git commit -m 'design: rebuild Detoks as a botanical editorial shop with genuine archive imagery'
+          git push origin HEAD:work/design-v4
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - run: npm run build:pages > qa-evidence/pages.log 2>&1
+      - run: npx playwright install --with-deps chromium
+      - name: Render design and check multilingual layouts
+        run: node scripts/design-v4-browser.mjs > qa-evidence/design.log 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-design-first-review
+          path: qa-evidence
+          retention-days: 7
