@@ -1,0 +1,69 @@
+name: Reviewed dependency and test maintenance
+on:
+  push:
+    branches: [work/storefront-refinement]
+    paths: [.github/workflows/refinement-maintenance.yml]
+permissions:
+  contents: write
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: work/storefront-refinement
+          fetch-depth: 2
+      - run: test "$(git rev-parse HEAD^)" = 58010393c5d0a78da1ecfedc3e726d8ab891e6fe
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Read the specifically reviewed npm release
+        run: npm view source-map-js@1.2.2 --json > /tmp/source-map-release.json
+      - name: Patch only the vulnerable lockfile entry and outdated test selectors
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          import assert from 'node:assert/strict';
+          const published=JSON.parse(readFileSync('/tmp/source-map-release.json','utf8'));
+          assert.equal(published.name,'source-map-js');
+          assert.equal(published.version,'1.2.2');
+          assert.equal(published.dist.tarball,'https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz');
+          assert.match(published.dist.integrity,/^sha512-[A-Za-z0-9+/]+=*$/);
+          const text=readFileSync('package-lock.json','utf8');
+          const lock=JSON.parse(text),before=structuredClone(lock);
+          const target=lock.packages['node_modules/source-map-js'];
+          assert.equal(target.version,'1.2.1');
+          for(const field of ['dependencies','optionalDependencies','peerDependencies'])assert.deepEqual(published[field]??{},target[field]??{});
+          target.version=published.version;target.resolved=published.dist.tarball;target.integrity=published.dist.integrity;
+          const restored=structuredClone(lock);restored.packages['node_modules/source-map-js']=before.packages['node_modules/source-map-js'];
+          assert.deepEqual(restored,before,'Unrelated dependency graph changed');
+          const eol=text.includes('\r\n')?'\r\n':'\n';
+          writeFileSync('package-lock.json',(JSON.stringify(lock,null,2)+'\n').replace(/\n/g,eol));
+          function replace(path,from,to,count){const source=readFileSync(path,'utf8');assert.equal(source.split(from).length-1,count,path);writeFileSync(path,source.replaceAll(from,to));}
+          replace('scripts/editorial-browser.mjs',"page.locator('.ed-inquiry textarea')","page.locator('.ed-inquiry > label textarea')",2);
+          replace('scripts/v3-locale-browser.mjs',"page.locator('.dt-desktop-nav').innerText()","page.locator('.dt-footer__links').innerText()",1);
+          console.log(JSON.stringify({package:published.name,version:published.version,integrity:published.dist.integrity,advisory:'GHSA-68fv-2mgg-jv7q',changedPackages:1}));
+          JS
+      - run: npm ci
+      - run: mkdir -p qa-evidence
+      - run: npm audit --audit-level=high --json > qa-evidence/dependencies.json
+      - run: npm test > qa-evidence/tests.log 2>&1
+      - run: npm run typecheck > qa-evidence/types.log 2>&1
+      - run: npm run lint > qa-evidence/lint.log 2>&1
+      - name: Record exact narrow changes
+        run: |
+          git diff -- package-lock.json scripts/editorial-browser.mjs scripts/v3-locale-browser.mjs > qa-evidence/maintenance.diff
+          git config user.name 'Detoks project automation'
+          git config user.email 'detoks-automation@users.noreply.github.com'
+          git add package-lock.json scripts/editorial-browser.mjs scripts/v3-locale-browser.mjs
+          git commit -m 'security: update source-map-js to reviewed fixed 1.2.2 and preserve customer test intent'
+          git push origin HEAD:work/storefront-refinement
+          git rev-parse HEAD > qa-evidence/commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: detoks-refinement-maintenance
+          path: qa-evidence
+          retention-days: 7
