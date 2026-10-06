@@ -1,21 +1,24 @@
 import { createFileRoute, notFound, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight, MessageCircle, Minus, Plus } from "lucide-react";
+import { ArrowRight, Minus, Plus } from "lucide-react";
 import { LocaleLink } from "@/components/locale-link";
+import { MessageActions } from "@/components/message-actions";
+import { requestLine } from "@/lib/selection-request";
+import { r } from "@/lib/refinement-copy";
 import { ProductGallery } from "@/components/product-gallery";
 import { mediaCopy } from "@/lib/media-copy";
 import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
 import { imageFor, productBySlug, type Product } from "@/lib/catalog";
-import { categoryTitle, localeMeta, productBlurb, productName, t } from "@/lib/i18n";
+import { categoryTitle, localeMeta, productBlurb, productName, unitLabel, t } from "@/lib/i18n";
 import { useLocale } from "@/lib/use-locale";
 import { usePaymentsEnabled } from "@/lib/payments";
 import { saleBlockers, MAX_ITEM_QUANTITY } from "@/lib/commerce-policy";
 import { ux } from "@/lib/storefront-copy";
 import { formatListed } from "@/lib/money";
 import { related, useCurrency, useShop } from "@/lib/store";
-import { SHOP_WHATSAPP } from "@/lib/shop-facts";
+
 import { breadcrumbJsonLd, localeFromSearch, pageOrigin, productJsonLd, seoHead } from "@/lib/seo";
 import { applyLang } from "@/lib/lang-search";
 
@@ -66,7 +69,8 @@ function ProductDetail({ product }: { product: Product }) {
     ["product.inci", info?.inci, ""],
     ["product.responsiblePerson", info?.responsiblePerson, ""],
   ].filter(row => typeof row[1] === "string" && row[1].trim());
-  const whatsapp = `${SHOP_WHATSAPP}?text=${encodeURIComponent(`${name}\n${product.sourceId}\n${country}\n${pageOrigin()}/p/${product.slug}?lang=${locale}`)}`;
+  const request = `${r(locale, "requestPhoto")}\n\n${requestLine({ name, sourceId: product.sourceId, qty: quantity, unit: product.unit })}\n${country}\n${pageOrigin()}/p/${product.slug}?lang=${locale}`;
+  const quantityLabel = r(locale, product.unit === "kg" ? "kg" : "items");
   function addProduct() {
     if (blocked) return;
     const result = add(product.slug, quantity);
@@ -76,10 +80,10 @@ function ProductDetail({ product }: { product: Product }) {
     }
     toast(payments ? t(locale, "product.added") : ux(locale, "listAdded"), { action: { label: payments ? t(locale, "nav.cart") : ux(locale, "selection"), onClick: () => { void navigate({ to: "/sepet", search: ((previous: Record<string, unknown>) => applyLang(previous, locale)) as never }); } } });
   }
-  const qtyInput = <div className="dt-quantity" role="group" aria-label={t(locale, "product.qty")}>
-    <button type="button" aria-label={`${t(locale, "product.qty")} −`} disabled={quantity <= 1} onClick={() => setQuantity(value => Math.max(1, value - 1))}><Minus size={16} aria-hidden="true" /></button>
-    <input type="number" inputMode="numeric" aria-label={t(locale, "product.qty")} min={1} max={MAX_ITEM_QUANTITY} step={1} value={quantity} onChange={event => setQuantity(Math.min(MAX_ITEM_QUANTITY, Math.max(1, Math.floor(Number(event.target.value)) || 1)))} />
-    <button type="button" aria-label={`${t(locale, "product.qty")} +`} disabled={quantity >= MAX_ITEM_QUANTITY} onClick={() => setQuantity(value => Math.min(MAX_ITEM_QUANTITY, value + 1))}><Plus size={16} aria-hidden="true" /></button>
+  const qtyInput = <div className="dt-quantity" role="group" aria-label={quantityLabel}>
+    <button type="button" aria-label={`${quantityLabel} −`} disabled={quantity <= 1} onClick={() => setQuantity(value => Math.max(1, value - 1))}><Minus size={16} aria-hidden="true" /></button>
+    <input type="number" inputMode="numeric" aria-label={quantityLabel} min={1} max={MAX_ITEM_QUANTITY} step={1} value={quantity} onChange={event => setQuantity(Math.min(MAX_ITEM_QUANTITY, Math.max(1, Math.floor(Number(event.target.value)) || 1)))} />
+    <button type="button" aria-label={`${quantityLabel} +`} disabled={quantity >= MAX_ITEM_QUANTITY} onClick={() => setQuantity(value => Math.min(MAX_ITEM_QUANTITY, value + 1))}><Plus size={16} aria-hidden="true" /></button>
   </div>;
   return <section className="dt-container dt-pdp">
     <nav className="dt-breadcrumb" aria-label={t(locale, "nav.shop")}><LocaleLink to="/shop">{t(locale, "nav.shop")}</LocaleLink><span aria-hidden="true">/</span><LocaleLink to="/shop/$category" params={{ category: product.category }}>{categoryTitle(product.category, locale)}</LocaleLink></nav>
@@ -93,16 +97,17 @@ function ProductDetail({ product }: { product: Product }) {
         <dl className="dt-product-facts">
           {product.net && <div><dt>{t(locale, "product.net")}</dt><dd>{new Intl.NumberFormat(localeMeta(locale).html).format(product.net.value)} {product.net.unit}</dd></div>}
           <div><dt>SKU</dt><dd>{product.sourceId}</dd></div>
+          <div><dt>{r(locale, "unitPrice")}</dt><dd>{product.unit === "kg" ? "kg" : unitLabel(product.unit, locale) === "ürün" ? r(locale, "items") : unitLabel(product.unit, locale)}</dd></div>
           {infoRows.map(([key, value, language]) => <div key={key}><dt>{t(locale, key!)}{language && language !== locale ? ` (${language.toUpperCase()})` : ""}</dt><dd lang={language || undefined}>{value}</dd></div>)}
         </dl>
-        {!payments && <p className="dt-notice">{ux(locale, "previewBody")}</p>}
+        {!payments && <p className="customer-selection-note">{r(locale, "selectionHelp")}</p>}
         {payments && blockers.length > 0 && <p className="dt-notice">{ux(locale, "pendingSale")}</p>}
         {country === "NO" && product.klass === "food" && <p className="dt-notice">{t(locale, "cart.norwayBlock")}</p>}
-        <div className="dt-pdp__actions">{qtyInput}<Button variant="primary" disabled={blocked || product.priceEur == null} onClick={addProduct}>{label}<ArrowRight size={17} aria-hidden="true" /></Button></div>
-        <a className="dt-text-link dt-pdp__question" href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={18} aria-hidden="true" />{t(locale, "product.askWhatsApp")}<span className="sr-only"> ({t(locale, "nav.external")})</span></a>
+        <p className="customer-quantity-label">{quantityLabel}</p><div className="dt-pdp__actions">{qtyInput}<Button variant="primary" disabled={blocked} onClick={addProduct}>{label}<ArrowRight size={17} aria-hidden="true" /></Button></div>
+        <details className="customer-product-help"><summary>{r(locale, "requestPhoto")}</summary><MessageActions message={request} /></details>
       </div>
     </div>
     {more.length > 0 && <section className="dt-related"><div className="dt-section-heading"><h2>{t(locale, "product.related")}</h2></div><div className="dt-product-grid">{more.map(item => <ProductCard key={item.sourceId} product={item} />)}</div></section>}
-    <div className="dt-mobile-purchase"><span>{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</span><Button size="sm" variant="primary" disabled={blocked || product.priceEur == null} onClick={addProduct}>{label}</Button></div>
+    <div className="dt-mobile-purchase"><span>{product.priceEur === null ? mediaCopy(locale, 'askPrice') : formatListed(product.priceEur, product.unit, currency, locale)}</span><Button size="sm" variant="primary" disabled={blocked} onClick={addProduct}>{label}</Button></div>
   </section>;
 }

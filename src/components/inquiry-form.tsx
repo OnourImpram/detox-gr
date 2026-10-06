@@ -1,5 +1,5 @@
 import { useState, useId } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { MessageActions } from './message-actions';
 import { b } from '@/lib/brand-copy';
 import { buildInquiry } from '@/lib/inquiry';
 import { countryName } from '@/lib/i18n';
@@ -7,7 +7,7 @@ import { COUNTRIES } from '@/lib/markets';
 import { SHOP_WHATSAPP } from '@/lib/shop-facts';
 import { useLocale } from '@/lib/use-locale';
 import { useShop } from '@/lib/store';
-import { Button } from './ui/button';
+
 export function InquiryForm({ kind }: { kind: 'gift' | 'trade' | 'contact' }) {
   const locale = useLocale();
   const country = useShop(state => state.country);
@@ -26,7 +26,7 @@ export function InquiryForm({ kind }: { kind: 'gift' | 'trade' | 'contact' }) {
       {kind !== 'contact' && <label>{b(locale, 'inquiry.budget')}<input maxLength={80} value={budget} onChange={event => setBudget(event.target.value)} /></label>}
     </div>
     <label>{b(locale, 'inquiry.note')}<textarea rows={5} maxLength={1000} value={note} onChange={event => setNote(event.target.value)} /></label>
-    <Button asChild variant="primary"><a href={href} target="_blank" rel="noopener noreferrer" data-testid="inquiry-link">{b(locale, 'inquiry.action')}<ArrowUpRight size={18} aria-hidden="true" /></a></Button>
+    <MessageActions message={new URL(href).searchParams.get("text") ?? ""} />
     <p className="ed-form-note">{b(locale, 'inquiry.privacy')}</p>
   </div>;
 }

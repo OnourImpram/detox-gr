@@ -38,7 +38,7 @@ export const useShop = create<State>()(persist((set, get) => ({
   add: (slug, qty = 1) => {
     const product = productBySlug(slug);
     if (!product) return "unknown";
-    if (product.priceEur == null || product.priceEur <= 0) return "no_price";
+    // A local inquiry may include an unpriced product. Server-side checkout still rejects it.
     if (get().country === "NO" && product.klass === "food") return "norway_food";
     if (!validateQuantity(qty)) return "quantity";
     const cart = sanitizeCart(get().cart, KNOWN_SLUGS);

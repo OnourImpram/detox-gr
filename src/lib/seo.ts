@@ -46,7 +46,7 @@ export function withLang(path: string, locale: Locale) {
 
 export function pageOrigin(): string {
   const env = import.meta.env.VITE_SITE_ORIGIN as string | undefined;
-  return env?.replace(/\/$/, "") || "";
+  return env?.replace(/\/$/, "") || (import.meta.env.VITE_STATIC_PREVIEW === "1" ? "https://onourimpram.github.io/detox-gr" : "");
 }
 
 export function liveOrigin(): string {
@@ -58,7 +58,11 @@ export function absoluteUrl(origin: string, path: string) {
   if (path.startsWith("http")) return path;
   const normalized = path.startsWith("/") ? path : `/${path}`;
   if (!origin) return normalized;
-  return `${origin.replace(/\/$/, "")}${normalized}`;
+  const base = origin.replace(/\/$/, "");
+  const basePath = new URL(base).pathname.replace(/\/$/, "");
+  // Vite's static adapter may have prefixed a media path already.
+  if (basePath && (normalized === basePath || normalized.startsWith(`${basePath}/`))) return `${new URL(base).origin}${normalized}`;
+  return `${base}${normalized}`;
 }
 
 export function alternateLinks(path: string, locale: Locale, origin: string) {
