@@ -1,0 +1,17 @@
+{
+  "name": "botanical-editorial",
+  "colors": {
+    "paper": "#F7F6F0",
+    "surface": "#ECEEE5",
+    "white": "#FFFFFF",
+    "ink": "#253C31",
+    "body": "#374A40",
+    "secondary": "#59665C",
+    "clay": "#915138"
+  },
+  "display": "Literata",
+  "interface": "Figtree",
+  "maxWidth": 1440,
+  "minControl": 44,
+  "motion": "user-triggered-only"
+}
