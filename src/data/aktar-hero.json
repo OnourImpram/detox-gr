@@ -1,0 +1,41 @@
+{
+  "id": "aktar-vinegar-20261010",
+  "kind": "illustration",
+  "userApproved": true,
+  "isActualStorePhoto": false,
+  "isVerifiedProductPhoto": false,
+  "sourceSha256": "d729982a3d2766277f6b4236da723aefda3920c520e5ef4e08d9f6a4a6c0589b",
+  "sourceWidth": 1672,
+  "sourceHeight": 941,
+  "description": "Solda elma sirkesi şişesi; ahşap tezgâhta gül tomurcukları, kuru bitkiler, kakule, karanfil ve tarçın. Yapay zekâ ile üretilmiş temsili aktar sahnesi.",
+  "variants": [
+    {
+      "src": "/media/hero/detoks-aktar-sirke-20261010-480.webp",
+      "width": 480,
+      "height": 270,
+      "bytes": 39124,
+      "sha256": "bfe3c1b65dd966676affad4f05df3854444611c8d80eb300da5744396f93bed0"
+    },
+    {
+      "src": "/media/hero/detoks-aktar-sirke-20261010-800.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 86148,
+      "sha256": "2070faa006f47ff598d314abe1e3f2e8ea08866f26def2fa6530d5aefe7d6e71"
+    },
+    {
+      "src": "/media/hero/detoks-aktar-sirke-20261010-1200.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 151926,
+      "sha256": "b642a1f201c06f9f80065d5ae1e049be822797643fdb6d126035205cc5504ffd"
+    },
+    {
+      "src": "/media/hero/detoks-aktar-sirke-20261010-1672.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 233062,
+      "sha256": "1244878e7654c18edf62d784af7a6863230ee2d4d4d0a3485e352c8c58ef3f73"
+    }
+  ]
+}

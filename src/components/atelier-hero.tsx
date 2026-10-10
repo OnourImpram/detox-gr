@@ -1,3 +1,5 @@
+import { AktarHeroImage } from './aktar-hero-image';
+import { mediaCopy } from '@/lib/media-copy';
 import { useState } from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ArchivePhoto } from './archive-photo';
@@ -13,7 +15,7 @@ const specimens = [
   { photo: PHOTO.star, label: 'group.spices' },
 ] as const;
 
-/** Owner-supplied photographs, changed only on an explicit visitor action. */
+/** Approved composition first; the three owner-supplied photographs remain explicit alternatives. */
 export function AtelierHero() {
   const locale = useLocale();
   const [selected, setSelected] = useState(0);
@@ -26,14 +28,15 @@ export function AtelierHero() {
       <div className="atelier-owner"><span>Taha Hüseyinoğlu</span><span>Detoks Aktar</span></div>
     </div>
     <div className="atelier-specimen">
-      <div className="atelier-specimen__frame" id="atelier-specimen-panel" aria-live="polite">
-        <ArchivePhoto key={specimens[selected].photo} original={specimens[selected].photo} priority caption={false} sizes="(min-width: 1100px) 43vw, (min-width: 768px) 50vw, 90vw" />
-        <span className="atelier-specimen__label">{b(locale, specimens[selected].label)}</span>
+      <div className="atelier-specimen__frame" id="atelier-specimen-panel" aria-live="polite" data-hero-kind={selected === 0 ? 'illustration' : 'archive'}>
+        {selected === 0 ? <AktarHeroImage /> : <ArchivePhoto key={specimens[selected - 1].photo} original={specimens[selected - 1].photo} priority caption={false} sizes="(min-width: 1100px) 43vw, (min-width: 768px) 50vw, 90vw" />}
+        {selected > 0 && <span className="atelier-specimen__label">{b(locale, specimens[selected - 1].label)}</span>}
       </div>
       <div className="atelier-specimen__controls" role="group" aria-label={b(locale,'archive.title')}>
-        {specimens.map((item,index) => <button key={item.photo} type="button" aria-pressed={selected===index} aria-controls="atelier-specimen-panel" onClick={()=>setSelected(index)}><span className="atelier-specimen__dot" aria-hidden="true" />{b(locale,item.label)}</button>)}
+        <button type="button" aria-pressed={selected === 0} aria-controls="atelier-specimen-panel" onClick={() => setSelected(0)}><span className="atelier-specimen__dot" aria-hidden="true" />Detoks Aktar</button>
+        {specimens.map((item,index) => <button key={item.photo} type="button" aria-pressed={selected===index+1} aria-controls="atelier-specimen-panel" onClick={()=>setSelected(index+1)}><span className="atelier-specimen__dot" aria-hidden="true" />{b(locale,item.label)}</button>)}
       </div>
-      <div className="atelier-specimen__caption"><span>{b(locale,'hero.caption')}</span><LocaleLink to="/raf">{b(locale,'archive.title')}<ArrowUpRight size={15} aria-hidden="true" /></LocaleLink></div>
+      <div className="atelier-specimen__caption"><span>{selected === 0 ? mediaCopy(locale, 'disclosure') : b(locale,'hero.caption')}</span><LocaleLink to="/raf">{b(locale,'archive.title')}<ArrowUpRight size={15} aria-hidden="true" /></LocaleLink></div>
     </div>
   </section>;
 }
