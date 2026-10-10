@@ -450,3 +450,8 @@ body { background: var(--dt-bg); color: var(--dt-fg); caret-color: var(--dt-pati
 .dt-mobile-purchase { width:100%; max-width:100%; min-width:0; box-sizing:border-box; }
 .dt-mobile-purchase > button { min-width:0; white-space:normal; }
 .v3-product-media__pending .v3-product-media__category { color:var(--dt-muted); }
+
+/* Full composition is preserved; the vinegar bottle on the left must not be cropped out. */
+.atelier-specimen__frame[data-hero-kind="illustration"] { aspect-ratio:1672 / 941; background:#1d221e; }
+.atelier-specimen__frame[data-hero-kind="illustration"] img { object-fit:contain; object-position:center; }
+.atelier-specimen__frame[data-hero-kind="illustration"] .aktar-hero-image { width:100%; height:100%; }
