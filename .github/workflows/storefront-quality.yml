@@ -84,6 +84,10 @@ jobs:
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
           for i in $(seq 1 40); do curl -sf 'http://127.0.0.1:8095/?lang=tr' > /dev/null && break; sleep 1; done
           node scripts/v3-ssr-smoke.mjs > qa-evidence/v3-ssr.log 2>&1
+      - name: Approved vinegar hero and selected prototype
+        id: aktar
+        continue-on-error: true
+        run: node scripts/aktar-hero-browser.mjs > qa-evidence/aktar-hero-browser.log 2>&1
       - name: Production server build
         id: production
         continue-on-error: true
@@ -91,7 +95,7 @@ jobs:
       - name: Evidence summary
         if: always()
         run: |
-          printf '%s\n' 'design=${{ steps.design.outcome }}' 'refinement=${{ steps.refinement.outcome }}' 'scenes=${{ steps.scenes.outcome }}' 'dependencies=${{ steps.dependencies.outcome }}' 'locale=${{ steps.locale.outcome }}' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
+          printf '%s\n' 'aktar=${{ steps.aktar.outcome }}' 'design=${{ steps.design.outcome }}' 'refinement=${{ steps.refinement.outcome }}' 'scenes=${{ steps.scenes.outcome }}' 'dependencies=${{ steps.dependencies.outcome }}' 'locale=${{ steps.locale.outcome }}' 'tests=${{ steps.tests.outcome }}' 'types=${{ steps.types.outcome }}' 'lint=${{ steps.lint.outcome }}' 'catalogue=${{ steps.catalogue.outcome }}' 'pages=${{ steps.pages.outcome }}' 'browser=${{ steps.browser.outcome }}' 'editorial=${{ steps.editorial.outcome }}' 'v3=${{ steps.v3.outcome }}' 'ssr=${{ steps.ssr.outcome }}' 'production=${{ steps.production.outcome }}' | tee qa-evidence/status.txt
           git rev-parse HEAD > qa-evidence/commit.txt
           git ls-files -z | xargs -0 sha256sum > qa-evidence/source-sha256.txt
           for f in qa-evidence/*.log; do echo "===== $f ====="; tail -25 "$f"; done
@@ -105,6 +109,7 @@ jobs:
         if: always()
         run: |
           test '${{ steps.design.outcome }}' = success
+          test '${{ steps.aktar.outcome }}' = success
           test '${{ steps.refinement.outcome }}' = success
           test '${{ steps.scenes.outcome }}' = success
           test '${{ steps.dependencies.outcome }}' = success
