@@ -15,13 +15,13 @@ jobs:
           ref: work/aktar-hero-20261010
           fetch-depth: 2
       - name: Require reviewed branch state
-        run: test "$(git rev-parse HEAD^)" = b65beca5af58175102f0c4c02e7e61b5e7b90f41
+        run: test "$(git rev-parse HEAD^)" = 1dbf19a0c913c6adffe0c94c514f5a436035bb54
       - name: Retrieve checksum-pinned approved assets and implementation
         env:
-          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-dbc4-820a-b1db-799349bfa892/raw?se=2026-10-10T13%3A53%3A27Z&sp=r&sv=2026-02-06&sr=b&scid=9d283640-663a-52fa-bdfe-91d314f840b7&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-10T05%3A25%3A30Z&ske=2026-10-11T05%3A25%3A30Z&sks=b&skv=2026-02-06&sig=bzV0JuU88GEC6KZjNpkhyQhp66M2WkbzypKVkcQdhGo%3D'
+          PACKAGE_URL: 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-1474-820a-b20d-146ea24b5bd6/raw?se=2026-10-10T13%3A57%3A05Z&sp=r&sv=2026-02-06&sr=b&scid=38254434-d346-5b5a-803a-0cd83cee5874&skoid=76024c37-11e2-4c92-aa07-7e519fbe2d0f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-10T06%3A40%3A35Z&ske=2026-10-11T06%3A40%3A35Z&sks=b&skv=2026-02-06&sig=/GZKNB96XzDZpdEk5lxFgmK6Yl7VuYs6X0FrOGFITaA%3D'
         run: |
           curl --fail --silent --show-error --location --max-time 60 "$PACKAGE_URL" -o /tmp/aktar.zip
-          echo '912d4c976a882c705d802fca2eb96d19707201f492d1c66ab1c6520ce878a6cb  /tmp/aktar.zip' | sha256sum -c -
+          echo '3f66cc8f063390e64a2bcd5c3b6d1c00479f9e3496bf3bbd3c2d88e5c42a7cb9  /tmp/aktar.zip' | sha256sum -c -
           python - <<'PY'
           import pathlib,hashlib,json,zipfile
           root=pathlib.Path.cwd()
@@ -59,12 +59,12 @@ jobs:
         run: node scripts/aktar-hero-browser.mjs > qa-evidence/aktar-hero-browser.log 2>&1
       - name: Verify current multilingual design regression suite
         run: node scripts/design-v4-browser.mjs > qa-evidence/design-v4-browser.log 2>&1
-      - name: Save tested implementation on isolated branch
+      - name: Save tested application files on isolated branch
         run: |
           git config user.name 'Detoks project automation'
           git config user.email 'detoks-automation@users.noreply.github.com'
-          git rm .github/workflows/aktar-hero-source.yml .github/workflows/import-aktar-hero.yml
-          git add .github/workflows/pages.yml .github/workflows/storefront-quality.yml src scripts docs/media public/media/hero public/yavas-dukkan public/version.json package.json package-lock.json
+          git restore --source=HEAD -- .github/workflows/pages.yml .github/workflows/storefront-quality.yml
+          git add src scripts docs/media public/media/hero public/yavas-dukkan public/version.json package.json package-lock.json
           git commit -m 'feat: install approved vinegar hero and publish the chosen Yavas Dukkan preview'
           git push origin HEAD:work/aktar-hero-20261010
           git rev-parse HEAD > qa-evidence/commit.txt
