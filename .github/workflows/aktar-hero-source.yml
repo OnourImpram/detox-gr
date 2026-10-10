@@ -1,0 +1,31 @@
+name: Aktar hero source snapshot
+on:
+  push:
+    branches: [work/aktar-hero-20261010]
+    paths: [.github/workflows/aktar-hero-source.yml]
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 2afedc9777a3f4fb6c6cae5941867618aafe82b0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Archive exact workspace without credentials
+        run: |
+          git rev-parse HEAD > /tmp/aktar-base.txt
+          tar --exclude=./.git --exclude=./.env --exclude=./qa-evidence --exclude=./.output --exclude=./.vercel --exclude=./dist -czf /tmp/aktar-workspace.tar.gz .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aktar-hero-source
+          path: |
+            /tmp/aktar-workspace.tar.gz
+            /tmp/aktar-base.txt
+          retention-days: 1
